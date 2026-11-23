@@ -620,7 +620,7 @@ button, input, textarea, select {
 
 
 /* ==========================================================================
-   3. HERO SECTION (Video & Horizontal Sliding Animation as in live site)
+   3. HERO SECTION (Matched exactly to screenshot with watermark & styling)
    ========================================================================== */
 #hero {
   position: relative;
@@ -692,7 +692,7 @@ button, input, textarea, select {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.40);
   z-index: 2;
   pointer-events: none;
 }
@@ -700,28 +700,32 @@ button, input, textarea, select {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 1050px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .hero-title {
-  font-size: 50px;
-  letter-spacing: 2px;
-  line-height: 1.25;
+  font-family: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.22;
   margin-bottom: 24px;
   text-transform: uppercase;
-  font-weight: 400;
+  color: #ffffff;
   text-shadow: none !important;
 }
 
 .hero-subtitle {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  line-height: 1.9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.85;
   text-transform: uppercase;
-  max-width: 860px;
-  margin: 0 auto 40px;
+  max-width: 880px;
+  margin: 0 auto 38px;
+  color: rgba(255, 255, 255, 0.95);
   text-shadow: none !important;
 }
 
@@ -729,27 +733,74 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   flex-wrap: wrap;
 }
 
-.hero-buttons .btn {
-  min-width: 230px;
+.btn-hero {
+  background-color: #ffffff !important;
+  color: #2ea8b8 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 16px 36px !important;
+  min-width: 200px;
+  border: 1px solid #ffffff !important;
+  border-radius: 0px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
+.btn-hero:hover {
+  background-color: #2b8282 !important;
+  color: #ffffff !important;
+  border-color: #2b8282 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* Watermark DRE info bottom-left exactly as screenshot */
 .hero-dre {
   position: absolute;
-  bottom: 25px;
-  left: 30px;
-  font-size: 12px;
-  letter-spacing: 1px;
+  bottom: 24px;
+  left: 28px;
+  font-size: 11.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  opacity: 0.85;
-  z-index: 2;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  z-index: 10;
   text-shadow: none !important;
+  pointer-events: none;
 }
 
-/* ==========================================================================
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+  .hero-subtitle {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .btn-hero {
+    min-width: 100%;
+    padding: 14px 20px !important;
+  }
+  .hero-dre {
+    bottom: 12px;
+    left: 16px;
+    font-size: 10px;
+  }
+}/* ==========================================================================
    4. SECTION: WHO WE ARE
    ========================================================================== */
 #who-we-are {
@@ -2214,11 +2265,11 @@ button, input, textarea, select {
    ========================================================================== */
 .floating-contact-btn {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: var(--accent);
-  color: var(--white);
-  padding: 12px 22px;
+  bottom: 24px;
+  left: 24px;
+  background-color: #2ea8b8;
+  color: #ffffff;
+  padding: 12px 24px;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -2229,9 +2280,19 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   text-decoration: none !important;
   text-shadow: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+}
+
+.floating-contact-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .floating-contact-btn:hover {
@@ -2605,6 +2666,16 @@ button, input, textarea, select {
 
 
 
+.nav-chevron {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
+}
+
+.nav-item:hover .nav-chevron {
+  transform: rotate(180deg);
+}
 </style>
 </head>
 <body>
@@ -2619,7 +2690,7 @@ button, input, textarea, select {
       <ul class="nav-group nav-group-left">
         <li class="nav-item">
           <a href="#who-we-are" class="nav-link">
-            About <span class="nav-caret">▼</span>
+            ABOUT <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg>
           </a>
           <ul class="nav-dropdown">
             <li><a href="about-us.html">About Us</a></li>
@@ -2627,11 +2698,11 @@ button, input, textarea, select {
           </ul>
         </li>
         <li class="nav-item">
-          <a href="selling.html" class="nav-link">Selling</a>
+          <a href="selling.html" class="nav-link">SELLING</a>
         </li>
         <li class="nav-item">
           <a href="#featured-properties" class="nav-link">
-            Buying <span class="nav-caret">▼</span>
+            BUYING <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg>
           </a>
           <ul class="nav-dropdown">
             <li><a href="buying.html">Buying Services</a></li>
@@ -2641,7 +2712,7 @@ button, input, textarea, select {
         </li>
         <li class="nav-item">
           <a href="#explore-area" class="nav-link">
-            Neighborhoods <span class="nav-caret">▼</span>
+            NEIGHBORHOODS <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg>
           </a>
           <ul class="nav-dropdown">
             <li><a href="tri-valley.html">Tri Valley</a></li>
@@ -2789,20 +2860,21 @@ button, input, textarea, select {
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Real Estate, Redesigned<br>for the Modern Homeowner</h1>
+      <h1 class="hero-title">REAL ESTATE, REDESIGNED<br>FOR THE MODERN HOMEOWNER</h1>
       <p class="hero-subtitle">
-        A smarter, more strategic way to buy, sell, invest, renovate, and manage real estate in Mountain House, Tracy, the Tri-Valley, Central Valley, and Greater Sacramento.
+        A SMARTER, MORE STRATEGIC WAY TO BUY, SELL, INVEST, RENOVATE, AND MANAGE REAL ESTATE IN MOUNTAIN HOUSE, TRACY, THE TRI-VALLEY, CENTRAL VALLEY, AND GREATER SACRAMENTO.
       </p>
       
       <div class="hero-buttons">
-        <a href="#featured-properties" class="btn btn-white">Home Search</a>
-        <a href="selling.html" class="btn btn-white">Home Valuation</a>
-        <a href="contact-us.html" class="btn btn-white">Contact Us</a>
+        <a href="#featured-properties" class="btn btn-hero">HOME SEARCH</a>
+        <a href="selling.html" class="btn btn-hero">HOME VALUATION</a>
+        <a href="contact-us.html" class="btn btn-hero">CONTACT US</a>
       </div>
     </div>
 
+    <!-- Watermark DRE License info in bottom-left -->
     <div class="hero-dre">
-      Lulu Logan | CA DRE# 01452747
+      LULU LOGAN | CA DRE# 01452747
     </div>
   </section>
 
@@ -3819,9 +3891,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   })();
+  // ----------------------------------------------------
+  // FLOATING CONTACT BUTTON (Only visible after hero section)
+  // ----------------------------------------------------
+  const floatingContactBtn = document.querySelector('.floating-contact-btn');
+  const heroSectionEl = document.getElementById('hero');
+
+  if (floatingContactBtn && heroSectionEl) {
+    const updateFloatingContact = () => {
+      const heroRect = heroSectionEl.getBoundingClientRect();
+      if (heroRect.bottom <= 80) {
+        floatingContactBtn.classList.add('visible');
+      } else {
+        floatingContactBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', updateFloatingContact, { passive: true });
+    updateFloatingContact();
+  }
 </script>
 </body>
 </html>
+
 
 
 
