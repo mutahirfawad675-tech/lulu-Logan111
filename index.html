@@ -45,6 +45,28 @@
   text-shadow: none !important;
 }
 
+/* Universal List Reset - Prevent any stray browser bullet dots */
+ul, ol {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+li {
+  list-style: none !important;
+}
+
+.sub-nav ul,
+.section-options,
+.nav-group,
+.nav-dropdown,
+.footer-social-row,
+.footer-copyright-links {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -207,47 +229,55 @@ button, input, textarea, select {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--navbar-height);
-  z-index: 999;
+  height: var(--navbar-height, 90px);
+  z-index: 1000;
   transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
   background-color: transparent;
-  color: var(--white);
+  color: var(--white, #ffffff);
 }
 
 #global-navbar.scrolled {
-  background-color: var(--white);
-  color: var(--black);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  background-color: var(--white, #ffffff);
+  color: var(--black, #111111);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0 40px;
 }
 
 .nav-group {
   display: flex;
   align-items: center;
-  gap: 28px;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .nav-group-left {
-  flex: 1;
   justify-content: flex-start;
+  gap: 24px;
 }
 
 .nav-group-right {
-  flex: 1;
   justify-content: flex-end;
+  gap: 22px;
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
   flex-shrink: 0;
   text-align: center;
-  padding: 0 20px;
 }
 
 .nav-logo img {
@@ -2270,28 +2300,29 @@ button, input, textarea, select {
   background-color: #2ea8b8;
   color: #ffffff;
   padding: 12px 24px;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11.5px;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
   z-index: 998;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   text-decoration: none !important;
   text-shadow: none !important;
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease;
+  border-radius: 2px;
 }
 
 .floating-contact-btn.visible {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
@@ -2676,6 +2707,245 @@ button, input, textarea, select {
 .nav-item:hover .nav-chevron {
   transform: rotate(180deg);
 }
+/* ==========================================================================
+   POPUPS, MODALS & COOKIE CONSENT STYLES
+   ========================================================================== */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  padding: 20px;
+}
+
+.contact-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-modal-card {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
+}
+
+.lead-modal-card {
+  max-width: 760px;
+  padding: 38px 40px;
+}
+
+.contact-modal-overlay.open .contact-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 4px 8px;
+  z-index: 10;
+}
+
+.contact-modal-close:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.modal-select-field {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 11px 12px;
+  font-size: 13.5px;
+  color: #1a1a1a;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.25s ease;
+  font-family: inherit;
+}
+
+.modal-select-field:focus {
+  border-color: #2ea8b8;
+}
+
+.modal-success-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.modal-success-state .success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background-color: rgba(46, 168, 184, 0.12);
+  color: #2ea8b8;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.modal-success-state h3 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.modal-success-state p {
+  font-size: 14px;
+  color: #555;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+.modal-success-close {
+  padding: 12px 32px;
+  background-color: #2ea8b8;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.modal-success-close:hover {
+  background-color: #258895;
+}
+
+/* Cookie Consent Bar */
+.cookie-consent-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 16px 24px;
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.25);
+  z-index: 99999;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.cookie-consent-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cookie-consent-container {
+  max-width: 1340px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cookie-consent-content {
+  flex: 1 1 500px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+.cookie-consent-title {
+  color: #ffffff;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.cookie-consent-content a {
+  color: #3BB9CA;
+  text-decoration: underline;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  padding: 9px 18px;
+  font-size: 11.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.cookie-btn-reject {
+  background: transparent;
+  color: #bbb;
+  border: 1px solid #555;
+}
+
+.cookie-btn-reject:hover {
+  color: #fff;
+  border-color: #999;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cookie-btn-customize {
+  background: transparent;
+  color: #3BB9CA;
+  border: 1px solid #3BB9CA;
+}
+
+.cookie-btn-customize:hover {
+  background: rgba(59, 185, 202, 0.1);
+  color: #5ed2e2;
+}
+
+.cookie-btn-accept {
+  background-color: #3BB9CA;
+  color: #ffffff;
+  border: 1px solid #3BB9CA;
+}
+
+.cookie-btn-accept:hover {
+  background-color: #2ea8b8;
+  border-color: #2ea8b8;
+}
 </style>
 </head>
 <body>
@@ -2733,13 +3003,13 @@ button, input, textarea, select {
       <!-- Right Navigation Links -->
       <ul class="nav-group nav-group-right">
         <li class="nav-item">
-          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+          <a href="knowledge-center.html" class="nav-link">KNOWLEDGE CENTER</a>
         </li>
         <li class="nav-item">
-          <a href="just-1-network.html" class="nav-link">Just 1 Network</a>
+          <a href="just-1-network.html" class="nav-link">JUST 1 NETWORK</a>
         </li>
         <li class="nav-item">
-          <a href="contact-us.html" class="nav-link">Contact Us</a>
+          <a href="contact-us.html" class="nav-link" data-open-contact-modal>CONTACT US</a>
         </li>
         <li class="nav-item">
           <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
@@ -2828,7 +3098,7 @@ button, input, textarea, select {
           <a href="just-1-network.html" class="link main-nav">Media</a>
           <div class="sub-nav">
             <ul>
-              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1â„¢ Channel</a></li>
+              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1™ Channel</a></li>
               <li><a href="just-1-network.html#podcast" class="link sub-nav-link">Podcast</a></li>
               <li><a href="just-1-network.html#press" class="link sub-nav-link">Press</a></li>
             </ul>
@@ -3411,8 +3681,9 @@ button, input, textarea, select {
 
         <div class="footer-broker-info">
           Just 1 Real Estate<br>
-          Lulu Logan | DRE #01452747<br>
-          Broker: Grobecker Holland International
+          Lulu Logan | CA DRE# 01452747<br>
+          Broker: Grobecker Holland International<br>
+          2181 N Tracy Blvd #275, Tracy, CA 95376
         </div>
       </div>
 
@@ -3475,21 +3746,24 @@ button, input, textarea, select {
   <!-- ==========================================================================
        17. FLOATING CONTACT US BUTTON
        ========================================================================== -->
-  <a href="contact-us.html" class="floating-contact-btn" aria-label="Contact Us">
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal>
     Contact Us &#94;
   </a>
 
   <!-- ==========================================================================
        18. INTERACTIVE CONTACT US MODAL
        ========================================================================== -->
-  <div class="contact-modal-overlay" id="contactModal">
+    <!-- ==========================================================================
+       CONTACT US / LEAVE A MESSAGE MODAL POPUP
+       ========================================================================== -->
+  <div class="contact-modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
     <div class="contact-modal-card">
       <button class="contact-modal-close" id="contactModalClose" aria-label="Close dialog">&times;</button>
       
       <div class="contact-modal-grid">
         
         <div class="modal-header-info">
-          <h2>CONTACT DETAILS</h2>
+          <h2 id="contactModalTitle">LEAVE A MESSAGE</h2>
           <p>Lulu Logan Group, powered by Just 1 Real Estate</p>
           <p>Lulu Logan | CA DRE# 01452747</p>
 
@@ -3508,7 +3782,6 @@ button, input, textarea, select {
             </div>
           </div>
 
-          <!-- 6 Circular Social Buttons (Matching Screenshot) -->
           <div class="modal-social-row">
             <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Instagram">
               <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -3548,6 +3821,17 @@ button, input, textarea, select {
           </div>
 
           <div class="modal-input-wrap">
+            <label for="modalInterest" class="modal-input-label">INTERESTED IN...</label>
+            <select id="modalInterest" class="modal-select-field">
+              <option value="Selling & Buying">Selling &amp; Buying</option>
+              <option value="Selling">Selling</option>
+              <option value="Buying">Buying</option>
+              <option value="Renting">Renting</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="modal-input-wrap">
             <label for="modalMessage" class="modal-input-label">MESSAGE</label>
             <textarea id="modalMessage" required class="modal-textarea-box"></textarea>
           </div>
@@ -3564,6 +3848,100 @@ button, input, textarea, select {
           </div>
         </form>
 
+        <div class="modal-success-state" id="contactSuccessState" style="display: none;">
+          <div class="success-icon">&#10003;</div>
+          <h3>MESSAGE SENT</h3>
+          <p>Thank you for reaching out to Lulu Logan Group! Your message has been received and our team will get back to you shortly.</p>
+          <button type="button" class="btn btn-primary modal-success-close">CLOSE</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LEAD / GUIDE / VALUATION MODAL
+       ========================================================================== -->
+  <div class="contact-modal-overlay" id="leadValuationModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="contact-modal-card lead-modal-card">
+      <button class="contact-modal-close" id="leadModalClose" aria-label="Close dialog">&times;</button>
+      
+      <div class="lead-modal-content">
+        <div class="modal-header-info text-center" style="margin-bottom: 24px;">
+          <h2 id="leadModalTitle">HOME VALUATION &amp; GUIDES</h2>
+          <p>Lulu Logan Group, powered by Just 1 Real Estate | Lulu Logan | CA DRE# 01452747</p>
+          <p style="font-size: 13px; color: #666; margin-top: 6px;">Discover the current market value of your property or receive our exclusive buyer &amp; seller guides.</p>
+        </div>
+
+        <form class="modal-contact-form" id="leadValuationForm">
+          <div class="modal-input-wrap">
+            <label for="leadAddress" class="modal-input-label">PROPERTY ADDRESS OR AREA OF INTEREST</label>
+            <input type="text" id="leadAddress" placeholder="e.g. 123 Main St, Mountain House, CA or Central Valley" required class="modal-input-underline">
+          </div>
+
+          <div class="modal-form-row">
+            <div class="modal-input-wrap">
+              <label for="leadName" class="modal-input-label">FULL NAME</label>
+              <input type="text" id="leadName" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="leadEmail" class="modal-input-label">EMAIL</label>
+              <input type="email" id="leadEmail" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="leadPhone" class="modal-input-label">PHONE</label>
+              <input type="tel" id="leadPhone" required class="modal-input-underline">
+            </div>
+          </div>
+
+          <div class="modal-input-wrap">
+            <label for="leadService" class="modal-input-label">WHAT CAN WE HELP YOU WITH?</label>
+            <select id="leadService" class="modal-select-field">
+              <option value="Home Valuation">Home Valuation (What's My Home Worth?)</option>
+              <option value="Buyer Journey Guide">Request Buyer Journey Guide</option>
+              <option value="Seller Strategy Guide">Request Seller Strategy Guide</option>
+              <option value="New Construction Access">New Construction VIP Access</option>
+              <option value="Relocation / 1031 Exchange">Relocation &amp; 1031 Exchange Consultation</option>
+            </select>
+          </div>
+
+          <div class="modal-consent-wrap">
+            <input type="checkbox" id="leadConsent" required>
+            <label for="leadConsent">
+              I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email, or text regarding real estate services and valuation reports. Consent is not a condition of purchase. Message and data rates may apply.
+            </label>
+          </div>
+
+          <div class="modal-submit-wrap">
+            <button type="submit" class="modal-submit-btn">SUBMIT REQUEST</button>
+          </div>
+        </form>
+
+        <div class="modal-success-state" id="leadSuccessState" style="display: none;">
+          <div class="success-icon">&#10003;</div>
+          <h3>REQUEST RECEIVED</h3>
+          <p>Thank you! Your property valuation and guide request has been received. Our team is preparing your custom market analysis and will reach out shortly.</p>
+          <button type="button" class="btn btn-primary modal-success-close">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       COOKIE & PRIVACY CONSENT POPUP
+       ========================================================================== -->
+  <div id="cookieConsentBanner" class="cookie-consent-bar" role="dialog" aria-label="Cookie Consent">
+    <div class="cookie-consent-container">
+      <div class="cookie-consent-content">
+        <span class="cookie-consent-title">We value your privacy.</span>
+        <span class="cookie-consent-text">
+          We use cookies and similar technologies to enhance site navigation, analyze site performance, and assist in delivering personalized marketing. By continuing, you agree to our <a href="#" target="_blank" rel="noopener">Privacy Policy</a>.
+        </span>
+      </div>
+      <div class="cookie-consent-actions">
+        <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Reject non-essential</button>
+        <button type="button" class="cookie-btn cookie-btn-customize" id="cookieCustomizeBtn">Customize</button>
+        <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Accept all</button>
       </div>
     </div>
   </div>
@@ -3752,39 +4130,107 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----------------------------------------------------
-  // 6. CONTACT US MODAL
+  // 6. MODAL POPUPS & TRIGGERS (LEAVE A MESSAGE / HOME VALUATION)
   // ----------------------------------------------------
   const contactModal = document.getElementById('contactModal');
-  const contactModalClose = document.getElementById('contactModalClose');
-  const contactTriggers = document.querySelectorAll('[data-open-modal="contact"]');
+  const leadModal = document.getElementById('leadValuationModal');
+  const cookieBanner = document.getElementById('cookieConsentBanner');
+  const contactForm = document.getElementById('contactModalForm');
+  const contactSuccessState = document.getElementById('contactSuccessState');
+  const leadForm = document.getElementById('leadValuationForm');
+  const leadSuccessState = document.getElementById('leadSuccessState');
 
-  const openContactModal = (e) => {
-    if (e) e.preventDefault();
-    if (contactModal) {
-      contactModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  const closeContactModal = () => {
-    if (contactModal) {
-      contactModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  };
-
-  contactTriggers.forEach(btn => btn.addEventListener('click', openContactModal));
-  if (contactModalClose) contactModalClose.addEventListener('click', closeContactModal);
-  if (contactModal) {
-    contactModal.addEventListener('click', (e) => {
-      if (e.target === contactModal) closeContactModal();
-    });
+  function openModal(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 
-  // ----------------------------------------------------
-  // 7. FORM SUBMISSIONS
-  // ----------------------------------------------------
-  const contactForm = document.getElementById('contactModalForm');
+  function closeModal(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function openContactModal() {
+    if (contactForm && contactSuccessState) {
+      contactForm.style.display = '';
+      contactSuccessState.style.display = 'none';
+    }
+    openModal(contactModal);
+  }
+
+  function openLeadModal(titleText) {
+    if (leadForm && leadSuccessState) {
+      leadForm.style.display = '';
+      leadSuccessState.style.display = 'none';
+    }
+    if (titleText) {
+      const titleEl = document.getElementById('leadModalTitle');
+      if (titleEl) titleEl.textContent = titleText;
+    }
+    openModal(leadModal);
+  }
+
+  // Wire explicit data attributes
+  document.querySelectorAll('[data-open-contact-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactModal();
+    });
+  });
+
+  document.querySelectorAll('[data-open-valuation-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLeadModal('REQUEST HOME VALUATION');
+    });
+  });
+
+  // Wire buttons/links by label
+  document.querySelectorAll('a, button').forEach(el => {
+    const text = el.textContent.trim().toUpperCase();
+    if ((text === 'CONTACT US' || text === 'WORK WITH US' || text === 'SCHEDULE A CONSULTATION' || text === 'GET IN TOUCH') && !el.classList.contains('nav-link')) {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openContactModal();
+      });
+    } else if (text === 'HOME VALUATION' || text === 'REQUEST YOUR BUYER JOURNEY GUIDE') {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLeadModal(text === 'HOME VALUATION' ? 'REQUEST HOME VALUATION' : 'REQUEST BUYER JOURNEY GUIDE');
+      });
+    }
+  });
+
+  // Close buttons
+  document.querySelectorAll('.contact-modal-close, .modal-success-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeModal(contactModal);
+      closeModal(leadModal);
+    });
+  });
+
+  // Backdrop click
+  [contactModal, leadModal].forEach(modal => {
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+
+  // Escape key close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal(contactModal);
+      closeModal(leadModal);
+    }
+  });
+
+  // Contact Form Submission (Clean confirmation, no page reload)
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -3794,15 +4240,35 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
 
       setTimeout(() => {
-        alert('Thank you for contacting Lulu Logan Group! We have received your inquiry and will reach out shortly.');
-        contactForm.reset();
+        contactForm.style.display = 'none';
+        if (contactSuccessState) contactSuccessState.style.display = 'block';
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-        closeContactModal();
-      }, 700);
+        contactForm.reset();
+      }, 500);
     });
   }
 
+  // Lead Form Submission (Clean confirmation, no page reload)
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = leadForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        leadForm.style.display = 'none';
+        if (leadSuccessState) leadSuccessState.style.display = 'block';
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        leadForm.reset();
+      }, 500);
+    });
+  }
+
+  // Footer Newsletter Submission
   const newsletterForm = document.getElementById('footerNewsletterForm');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
@@ -3815,12 +4281,44 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      alert(`Thank you for subscribing with ${input.value}! Exclusive real estate listings and updates are on their way.`);
+      alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.');
       newsletterForm.reset();
     });
   }
-});
 
+  // ----------------------------------------------------
+  // COOKIE CONSENT BANNER
+  // ----------------------------------------------------
+  if (cookieBanner) {
+    const savedConsent = localStorage.getItem('cookieConsentChoice');
+    if (!savedConsent) {
+      setTimeout(() => {
+        cookieBanner.classList.add('visible');
+      }, 600);
+    }
+
+    const dismissCookieBanner = (choice) => {
+      localStorage.setItem('cookieConsentChoice', choice);
+      cookieBanner.classList.remove('visible');
+    };
+
+    const acceptBtn = document.getElementById('cookieAcceptBtn');
+    const rejectBtn = document.getElementById('cookieRejectBtn');
+    const customizeBtn = document.getElementById('cookieCustomizeBtn');
+
+    if (acceptBtn) acceptBtn.addEventListener('click', () => dismissCookieBanner('accepted'));
+    if (rejectBtn) rejectBtn.addEventListener('click', () => dismissCookieBanner('rejected'));
+    if (customizeBtn) customizeBtn.addEventListener('click', () => dismissCookieBanner('customized'));
+
+    // Wire "Your Privacy Choices" in footer
+    document.querySelectorAll('.footer-bottom-center a, a[href="#privacy-choices"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        cookieBanner.classList.add('visible');
+      });
+    });
+  }
+});
 
   // Video thumbnail inline player swap
   const videoWrap = document.querySelector('.video-thumbnail-wrap');
@@ -3891,24 +4389,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   })();
+
   // ----------------------------------------------------
-  // FLOATING CONTACT BUTTON (Only visible after hero section)
+  // FLOATING CONTACT BUTTON (Visible only after hero section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero');
+  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, section:first-of-type');
 
   if (floatingContactBtn && heroSectionEl) {
-    const updateFloatingContact = () => {
-      const heroRect = heroSectionEl.getBoundingClientRect();
-      if (heroRect.bottom <= 80) {
-        floatingContactBtn.classList.add('visible');
-      } else {
-        floatingContactBtn.classList.remove('visible');
-      }
-    };
-
-    window.addEventListener('scroll', updateFloatingContact, { passive: true });
-    updateFloatingContact();
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            floatingContactBtn.classList.add('visible');
+          } else {
+            floatingContactBtn.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(heroSectionEl);
+    } else {
+      const updateFloatingContact = () => {
+        if (window.scrollY > window.innerHeight * 0.85) {
+          floatingContactBtn.classList.add('visible');
+        } else {
+          floatingContactBtn.classList.remove('visible');
+        }
+      };
+      window.addEventListener('scroll', updateFloatingContact, { passive: true });
+      updateFloatingContact();
+    }
   }
 </script>
 </body>

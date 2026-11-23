@@ -1072,6 +1072,541 @@
 .nav-item:hover .nav-chevron {
   transform: rotate(180deg);
 }
+
+/* Universal List Reset - Prevent any stray browser bullet dots */
+ul, ol {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+li {
+  list-style: none !important;
+}
+
+.sub-nav ul,
+.section-options,
+.nav-group,
+.nav-dropdown,
+.buying-accordion-body-inner ul,
+.selling-accordion-body-inner ul,
+.footer-social-row,
+.footer-copyright-links {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Centered Header & Navigation Grid */
+.nav-container {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+}
+
+.nav-group-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 24px !important;
+}
+
+.nav-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 20px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-group-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 22px !important;
+}
+
+@media (max-width: 1024px) {
+  .nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+  }
+  .nav-group-left,
+  .nav-group-right .nav-item {
+    display: none !important;
+  }
+}
+
+/* Floating Contact Button */
+.floating-contact-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 24px !important;
+  background-color: #2ea8b8 !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  cursor: pointer !important;
+  z-index: 998 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(16px) !important;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease !important;
+  border-radius: 2px !important;
+}
+
+.floating-contact-btn.visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.floating-contact-btn:hover {
+  background-color: #258895 !important;
+  color: #ffffff !important;
+}
+
+/* Popups & Modals */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  padding: 20px;
+}
+
+.contact-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-modal-card {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
+}
+
+.lead-modal-card {
+  max-width: 760px;
+  padding: 38px 40px;
+}
+
+.contact-modal-overlay.open .contact-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 4px 8px;
+  z-index: 10;
+}
+
+.contact-modal-close:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.contact-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+}
+
+@media (max-width: 820px) {
+  .contact-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .contact-modal-card {
+    padding: 30px 20px;
+  }
+}
+
+.modal-header-info h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.modal-header-info p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.modal-contact-row {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-contact-item span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.modal-contact-item a,
+.modal-contact-item .modal-addr {
+  font-size: 13px;
+  color: #1a1a1a;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.modal-social-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.modal-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  transition: all 0.25s ease;
+}
+
+.modal-social-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.modal-social-btn:hover {
+  background-color: #2ea8b8;
+  border-color: #2ea8b8;
+  color: #ffffff;
+}
+
+.modal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .modal-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-input-wrap {
+  margin-bottom: 18px;
+}
+
+.modal-input-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.modal-input-underline {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  font-size: 13.5px;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.25s ease;
+  background: transparent;
+}
+
+.modal-input-underline:focus {
+  border-bottom-color: #2ea8b8;
+}
+
+.modal-select-field {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 11px 12px;
+  font-size: 13.5px;
+  color: #1a1a1a;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.25s ease;
+  font-family: inherit;
+}
+
+.modal-select-field:focus {
+  border-color: #2ea8b8;
+}
+
+.modal-textarea-box {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: #1a1a1a;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.25s ease;
+}
+
+.modal-textarea-box:focus {
+  border-color: #2ea8b8;
+}
+
+.modal-consent-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0 20px;
+}
+
+.modal-consent-wrap input[type="checkbox"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: #2ea8b8;
+}
+
+.modal-consent-wrap label {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.modal-consent-wrap a {
+  color: #2ea8b8;
+  text-decoration: underline;
+}
+
+.modal-submit-btn {
+  width: 100%;
+  background-color: #2ea8b8;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 12.5px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.modal-submit-btn:hover {
+  background-color: #258895;
+}
+
+.modal-success-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.modal-success-state .success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background-color: rgba(46, 168, 184, 0.12);
+  color: #2ea8b8;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.modal-success-state h3 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.modal-success-state p {
+  font-size: 14px;
+  color: #555;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+.modal-success-close {
+  padding: 12px 32px;
+  background-color: #2ea8b8;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.modal-success-close:hover {
+  background-color: #258895;
+}
+
+/* Cookie Consent Bar */
+.cookie-consent-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 16px 24px;
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.25);
+  z-index: 99999;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.cookie-consent-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cookie-consent-container {
+  max-width: 1340px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cookie-consent-content {
+  flex: 1 1 500px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+.cookie-consent-title {
+  color: #ffffff;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.cookie-consent-content a {
+  color: #3BB9CA;
+  text-decoration: underline;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  padding: 9px 18px;
+  font-size: 11.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.cookie-btn-reject {
+  background: transparent;
+  color: #bbb;
+  border: 1px solid #555;
+}
+
+.cookie-btn-reject:hover {
+  color: #fff;
+  border-color: #999;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cookie-btn-customize {
+  background: transparent;
+  color: #3BB9CA;
+  border: 1px solid #3BB9CA;
+}
+
+.cookie-btn-customize:hover {
+  background: rgba(59, 185, 202, 0.1);
+  color: #5ed2e2;
+}
+
+.cookie-btn-accept {
+  background-color: #3BB9CA;
+  color: #ffffff;
+  border: 1px solid #3BB9CA;
+}
+
+.cookie-btn-accept:hover {
+  background-color: #2ea8b8;
+  border-color: #2ea8b8;
+}
+
 </style>
 </head>
 <body>
@@ -1145,7 +1680,7 @@
           <a href="just-1-network.html" class="link main-nav">Media</a>
           <div class="sub-nav">
             <ul>
-              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1â„¢ Channel</a></li>
+              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1™ Channel</a></li>
               <li><a href="just-1-network.html#podcast" class="link sub-nav-link">Podcast</a></li>
               <li><a href="just-1-network.html#press" class="link sub-nav-link">Press</a></li>
             </ul>
@@ -1434,9 +1969,7 @@
   </footer>
 
   <!-- Floating Contact Button (Bottom Left) -->
-  <a href="contact-us.html" class="floating-contact-btn" aria-label="Contact Us">
-    CONTACT US &#94;
-  </a>
+  
 
   <!-- JavaScript -->
   <script>
@@ -1540,7 +2073,430 @@
     });
   })();
 
+
+  // ----------------------------------------------------
+  // MODAL POPUPS & TRIGGERS (LEAVE A MESSAGE / HOME VALUATION)
+  // ----------------------------------------------------
+  const contactModal = document.getElementById('contactModal');
+  const leadModal = document.getElementById('leadValuationModal');
+  const cookieBanner = document.getElementById('cookieConsentBanner');
+  const contactForm = document.getElementById('contactModalForm');
+  const contactSuccessState = document.getElementById('contactSuccessState');
+  const leadForm = document.getElementById('leadValuationForm');
+  const leadSuccessState = document.getElementById('leadSuccessState');
+
+  function openModal(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function openContactModal() {
+    if (contactForm && contactSuccessState) {
+      contactForm.style.display = '';
+      contactSuccessState.style.display = 'none';
+    }
+    openModal(contactModal);
+  }
+
+  function openLeadModal(titleText) {
+    if (leadForm && leadSuccessState) {
+      leadForm.style.display = '';
+      leadSuccessState.style.display = 'none';
+    }
+    if (titleText) {
+      const titleEl = document.getElementById('leadModalTitle');
+      if (titleEl) titleEl.textContent = titleText;
+    }
+    openModal(leadModal);
+  }
+
+  // Wire explicit data attributes
+  document.querySelectorAll('[data-open-contact-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactModal();
+    });
+  });
+
+  document.querySelectorAll('[data-open-valuation-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLeadModal('REQUEST HOME VALUATION');
+    });
+  });
+
+  // Wire buttons/links by label
+  document.querySelectorAll('a, button').forEach(el => {
+    const text = el.textContent.trim().toUpperCase();
+    if ((text === 'CONTACT US' || text === 'WORK WITH US' || text === 'SCHEDULE A CONSULTATION' || text === 'GET IN TOUCH') && !el.classList.contains('nav-link')) {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openContactModal();
+      });
+    } else if (text === 'HOME VALUATION' || text === 'REQUEST YOUR BUYER JOURNEY GUIDE') {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLeadModal(text === 'HOME VALUATION' ? 'REQUEST HOME VALUATION' : 'REQUEST BUYER JOURNEY GUIDE');
+      });
+    }
+  });
+
+  // Close buttons
+  document.querySelectorAll('.contact-modal-close, .modal-success-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeModal(contactModal);
+      closeModal(leadModal);
+    });
+  });
+
+  // Backdrop click
+  [contactModal, leadModal].forEach(modal => {
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+
+  // Escape key close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal(contactModal);
+      closeModal(leadModal);
+    }
+  });
+
+  // Contact Form Submission (Clean confirmation, no page reload)
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        contactForm.style.display = 'none';
+        if (contactSuccessState) contactSuccessState.style.display = 'block';
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        contactForm.reset();
+      }, 500);
+    });
+  }
+
+  // Lead Form Submission (Clean confirmation, no page reload)
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = leadForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        leadForm.style.display = 'none';
+        if (leadSuccessState) leadSuccessState.style.display = 'block';
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        leadForm.reset();
+      }, 500);
+    });
+  }
+
+  // Footer Newsletter Submission
+  const newsletterForm = document.getElementById('footerNewsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = newsletterForm.querySelector('input[type="email"]');
+      const checkbox = newsletterForm.querySelector('input[type="checkbox"]');
+      
+      if (!checkbox.checked) {
+        alert('Please accept the consent terms before subscribing.');
+        return;
+      }
+
+      alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.');
+      newsletterForm.reset();
+    });
+  }
+
+  // ----------------------------------------------------
+  // COOKIE CONSENT BANNER
+  // ----------------------------------------------------
+  if (cookieBanner) {
+    const savedConsent = localStorage.getItem('cookieConsentChoice');
+    if (!savedConsent) {
+      setTimeout(() => {
+        cookieBanner.classList.add('visible');
+      }, 600);
+    }
+
+    const dismissCookieBanner = (choice) => {
+      localStorage.setItem('cookieConsentChoice', choice);
+      cookieBanner.classList.remove('visible');
+    };
+
+    const acceptBtn = document.getElementById('cookieAcceptBtn');
+    const rejectBtn = document.getElementById('cookieRejectBtn');
+    const customizeBtn = document.getElementById('cookieCustomizeBtn');
+
+    if (acceptBtn) acceptBtn.addEventListener('click', () => dismissCookieBanner('accepted'));
+    if (rejectBtn) rejectBtn.addEventListener('click', () => dismissCookieBanner('rejected'));
+    if (customizeBtn) customizeBtn.addEventListener('click', () => dismissCookieBanner('customized'));
+
+    // Wire "Your Privacy Choices" in footer
+    document.querySelectorAll('.footer-bottom-center a, a[href="#privacy-choices"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        cookieBanner.classList.add('visible');
+      });
+    });
+  }
+
+  // ----------------------------------------------------
+  // FLOATING CONTACT BUTTON (Visible only after top section)
+  // ----------------------------------------------------
+  const floatingContactBtn = document.querySelector('.floating-contact-btn');
+  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+
+  if (floatingContactBtn) {
+    if (heroSectionEl && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            floatingContactBtn.classList.add('visible');
+          } else {
+            floatingContactBtn.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(heroSectionEl);
+    } else {
+      const updateFloatingContact = () => {
+        if (window.scrollY > 250) {
+          floatingContactBtn.classList.add('visible');
+        } else {
+          floatingContactBtn.classList.remove('visible');
+        }
+      };
+      window.addEventListener('scroll', updateFloatingContact, { passive: true });
+      updateFloatingContact();
+    }
+  }
+
 </script>
+
+  <!-- ==========================================================================
+       FLOATING CONTACT BUTTON
+       ========================================================================== -->
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal>
+    Contact Us &#94;
+  </button>
+
+  <!-- ==========================================================================
+       CONTACT US / LEAVE A MESSAGE MODAL POPUP
+       ========================================================================== -->
+  <div class="contact-modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="contact-modal-card">
+      <button class="contact-modal-close" id="contactModalClose" aria-label="Close dialog">&times;</button>
+      
+      <div class="contact-modal-grid">
+        
+        <div class="modal-header-info">
+          <h2 id="contactModalTitle">LEAVE A MESSAGE</h2>
+          <p>Lulu Logan Group, powered by Just 1 Real Estate</p>
+          <p>Lulu Logan | CA DRE# 01452747</p>
+
+          <div class="modal-contact-row">
+            <div class="modal-contact-item">
+              <span>PHONE</span>
+              <a href="tel:6692220704">(669) 222-0704</a>
+            </div>
+            <div class="modal-contact-item">
+              <span>ADDRESS</span>
+              <div class="modal-addr">2181 N TRACY BLVD #275<br>TRACY, CA 95376</div>
+            </div>
+            <div class="modal-contact-item">
+              <span>EMAIL</span>
+              <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
+            </div>
+          </div>
+
+          <div class="modal-social-row">
+            <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="modal-social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="modal-social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.zillow.com/profile/LuluLoganGroup" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Zillow">
+              <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="modal-social-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.38-1.48 3.49-3.29.04-2.83.02-5.66.02-8.49 0-3.69-.02-7.38.02-11.08z"/></svg>
+            </a>
+            <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Google">
+              <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="modal-contact-form" id="contactModalForm">
+          <div class="modal-form-row">
+            <div class="modal-input-wrap">
+              <label for="modalName" class="modal-input-label">NAME</label>
+              <input type="text" id="modalName" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="modalEmail" class="modal-input-label">EMAIL</label>
+              <input type="email" id="modalEmail" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="modalPhone" class="modal-input-label">PHONE</label>
+              <input type="tel" id="modalPhone" class="modal-input-underline">
+            </div>
+          </div>
+
+          <div class="modal-input-wrap">
+            <label for="modalInterest" class="modal-input-label">INTERESTED IN...</label>
+            <select id="modalInterest" class="modal-select-field">
+              <option value="Selling & Buying">Selling &amp; Buying</option>
+              <option value="Selling">Selling</option>
+              <option value="Buying">Buying</option>
+              <option value="Renting">Renting</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="modal-input-wrap">
+            <label for="modalMessage" class="modal-input-label">MESSAGE</label>
+            <textarea id="modalMessage" required class="modal-textarea-box"></textarea>
+          </div>
+
+          <div class="modal-consent-wrap">
+            <input type="checkbox" id="modalConsent" required>
+            <label for="modalConsent">
+              I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#">terms of use and Privacy Policy</a>.
+            </label>
+          </div>
+
+          <div class="modal-submit-wrap">
+            <button type="submit" class="modal-submit-btn">SUBMIT</button>
+          </div>
+        </form>
+
+        <div class="modal-success-state" id="contactSuccessState" style="display: none;">
+          <div class="success-icon">&#10003;</div>
+          <h3>MESSAGE SENT</h3>
+          <p>Thank you for reaching out to Lulu Logan Group! Your message has been received and our team will get back to you shortly.</p>
+          <button type="button" class="btn btn-primary modal-success-close">CLOSE</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LEAD / GUIDE / VALUATION MODAL
+       ========================================================================== -->
+  <div class="contact-modal-overlay" id="leadValuationModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="contact-modal-card lead-modal-card">
+      <button class="contact-modal-close" id="leadModalClose" aria-label="Close dialog">&times;</button>
+      
+      <div class="lead-modal-content">
+        <div class="modal-header-info text-center" style="margin-bottom: 24px;">
+          <h2 id="leadModalTitle">HOME VALUATION &amp; GUIDES</h2>
+          <p>Lulu Logan Group, powered by Just 1 Real Estate | Lulu Logan | CA DRE# 01452747</p>
+          <p style="font-size: 13px; color: #666; margin-top: 6px;">Discover the current market value of your property or receive our exclusive buyer &amp; seller guides.</p>
+        </div>
+
+        <form class="modal-contact-form" id="leadValuationForm">
+          <div class="modal-input-wrap">
+            <label for="leadAddress" class="modal-input-label">PROPERTY ADDRESS OR AREA OF INTEREST</label>
+            <input type="text" id="leadAddress" placeholder="e.g. 123 Main St, Mountain House, CA or Central Valley" required class="modal-input-underline">
+          </div>
+
+          <div class="modal-form-row">
+            <div class="modal-input-wrap">
+              <label for="leadName" class="modal-input-label">FULL NAME</label>
+              <input type="text" id="leadName" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="leadEmail" class="modal-input-label">EMAIL</label>
+              <input type="email" id="leadEmail" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="leadPhone" class="modal-input-label">PHONE</label>
+              <input type="tel" id="leadPhone" required class="modal-input-underline">
+            </div>
+          </div>
+
+          <div class="modal-input-wrap">
+            <label for="leadService" class="modal-input-label">WHAT CAN WE HELP YOU WITH?</label>
+            <select id="leadService" class="modal-select-field">
+              <option value="Home Valuation">Home Valuation (What's My Home Worth?)</option>
+              <option value="Buyer Journey Guide">Request Buyer Journey Guide</option>
+              <option value="Seller Strategy Guide">Request Seller Strategy Guide</option>
+              <option value="New Construction Access">New Construction VIP Access</option>
+              <option value="Relocation / 1031 Exchange">Relocation &amp; 1031 Exchange Consultation</option>
+            </select>
+          </div>
+
+          <div class="modal-consent-wrap">
+            <input type="checkbox" id="leadConsent" required>
+            <label for="leadConsent">
+              I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email, or text regarding real estate services and valuation reports. Consent is not a condition of purchase. Message and data rates may apply.
+            </label>
+          </div>
+
+          <div class="modal-submit-wrap">
+            <button type="submit" class="modal-submit-btn">SUBMIT REQUEST</button>
+          </div>
+        </form>
+
+        <div class="modal-success-state" id="leadSuccessState" style="display: none;">
+          <div class="success-icon">&#10003;</div>
+          <h3>REQUEST RECEIVED</h3>
+          <p>Thank you! Your property valuation and guide request has been received. Our team is preparing your custom market analysis and will reach out shortly.</p>
+          <button type="button" class="btn btn-primary modal-success-close">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       COOKIE & PRIVACY CONSENT POPUP
+       ========================================================================== -->
+  <div id="cookieConsentBanner" class="cookie-consent-bar" role="dialog" aria-label="Cookie Consent">
+    <div class="cookie-consent-container">
+      <div class="cookie-consent-content">
+        <span class="cookie-consent-title">We value your privacy.</span>
+        <span class="cookie-consent-text">
+          We use cookies and similar technologies to enhance site navigation, analyze site performance, and assist in delivering personalized marketing. By continuing, you agree to our <a href="#" target="_blank" rel="noopener">Privacy Policy</a>.
+        </span>
+      </div>
+      <div class="cookie-consent-actions">
+        <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Reject non-essential</button>
+        <button type="button" class="cookie-btn cookie-btn-customize" id="cookieCustomizeBtn">Customize</button>
+        <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Accept all</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
 
