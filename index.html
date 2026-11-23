@@ -17,7 +17,7 @@
    Clean text styling: No text shadows, no gradient overlays, no text shading
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Tenor+Sans&display=swap');
 
 :root {
   --primary-font: 'Tenor Sans', sans-serif;
@@ -2946,6 +2946,213 @@ button, input, textarea, select {
   background-color: #2ea8b8;
   border-color: #2ea8b8;
 }
+/* ==========================================================================
+   UPDATED NAVBAR & HERO SPECIFICATIONS
+   ========================================================================== */
+
+/* Navbar & Centered Larger Logo */
+#global-navbar {
+  height: 100px !important;
+}
+
+#global-navbar.scrolled {
+  height: 85px !important;
+}
+
+.nav-container {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 1600px !important;
+  margin: 0 auto !important;
+  padding: 0 48px !important;
+}
+
+.nav-group-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 32px !important;
+}
+
+.nav-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 40px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-logo a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.nav-logo img {
+  height: 76px !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  transition: height 0.3s ease, opacity 0.3s ease !important;
+}
+
+#global-navbar.scrolled .nav-logo img {
+  height: 66px !important;
+}
+
+.nav-group-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 28px !important;
+}
+
+.nav-link {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.6px !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 1200px) {
+  .nav-group-left { gap: 20px !important; }
+  .nav-group-right { gap: 18px !important; }
+  .nav-logo { padding: 0 20px !important; }
+  .nav-logo img { height: 64px !important; }
+  .nav-link { font-size: 11px !important; letter-spacing: 1.2px !important; }
+}
+
+@media (max-width: 1024px) {
+  .nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 24px !important;
+  }
+  .nav-group-left,
+  .nav-group-right .nav-item {
+    display: none !important;
+  }
+  .nav-logo img {
+    height: 52px !important;
+  }
+}
+
+/* Watermark Behind Hero Text */
+#hero {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.hero-watermark {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -55%) !important;
+  width: 580px !important;
+  max-width: 90vw !important;
+  height: auto !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  opacity: 0.13 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.hero-watermark-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Hero Center Text Typography & Texture */
+.hero-title {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+  font-size: 54px !important;
+  font-weight: 400 !important;
+  letter-spacing: 3px !important;
+  line-height: 1.22 !important;
+  margin-bottom: 24px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+}
+
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  line-height: 1.85 !important;
+  margin-bottom: 38px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65) !important;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px !important;
+    letter-spacing: 1.5px !important;
+  }
+  .hero-subtitle {
+    font-size: 11.5px !important;
+    letter-spacing: 1.2px !important;
+    line-height: 1.7 !important;
+  }
+  .hero-watermark {
+    width: 340px !important;
+  }
+}
+
+/* Floating Contact Button (Strictly hidden until hero is completely scrolled away) */
+.floating-contact-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 24px !important;
+  background-color: #2ea8b8 !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  cursor: pointer !important;
+  z-index: 998 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+  text-decoration: none !important;
+  border-radius: 2px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(20px) !important;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
+}
+
+.floating-contact-btn.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
 </style>
 </head>
 <body>
@@ -3129,6 +3336,10 @@ button, input, textarea, select {
       <div class="hero-bg-slide-fallback"></div>
     </div>
     <div class="hero-overlay"></div>
+        <!-- Subtle Logo Watermark behind hero text -->
+    <div class="hero-watermark" aria-hidden="true">
+      <img src="images/testimonial-house-logo.png" alt="" class="hero-watermark-img">
+    </div>
     <div class="hero-content">
       <h1 class="hero-title">REAL ESTATE, REDESIGNED<br>FOR THE MODERN HOMEOWNER</h1>
       <p class="hero-subtitle">
@@ -4390,35 +4601,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // ----------------------------------------------------
-  // FLOATING CONTACT BUTTON (Visible only after hero section)
+    // ----------------------------------------------------
+  // FLOATING CONTACT BUTTON (Visible strictly AFTER hero section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, section:first-of-type');
+  const heroSectionEl = document.getElementById('hero');
 
   if (floatingContactBtn && heroSectionEl) {
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            floatingContactBtn.classList.add('visible');
-          } else {
-            floatingContactBtn.classList.remove('visible');
-          }
-        });
-      }, { threshold: 0.15 });
-      observer.observe(heroSectionEl);
-    } else {
-      const updateFloatingContact = () => {
-        if (window.scrollY > window.innerHeight * 0.85) {
-          floatingContactBtn.classList.add('visible');
-        } else {
-          floatingContactBtn.classList.remove('visible');
-        }
-      };
-      window.addEventListener('scroll', updateFloatingContact, { passive: true });
-      updateFloatingContact();
-    }
+    const updateFloatingContact = () => {
+      const heroRect = heroSectionEl.getBoundingClientRect();
+      // Only show when the hero section is completely scrolled past (bottom <= 0)
+      if (heroRect.bottom <= 0) {
+        floatingContactBtn.classList.add('visible');
+      } else {
+        floatingContactBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', updateFloatingContact, { passive: true });
+    window.addEventListener('resize', updateFloatingContact, { passive: true });
+    updateFloatingContact();
   }
 </script>
 </body>
