@@ -1,0 +1,2189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Construction Homes | Just 1 Real Estate</title>
+  <meta name="description" content="Explore newly constructed homes across Tri Valley, Central Valley, and Greater Sacramento with Just 1 Real Estate.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/card-logo.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & BASE STYLES
+       ========================================================================== */
+    :root {
+      --primary-font: 'Cinzel', serif;
+      --body-font: 'Montserrat', sans-serif;
+      --bg-dark: #121212;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --white: #ffffff;
+      --black: #000000;
+      --accent: #3BB9CA;
+      --accent-hover: #329ea8;
+      --border-color: #e5e5e5;
+      --transition-smooth: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body-font);
+      color: var(--text-main);
+      background-color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       1. GLOBAL NAVIGATION BAR
+       ========================================================================== */
+    #global-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent;
+      transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+      padding: 22px 0;
+    }
+
+    #global-navbar.scrolled {
+      background-color: rgba(18, 18, 18, 0.96);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      padding: 14px 0;
+    }
+
+    .nav-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .nav-caret {
+      font-size: 8px;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-item:hover .nav-caret {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Menus */
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #1a1a1a;
+      min-width: 220px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      padding: 14px 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+      border-top: 2px solid var(--accent);
+    }
+
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown li a {
+      display: block;
+      padding: 9px 22px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-dropdown li a:hover,
+    .nav-dropdown li a.active {
+      color: var(--accent);
+      background-color: rgba(255, 255, 255, 0.05);
+      padding-left: 26px;
+    }
+
+    /* Center Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .logo-dark {
+      display: none;
+    }
+
+    .logo-light {
+      display: block;
+    }
+
+    .nav-phone {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    /* Hamburger Button */
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--white);
+      transition: var(--transition-smooth);
+    }
+
+    .hamburger-btn:hover span {
+      background-color: var(--accent);
+    }
+
+    /* Slide-out Menu */
+    .side-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .side-menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 400px;
+      max-width: 90vw;
+      height: 100vh;
+      background-color: #111111;
+      color: var(--white);
+      z-index: 2001;
+      overflow-y: auto;
+      padding: 30px;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .side-menu.open {
+      right: 0;
+    }
+
+    .side-menu-close {
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+      float: right;
+      margin-bottom: 30px;
+    }
+
+    .side-menu-close:hover {
+      color: var(--accent);
+    }
+
+    .side-menu-nav {
+      list-style: none;
+      margin-top: 40px;
+      clear: both;
+    }
+
+    .side-menu-nav li {
+      margin-bottom: 20px;
+    }
+
+    .side-menu-link {
+      font-family: var(--primary-font);
+      font-size: 18px;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: block;
+      padding: 6px 0;
+    }
+
+    .side-menu-link:hover,
+    .side-menu-link.active {
+      color: var(--accent);
+    }
+
+    .side-menu-contact {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #333333;
+      font-size: 13px;
+      color: #999999;
+      line-height: 1.8;
+    }
+
+    /* ==========================================================================
+       SECTION 1 (Screenshot 1): HERO - NEW CONSTRUCTION
+       ========================================================================== */
+    #nc-hero {
+      position: relative;
+      min-height: 540px;
+      height: 58vh;
+      max-height: 640px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url('images/nc-hero.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding: 120px 24px 60px;
+    }
+
+    .nc-hero-content {
+      max-width: 920px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .nc-hero-title {
+      font-family: var(--primary-font);
+      font-size: 46px;
+      font-weight: 400;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    /* ==========================================================================
+       SECTION 2 (Screenshot 2): REGION TABS
+       ========================================================================== */
+    #nc-tabs-section {
+      padding: 60px 0 20px;
+      background-color: var(--white);
+    }
+
+    .nc-tabs-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .nc-tab-pill {
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 12px 32px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      border: 1px solid var(--accent);
+    }
+
+    .nc-tab-pill:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Region Section Header */
+    .nc-region-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .nc-region-title {
+      font-family: var(--primary-font);
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .nc-region-subtitle {
+      font-family: var(--body-font);
+      font-size: 13.5px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================================================
+       PROPERTY CARDS (3 COLUMNS)
+       ========================================================================== */
+    .nc-properties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 35px;
+    }
+
+    .nc-property-card {
+      background-color: var(--white);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nc-property-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .nc-property-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10.2;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+
+    .nc-property-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .nc-property-card:hover .nc-property-img {
+      transform: scale(1.04);
+    }
+
+    /* Card Info */
+    .nc-property-body {
+      padding: 18px 0 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nc-property-price {
+      font-family: var(--body-font);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+
+    .nc-property-address {
+      font-family: var(--body-font);
+      font-size: 11.5px;
+      font-weight: 400;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #666666;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nc-property-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .nc-property-specs {
+      font-family: var(--body-font);
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #777777;
+    }
+
+    .metrolist-logo {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: italic;
+      color: #d32f2f;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .metrolist-logo sup {
+      font-size: 8px;
+      font-style: normal;
+    }
+
+    /* Search Button Row */
+    .nc-search-btn-wrap {
+      text-align: center;
+      margin: 30px 0 70px;
+    }
+
+    .btn-nc-search {
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 14px 38px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 1px solid var(--accent);
+      display: inline-block;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-nc-search:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SECTION 15 (Screenshot 15): WORK WITH US
+       ========================================================================== */
+    #nc-workwithus {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/workwithus-bg.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 100px 24px;
+    }
+
+    .workwithus-content {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .workwithus-title {
+      font-family: var(--primary-font);
+      font-size: 38px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .workwithus-desc {
+      font-family: var(--body-font);
+      font-size: 14.5px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 30px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white-teal {
+      background-color: var(--white);
+      color: var(--accent);
+      border: 1px solid var(--white);
+      padding: 14px 34px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-white-teal:hover {
+      background-color: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SECTION 16 & 17 (Screenshots 16 & 17): GLOBAL FOOTER
+       ========================================================================== */
+    #global-footer {
+      background-color: var(--white);
+      color: var(--black);
+      padding: 80px 0 40px;
+      border-top: 1px solid #eeeeee;
+      font-size: 13px;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col-left h3 {
+      font-family: var(--body-font);
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: var(--black);
+    }
+
+    .footer-info-block {
+      margin-bottom: 18px;
+    }
+
+    .footer-info-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999999;
+      margin-bottom: 4px;
+    }
+
+    .footer-info-val {
+      font-size: 13.5px;
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    .footer-info-val a {
+      color: var(--black);
+      text-decoration: underline;
+    }
+
+    .footer-info-val a:hover {
+      color: var(--accent);
+    }
+
+    /* Footer Right: Newsletter */
+    .footer-col-right h4 {
+      font-family: var(--body-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #777777;
+      margin-bottom: 24px;
+    }
+
+    .newsletter-input-group {
+      margin-bottom: 20px;
+    }
+
+    .newsletter-input-underline {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #777777;
+      padding: 10px 0;
+      font-family: var(--body-font);
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--black);
+      background: transparent;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-input-underline:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    .newsletter-input-underline::placeholder {
+      color: #888888;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .newsletter-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .newsletter-consent input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--accent);
+    }
+
+    .newsletter-consent label {
+      font-size: 11px;
+      color: #666666;
+      line-height: 1.6;
+    }
+
+    .newsletter-consent label a {
+      color: #666666;
+      text-decoration: underline;
+    }
+
+    .newsletter-consent label a:hover {
+      color: var(--accent);
+    }
+
+    .newsletter-btn {
+      background-color: var(--accent);
+      color: var(--white);
+      border: 1px solid var(--accent);
+      padding: 12px 36px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .newsletter-btn:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    /* Footer Middle */
+    .footer-middle-legal {
+      font-size: 11.5px;
+      color: #666666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-realtor-img {
+      height: 38px;
+      width: auto;
+      margin-bottom: 18px;
+    }
+
+    .footer-dre-info {
+      font-size: 11.5px;
+      color: #666666;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    /* Footer Bottom Row */
+    .footer-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 25px;
+      border-top: 1px solid #000000;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 12px;
+      color: #555555;
+    }
+
+    .lp-attribution {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lp-logo-badge {
+      height: 18px;
+      width: auto;
+    }
+
+    .footer-copyright a {
+      color: #555555;
+      text-decoration: underline;
+    }
+
+    .footer-copyright a:hover {
+      color: var(--accent);
+    }
+
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-teal-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+
+    .social-teal-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .social-teal-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .footer-privacy-choices {
+      text-align: center;
+      font-size: 10.5px;
+      color: #888888;
+      margin-top: 25px;
+    }
+
+    /* Floating Contact Button (Bottom Left) */
+    .floating-contact-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 12px 22px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      z-index: 998;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: var(--transition-smooth);
+    }
+
+    .floating-contact-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .nav-group-left,
+      .nav-group-right .nav-item {
+        display: none;
+      }
+
+      .nc-properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nc-properties-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nc-hero-title {
+        font-size: 32px;
+        letter-spacing: 2px;
+      }
+
+      .nc-region-title {
+        font-size: 24px;
+      }
+
+      .nc-tabs-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nc-tab-pill {
+        text-align: center;
+      }
+    }
+  /* ==========================================================================
+   GLOBAL SIDE MENU DRAWER (Matches exact just1realestate.com screenshot)
+   ========================================================================== */
+#global-sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#global-sidemenu.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#global-sidemenu .sidemenu-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.88) 100%),
+              url('https://media-production.lp-cdn.com/media/d416ebde-fd4f-414a-97e6-115af8784da9');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+#global-sidemenu.visible .sidemenu-wrapper {
+  transform: translateX(0);
+}
+
+/* Watermark house logo in bottom-left */
+#global-sidemenu .sidemenu-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  max-width: 45vw;
+  height: 480px;
+  bottom: 30px;
+  left: 30px;
+  background-image: url('https://media-production.lp-cdn.com/media/3c059318-91b2-4d38-a75c-9b060ffe2547');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  opacity: 0.045;
+  filter: invert(0%) saturate(0%) brightness(0%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Close button on top-right */
+#global-sidemenu .sidemenu-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: #111;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#global-sidemenu .sidemenu-close:hover {
+  transform: scale(1.15) rotate(90deg);
+  color: #2b8282;
+}
+
+/* Right-aligned container for options */
+#global-sidemenu .sidemenu-holder {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  padding: 95px 60px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+#global-sidemenu .sidemenu-title {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #555;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin-bottom: 28px;
+  font-weight: 500;
+  padding-right: 8px;
+}
+
+#global-sidemenu .section-options {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 40px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#global-sidemenu .section-options::-webkit-scrollbar {
+  width: 4px;
+}
+#global-sidemenu .section-options::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+}
+#global-sidemenu .section-options::-webkit-scrollbar-thumb {
+  background: rgba(43, 130, 130, 0.4);
+  border-radius: 4px;
+}
+
+#global-sidemenu .option {
+  text-align: right;
+  position: relative;
+}
+
+#global-sidemenu .option > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+  line-height: 1.5;
+}
+
+#global-sidemenu .option > a:hover {
+  color: #2b8282;
+  transform: translateX(-3px);
+}
+
+/* Chevron indicator for expandable items */
+#global-sidemenu .sub-nav-container > .main-nav::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.3s ease;
+  margin-left: 6px;
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav {
+  color: #2b8282;
+}
+
+/* Sub-nav list */
+#global-sidemenu .sub-nav {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#global-sidemenu .sub-nav-container.open .sub-nav {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+#global-sidemenu .sub-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  padding: 4px 14px 4px 0;
+  transition: color 0.2s ease;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link:hover {
+  color: #2b8282;
+}
+
+@media (max-width: 768px) {
+  #global-sidemenu .sidemenu-holder {
+    max-width: 100%;
+    padding: 80px 24px 30px 20px;
+  }
+  #global-sidemenu .option > a {
+    font-size: 20px;
+  }
+  #global-sidemenu .sidemenu-close {
+    top: 20px;
+    right: 20px;
+  }
+  #global-sidemenu .sidemenu-wrapper::before {
+    display: none;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- GLOBAL SIDE MENU (Matches exact just1realestate.com screenshot) -->
+<div id="global-sidemenu" class="sidemenu" aria-hidden="true">
+  <div class="sidemenu-wrapper">
+    <button class="toggle sidemenu-close" id="sideMenuClose" aria-label="Close menu">&times;</button>
+    <div class="sidemenu-holder">
+      <div class="sidemenu-title">Lulu Logan Group, powered by Just 1 Real Estate</div>
+      <ul class="section-options">
+        <li class="option"><a href="index.html">Home</a></li>
+        <li class="option"><a href="about-us.html">About Us</a></li>
+        <li class="option sub-nav-container">
+          <a href="featured-listings.html" class="link main-nav">Properties</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="featured-listings.html" class="link sub-nav-link">Featured Listings</a></li>
+              <li><a href="featured-listings.html#sold" class="link sub-nav-link">Past Transactions</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option sub-nav-container">
+          <a href="tri-valley.html" class="link main-nav">Home Search</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="tri-valley.html" class="link sub-nav-link">Tri Valley</a></li>
+              <li><a href="tri-valley.html#pleasanton" class="link sub-nav-link">Pleasanton</a></li>
+              <li><a href="tri-valley.html#livermore" class="link sub-nav-link">Livermore</a></li>
+              <li><a href="tri-valley.html#dublin" class="link sub-nav-link">Dublin</a></li>
+              <li><a href="central-valley.html" class="link sub-nav-link">Central Valley</a></li>
+              <li><a href="central-valley.html#mountain-house" class="link sub-nav-link">Mountain House</a></li>
+              <li><a href="central-valley.html#tracy" class="link sub-nav-link">Tracy</a></li>
+              <li><a href="central-valley.html#lathrop" class="link sub-nav-link">Lathrop</a></li>
+              <li><a href="central-valley.html#manteca" class="link sub-nav-link">Manteca</a></li>
+              <li><a href="central-valley.html#lodi" class="link sub-nav-link">Lodi</a></li>
+              <li><a href="greater-sacramento.html#el-dorado-hills" class="link sub-nav-link">El Dorado Hills</a></li>
+              <li><a href="greater-sacramento.html#folsom" class="link sub-nav-link">Folsom</a></li>
+              <li><a href="greater-sacramento.html#roseville" class="link sub-nav-link">Roseville</a></li>
+              <li><a href="featured-listings.html" class="link sub-nav-link">Search All</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="selling.html">Home Valuation</a></li>
+        <li class="option sub-nav-container">
+          <a href="tri-valley.html" class="link main-nav">Neighborhoods</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="tri-valley.html" class="link sub-nav-link">Tri Valley</a></li>
+              <li><a href="central-valley.html" class="link sub-nav-link">Central Valley</a></li>
+              <li><a href="greater-sacramento.html" class="link sub-nav-link">Greater Sacramento</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="testimonials.html">Testimonials</a></li>
+        <li class="option sub-nav-container">
+          <a href="buying.html" class="link main-nav">Resources</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="buying.html" class="link sub-nav-link">Buying Services</a></li>
+              <li><a href="selling.html" class="link sub-nav-link">Selling</a></li>
+              <li><a href="knowledge-center.html" class="link sub-nav-link">Knowledge Center</a></li>
+              <li><a href="about-us.html" class="link sub-nav-link">Just 1 Real Estate</a></li>
+              <li><a href="just-1-network.html" class="link sub-nav-link">Just 1 Network</a></li>
+              <li><a href="about-us.html#services" class="link sub-nav-link">Next Era Home Services</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="new-construction.html">New Construction</a></li>
+        <li class="option sub-nav-container">
+          <a href="just-1-network.html" class="link main-nav">Media</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1â„¢ Channel</a></li>
+              <li><a href="just-1-network.html#podcast" class="link sub-nav-link">Podcast</a></li>
+              <li><a href="just-1-network.html#press" class="link sub-nav-link">Press</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="knowledge-center.html">Blog</a></li>
+        <li class="option"><a href="just-1-network.html">Just 1 Minute</a></li>
+        <li class="option"><a href="contact-us.html">Contact Us</a></li>
+        <li class="option"><a href="featured-listings.html">My Search Portal</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- ==========================================================================
+       1. GLOBAL NAVIGATION BAR
+       ========================================================================== -->
+  <nav id="global-navbar">
+    <div class="nav-container">
+      
+      <!-- Left Navigation Links -->
+      <ul class="nav-group nav-group-left">
+        <li class="nav-item">
+          <a href="index.html#who-we-are" class="nav-link">
+            About <span class="nav-caret">â–¼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="selling.html" class="nav-link">Selling</a>
+        </li>
+        <li class="nav-item">
+          <a href="buying.html" class="nav-link active">
+            Buying <span class="nav-caret">â–¼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="buying.html">Buying Services</a></li>
+            <li><a href="featured-listings.html">Featured Listings</a></li>
+            <li><a href="new-construction.html" class="active">New Construction</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#explore-area" class="nav-link">
+            Neighborhoods <span class="nav-caret">â–¼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="tri-valley.html">Tri Valley</a></li>
+            <li><a href="central-valley.html">Central Valley</a></li>
+            <li><a href="greater-sacramento.html">Greater Sacramento</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="nav-logo">
+        <a href="index.html" aria-label="Just 1 Real Estate">
+          <img src="images/logo-light.png" alt="Just 1 Real Estate" class="logo-light">
+          <img src="images/logo-dark.png" alt="Just 1 Real Estate" class="logo-dark">
+        </a>
+      </div>
+
+      <!-- Right Navigation Links -->
+      <ul class="nav-group nav-group-right">
+        <li class="nav-item">
+          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+        </li>
+        <li class="nav-item">
+          <a href="just-1-network.html" class="nav-link">Just 1 Network</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact-us.html" class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
+        </li>
+        <li class="nav-item-hamburger">
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       2. SLIDE-OUT SIDE MENU
+       ========================================================================== -->
+  
+
+  <!-- ==========================================================================
+       SECTION 1 (Screenshot 1): HERO - NEW CONSTRUCTION
+       ========================================================================== -->
+  <section id="nc-hero">
+    <div class="nc-hero-content">
+      <h1 class="nc-hero-title">NEW CONSTRUCTION</h1>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2 (Screenshot 2): REGION TABS & TRI VALLEY INTRO
+       ========================================================================== -->
+  <section id="nc-tabs-section">
+    <div class="container">
+      
+      <!-- 3 Filter Tabs (Screenshot 2 Top) -->
+      <div class="nc-tabs-row">
+        <a href="#tri-valley-section" class="nc-tab-pill">TRI VALLEY</a>
+        <a href="#central-valley-section" class="nc-tab-pill">CENTRAL VALLEY</a>
+        <a href="#greater-sacramento-section" class="nc-tab-pill">GREATER SACRAMENTO</a>
+      </div>
+
+      <!-- ======================================================================
+           REGION 1: TRI VALLEY NEW CONSTRUCTION HOMES (Screenshots 2 to 6)
+           ====================================================================== -->
+      <div id="tri-valley-section" class="nc-region-block">
+        
+        <header class="nc-region-header">
+          <h2 class="nc-region-title">TRI VALLEY NEW CONSTRUCTION HOMES</h2>
+          <p class="nc-region-subtitle">Browse the available properties in the area below.</p>
+        </header>
+
+        <!-- Properties Grid: Rows 1-4 (Properties 1-12) -->
+        <div class="nc-properties-grid">
+          
+          <!-- Property 1 (Screenshot 3 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p1.jpg" alt="5010 Greyson Creek Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$4,650,000</div>
+              <div class="nc-property-address">5010 GREYSON CREEK DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">7 BEDS 8 BATHS 6,322 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 2 (Screenshot 3 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p2.jpg" alt="4145 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$4,575,000</div>
+              <div class="nc-property-address">4145 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 6.5 BATHS 6,580 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 3 (Screenshot 3 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p3.jpg" alt="3526 Greenview Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$4,498,000</div>
+              <div class="nc-property-address">3526 GREENVIEW DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">3 BEDS 4 BATHS 4,231 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 4 (Screenshot 4 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p4.jpg" alt="4138 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$4,122,500</div>
+              <div class="nc-property-address">4138 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 6.5 BATHS 6,607 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 5 (Screenshot 4 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p5.jpg" alt="6345 Western Sierra Way" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,600,000</div>
+              <div class="nc-property-address">6345 WESTERN SIERRA WAY, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 6 BATHS 5,115 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 6 (Screenshot 4 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p6.jpg" alt="6315 Western Sierra Way" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,600,000</div>
+              <div class="nc-property-address">6315 WESTERN SIERRA WAY, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4.5 BATHS 5,009 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 7 (Screenshot 5 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p7.jpg" alt="4190 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,549,000</div>
+              <div class="nc-property-address">4190 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 6 BATHS 4,543 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 8 (Screenshot 5 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p8.jpg" alt="4195 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,537,500</div>
+              <div class="nc-property-address">4195 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">3 BEDS 3.5 BATHS 4,111 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 9 (Screenshot 5 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p9.jpg" alt="4150 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,530,000</div>
+              <div class="nc-property-address">4150 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4.5 BATHS 4,602 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 10 (Screenshot 6 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p10.jpg" alt="4200 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,499,000</div>
+              <div class="nc-property-address">4200 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 6 BATHS 6,759 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 11 (Screenshot 6 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p11.jpg" alt="4180 Raphael Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,390,000</div>
+              <div class="nc-property-address">4180 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4.5 BATHS 4,470 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 12 (Screenshot 6 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p12.jpg" alt="789 Del Coronado Court" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$3,350,000</div>
+              <div class="nc-property-address">789 DEL CORONADO COURT, EL DORADO HILLS, CA 95762</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 5.5 BATHS 4,954 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Button Below Tri Valley (Screenshot 6 Bottom) -->
+        <div class="nc-search-btn-wrap">
+          <a href="contact-us.html" class="btn-nc-search">SEARCH ALL NEW CONSTRUCTION</a>
+        </div>
+
+      </div>
+
+      <!-- ======================================================================
+           REGION 2: CENTRAL VALLEY NEW CONSTRUCTION HOMES (Screenshots 7 to 10)
+           ====================================================================== -->
+      <div id="central-valley-section" class="nc-region-block">
+        
+        <header class="nc-region-header">
+          <h2 class="nc-region-title">CENTRAL VALLEY NEW CONSTRUCTION HOMES</h2>
+          <p class="nc-region-subtitle">Browse the available properties in the area below.</p>
+        </header>
+
+        <!-- Properties Grid: Rows 1-4 (Properties 13-24) -->
+        <div class="nc-properties-grid">
+          
+          <!-- Property 13 (Screenshot 7 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p13.jpg" alt="3180 Saffron Lane" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,949,000</div>
+              <div class="nc-property-address">3180 SAFFRON LANE, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">6 BEDS 5.5 BATHS 4,316 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 14 (Screenshot 7 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p14.jpg" alt="3285 Baseline Road" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,890,000</div>
+              <div class="nc-property-address">3285 BASELINE ROAD, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4 BATHS 3,473 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 15 (Screenshot 7 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p15.jpg" alt="3100 Saffron Lane" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,699,000</div>
+              <div class="nc-property-address">3100 SAFFRON LANE, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4.5 BATHS 3,550 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 16 (Screenshot 8 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p16.jpg" alt="1056 Elite Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,199,999</div>
+              <div class="nc-property-address">1056 ELITE STREET, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 4.5 BATHS 4,626 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 17 (Screenshot 8 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p17.jpg" alt="1136 Wadsworth Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,160,000</div>
+              <div class="nc-property-address">1136 WADSWORTH DRIVE, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 4.5 BATHS 3,607 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 18 (Screenshot 8 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p18.jpg" alt="3033 Palo Alto Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,156,885</div>
+              <div class="nc-property-address">3033 PALO ALTO STREET, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 4.5 BATHS 4,403 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 19 (Screenshot 9 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p19.jpg" alt="3041 Palo Alto Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,156,142</div>
+              <div class="nc-property-address">3041 PALO ALTO STREET, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4.5 BATHS 3,978 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 20 (Screenshot 9 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p20.jpg" alt="3049 Palo Alto Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,130,000</div>
+              <div class="nc-property-address">3049 PALO ALTO STREET, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 4.5 BATHS 4,403 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 21 (Screenshot 9 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p21.jpg" alt="325 Provo Court" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,105,000</div>
+              <div class="nc-property-address">325 PROVO COURT, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4 BATHS 2,801 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 22 (Screenshot 10 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p22.jpg" alt="141 Birch Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,075,000</div>
+              <div class="nc-property-address">141 BIRCH STREET, ROSEVILLE, CA 95678</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">7 BEDS 4.5 BATHS 3,090 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 23 (Screenshot 10 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p23.jpg" alt="1032 Shadowgate Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,069,938</div>
+              <div class="nc-property-address">1032 SHADOWGATE DRIVE, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">6 BEDS 4.5 BATHS 3,159 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 24 (Screenshot 10 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p24.jpg" alt="400 Meadow Bloom Court" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,065,000</div>
+              <div class="nc-property-address">400 MEADOW BLOOM COURT, ROSEVILLE, CA 95747</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 5 BATHS 3,822 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Button Below Central Valley (Screenshot 10 Bottom) -->
+        <div class="nc-search-btn-wrap">
+          <a href="contact-us.html" class="btn-nc-search">SEARCH ALL ROSEVILLE NEW CONSTRUCTION</a>
+        </div>
+
+      </div>
+
+      <!-- ======================================================================
+           REGION 3: GREATER SACRAMENTO NEW CONSTRUCTION HOMES (Screenshots 11 to 14)
+           ====================================================================== -->
+      <div id="greater-sacramento-section" class="nc-region-block">
+        
+        <header class="nc-region-header">
+          <h2 class="nc-region-title">GREATER SACRAMENTO NEW CONSTRUCTION HOMES</h2>
+          <p class="nc-region-subtitle">Browse the available properties in the area below.</p>
+        </header>
+
+        <!-- Properties Grid: Rows 1-4 (Properties 25-36) -->
+        <div class="nc-properties-grid">
+          
+          <!-- Property 25 (Screenshot 11 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p25.jpg" alt="4347 W California Avenue" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$1,125,000</div>
+              <div class="nc-property-address">4347 W CALIFORNIA AVENUE, TRACY, CA 95304</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 3.5 BATHS 3,758 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 26 (Screenshot 11 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p26.jpg" alt="1300 Richard Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$974,900</div>
+              <div class="nc-property-address">1300 RICHARD DRIVE, TRACY, CA 95376</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">3 BEDS 2 BATHS 1,428 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 27 (Screenshot 11 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p27.jpg" alt="94 W San Diego Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$831,000</div>
+              <div class="nc-property-address">94 W SAN DIEGO DRIVE, TRACY, CA 95391</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 3.5 BATHS 2,628 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 28 (Screenshot 12 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p28.jpg" alt="3391 Pageant Avenue" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$811,000</div>
+              <div class="nc-property-address">3391 PAGEANT AVENUE, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 4 BATHS 2,513 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 29 (Screenshot 12 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p29.jpg" alt="3695 Singh Lane" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$790,000</div>
+              <div class="nc-property-address">3695 SINGH LANE, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 3.5 BATHS 2,502 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 30 (Screenshot 12 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p30.jpg" alt="5699 Kusnick Avenue" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$780,000</div>
+              <div class="nc-property-address">5699 KUSNICK AVENUE, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 3.5 BATHS 2,869 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 31 (Screenshot 13 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p31.jpg" alt="1839 Snowflower Place" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$769,900</div>
+              <div class="nc-property-address">1839 SNOWFLOWER PLACE, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">3 BEDS 2 BATHS 1,829 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 32 (Screenshot 13 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p32.jpg" alt="3627 Junefield Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$750,000</div>
+              <div class="nc-property-address">3627 JUNEFIELD STREET, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">5 BEDS 3 BATHS 2,580 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 33 (Screenshot 13 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p33.jpg" alt="3618 Barton Street" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$745,000</div>
+              <div class="nc-property-address">3618 BARTON STREET, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 2 BATHS 2,173 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 34 (Screenshot 14 Left) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p34.jpg" alt="441 N Paso Robles Drive" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$725,000</div>
+              <div class="nc-property-address">441 N PASO ROBLES DRIVE, TRACY, CA 95391</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 2.5 BATHS 2,136 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 35 (Screenshot 14 Center) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p35.jpg" alt="5440 Ironwood Avenue" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$720,000</div>
+              <div class="nc-property-address">5440 IRONWOOD AVENUE, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">4 BEDS 3 BATHS 2,452 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Property 36 (Screenshot 14 Right) -->
+          <a href="contact-us.html" class="nc-property-card">
+            <div class="nc-property-img-wrap">
+              <img src="images/nc-p36.jpg" alt="1617 Granite Court" class="nc-property-img" loading="lazy">
+            </div>
+            <div class="nc-property-body">
+              <div class="nc-property-price">$710,000</div>
+              <div class="nc-property-address">1617 GRANITE COURT, TRACY, CA 95377</div>
+              <div class="nc-property-footer-row">
+                <span class="nc-property-specs">2 BEDS 2 BATHS 1,763 SQ.FT.</span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Button Below Greater Sacramento (Screenshot 14 Bottom) -->
+        <div class="nc-search-btn-wrap">
+          <a href="contact-us.html" class="btn-nc-search">SEARCH ALL TRACY NEW CONSTRUCTION</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 15 (Screenshot 15): WORK WITH US
+       ========================================================================== -->
+  <section id="nc-workwithus">
+    <div class="workwithus-content">
+      <h2 class="workwithus-title">WORK WITH US</h2>
+      <p class="workwithus-desc">
+        A modern real estate experience built on strategy, boutique service, and a connected network of professionals.
+      </p>
+      <a href="contact-us.html" class="btn-white-teal">CONTACT US</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 16 & 17 (Screenshots 16 & 17): GLOBAL FOOTER
+       ========================================================================== -->
+  <footer id="global-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Left Column -->
+        <div class="footer-col-left">
+          <h3>Lulu Logan Group</h3>
+          
+          <div class="footer-info-block">
+            <div class="footer-info-label">EMAIL</div>
+            <div class="footer-info-val">
+              <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
+            </div>
+          </div>
+
+          <div class="footer-info-block">
+            <div class="footer-info-label">PHONE NUMBER</div>
+            <div class="footer-info-val">
+              <a href="tel:6692220704">(669) 222-0704</a>
+            </div>
+          </div>
+
+          <div class="footer-info-block">
+            <div class="footer-info-label">ADDRESS</div>
+            <div class="footer-info-val">
+              2181 N TRACY BLVD #275<br>
+              TRACY, CA 95376
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Newsletter -->
+        <div class="footer-col-right">
+          <h4>SIGN UP FOR EXCLUSIVE NEWS</h4>
+          
+          <form id="footerNewsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.'); this.reset();">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="EMAIL ADDRESS" required class="newsletter-input-underline">
+            </div>
+
+            <div class="newsletter-consent">
+              <input type="checkbox" id="newsletterConsent" required>
+              <label for="newsletterConsent">
+                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#">terms of use and Privacy Policy</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Legal Disclosure -->
+      <p class="footer-middle-legal">
+        All information is deemed reliable but not guaranteed and should be independently reviewed and verified.
+      </p>
+
+      <!-- Realtor / Equal Housing Opportunity Logo -->
+      <img src="images/realtor-equal-housing.png" alt="Realtor & Equal Housing Opportunity" class="footer-realtor-img">
+
+      <!-- Broker Info -->
+      <div class="footer-dre-info">
+        <p>Just 1 Real Estate</p>
+        <p>Lulu Logan | DRE #01452747</p>
+        <p>Broker: Grobecker Holland International</p>
+      </div>
+
+      <!-- Bottom Attribution & Socials -->
+      <div class="footer-bottom-row">
+        
+        <div class="lp-attribution">
+          <img src="images/luxury-presence.png" alt="Luxury Presence" class="lp-logo-badge">
+          <span>Real Estate Website Design by <a href="https://www.luxurypresence.com/" target="_blank" rel="noopener" style="text-decoration: underline;">Luxury Presence</a></span>
+        </div>
+
+        <div class="footer-copyright">
+          Copyright Â© 2026 | <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a>
+        </div>
+
+        <div class="footer-social-row">
+          <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="social-teal-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.yelp.com/biz/just-1-real-estate-tracy-2" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Zillow">
+            <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="social-teal-btn" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.38-1.48 3.49-3.29.04-2.83.02-5.66.02-8.49 0-3.69-.02-7.38.02-11.08z"/></svg>
+          </a>
+          <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Google">
+            <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-privacy-choices">
+        <a href="#">Your Privacy Choices</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Contact Button (Bottom Left) -->
+  <a href="contact-us.html" class="floating-contact-btn" aria-label="Contact Us">
+    CONTACT US &#94;
+  </a>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar scroll effect
+      const navbar = document.getElementById('global-navbar');
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      // Side menu toggle
+      const sideMenu = document.getElementById('sideMenu');
+      const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const sideMenuClose = document.getElementById('sideMenuClose');
+
+      const openSideMenu = () => {
+        sideMenu.classList.add('open');
+        sideMenuOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeSideMenu = () => {
+        sideMenu.classList.remove('open');
+        sideMenuOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSideMenu);
+      if (sideMenuClose) sideMenuClose.addEventListener('click', closeSideMenu);
+      if (sideMenuOverlay) sideMenuOverlay.addEventListener('click', closeSideMenu);
+    });
+  </script>
+
+<script>
+
+</script>
+<script>
+  // GLOBAL SIDE MENU INITIALIZATION
+  (function initGlobalSideMenu() {
+    var sideMenu = document.getElementById('global-sidemenu');
+    var openButtons = document.querySelectorAll('.hamburger-btn, #hamburgerBtn, #hamburger-btn, .nav-hamburger, [data-action="open-menu"]');
+    var closeButton = document.getElementById('sideMenuClose');
+
+    if (!sideMenu) return;
+
+    function openMenu() {
+      sideMenu.classList.add('visible');
+      sideMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      sideMenu.classList.remove('visible');
+      sideMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    openButtons.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openMenu();
+      });
+    });
+
+    if (closeButton) {
+      closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+
+    sideMenu.addEventListener('click', function(e) {
+      if (e.target === sideMenu || e.target.classList.contains('sidemenu-wrapper')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sideMenu.classList.contains('visible')) {
+        closeMenu();
+      }
+    });
+
+    var subNavContainers = sideMenu.querySelectorAll('.sub-nav-container');
+    subNavContainers.forEach(function(container) {
+      var mainNav = container.querySelector('.main-nav');
+      if (mainNav) {
+        mainNav.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          container.classList.toggle('open');
+        });
+      }
+    });
+  })();
+
+</script>
+</body>
+</html>
+
+

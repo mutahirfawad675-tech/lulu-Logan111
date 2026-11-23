@@ -1,0 +1,2120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buying Services | Just 1 Real Estate | Modern Homeownership</title>
+  <meta name="description" content="Buying a home is more than a searchâ€”it's a strategic milestone. At Just 1 Real Estate, we combine boutique advisory, local expertise, and modern tools.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo-dark.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+  <style>
+/* ==========================================================================
+   BUYING SERVICES PAGE - STYLESHEET
+   Accurate 1:1 replica of the original website's Buying Services page
+   ========================================================================== */
+
+:root {
+  --primary-font: 'Tenor Sans', sans-serif;
+  --body-font: 'Montserrat', sans-serif;
+  --accent: #3BB9CA;
+  --accent-hover: #329ea8;
+  --white: #ffffff;
+  --black: #000000;
+  --dark-bg: #111111;
+  --light-gray: #f7f7f7;
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-dark: rgba(0, 0, 0, 0.12);
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-shadow: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--black);
+  background-color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   1. GLOBAL NAVBAR
+   ========================================================================== */
+#global-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+  padding: 24px 0;
+}
+
+#global-navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 14px 0;
+}
+
+.nav-container {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+
+#global-navbar.scrolled .nav-link {
+  color: #222222;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent) !important;
+}
+
+.nav-caret {
+  font-size: 8px;
+  transition: transform 0.25s ease;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  min-width: 220px;
+  padding: 12px 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.25s ease;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-item:hover .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333333;
+  letter-spacing: 1px;
+}
+
+.nav-dropdown li a:hover {
+  background-color: #f7f7f7;
+  color: var(--accent);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo img {
+  height: 52px;
+  width: auto;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-logo .logo-dark {
+  display: none;
+}
+
+#global-navbar.scrolled .nav-logo .logo-light {
+  display: none;
+}
+
+#global-navbar.scrolled .nav-logo .logo-dark {
+  display: block;
+}
+
+.nav-phone {
+  letter-spacing: 0.5px;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--white);
+  transition: background-color 0.25s ease;
+}
+
+#global-navbar.scrolled .hamburger-btn span {
+  background-color: #222222;
+}
+
+/* ==========================================================================
+   2. SLIDE-OUT SIDE MENU
+   ========================================================================== */
+.side-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.side-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background-color: #111111;
+  color: var(--white);
+  z-index: 2001;
+  overflow-y: auto;
+  padding: 40px 32px;
+  transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu-close {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 30px;
+}
+
+.side-menu-nav {
+  list-style: none;
+  margin-top: 40px;
+  clear: both;
+}
+
+.side-menu-link {
+  display: block;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+}
+
+.side-menu-link:hover,
+.side-menu-link.active {
+  color: var(--accent);
+}
+
+.side-menu-contact {
+  margin-top: 50px;
+  font-size: 13px;
+  color: #aaaaaa;
+  line-height: 1.8;
+}
+
+.side-menu-contact strong {
+  color: var(--white);
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   SECTION 1 (Screenshot 1): HERO - BUYING SERVICES
+   ========================================================================== */
+#buying-hero {
+  position: relative;
+  min-height: 540px;
+  height: 58vh;
+  max-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url('images/buying-hero.jpg?v=2');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 120px 24px 60px;
+}
+
+.buying-hero-content {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.buying-hero-title {
+  font-family: var(--primary-font);
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.buying-hero-subtitle {
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECTION 2 (Screenshot 2): STRATEGIC GUIDANCE & ACCORDION
+   ========================================================================== */
+#buying-approach {
+  padding: 90px 0 100px;
+  background-color: var(--white);
+}
+
+.buying-approach-header {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 65px;
+}
+
+.buying-approach-title {
+  font-family: var(--primary-font);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.45;
+  color: #111111;
+}
+
+.buying-approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: start;
+}
+
+/* Image with cyan box shadow offset matching original website */
+.buying-approach-img-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.buying-approach-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  box-shadow: 15px 15px 0px -4px #3BB9CA;
+}
+
+/* Accordion */
+.buying-accordion-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.buying-accordion-item {
+  border-bottom: 1px solid var(--black);
+}
+
+.buying-accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  gap: 15px;
+  outline: none;
+}
+
+.buying-accordion-header h3 {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.buying-accordion-header:hover h3,
+.buying-accordion-item.active .buying-accordion-header h3 {
+  color: var(--accent);
+}
+
+.accordion-chevron {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  transform: rotate(45deg);
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  flex-shrink: 0;
+}
+
+.buying-accordion-item.active .accordion-chevron {
+  transform: rotate(-135deg);
+  border-color: var(--accent);
+}
+
+.buying-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.buying-accordion-body-inner {
+  padding: 0 0 24px;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #444444;
+}
+
+.buying-accordion-body-inner p {
+  margin-bottom: 12px;
+}
+
+.buying-accordion-body-inner ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.buying-accordion-body-inner li {
+  margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   SECTION 3 (Screenshot 3): OUR BUYER FRAMEWORK
+   ========================================================================== */
+#buying-framework {
+  background-color: #000000;
+  color: var(--white);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.framework-title {
+  font-family: var(--primary-font);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.framework-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 55px;
+  letter-spacing: 0.5px;
+}
+
+.framework-cards-row {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.framework-card {
+  flex: 1;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 12px;
+  padding: 24px 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.framework-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(59, 185, 202, 0.25);
+}
+
+.framework-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.framework-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.framework-footer-text {
+  max-width: 920px;
+  margin: 45px auto 0;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================================================
+   SECTION 4 (Screenshot 4): READY TO FIND THE RIGHT HOME?
+   ========================================================================== */
+#buying-ready {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/selling-ready.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px 24px;
+  color: var(--white);
+  text-align: center;
+}
+
+.buying-ready-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.buying-ready-title {
+  font-family: var(--primary-font);
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.buying-ready-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 35px;
+}
+
+.buying-ready-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-white-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--accent);
+  border: 1px solid var(--white);
+  padding: 14px 34px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-white-teal:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-dark-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 14px 34px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-dark-outline:hover {
+  background-color: var(--white);
+  color: #111111;
+}
+
+/* ==========================================================================
+   SECTION 5 (Screenshots 5 & 6): THE JUST 1 BUYER JOURNEY (TIMELINE)
+   ========================================================================== */
+#buyer-journey {
+  padding: 100px 0 0;
+  background-color: var(--white);
+}
+
+.journey-header {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto 50px;
+}
+
+.journey-title {
+  font-family: var(--primary-font);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.journey-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 25px;
+}
+
+.journey-subtext {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+}
+
+/* Vertical Timeline Container */
+.journey-timeline-wrap {
+  position: relative;
+  max-width: 980px;
+  margin: 40px auto 90px;
+  padding: 20px 0;
+}
+
+.journey-timeline-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #000000;
+  transform: translateX(-50%);
+}
+
+.timeline-row {
+  display: flex;
+  position: relative;
+  margin-top: 48px;
+  align-items: center;
+}
+
+.timeline-row:first-child {
+  margin-top: 0;
+}
+
+.timeline-row::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  background-color: #000000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.timeline-col {
+  width: 50%;
+  padding: 0 45px;
+}
+
+.timeline-row.right .timeline-col.left-col {
+  /* empty */
+}
+
+.timeline-row.right .timeline-col.right-col {
+  text-align: left;
+}
+
+.timeline-row.left .timeline-col.left-col {
+  text-align: right;
+}
+
+.timeline-row.left .timeline-col.right-col {
+  /* empty */
+}
+
+.timeline-point-title {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #111111;
+  line-height: 1.45;
+}
+
+/* Banner CTA below timeline */
+.buyer-journey-banner {
+  background-color: #000000;
+  color: var(--white);
+  padding: 90px 24px;
+  text-align: center;
+}
+
+.banner-title {
+  font-family: var(--primary-font);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.banner-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 18px;
+}
+
+.banner-desc {
+  max-width: 820px;
+  margin: 0 auto 35px;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   SECTION 6 (Screenshot 7): WORK WITH US
+   ========================================================================== */
+#buying-workwithus {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/workwithus-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 130px 24px;
+  color: var(--white);
+  text-align: center;
+}
+
+.workwithus-content {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.workwithus-title {
+  font-family: var(--primary-font);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.workwithus-desc {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 35px;
+}
+
+/* ==========================================================================
+   SECTION 7 (Screenshot 8): GLOBAL FOOTER
+   ========================================================================== */
+#global-footer {
+  background-color: var(--white);
+  color: #111111;
+  padding: 80px 0 40px;
+  border-top: 1px solid #eeeeee;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-bottom: 50px;
+}
+
+.footer-col-left h3 {
+  font-family: var(--primary-font);
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.footer-info-block {
+  margin-bottom: 20px;
+}
+
+.footer-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.footer-info-val {
+  font-size: 13px;
+  color: #111111;
+}
+
+.footer-info-val a {
+  color: #111111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-col-right h4 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.newsletter-input-group {
+  margin-bottom: 18px;
+}
+
+.newsletter-input-underline {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #999999;
+  border-radius: 0;
+  background: transparent;
+  color: #111111;
+  padding: 10px 0;
+  font-family: var(--body-font);
+  font-size: 13px;
+  outline: none;
+}
+
+.newsletter-input-underline:focus {
+  border-bottom-color: var(--accent);
+}
+
+.newsletter-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+.newsletter-consent input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.newsletter-consent a {
+  text-decoration: underline;
+  color: #333333;
+}
+
+.newsletter-btn {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 13px 40px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.newsletter-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Legal text & Broker */
+.footer-middle-legal {
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.footer-realtor-img {
+  width: 75px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footer-dre-info {
+  font-size: 12.5px;
+  color: #333333;
+  line-height: 1.6;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 30px;
+}
+
+/* Bottom copyright & attribution */
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lp-attribution {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #555555;
+}
+
+.lp-logo-badge {
+  height: 20px;
+  width: auto;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: #555555;
+}
+
+.footer-copyright a {
+  color: #555555;
+  text-decoration: none;
+}
+
+.footer-copyright a:hover {
+  color: var(--accent);
+}
+
+.footer-social-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-teal-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.social-teal-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-hover);
+}
+
+.social-teal-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #ffffff;
+}
+
+/* Floating Contact Button (Bottom Left) */
+.floating-contact-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 12px 22px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none !important;
+}
+
+.floating-contact-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+  .nav-group-left, .nav-group-right .nav-item {
+    display: none;
+  }
+  .buying-approach-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .framework-cards-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .framework-card {
+    flex: 0 0 calc(50% - 6px);
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buying-hero-title {
+    font-size: 32px;
+  }
+  .buying-approach-title {
+    font-size: 22px;
+  }
+  .framework-title {
+    font-size: 24px;
+  }
+  .buying-ready-title {
+    font-size: 26px;
+  }
+  .journey-title {
+    font-size: 24px;
+  }
+  .banner-title {
+    font-size: 24px;
+  }
+  .workwithus-title {
+    font-size: 28px;
+  }
+  .framework-card {
+    flex: 0 0 100%;
+  }
+  .journey-timeline-wrap::before {
+    left: 15px;
+  }
+  .timeline-row::before {
+    left: 15px;
+  }
+  .timeline-row {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+  .timeline-col {
+    width: 100% !important;
+    padding: 0 0 0 40px !important;
+    text-align: left !important;
+  }
+  .timeline-row.right .timeline-col.left-col,
+  .timeline-row.left .timeline-col.right-col {
+    display: none;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+  /* ==========================================================================
+   GLOBAL SIDE MENU DRAWER (Matches exact just1realestate.com screenshot)
+   ========================================================================== */
+#global-sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#global-sidemenu.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#global-sidemenu .sidemenu-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.88) 100%),
+              url('https://media-production.lp-cdn.com/media/d416ebde-fd4f-414a-97e6-115af8784da9');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+#global-sidemenu.visible .sidemenu-wrapper {
+  transform: translateX(0);
+}
+
+/* Watermark house logo in bottom-left */
+#global-sidemenu .sidemenu-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  max-width: 45vw;
+  height: 480px;
+  bottom: 30px;
+  left: 30px;
+  background-image: url('https://media-production.lp-cdn.com/media/3c059318-91b2-4d38-a75c-9b060ffe2547');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  opacity: 0.045;
+  filter: invert(0%) saturate(0%) brightness(0%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Close button on top-right */
+#global-sidemenu .sidemenu-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: #111;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#global-sidemenu .sidemenu-close:hover {
+  transform: scale(1.15) rotate(90deg);
+  color: #2b8282;
+}
+
+/* Right-aligned container for options */
+#global-sidemenu .sidemenu-holder {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  padding: 95px 60px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+#global-sidemenu .sidemenu-title {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #555;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin-bottom: 28px;
+  font-weight: 500;
+  padding-right: 8px;
+}
+
+#global-sidemenu .section-options {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 40px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#global-sidemenu .section-options::-webkit-scrollbar {
+  width: 4px;
+}
+#global-sidemenu .section-options::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+}
+#global-sidemenu .section-options::-webkit-scrollbar-thumb {
+  background: rgba(43, 130, 130, 0.4);
+  border-radius: 4px;
+}
+
+#global-sidemenu .option {
+  text-align: right;
+  position: relative;
+}
+
+#global-sidemenu .option > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+  line-height: 1.5;
+}
+
+#global-sidemenu .option > a:hover {
+  color: #2b8282;
+  transform: translateX(-3px);
+}
+
+/* Chevron indicator for expandable items */
+#global-sidemenu .sub-nav-container > .main-nav::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.3s ease;
+  margin-left: 6px;
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav {
+  color: #2b8282;
+}
+
+/* Sub-nav list */
+#global-sidemenu .sub-nav {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#global-sidemenu .sub-nav-container.open .sub-nav {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+#global-sidemenu .sub-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  padding: 4px 14px 4px 0;
+  transition: color 0.2s ease;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link:hover {
+  color: #2b8282;
+}
+
+@media (max-width: 768px) {
+  #global-sidemenu .sidemenu-holder {
+    max-width: 100%;
+    padding: 80px 24px 30px 20px;
+  }
+  #global-sidemenu .option > a {
+    font-size: 20px;
+  }
+  #global-sidemenu .sidemenu-close {
+    top: 20px;
+    right: 20px;
+  }
+  #global-sidemenu .sidemenu-wrapper::before {
+    display: none;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- GLOBAL SIDE MENU (Matches exact just1realestate.com screenshot) -->
+<div id="global-sidemenu" class="sidemenu" aria-hidden="true">
+  <div class="sidemenu-wrapper">
+    <button class="toggle sidemenu-close" id="sideMenuClose" aria-label="Close menu">&times;</button>
+    <div class="sidemenu-holder">
+      <div class="sidemenu-title">Lulu Logan Group, powered by Just 1 Real Estate</div>
+      <ul class="section-options">
+        <li class="option"><a href="index.html">Home</a></li>
+        <li class="option"><a href="about-us.html">About Us</a></li>
+        <li class="option sub-nav-container">
+          <a href="featured-listings.html" class="link main-nav">Properties</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="featured-listings.html" class="link sub-nav-link">Featured Listings</a></li>
+              <li><a href="featured-listings.html#sold" class="link sub-nav-link">Past Transactions</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option sub-nav-container">
+          <a href="tri-valley.html" class="link main-nav">Home Search</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="tri-valley.html" class="link sub-nav-link">Tri Valley</a></li>
+              <li><a href="tri-valley.html#pleasanton" class="link sub-nav-link">Pleasanton</a></li>
+              <li><a href="tri-valley.html#livermore" class="link sub-nav-link">Livermore</a></li>
+              <li><a href="tri-valley.html#dublin" class="link sub-nav-link">Dublin</a></li>
+              <li><a href="central-valley.html" class="link sub-nav-link">Central Valley</a></li>
+              <li><a href="central-valley.html#mountain-house" class="link sub-nav-link">Mountain House</a></li>
+              <li><a href="central-valley.html#tracy" class="link sub-nav-link">Tracy</a></li>
+              <li><a href="central-valley.html#lathrop" class="link sub-nav-link">Lathrop</a></li>
+              <li><a href="central-valley.html#manteca" class="link sub-nav-link">Manteca</a></li>
+              <li><a href="central-valley.html#lodi" class="link sub-nav-link">Lodi</a></li>
+              <li><a href="greater-sacramento.html#el-dorado-hills" class="link sub-nav-link">El Dorado Hills</a></li>
+              <li><a href="greater-sacramento.html#folsom" class="link sub-nav-link">Folsom</a></li>
+              <li><a href="greater-sacramento.html#roseville" class="link sub-nav-link">Roseville</a></li>
+              <li><a href="featured-listings.html" class="link sub-nav-link">Search All</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="selling.html">Home Valuation</a></li>
+        <li class="option sub-nav-container">
+          <a href="tri-valley.html" class="link main-nav">Neighborhoods</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="tri-valley.html" class="link sub-nav-link">Tri Valley</a></li>
+              <li><a href="central-valley.html" class="link sub-nav-link">Central Valley</a></li>
+              <li><a href="greater-sacramento.html" class="link sub-nav-link">Greater Sacramento</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="testimonials.html">Testimonials</a></li>
+        <li class="option sub-nav-container">
+          <a href="buying.html" class="link main-nav">Resources</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="buying.html" class="link sub-nav-link">Buying Services</a></li>
+              <li><a href="selling.html" class="link sub-nav-link">Selling</a></li>
+              <li><a href="knowledge-center.html" class="link sub-nav-link">Knowledge Center</a></li>
+              <li><a href="about-us.html" class="link sub-nav-link">Just 1 Real Estate</a></li>
+              <li><a href="just-1-network.html" class="link sub-nav-link">Just 1 Network</a></li>
+              <li><a href="about-us.html#services" class="link sub-nav-link">Next Era Home Services</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="new-construction.html">New Construction</a></li>
+        <li class="option sub-nav-container">
+          <a href="just-1-network.html" class="link main-nav">Media</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1â„¢ Channel</a></li>
+              <li><a href="just-1-network.html#podcast" class="link sub-nav-link">Podcast</a></li>
+              <li><a href="just-1-network.html#press" class="link sub-nav-link">Press</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="knowledge-center.html">Blog</a></li>
+        <li class="option"><a href="just-1-network.html">Just 1 Minute</a></li>
+        <li class="option"><a href="contact-us.html">Contact Us</a></li>
+        <li class="option"><a href="featured-listings.html">My Search Portal</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- ==========================================================================
+       1. GLOBAL NAVIGATION BAR
+       ========================================================================== -->
+  <nav id="global-navbar">
+    <div class="nav-container">
+      
+      <!-- Left Navigation Links -->
+      <ul class="nav-group nav-group-left">
+        <li class="nav-item">
+          <a href="index.html#who-we-are" class="nav-link">
+            About <span class="nav-caret">â–¼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="selling.html" class="nav-link">Selling</a>
+        </li>
+        <li class="nav-item">
+          <a href="buying.html" class="nav-link active">
+            Buying <span class="nav-caret">â–¼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="buying.html">Buying Services</a></li>
+            <li><a href="featured-listings.html">Featured Listings</a></li>
+            <li><a href="new-construction.html">New Construction</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#explore-area" class="nav-link">
+            Neighborhoods <span class="nav-caret">â–¼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="tri-valley.html">Tri Valley</a></li>
+            <li><a href="central-valley.html">Central Valley</a></li>
+            <li><a href="greater-sacramento.html">Greater Sacramento</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="nav-logo">
+        <a href="index.html" aria-label="Just 1 Real Estate">
+          <img src="images/logo-light.png" alt="Just 1 Real Estate" class="logo-light">
+          <img src="images/logo-dark.png" alt="Just 1 Real Estate" class="logo-dark">
+        </a>
+      </div>
+
+      <!-- Right Navigation Links -->
+      <ul class="nav-group nav-group-right">
+        <li class="nav-item">
+          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+        </li>
+        <li class="nav-item">
+          <a href="just-1-network.html" class="nav-link">Just 1 Network</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact-us.html" class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
+        </li>
+        <li class="nav-item-hamburger">
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       2. SLIDE-OUT SIDE MENU
+       ========================================================================== -->
+  
+
+  <!-- ==========================================================================
+       SECTION 1 (Screenshot 1): HERO - BUYING SERVICES
+       ========================================================================== -->
+  <section id="buying-hero">
+    <div class="buying-hero-content">
+      <h1 class="buying-hero-title">BUYING SERVICES</h1>
+      <p class="buying-hero-subtitle">
+        Buying a home is more than a searchâ€”it's a strategic milestone. At Just 1 Real Estate, we combine boutique advisory, local expertise, and modern tools to help you find the right home with clarity, confidence, and intention.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2 (Screenshot 2): STRATEGIC GUIDANCE & 5 ACCORDIONS
+       ========================================================================== -->
+  <section id="buying-approach">
+    <div class="container">
+      
+      <header class="buying-approach-header">
+        <h2 class="buying-approach-title">
+          STRATEGIC GUIDANCE. CONFIDENT DECISIONS. A MODERN PATH TO HOMEOWNERSHIP.
+        </h2>
+      </header>
+
+      <div class="buying-approach-grid">
+        
+        <!-- Left Image with cyan outline -->
+        <div class="buying-approach-img-wrap">
+          <img src="images/buying-approach.jpg" alt="A modern path to homeownership" class="buying-approach-img">
+        </div>
+
+        <!-- Right 5 Accordions -->
+        <div class="buying-accordion-list">
+          
+          <!-- Accordion 1 -->
+          <div class="buying-accordion-item">
+            <button class="buying-accordion-header" type="button" aria-expanded="false">
+              <h3>UNDERSTANDING YOUR GOALS</h3>
+              <span class="accordion-chevron"></span>
+            </button>
+            <div class="buying-accordion-body">
+              <div class="buying-accordion-body-inner">
+                <p>Every buyer has a story, a vision, and a set of priorities that shape their ideal home. We begin with a conversation that uncovers:</p>
+                <ul>
+                  <li>Your lifestyle needs</li>
+                  <li>Your location preferences</li>
+                  <li>Your financial comfort zone</li>
+                  <li>Your long-term plans</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 2 -->
+          <div class="buying-accordion-item">
+            <button class="buying-accordion-header" type="button" aria-expanded="false">
+              <h3>A GUIDED, SUPPORTED BUYING EXPERIENCE</h3>
+              <span class="accordion-chevron"></span>
+            </button>
+            <div class="buying-accordion-body">
+              <div class="buying-accordion-body-inner">
+                <p>Buying doesnâ€™t need to feel overwhelming. We streamline your journey by providing structure, simplicity, and consistent communication at every stage.</p>
+                <p>From your first search to getting keys in hand, our advisors walk you through:</p>
+                <ul>
+                  <li>Understanding neighborhoods</li>
+                  <li>Evaluating market trends</li>
+                  <li>Identifying strong opportunities</li>
+                  <li>Preparing competitive offers</li>
+                  <li>Navigating escrow</li>
+                  <li>Planning your next steps</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 3 -->
+          <div class="buying-accordion-item">
+            <button class="buying-accordion-header" type="button" aria-expanded="false">
+              <h3>LOCAL INSIGHT THAT MAKES THE DIFFERENCE</h3>
+              <span class="accordion-chevron"></span>
+            </button>
+            <div class="buying-accordion-body">
+              <div class="buying-accordion-body-inner">
+                <p>With deep knowledge across the Central Valley, Tri-Valley, and surrounding regions, we help you understand:</p>
+                <ul>
+                  <li>Micro-markets</li>
+                  <li>School zones</li>
+                  <li>New development patterns</li>
+                  <li>Commute routes</li>
+                  <li>Investment potential</li>
+                  <li>Community amenities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 4 -->
+          <div class="buying-accordion-item">
+            <button class="buying-accordion-header" type="button" aria-expanded="false">
+              <h3>NEGOTIATION WITH PURPOSE</h3>
+              <span class="accordion-chevron"></span>
+            </button>
+            <div class="buying-accordion-body">
+              <div class="buying-accordion-body-inner">
+                <p>In a competitive market, negotiation is strategyâ€”not chance.</p>
+                <p>We help you:</p>
+                <ul>
+                  <li>Structure winning offers</li>
+                  <li>Understand seller motivations</li>
+                  <li>Navigate appraisal + inspection dynamics</li>
+                  <li>Negotiate credits, repairs, or terms</li>
+                  <li>Protect your financial interest at every turn</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 5 -->
+          <div class="buying-accordion-item">
+            <button class="buying-accordion-header" type="button" aria-expanded="false">
+              <h3>A SEAMLESS CLOSING EXPERIENCE</h3>
+              <span class="accordion-chevron"></span>
+            </button>
+            <div class="buying-accordion-body">
+              <div class="buying-accordion-body-inner">
+                <p>From contract to keys, we manage the timeline, paperwork, and details so you can focus on what comes next: making the home yours.</p>
+                <ul>
+                  <li>Escrow timeline management</li>
+                  <li>Contingency review and removals</li>
+                  <li>Final walkthrough coordination</li>
+                  <li>Signing and key handover celebration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3 (Screenshot 3): OUR BUYER FRAMEWORK
+       ========================================================================== -->
+  <section id="buying-framework">
+    <div class="container">
+      <h2 class="framework-title">OUR BUYER FRAMEWORK</h2>
+      <p class="framework-subtitle">A Clear Path From Discovery to Keys</p>
+
+      <!-- 7 Framework Cards -->
+      <div class="framework-cards-row">
+        <div class="framework-card">
+          <div class="framework-icon">ðŸ”</div>
+          <div class="framework-label">DISCOVER</div>
+        </div>
+        <div class="framework-card">
+          <div class="framework-icon">ðŸ </div>
+          <div class="framework-label">TOUR</div>
+        </div>
+        <div class="framework-card">
+          <div class="framework-icon">ðŸ“Š</div>
+          <div class="framework-label">EVALUATE</div>
+        </div>
+        <div class="framework-card">
+          <div class="framework-icon">âœï¸</div>
+          <div class="framework-label">OFFER</div>
+        </div>
+        <div class="framework-card">
+          <div class="framework-icon">ðŸ“„</div>
+          <div class="framework-label">ESCROW</div>
+        </div>
+        <div class="framework-card">
+          <div class="framework-icon">ðŸ”‘</div>
+          <div class="framework-label">KEYS</div>
+        </div>
+        <div class="framework-card">
+          <div class="framework-icon">âš¡</div>
+          <div class="framework-label">AI ADVANTAGE</div>
+        </div>
+      </div>
+
+      <p class="framework-footer-text">
+        This is our high-level roadmap. The full Buyer Journeyâ€”complete with strategy, timelines, and personalized guidanceâ€”is provided during your consultation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4 (Screenshot 4): READY TO FIND THE RIGHT HOME?
+       ========================================================================== -->
+  <section id="buying-ready">
+    <div class="buying-ready-content">
+      <h2 class="buying-ready-title">READY TO FIND THE RIGHT HOME?</h2>
+      <p class="buying-ready-desc">
+        Your path to clarity begins with a conversation. Whether you're exploring neighborhoods, preparing to tour, or ready to write your first offer, our advisors are here to guide you with strategy and support.
+      </p>
+      <div class="buying-ready-buttons">
+        <a href="contact-us.html" class="btn-white-teal">SCHEDULE A CONSULTATION</a>
+        <a href="index.html#featured-properties" class="btn-dark-outline">START YOUR HOME SEARCH</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5 (Screenshots 5 & 6): THE JUST 1 BUYER JOURNEY (TIMELINE)
+       ========================================================================== -->
+  <section id="buyer-journey">
+    <div class="container">
+      
+      <header class="journey-header">
+        <h2 class="journey-title">THE JUST 1 BUYER JOURNEY</h2>
+        <p class="journey-desc">
+          A Clear, Modern Path From Curiosity to Keys Buying a home shouldn't feel overwhelming. The Just 1 Buyer Journey is a proven, step-by-step framework that brings clarity, structure, and confidence to every decision you make. Our advisors guide you through each stage with strategy, market insight, and the support of the Just 1 Networkâ€”so you never feel lost, rushed, or unsure about your next move.
+        </p>
+        <p class="journey-subtext">Inside the Buyer Journey, you'll learn:</p>
+      </header>
+
+      <!-- Alternating Vertical Timeline -->
+      <div class="journey-timeline-wrap">
+        
+        <!-- Point 1 (Right) -->
+        <div class="timeline-row right">
+          <div class="timeline-col left-col"></div>
+          <div class="timeline-col right-col">
+            <h4 class="timeline-point-title">HOW TO CLARIFY YOUR GOALS</h4>
+          </div>
+        </div>
+
+        <!-- Point 2 (Left) -->
+        <div class="timeline-row left">
+          <div class="timeline-col left-col">
+            <h4 class="timeline-point-title">HOW TO CONFIDENTLY UNDERSTAND YOUR NUMBERS</h4>
+          </div>
+          <div class="timeline-col right-col"></div>
+        </div>
+
+        <!-- Point 3 (Right) -->
+        <div class="timeline-row right">
+          <div class="timeline-col left-col"></div>
+          <div class="timeline-col right-col">
+            <h4 class="timeline-point-title">HOW OUR CURATED TOURING SYSTEM WORKS</h4>
+          </div>
+        </div>
+
+        <!-- Point 4 (Left) -->
+        <div class="timeline-row left">
+          <div class="timeline-col left-col">
+            <h4 class="timeline-point-title">HOW WE USE STRATEGY (NOT PRESSURE) TO HELP YOU CHOOSE THE RIGHT HOME</h4>
+          </div>
+          <div class="timeline-col right-col"></div>
+        </div>
+
+        <!-- Point 5 (Right) -->
+        <div class="timeline-row right">
+          <div class="timeline-col left-col"></div>
+          <div class="timeline-col right-col">
+            <h4 class="timeline-point-title">HOW WE NEGOTIATE TO PROTECT YOUR INTERESTS</h4>
+          </div>
+        </div>
+
+        <!-- Point 6 (Left) -->
+        <div class="timeline-row left">
+          <div class="timeline-col left-col">
+            <h4 class="timeline-point-title">HOW WE MANAGE ESCROW, INSPECTIONS, TIMELINES, AND DUE DILIGENCE</h4>
+          </div>
+          <div class="timeline-col right-col"></div>
+        </div>
+
+        <!-- Point 7 (Right) -->
+        <div class="timeline-row right">
+          <div class="timeline-col left-col"></div>
+          <div class="timeline-col right-col">
+            <h4 class="timeline-point-title">HOW WE SUPPORT YOU LONG AFTER CLOSING</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Black Banner CTA (Screenshot 6 bottom) -->
+    <div class="buyer-journey-banner">
+      <div class="container">
+        <h2 class="banner-title">READY TO FIND THE RIGHT HOME?</h2>
+        <p class="banner-subtitle">Want the full Buyer Journey Guide?</p>
+        <p class="banner-desc">
+          We provide the complete roadmapâ€”including interactive steps, timelines, and personalized recommendationsâ€”during your consultation.
+        </p>
+        <a href="contact-us.html" class="btn-white-teal">REQUEST YOUR BUYER JOURNEY GUIDE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6 (Screenshot 7): WORK WITH US
+       ========================================================================== -->
+  <section id="buying-workwithus">
+    <div class="workwithus-content">
+      <h2 class="workwithus-title">WORK WITH US</h2>
+      <p class="workwithus-desc">
+        A modern real estate experience built on strategy, boutique service, and a connected network of professionals.
+      </p>
+      <a href="contact-us.html" class="btn-white-teal">CONTACT US</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7 (Screenshot 8): GLOBAL FOOTER
+       ========================================================================== -->
+  <footer id="global-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Left Column -->
+        <div class="footer-col-left">
+          <h3>Lulu Logan Group</h3>
+          
+          <div class="footer-info-block">
+            <div class="footer-info-label">EMAIL</div>
+            <div class="footer-info-val">
+              <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
+            </div>
+          </div>
+
+          <div class="footer-info-block">
+            <div class="footer-info-label">PHONE NUMBER</div>
+            <div class="footer-info-val">
+              <a href="tel:6692220704">(669) 222-0704</a>
+            </div>
+          </div>
+
+          <div class="footer-info-block">
+            <div class="footer-info-label">ADDRESS</div>
+            <div class="footer-info-val">
+              2181 N TRACY BLVD #275<br>
+              TRACY, CA 95376
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Newsletter -->
+        <div class="footer-col-right">
+          <h4>SIGN UP FOR EXCLUSIVE NEWS</h4>
+          
+          <form id="footerNewsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.'); this.reset();">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="EMAIL ADDRESS" required class="newsletter-input-underline">
+            </div>
+
+            <div class="newsletter-consent">
+              <input type="checkbox" id="newsletterConsent" required>
+              <label for="newsletterConsent">
+                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#">terms of use and Privacy Policy</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Legal Disclosure -->
+      <p class="footer-middle-legal">
+        All information is deemed reliable but not guaranteed and should be independently reviewed and verified.
+      </p>
+
+      <!-- Realtor / Equal Housing Opportunity Logo -->
+      <img src="images/realtor-equal-housing.png" alt="Realtor & Equal Housing Opportunity" class="footer-realtor-img">
+
+      <!-- Broker Info -->
+      <div class="footer-dre-info">
+        <p>Just 1 Real Estate</p>
+        <p>Lulu Logan | DRE #01452747</p>
+        <p>Broker: Grobecker Holland International</p>
+      </div>
+
+      <!-- Bottom Attribution & Socials -->
+      <div class="footer-bottom-row">
+        
+        <div class="lp-attribution">
+          <img src="images/luxury-presence.png" alt="Luxury Presence" class="lp-logo-badge">
+          <span>Real Estate Website Design by <a href="https://www.luxurypresence.com/" target="_blank" rel="noopener" style="text-decoration: underline;">Luxury Presence</a></span>
+        </div>
+
+        <div class="footer-copyright">
+          Copyright Â© 2026 | <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a>
+        </div>
+
+        <div class="footer-social-row">
+          <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="social-teal-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.yelp.com/biz/just-1-real-estate-tracy-2" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Zillow">
+            <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="social-teal-btn" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.38-1.48 3.49-3.29.04-2.83.02-5.66.02-8.49 0-3.69-.02-7.38.02-11.08z"/></svg>
+          </a>
+          <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Google">
+            <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Contact Button (Bottom Left, matching screenshot) -->
+  <a href="contact-us.html" class="floating-contact-btn" aria-label="Contact Us">
+    CONTACT US &#94;
+  </a>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar scroll effect
+      const navbar = document.getElementById('global-navbar');
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      // Side menu toggle
+      const sideMenu = document.getElementById('sideMenu');
+      const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const sideMenuClose = document.getElementById('sideMenuClose');
+
+      const openSideMenu = () => {
+        sideMenu.classList.add('open');
+        sideMenuOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeSideMenu = () => {
+        sideMenu.classList.remove('open');
+        sideMenuOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSideMenu);
+      if (sideMenuClose) sideMenuClose.addEventListener('click', closeSideMenu);
+      if (sideMenuOverlay) sideMenuOverlay.addEventListener('click', closeSideMenu);
+
+      // Accordion toggle functionality
+      const accordionItems = document.querySelectorAll('.buying-accordion-item');
+      accordionItems.forEach(item => {
+        const header = item.querySelector('.buying-accordion-header');
+        const body = item.querySelector('.buying-accordion-body');
+
+        header.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+
+          accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.buying-accordion-header').setAttribute('aria-expanded', 'false');
+              otherItem.querySelector('.buying-accordion-body').style.maxHeight = null;
+            }
+          });
+
+          if (!isOpen) {
+            item.classList.add('active');
+            header.setAttribute('aria-expanded', 'true');
+            body.style.maxHeight = body.scrollHeight + 'px';
+          } else {
+            item.classList.remove('active');
+            header.setAttribute('aria-expanded', 'false');
+            body.style.maxHeight = null;
+          }
+        });
+      });
+    });
+  </script>
+
+<script>
+
+</script>
+<script>
+  // GLOBAL SIDE MENU INITIALIZATION
+  (function initGlobalSideMenu() {
+    var sideMenu = document.getElementById('global-sidemenu');
+    var openButtons = document.querySelectorAll('.hamburger-btn, #hamburgerBtn, #hamburger-btn, .nav-hamburger, [data-action="open-menu"]');
+    var closeButton = document.getElementById('sideMenuClose');
+
+    if (!sideMenu) return;
+
+    function openMenu() {
+      sideMenu.classList.add('visible');
+      sideMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      sideMenu.classList.remove('visible');
+      sideMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    openButtons.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openMenu();
+      });
+    });
+
+    if (closeButton) {
+      closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+
+    sideMenu.addEventListener('click', function(e) {
+      if (e.target === sideMenu || e.target.classList.contains('sidemenu-wrapper')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sideMenu.classList.contains('visible')) {
+        closeMenu();
+      }
+    });
+
+    var subNavContainers = sideMenu.querySelectorAll('.sub-nav-container');
+    subNavContainers.forEach(function(container) {
+      var mainNav = container.querySelector('.main-nav');
+      if (mainNav) {
+        mainNav.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          container.classList.toggle('open');
+        });
+      }
+    });
+  })();
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,3841 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lulu Logan Group | Mountain House &amp; Tracy Real Estate</title>
+  <meta name="description" content="Lulu Logan Group, powered by Just 1 Real Estate, helps buyers, sellers &amp; property owners in Mountain House, Tracy, Tri-Valley, Central Valley &amp; Greater Sacramento.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo-dark.png">
+
+  <!-- Stylesheet -->
+  <style>
+/* ==========================================================================
+   JUST 1 REAL ESTATE - MAIN STYLESHEET
+   Clean text styling: No text shadows, no gradient overlays, no text shading
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Tenor+Sans&display=swap');
+
+:root {
+  --primary-font: 'Tenor Sans', sans-serif;
+  --body-font: 'Montserrat', sans-serif;
+  --accent: #3BB9CA;
+  --accent-hover: #329ea8;
+  --accent-light: rgba(59, 185, 202, 0.15);
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #121212;
+  --gray-dark: #222222;
+  --gray-med: #555555;
+  --gray-light: #f5f5f5;
+  --text-color: #1a1a1a;
+  --border-color: #e2e2e2;
+  --navbar-height: 90px;
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ---------------- RESET & BASE ---------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-shadow: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background-color: var(--white);
+  line-height: 1.8;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: inherit;
+  text-shadow: none !important;
+}
+
+h1 {
+  font-size: 52px;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-size: 38px;
+  letter-spacing: 1.2px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+p {
+  line-height: 1.85;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  margin-bottom: 1.2rem;
+  text-shadow: none !important;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  text-shadow: none !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  text-shadow: none !important;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 46px;
+  font-family: var(--body-font);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-align: center;
+  line-height: 1;
+  text-shadow: none !important;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--accent);
+  border-color: var(--white);
+}
+
+.btn-white:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* ---------------- CONTAINER & LAYOUT ---------------- */
+.container {
+  width: 100%;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.section-padding {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================================
+   1. NAVIGATION BAR
+   ========================================================================== */
+#global-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  z-index: 999;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+  background-color: transparent;
+  color: var(--white);
+}
+
+#global-navbar.scrolled {
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-group-left {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.nav-group-right {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-logo {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.nav-logo img {
+  height: 65px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo .logo-dark {
+  display: none;
+}
+
+#global-navbar.scrolled .nav-logo .logo-light {
+  display: none;
+}
+
+#global-navbar.scrolled .nav-logo .logo-dark {
+  display: block;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: inherit;
+  padding: 10px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-caret {
+  font-size: 9px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  color: var(--black);
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  list-style: none;
+  z-index: 1000;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown li a:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.nav-phone {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: inherit;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   GLOBAL SIDE MENU DRAWER (Matches exact just1realestate.com screenshot)
+   ========================================================================== */
+#global-sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#global-sidemenu.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#global-sidemenu .sidemenu-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.88) 100%),
+              url('https://media-production.lp-cdn.com/media/d416ebde-fd4f-414a-97e6-115af8784da9');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+#global-sidemenu.visible .sidemenu-wrapper {
+  transform: translateX(0);
+}
+
+/* Watermark house logo in bottom-left */
+#global-sidemenu .sidemenu-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  max-width: 45vw;
+  height: 480px;
+  bottom: 30px;
+  left: 30px;
+  background-image: url('https://media-production.lp-cdn.com/media/3c059318-91b2-4d38-a75c-9b060ffe2547');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  opacity: 0.045;
+  filter: invert(0%) saturate(0%) brightness(0%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Close button on top-right */
+#global-sidemenu .sidemenu-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: #111;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#global-sidemenu .sidemenu-close:hover {
+  transform: scale(1.15) rotate(90deg);
+  color: #2b8282;
+}
+
+/* Right-aligned container for options */
+#global-sidemenu .sidemenu-holder {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  padding: 95px 60px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+#global-sidemenu .sidemenu-title {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #555;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin-bottom: 28px;
+  font-weight: 500;
+  padding-right: 8px;
+}
+
+#global-sidemenu .section-options {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 40px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#global-sidemenu .section-options::-webkit-scrollbar {
+  width: 4px;
+}
+#global-sidemenu .section-options::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+}
+#global-sidemenu .section-options::-webkit-scrollbar-thumb {
+  background: rgba(43, 130, 130, 0.4);
+  border-radius: 4px;
+}
+
+#global-sidemenu .option {
+  text-align: right;
+  position: relative;
+}
+
+#global-sidemenu .option > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+  line-height: 1.5;
+}
+
+#global-sidemenu .option > a:hover {
+  color: #2b8282;
+  transform: translateX(-3px);
+}
+
+/* Chevron indicator for expandable items */
+#global-sidemenu .sub-nav-container > .main-nav::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.3s ease;
+  margin-left: 6px;
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav {
+  color: #2b8282;
+}
+
+/* Sub-nav list */
+#global-sidemenu .sub-nav {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#global-sidemenu .sub-nav-container.open .sub-nav {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+#global-sidemenu .sub-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  padding: 4px 14px 4px 0;
+  transition: color 0.2s ease;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link:hover {
+  color: #2b8282;
+}
+
+@media (max-width: 768px) {
+  #global-sidemenu .sidemenu-holder {
+    max-width: 100%;
+    padding: 80px 24px 30px 20px;
+  }
+  #global-sidemenu .option > a {
+    font-size: 20px;
+  }
+  #global-sidemenu .sidemenu-close {
+    top: 20px;
+    right: 20px;
+  }
+  #global-sidemenu .sidemenu-wrapper::before {
+    display: none;
+  }
+}
+
+
+/* ==========================================================================
+   3. HERO SECTION (Video & Horizontal Sliding Animation as in live site)
+   ========================================================================== */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  padding: 160px 20px 80px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1.05);
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
+  animation: heroHorizontalSlide 26s ease-in-out infinite alternate;
+}
+
+.hero-bg-slide-fallback {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background-image: url('https://res.cloudinary.com/luxuryp/videos/f_auto,q_auto/so_0,eo_0/wjpgfgdjrolj7czfcmpv/brick_-stone-neighborhood.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: heroHorizontalSlide 26s ease-in-out infinite alternate;
+  will-change: transform;
+  z-index: 0;
+}
+
+@keyframes heroHorizontalSlide {
+  0% {
+    transform: translate(-50%, -50%) scale(1.06) translateX(-3.5%);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.06) translateX(3.5%);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.06) translateX(-3.5%);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 50px;
+  letter-spacing: 2px;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: none !important;
+}
+
+.hero-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 1.9;
+  text-transform: uppercase;
+  max-width: 860px;
+  margin: 0 auto 40px;
+  text-shadow: none !important;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+  min-width: 230px;
+}
+
+.hero-dre {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  z-index: 2;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   4. SECTION: WHO WE ARE
+   ========================================================================== */
+#who-we-are {
+  background-color: var(--white);
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.who-we-are-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.who-we-are-text {
+  flex: 48%;
+  padding-right: 20px;
+}
+
+.who-we-are-text h2 {
+  font-size: 40px;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.who-subtitle {
+  font-size: 13px;
+  color: var(--gray-med);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.who-subtitle strong {
+  display: block;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.who-we-are-text p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #333333;
+  margin-bottom: 22px;
+}
+
+.who-highlight {
+  font-weight: 600;
+  color: var(--black);
+  margin-top: 25px;
+  margin-bottom: 35px !important;
+}
+
+.who-we-are-images {
+  flex: 52%;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.who-img-main {
+  width: 58%;
+  position: relative;
+  z-index: 1;
+}
+
+.who-img-main img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.who-img-sub {
+  width: 42%;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.who-img-sub img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   5. SECTION: MEET OUR TEAM
+   ========================================================================== */
+#team {
+  background-color: var(--white);
+  padding: 100px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.team-header h2 {
+  font-size: 38px;
+  letter-spacing: 1.5px;
+}
+
+.carousel-container {
+  position: relative;
+  padding: 0 50px;
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.team-carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.team-card {
+  flex: 0 0 calc((100% - 96px) / 5);
+  min-width: 200px;
+  text-align: center;
+}
+
+.team-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  background-color: var(--black);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-img-wrap.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black);
+  padding: 20px;
+}
+
+.team-img-wrap.logo-card img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+.team-name {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--black);
+}
+
+.team-role {
+  font-size: 12px;
+  color: var(--gray-med);
+  margin-bottom: 2px;
+}
+
+.team-company {
+  font-size: 12px;
+  color: var(--gray-med);
+  opacity: 0.85;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.25s ease;
+  font-size: 18px;
+}
+
+.carousel-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.carousel-btn-prev {
+  left: 0;
+}
+
+.carousel-btn-next {
+  right: 0;
+}
+
+/* ==========================================================================
+   6. SECTION: QUOTE BANNER
+   ========================================================================== */
+#quote-banner {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 100px 30px;
+  text-align: center;
+}
+
+.quote-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quote-text {
+  font-family: var(--primary-font);
+  font-size: 24px;
+  font-style: italic;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  text-shadow: none !important;
+}
+
+.quote-author {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: var(--white);
+}
+
+.quote-title {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: #cccccc;
+}
+
+/* ==========================================================================
+   7. SECTION: TESTIMONIALS (Exact match to reference screenshot)
+   ========================================================================== */
+#testimonials {
+  position: relative;
+  background-image: url('images/testimonials-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 105px 20px 115px 20px;
+  overflow: hidden;
+}
+
+#testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.44);
+  z-index: 1;
+}
+
+.testimonials-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials-heading {
+  font-family: var(--primary-font);
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.testimonial-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--body-font);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  color: #ffffff;
+}
+
+.testimonial-nav button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: var(--body-font);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #ffffff;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  line-height: 1;
+}
+
+.testimonial-nav button:hover {
+  opacity: 0.8;
+}
+
+.testimonial-nav .nav-sep {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  margin: 0 4px;
+  user-select: none;
+}
+
+.testimonial-quote {
+  font-family: var(--body-font);
+  font-size: 13.5px;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-weight: 400;
+  max-width: 760px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  transition: opacity 0.25s ease;
+  text-shadow: none !important;
+}
+
+.testimonial-author {
+  font-family: var(--primary-font);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase !important;
+  color: #ffffff;
+  margin-bottom: 30px;
+  transition: opacity 0.25s ease;
+  text-shadow: none !important;
+}
+
+.testimonial-view-all-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--accent);
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  padding: 13px 42px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-view-all-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   8. SECTION: A BOUTIQUE REAL ESTATE EXPERIENCE
+   ========================================================================== */
+#boutique-experience {
+  background-color: var(--white);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.boutique-content {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.boutique-content h2 {
+  font-size: 34px;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  color: var(--black);
+}
+
+.boutique-content p {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--gray-med);
+}
+
+/* ==========================================================================
+   9. SECTION: 3 PILLAR SERVICE CARDS (Exact match to reference screenshot)
+   ========================================================================== */
+#pillars {
+  padding-bottom: 96px;
+  background-color: var(--white);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pillar-card {
+  position: relative;
+  aspect-ratio: 1 / 1.25;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pillar-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pillar-card:hover img {
+  transform: scale(1.04);
+}
+
+.pillar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.pillar-card:hover .pillar-overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.pillar-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+.pillar-title {
+  font-family: var(--primary-font);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase !important;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pillar-card {
+    aspect-ratio: 1 / 0.9;
+  }
+}
+
+/* ==========================================================================
+   10. SECTION: FEATURED PROPERTIES
+   ========================================================================== */
+#featured-properties {
+  background-color: var(--white);
+  padding: 100px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.properties-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.properties-header h2 {
+  font-size: 38px;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.properties-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: var(--gray-med);
+}
+
+.properties-nav button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.properties-nav button:hover {
+  color: var(--accent);
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.property-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.property-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-img {
+  transform: scale(1.04);
+}
+
+.property-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  z-index: 2;
+  font-weight: 500;
+  text-shadow: none !important;
+}
+
+.property-info-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--white);
+  padding: 24px 20px;
+  text-align: center;
+  text-shadow: none !important;
+}
+
+.property-price {
+  font-family: var(--primary-font);
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-shadow: none !important;
+}
+
+.property-address {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.95;
+  text-shadow: none !important;
+}
+
+.property-specs {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  opacity: 0.85;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   11. SECTION: RECEIVE LISTINGS IN YOUR INBOX
+   ========================================================================== */
+#inbox-banner {
+  position: relative;
+  background-image: url('images/newsletter-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 105px 20px 115px 20px;
+  overflow: hidden;
+}
+
+#inbox-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.inbox-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.inbox-banner-content h2 {
+  font-family: var(--primary-font);
+  font-size: 34px;
+  font-weight: 400;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  text-shadow: none !important;
+}
+
+.inbox-banner-content p {
+  font-family: var(--body-font);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 28px;
+  line-height: 1.6;
+  text-shadow: none !important;
+}
+
+.inbox-signup-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--accent);
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  padding: 13px 40px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inbox-signup-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   12. SECTION: FEATURED VIDEO (Exact match to reference screenshot)
+   ========================================================================== */
+#featured-video {
+  background-color: #ffffff;
+  padding: 85px 0 95px 0;
+}
+
+.video-section-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.video-info-col {
+  flex: 0 0 380px;
+  max-width: 420px;
+}
+
+.video-heading {
+  font-family: var(--primary-font);
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase !important;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.video-subtitle {
+  font-family: var(--body-font);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #555555;
+  margin-bottom: 30px;
+  max-width: 330px;
+}
+
+.video-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.video-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  padding: 13px 36px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: fit-content;
+}
+
+.video-btn:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.video-player-col {
+  flex: 1 1 auto;
+  max-width: 680px;
+  position: relative;
+}
+
+.video-thumbnail-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.video-thumbnail-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.video-thumbnail-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.play-button svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  margin-left: 3px;
+  transition: fill 0.3s ease;
+}
+
+.video-thumbnail-wrap:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 991px) {
+  .video-section-grid {
+    flex-direction: column;
+    gap: 40px;
+    text-align: left;
+  }
+  .video-info-col {
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+  .video-player-col {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   13. SECTION: EXPLORE THE AREA
+   ========================================================================== */
+#explore-area {
+  background-color: var(--white);
+  padding: 100px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.explore-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.explore-header h2 {
+  font-size: 38px;
+  letter-spacing: 1.5px;
+}
+
+.neighborhoods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.neighborhood-card {
+  position: relative;
+  aspect-ratio: 1 / 1.4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.neighborhood-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.neighborhood-card:hover img {
+  transform: scale(1.04);
+}
+
+.neighborhood-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.neighborhood-title {
+  position: relative;
+  z-index: 2;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 20px;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   14. SECTION: REAL ESTATE INSIGHTS (Exact match to reference screenshot)
+   ========================================================================== */
+#insights {
+  background-color: #ffffff;
+  padding: 80px 0 90px 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.insights-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1380px;
+  margin-left: 0;
+  margin-right: auto;
+  padding-right: 50px;
+  gap: 38px;
+}
+
+.insights-visuals {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.insights-img-peek {
+  width: 166px;
+  height: 480px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.insights-img-peek img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.insights-img-main {
+  width: 435px;
+  height: 480px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.insights-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.insights-content {
+  flex: 1 1 480px;
+  max-width: 560px;
+  padding-left: 5px;
+}
+
+.insights-heading {
+  font-family: var(--primary-font);
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase !important;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.insights-desc {
+  font-family: var(--body-font);
+  font-size: 13px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.insights-article-list {
+  margin-bottom: 28px;
+}
+
+.insights-item {
+  padding-top: 0;
+  padding-bottom: 18px;
+}
+
+.insights-item:not(:last-child) {
+  border-bottom: 1px solid #000000;
+  margin-bottom: 20px;
+}
+
+.insights-item-title {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px;
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.insights-item-title a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.insights-item-title a:hover {
+  color: var(--accent);
+}
+
+.insights-item-date {
+  font-family: var(--body-font);
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777777;
+}
+
+.insights-view-all-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  padding: 13px 40px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.insights-view-all-btn:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+@media (max-width: 1200px) {
+  .insights-wrapper {
+    padding-right: 25px;
+    gap: 25px;
+  }
+  .insights-img-peek {
+    width: 120px;
+    height: 420px;
+  }
+  .insights-img-main {
+    width: 380px;
+    height: 420px;
+  }
+  .insights-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .insights-wrapper {
+    flex-direction: column;
+    padding: 0 25px;
+    margin: 0 auto;
+  }
+  .insights-visuals {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .insights-img-peek {
+    display: none;
+  }
+  .insights-img-main {
+    width: 100%;
+    max-width: 480px;
+    height: 380px;
+  }
+  .insights-content {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 25px;
+  }
+}
+
+/* ==========================================================================
+   15. SECTION: WORK WITH US
+   ========================================================================== */
+#work-with-us {
+  position: relative;
+  background-image: url('images/workwithus-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: var(--white);
+  text-align: center;
+  padding: 130px 20px;
+}
+
+#work-with-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.work-with-us-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.work-with-us-content h2 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  text-shadow: none !important;
+}
+
+.work-with-us-content p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  opacity: 0.95;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   16. GLOBAL FOOTER (Exact replica of original reference)
+   ========================================================================== */
+#global-footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding-top: 70px;
+  padding-bottom: 25px;
+  font-family: var(--body-font);
+}
+
+#global-footer .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-brand-title {
+  font-family: var(--primary-font);
+  font-size: 24px;
+  text-transform: none !important;
+  font-weight: 400;
+  margin-bottom: 25px;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+.footer-info-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 35px;
+}
+
+.footer-agent-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-cell-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.footer-cell-val {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #222222;
+  line-height: 1.6;
+}
+
+.footer-cell-val a {
+  color: #222222;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.footer-cell-val a:hover {
+  color: var(--accent);
+}
+
+.footer-newsletter-box {
+  width: 50%;
+}
+
+.footer-newsletter-box .footer-cell-title {
+  margin-bottom: 12px;
+}
+
+.footer-input-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #222222;
+  margin-bottom: 6px;
+}
+
+.footer-input-field {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 8px 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+  outline: none;
+  background: transparent;
+  color: #000000;
+  margin-bottom: 18px;
+}
+
+.footer-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.footer-consent input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.footer-consent label {
+  font-size: 10.5px;
+  line-height: 1.65;
+  color: #555555;
+  letter-spacing: 0.2px;
+}
+
+.footer-consent label a {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.footer-subscribe-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  padding: 13px 42px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-subscribe-btn:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+/* Middle disclaimer & broker */
+.footer-text-first {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.footer-disclaimer-text {
+  font-size: 12px !important;
+  color: #222222;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.footer-logos-img {
+  width: 95px;
+  height: auto;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.footer-broker-info {
+  font-size: 12px !important;
+  color: #222222;
+  line-height: 1.8;
+}
+
+/* Dividing line */
+.footer-divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* Bottom flex row */
+.footer-privacy-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.footer-powered-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #222222;
+}
+
+.footer-powered-col img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.footer-powered-col a {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.footer-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.footer-copyright-links {
+  font-size: 13px;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-copyright-links a {
+  color: #222222;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-copyright-links a:hover {
+  color: var(--accent);
+}
+
+.footer-copyright-links a.sitemap-link {
+  font-weight: 600;
+}
+
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-teal-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-teal-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-hover);
+}
+
+.social-teal-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #ffffff;
+}
+
+.footer-bottom-center {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.footer-bottom-center a {
+  font-size: 11px;
+  color: #555555;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+}
+
+.footer-bottom-center a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .footer-info-wrap {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-agent-box, .footer-newsletter-box {
+    width: 100%;
+  }
+  .footer-privacy-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-right-col {
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   17. FLOATING CONTACT US BUTTON & CONTACT MODAL
+   ========================================================================== */
+.floating-contact-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 12px 22px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none !important;
+  text-shadow: none !important;
+}
+
+.floating-contact-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+}
+
+.contact-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-modal-card {
+  position: relative;
+  background-color: #111111;
+  background-image: url('images/contact-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  width: 100%;
+  max-width: 960px;
+  max-height: 94vh;
+  overflow-y: auto;
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(20px);
+  transition: transform 0.35s ease;
+}
+
+.contact-modal-overlay.open .contact-modal-card {
+  transform: translateY(0);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact-modal-close:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.contact-modal-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header-info {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.modal-header-info h2 {
+  font-family: var(--primary-font);
+  font-size: 30px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase !important;
+  margin-bottom: 8px;
+  color: var(--white);
+  text-shadow: none !important;
+}
+
+.modal-header-info p {
+  font-size: 13px;
+  color: var(--white);
+  opacity: 0.95;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+  text-shadow: none !important;
+}
+
+.modal-contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.modal-contact-item span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.modal-contact-item a {
+  font-size: 12px;
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  letter-spacing: 0.5px;
+}
+
+.modal-contact-item .modal-addr {
+  font-size: 12px;
+  color: var(--white);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.modal-social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  margin-bottom: 28px;
+}
+
+.modal-social-btn {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.modal-social-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent);
+}
+
+.modal-social-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--accent);
+  transition: fill 0.2s ease;
+}
+
+.modal-social-btn:hover svg {
+  fill: #ffffff;
+}
+
+.modal-contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-bottom: 24px;
+}
+
+.modal-input-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.modal-input-wrap input.modal-input-underline {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  padding: 8px 0;
+  color: var(--white);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.modal-input-wrap input.modal-input-underline:focus {
+  border-bottom-color: var(--accent);
+}
+
+.modal-input-wrap textarea.modal-textarea-box {
+  width: 100%;
+  height: 110px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  padding: 12px;
+  color: var(--white);
+  font-size: 13px;
+  outline: none;
+  resize: vertical;
+  margin-bottom: 22px;
+  transition: border-color 0.2s ease;
+}
+
+.modal-input-wrap textarea.modal-textarea-box:focus {
+  border-color: var(--accent);
+}
+
+.modal-consent-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.modal-consent-wrap input {
+  margin-top: 2px;
+  accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.modal-consent-wrap label {
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: none !important;
+}
+
+.modal-consent-wrap a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.modal-submit-wrap {
+  text-align: center;
+}
+
+.modal-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--accent);
+  border: 1px solid var(--white);
+  padding: 12px 48px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.modal-submit-btn:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   18. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .nav-group {
+    gap: 16px;
+  }
+  .nav-link {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .team-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-group-left, .nav-group-right .nav-item {
+    display: none;
+  }
+  .who-we-are-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .who-we-are-text, .who-we-are-images {
+    flex: 100%;
+    width: 100%;
+  }
+  .who-we-are-images {
+    flex-direction: column;
+  }
+  .who-img-main, .who-img-sub {
+    width: 100%;
+    margin-top: 0;
+  }
+  .who-img-main img, .who-img-sub img {
+    height: 380px;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-section-grid {
+    flex-direction: column;
+  }
+  .neighborhoods-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 34px; }
+  h2 { font-size: 28px; }
+  .hero-title { font-size: 32px; }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+  }
+  .team-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    flex: 0 0 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. GLOBAL NAVIGATION BAR
+       ========================================================================== -->
+  <nav id="global-navbar">
+    <div class="nav-container">
+      
+      <!-- Left Navigation Links -->
+      <ul class="nav-group nav-group-left">
+        <li class="nav-item">
+          <a href="#who-we-are" class="nav-link">
+            About <span class="nav-caret">▼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="selling.html" class="nav-link">Selling</a>
+        </li>
+        <li class="nav-item">
+          <a href="#featured-properties" class="nav-link">
+            Buying <span class="nav-caret">▼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="buying.html">Buying Services</a></li>
+            <li><a href="featured-listings.html">Featured Listings</a></li>
+            <li><a href="new-construction.html">New Construction</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#explore-area" class="nav-link">
+            Neighborhoods <span class="nav-caret">▼</span>
+          </a>
+          <ul class="nav-dropdown">
+            <li><a href="tri-valley.html">Tri Valley</a></li>
+            <li><a href="central-valley.html">Central Valley</a></li>
+            <li><a href="greater-sacramento.html">Greater Sacramento</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="nav-logo">
+        <a href="#hero" aria-label="Just 1 Real Estate">
+          <img src="images/logo-light.png" alt="Just 1 Real Estate" class="logo-light">
+          <img src="images/logo-dark.png" alt="Just 1 Real Estate" class="logo-dark">
+        </a>
+      </div>
+
+      <!-- Right Navigation Links -->
+      <ul class="nav-group nav-group-right">
+        <li class="nav-item">
+          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+        </li>
+        <li class="nav-item">
+          <a href="just-1-network.html" class="nav-link">Just 1 Network</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact-us.html" class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
+        </li>
+        <li class="nav-item-hamburger">
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       2. SLIDE-OUT SIDE MENU
+       ========================================================================== -->
+    <!-- GLOBAL SIDE MENU (Matches exact just1realestate.com screenshot) -->
+<div id="global-sidemenu" class="sidemenu" aria-hidden="true">
+  <div class="sidemenu-wrapper">
+    <button class="toggle sidemenu-close" id="sideMenuClose" aria-label="Close menu">&times;</button>
+    <div class="sidemenu-holder">
+      <div class="sidemenu-title">Lulu Logan Group, powered by Just 1 Real Estate</div>
+      <ul class="section-options">
+        <li class="option"><a href="index.html">Home</a></li>
+        <li class="option"><a href="about-us.html">About Us</a></li>
+        <li class="option sub-nav-container">
+          <a href="featured-listings.html" class="link main-nav">Properties</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="featured-listings.html" class="link sub-nav-link">Featured Listings</a></li>
+              <li><a href="featured-listings.html#sold" class="link sub-nav-link">Past Transactions</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option sub-nav-container">
+          <a href="tri-valley.html" class="link main-nav">Home Search</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="tri-valley.html" class="link sub-nav-link">Tri Valley</a></li>
+              <li><a href="tri-valley.html#pleasanton" class="link sub-nav-link">Pleasanton</a></li>
+              <li><a href="tri-valley.html#livermore" class="link sub-nav-link">Livermore</a></li>
+              <li><a href="tri-valley.html#dublin" class="link sub-nav-link">Dublin</a></li>
+              <li><a href="central-valley.html" class="link sub-nav-link">Central Valley</a></li>
+              <li><a href="central-valley.html#mountain-house" class="link sub-nav-link">Mountain House</a></li>
+              <li><a href="central-valley.html#tracy" class="link sub-nav-link">Tracy</a></li>
+              <li><a href="central-valley.html#lathrop" class="link sub-nav-link">Lathrop</a></li>
+              <li><a href="central-valley.html#manteca" class="link sub-nav-link">Manteca</a></li>
+              <li><a href="central-valley.html#lodi" class="link sub-nav-link">Lodi</a></li>
+              <li><a href="greater-sacramento.html#el-dorado-hills" class="link sub-nav-link">El Dorado Hills</a></li>
+              <li><a href="greater-sacramento.html#folsom" class="link sub-nav-link">Folsom</a></li>
+              <li><a href="greater-sacramento.html#roseville" class="link sub-nav-link">Roseville</a></li>
+              <li><a href="featured-listings.html" class="link sub-nav-link">Search All</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="selling.html">Home Valuation</a></li>
+        <li class="option sub-nav-container">
+          <a href="tri-valley.html" class="link main-nav">Neighborhoods</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="tri-valley.html" class="link sub-nav-link">Tri Valley</a></li>
+              <li><a href="central-valley.html" class="link sub-nav-link">Central Valley</a></li>
+              <li><a href="greater-sacramento.html" class="link sub-nav-link">Greater Sacramento</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="testimonials.html">Testimonials</a></li>
+        <li class="option sub-nav-container">
+          <a href="buying.html" class="link main-nav">Resources</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="buying.html" class="link sub-nav-link">Buying Services</a></li>
+              <li><a href="selling.html" class="link sub-nav-link">Selling</a></li>
+              <li><a href="knowledge-center.html" class="link sub-nav-link">Knowledge Center</a></li>
+              <li><a href="about-us.html" class="link sub-nav-link">Just 1 Real Estate</a></li>
+              <li><a href="just-1-network.html" class="link sub-nav-link">Just 1 Network</a></li>
+              <li><a href="about-us.html#services" class="link sub-nav-link">Next Era Home Services</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="new-construction.html">New Construction</a></li>
+        <li class="option sub-nav-container">
+          <a href="just-1-network.html" class="link main-nav">Media</a>
+          <div class="sub-nav">
+            <ul>
+              <li><a href="just-1-network.html#channel" class="link sub-nav-link">The Just 1â„¢ Channel</a></li>
+              <li><a href="just-1-network.html#podcast" class="link sub-nav-link">Podcast</a></li>
+              <li><a href="just-1-network.html#press" class="link sub-nav-link">Press</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="option"><a href="knowledge-center.html">Blog</a></li>
+        <li class="option"><a href="just-1-network.html">Just 1 Minute</a></li>
+        <li class="option"><a href="contact-us.html">Contact Us</a></li>
+        <li class="option"><a href="featured-listings.html">My Search Portal</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <!-- ==========================================================================
+       3. HERO SECTION
+       ========================================================================== -->
+    <!-- ==========================================================================
+       3. HERO SECTION (Animated Drone Aerial Video & Horizontal Sliding Animation)
+       ========================================================================== -->
+  <section id="hero">
+    <div class="hero-video-wrapper">
+      <video class="hero-bg-video" poster="https://res.cloudinary.com/luxuryp/videos/f_auto,q_auto/so_0,eo_0/wjpgfgdjrolj7czfcmpv/brick_-stone-neighborhood.jpg" autoplay loop muted playsinline>
+        <source src="https://res.cloudinary.com/luxuryp/videos/f_mp4,vc_h264,q_auto:best,w_1920,c_limit/wjpgfgdjrolj7czfcmpv/brick_-stone-neighborhood.mp4" type="video/mp4">
+        <source src="https://res.cloudinary.com/luxuryp/videos/f_webm,vc_vp9,q_auto:best,w_1920,c_limit/wjpgfgdjrolj7czfcmpv/brick_-stone-neighborhood.webm" type="video/webm">
+      </video>
+      <div class="hero-bg-slide-fallback"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Real Estate, Redesigned<br>for the Modern Homeowner</h1>
+      <p class="hero-subtitle">
+        A smarter, more strategic way to buy, sell, invest, renovate, and manage real estate in Mountain House, Tracy, the Tri-Valley, Central Valley, and Greater Sacramento.
+      </p>
+      
+      <div class="hero-buttons">
+        <a href="#featured-properties" class="btn btn-white">Home Search</a>
+        <a href="selling.html" class="btn btn-white">Home Valuation</a>
+        <a href="contact-us.html" class="btn btn-white">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="hero-dre">
+      Lulu Logan | CA DRE# 01452747
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. SECTION: WHO WE ARE
+       ========================================================================== -->
+  <section id="who-we-are" class="section-padding">
+    <div class="container">
+      <div class="who-we-are-grid">
+        
+        <!-- Text Column -->
+        <div class="who-we-are-text">
+          <h2>Who We Are</h2>
+          <div class="who-subtitle">
+            <strong>Lulu Logan | CA DRE# 01452747</strong>
+            <span>Lulu Logan Group, powered by Just 1 Real Estate</span>
+          </div>
+
+          <p>
+            Led by Lulu Logan, REALTOR® and Founder &amp; Builder of Lulu Logan Group, powered by Just 1 Real Estate, ensures we don't leave value to chance. We design for it. We operate through the Just 1 Value System, a connected approach built to maximize property value before, during, and after the sale. NexEra leads with inspections and value strategy, identifying what elevates price and what to avoid.
+          </p>
+
+          <p>
+            Just 1 Network executes, bringing in vetted contractors and vendors to educate and deliver the improvements that matter. Just 1 Real Estate directs pricing, positioning, and negotiation to drive stronger outcomes.
+          </p>
+
+          <p>
+            Whether you are selling, buying, investing, or relocating, Just 1 Real Estate moves you forward with clarity, control, and confidence.
+          </p>
+
+          <p class="who-highlight">
+            Activate the Just 1 Value System. Maximize your property's value from day one.
+          </p>
+
+          <a href="#" class="btn btn-primary" data-open-modal="contact">Learn More</a>
+        </div>
+
+        <!-- Overlapping Images Column -->
+        <div class="who-we-are-images">
+          <div class="who-img-main">
+            <img src="images/lulu-portrait.jpg" alt="Lulu Logan REALTOR">
+          </div>
+          <div class="who-img-sub">
+            <img src="images/fireplace.jpg" alt="Luxury Architectural Interior">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. SECTION: MEET OUR TEAM
+       ========================================================================== -->
+  <section id="team">
+    <div class="container">
+      <div class="team-header">
+        <h2>Meet Our Team</h2>
+      </div>
+
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" id="teamPrevBtn" aria-label="Previous team member">&lt;</button>
+        
+        <div class="carousel-track-wrapper">
+          <div class="team-carousel-track" id="teamCarouselTrack">
+            
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/parmjit.jpg" alt="Parmjit S. Rai">
+              </div>
+              <h5 class="team-name">Parmjit S. Rai</h5>
+              <p class="team-role">Real Estate Advisor</p>
+              <p class="team-company">Just 1 Real Estate</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/lorna.jpg" alt="Lorna C">
+              </div>
+              <h5 class="team-name">Lorna C</h5>
+              <p class="team-role">Sr. Partner, Capital &amp; Finance</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap logo-card">
+                <img src="images/card-logo.jpg" alt="Just 1 Real Estate">
+              </div>
+              <h5 class="team-name">Brian F</h5>
+              <p class="team-role">Project Manager</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap logo-card">
+                <img src="images/card-logo.jpg" alt="Just 1 Real Estate">
+              </div>
+              <h5 class="team-name">Areeba I.</h5>
+              <p class="team-role">Marketing Manager</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/victor.jpg" alt="Victor">
+              </div>
+              <h5 class="team-name">Victor</h5>
+              <p class="team-role">Director</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/agent-alex.jpg" alt="Agent Alex">
+              </div>
+              <h5 class="team-name">Agent Alex</h5>
+              <p class="team-role">Digital Assistant (AI)</p>
+              <p class="team-company">Luxury Presence</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/agent-aley.jpg" alt="Agent Aley">
+              </div>
+              <h5 class="team-name">Agent Aley</h5>
+              <p class="team-role">Digital Assistant</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/sunainah.jpg" alt="Sunainah I">
+              </div>
+              <h5 class="team-name">Sunainah I</h5>
+              <p class="team-role">Operations</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/jessica.jpg" alt="Jessica H">
+              </div>
+              <h5 class="team-name">Jessica H</h5>
+              <p class="team-role">Client Services</p>
+              <p class="team-company">Just 1 Real Estate</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/brian-h.jpg" alt="Brian H">
+              </div>
+              <h5 class="team-name">Brian H</h5>
+              <p class="team-role">Advisory</p>
+              <p class="team-company">Just 1 Real Estate</p>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-btn-next" id="teamNextBtn" aria-label="Next team member">&gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. SECTION: QUOTE BANNER
+       ========================================================================== -->
+  <section id="quote-banner">
+    <div class="quote-container">
+      <div class="quote-text">
+        &ldquo; Tell me what you want to do, and I'll ask you why. Because understanding what matters to you is how we make real estate decisions that protect what you've built and help you move forward. &rdquo;
+      </div>
+      <div class="quote-author">Lulu Logan</div>
+      <div class="quote-title">REALTOR® and Founder &amp; Builder of Lulu Logan Group, powered by Just 1 Real Estate</div>
+    </div>
+  </section>
+
+    <!-- ==========================================================================
+       7. SECTION: TESTIMONIALS
+       ========================================================================== -->
+  <section id="testimonials">
+    <div class="testimonials-content">
+      <h2 class="testimonials-heading">TESTIMONIALS</h2>
+      
+      <div class="testimonial-nav">
+        <button id="testPrevBtn">PREVIOUS</button>
+        <span class="nav-sep">|</span>
+        <button id="testNextBtn">NEXT</button>
+      </div>
+
+      <p class="testimonial-quote" id="testimonialQuote">
+        Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication, strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family while delivering expert results. Highly recommend!
+      </p>
+
+      <div class="testimonial-author" id="testimonialAuthor">
+        &mdash; SAM N.
+      </div>
+
+      <a href="#" class="testimonial-view-all-btn" data-open-modal="contact">VIEW ALL</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. SECTION: A BOUTIQUE REAL ESTATE EXPERIENCE
+       ========================================================================== -->
+  <section id="boutique-experience">
+    <div class="container">
+      <div class="boutique-content">
+        <h2>A Boutique Real Estate Experience Built on Strategy and Service</h2>
+        <p>
+          At Just 1 Real Estate, every client receives personalized advisory support—grounded in data, shaped by market knowledge, and shaped by decades of experience across Mountain House, Tracy, the Tri-Valley, Central Valley, and Greater Sacramento. Our advisors help you move through each step with a clear plan and a modern, concierge-level experience that feels effortless from beginning to end.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- ==========================================================================
+       9. SECTION: 3 PILLAR SERVICE CARDS
+       ========================================================================== -->
+  <section id="pillars">
+    <div class="container">
+      <div class="pillars-grid">
+        
+        <!-- Pillar 1 -->
+        <a href="#who-we-are" class="pillar-card">
+          <img src="images/pillar-realestate.jpg" alt="Just 1 Real Estate">
+          <div class="pillar-overlay"></div>
+          <div class="pillar-content">
+            <h3 class="pillar-title">JUST 1 REAL ESTATE</h3>
+          </div>
+        </a>
+
+        <!-- Pillar 2 -->
+        <a href="#who-we-are" class="pillar-card">
+          <img src="images/pillar-network.jpg" alt="Just 1 Network">
+          <div class="pillar-overlay"></div>
+          <div class="pillar-content">
+            <h3 class="pillar-title">JUST 1 NETWORK</h3>
+          </div>
+        </a>
+
+        <!-- Pillar 3 -->
+        <a href="#who-we-are" class="pillar-card">
+          <img src="images/pillar-nextera.jpg" alt="Next Era Home Services">
+          <div class="pillar-overlay"></div>
+          <div class="pillar-content">
+            <h3 class="pillar-title">NEXT ERA HOME SERVICES</h3>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. SECTION: FEATURED PROPERTIES
+       ========================================================================== -->
+  <section id="featured-properties">
+    <div class="container">
+      <div class="properties-header">
+        <h2>Featured Properties</h2>
+      </div>
+
+      <div class="properties-nav">
+        <button id="propPrevBtn">Previous</button>
+        <span>|</span>
+        <button id="propNextBtn">Next</button>
+      </div>
+
+      <div class="properties-grid">
+        
+        <!-- Property 1 -->
+        <div class="property-card">
+          <img src="images/property-frost.jpg" alt="48 E Frost Drive" class="property-img">
+          <div class="property-badge">For Sale</div>
+          <div class="property-info-overlay">
+            <div class="property-price">$699,000</div>
+            <div class="property-address">48 E Frost Drive, Mountain House, CA 95391</div>
+            <div class="property-specs">4 BD | 3 BA | 2,084 Sq.Ft.</div>
+          </div>
+        </div>
+
+        <!-- Property 2 -->
+        <div class="property-card">
+          <img src="images/property-dutchcreek.jpg" alt="448 Dutch Creek Street" class="property-img">
+          <div class="property-badge">Pending</div>
+          <div class="property-info-overlay">
+            <div class="property-price">$670,000</div>
+            <div class="property-address">448 Dutch Creek Street, West Sacramento, CA 95605</div>
+            <div class="property-specs">4 BD | 3 BA | 2,091 Sq.Ft.</div>
+          </div>
+        </div>
+
+        <!-- Property 3 (Toggleable) -->
+        <div class="property-card" style="display: none;">
+          <img src="images/property-orinda.jpg" alt="474 N Orinda Court" class="property-img">
+          <div class="property-badge">For Sale</div>
+          <div class="property-info-overlay">
+            <div class="property-price">$825,000</div>
+            <div class="property-address">474 N Orinda Court, Mountain House, CA 95391</div>
+            <div class="property-specs">5 BD | 4 BA | 3,120 Sq.Ft.</div>
+          </div>
+        </div>
+
+        <!-- Property 4 (Toggleable) -->
+        <div class="property-card" style="display: none;">
+          <img src="images/property-ohio.jpg" alt="2107 Ohio Avenue" class="property-img">
+          <div class="property-badge">For Sale</div>
+          <div class="property-info-overlay">
+            <div class="property-price">$749,000</div>
+            <div class="property-address">2107 Ohio Avenue, West Sacramento, CA 95691</div>
+            <div class="property-specs">4 BD | 2.5 BA | 2,450 Sq.Ft.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <a href="#" class="btn btn-primary" data-open-modal="contact">View All</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- ==========================================================================
+       11. SECTION: RECEIVE LISTINGS IN YOUR INBOX
+       ========================================================================== -->
+  <section id="inbox-banner">
+    <div class="inbox-banner-content">
+      <h2>RECEIVE LISTINGS IN YOUR INBOX</h2>
+      <p>For exclusive news and market updates sign up for our newsletter.</p>
+      <a href="#global-footer" class="inbox-signup-btn">SIGN UP</a>
+    </div>
+  </section>
+
+    <!-- ==========================================================================
+       12. SECTION: FEATURED VIDEO (Exact match to reference screenshot)
+       ========================================================================== -->
+  <section id="featured-video">
+    <div class="container">
+      <div class="video-section-grid">
+        
+        <div class="video-info-col">
+          <h2 class="video-heading">FEATURED VIDEO</h2>
+          <p class="video-subtitle">
+            Living in West Sacramento, CA | Parks, Neighborhoods &amp; Daily Life
+          </p>
+          <div class="video-actions">
+            <a href="https://just1realestate.com/video-gallery" target="_blank" class="video-btn">VIEW ALL</a>
+            <a href="#explore-area" class="video-btn">EXPLORE THE COMMUNITY</a>
+          </div>
+        </div>
+
+        <div class="video-player-col">
+          <div class="video-thumbnail-wrap" data-video-url="https://www.youtube.com/embed/-KksMDhrlAY?autoplay=1">
+            <img src="images/video-thumb.jpg" alt="Featured Community Video - West Sacramento">
+            <div class="play-button" aria-label="Play Video">
+              <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       13. SECTION: EXPLORE THE AREA
+       ========================================================================== -->
+  <section id="explore-area">
+    <div class="container">
+      <div class="explore-header">
+        <h2>Explore The Area</h2>
+      </div>
+
+      <div class="neighborhoods-grid">
+        
+        <a href="tri-valley.html" class="neighborhood-card">
+          <img src="images/neighborhood-trivalley.jpg" alt="Tri Valley">
+          <div class="neighborhood-overlay"></div>
+          <h3 class="neighborhood-title">Tri Valley</h3>
+        </a>
+
+        <a href="central-valley.html" class="neighborhood-card">
+          <img src="images/neighborhood-centralvalley.jpg" alt="Central Valley">
+          <div class="neighborhood-overlay"></div>
+          <h3 class="neighborhood-title">Central Valley</h3>
+        </a>
+
+        <a href="greater-sacramento.html" class="neighborhood-card">
+          <img src="images/neighborhood-sacramento.jpg" alt="Greater Sacramento">
+          <div class="neighborhood-overlay"></div>
+          <h3 class="neighborhood-title">Greater Sacramento</h3>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+      <!-- ==========================================================================
+       14. SECTION: REAL ESTATE INSIGHTS
+       ========================================================================== -->
+  <section id="insights">
+    <div class="insights-wrapper">
+      
+      <!-- Visuals: Peek Image on far left + Main Living Room Image -->
+      <div class="insights-visuals">
+        <div class="insights-img-peek">
+          <img src="images/insights-peek.jpg" alt="Luxury Home Architecture">
+        </div>
+        <div class="insights-img-main">
+          <img src="images/insights-livingroom.jpg" alt="High Ceiling Great Room with Fireplace">
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="insights-content">
+        <h2 class="insights-heading">REAL ESTATE INSIGHTS</h2>
+        <p class="insights-desc">
+          Read our latest blog articles on white-gloved client service, ingenious marketing strategies, scrupulous business practices and record-breaking sales deals.
+        </p>
+
+        <div class="insights-article-list">
+          
+          <article class="insights-item">
+            <h4 class="insights-item-title">
+              <a href="#">MANTECA'S GROCERY RUN IS MOVING SOUTH TO ATHERTON DRIVE</a>
+            </h4>
+            <div class="insights-item-date">OCTOBER 22, 2026</div>
+          </article>
+
+          <article class="insights-item">
+            <h4 class="insights-item-title">
+              <a href="#">DOWNTOWN MANTECA'S ACE STOP, AND HOW TO PRICE A HOME NEAR IT</a>
+            </h4>
+            <div class="insights-item-date">NOVEMBER 19, 2026</div>
+          </article>
+
+          <article class="insights-item">
+            <h4 class="insights-item-title">
+              <a href="#">MOUNTAIN HOUSE IS SPLITTING ITS COURTS BY SPORT. HERE'S WHERE EACH ...</a>
+            </h4>
+            <div class="insights-item-date">OCTOBER 29, 2026</div>
+          </article>
+
+        </div>
+
+        <a href="#" class="insights-view-all-btn" data-open-modal="contact">VIEW ALL</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       15. SECTION: WORK WITH US
+       ========================================================================== -->
+  <section id="work-with-us">
+    <div class="work-with-us-content">
+      <h2>Work With Us</h2>
+      <p>
+        A modern real estate experience built on strategy, boutique service, and a connected network of professionals.
+      </p>
+      <a href="contact-us.html" class="btn btn-white">Contact Us</a>
+    </div>
+  </section>
+
+    <!-- ==========================================================================
+       16. GLOBAL FOOTER
+       ========================================================================== -->
+  <footer id="global-footer">
+    <div class="container footer-container">
+      
+      <!-- Top 2-Column Section -->
+      <div class="footer-info-wrap">
+        
+        <!-- Left: Agent / Group Info -->
+        <div class="footer-agent-box">
+          <h3 class="footer-brand-title">Lulu Logan Group</h3>
+
+          <div class="footer-cell">
+            <div class="footer-cell-title">Email</div>
+            <div class="footer-cell-val">
+              <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
+            </div>
+          </div>
+
+          <div class="footer-cell">
+            <div class="footer-cell-title">Phone Number</div>
+            <div class="footer-cell-val">
+              <a href="tel:6692220704">(669) 222-0704</a>
+            </div>
+          </div>
+
+          <div class="footer-cell">
+            <div class="footer-cell-title">Address</div>
+            <div class="footer-cell-val">
+              2181 N TRACY BLVD #275<br>
+              TRACY, CA 95376
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Newsletter Subscription Form -->
+        <div class="footer-newsletter-box">
+          <form id="footerNewsletterForm" class="footer-newsletter-form">
+            <div class="footer-cell-title">Sign up for exclusive news</div>
+
+            <div class="inp-group">
+              <label for="footer-email-input" class="footer-input-label">Email Address</label>
+              <input type="email" id="footer-email-input" class="footer-input-field" required>
+            </div>
+
+            <div class="footer-consent">
+              <input type="checkbox" id="footer-consent-checkbox" required>
+              <label for="footer-consent-checkbox">
+                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#" target="_blank" rel="noopener">terms of use and Privacy Policy</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="footer-subscribe-btn">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Middle: Disclaimer & Broker Info -->
+      <div class="footer-text-first">
+        <p class="footer-disclaimer-text">
+          All information is deemed reliable but not guaranteed and should be independently reviewed and verified.
+        </p>
+
+        <div class="footer-logos-wrap">
+          <img src="images/realtor-equal-housing.png" alt="Realtor &amp; Equal Housing Opportunity" class="footer-logos-img">
+        </div>
+
+        <div class="footer-broker-info">
+          Just 1 Real Estate<br>
+          Lulu Logan | DRE #01452747<br>
+          Broker: Grobecker Holland International
+        </div>
+      </div>
+
+      <!-- Horizontal dividing line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Bottom flex row: Luxury Presence + Copyright/Sitemap + 6 Social Icons -->
+      <div class="footer-privacy-bar">
+        <div class="footer-powered-col">
+          <img src="images/luxury-presence.png" alt="Luxury Presence">
+          <span>Real Estate Website Design by <a href="https://www.luxurypresence.com/real-estate-website-design/" target="_blank" rel="noopener">Luxury Presence</a></span>
+        </div>
+
+        <div class="footer-right-col">
+          <div class="footer-copyright-links">
+            <span>Copyright &copy; 2026</span>
+            <span>|</span>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" class="sitemap-link">Sitemap</a>
+          </div>
+
+          <div class="footer-social-row">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="social-teal-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            </a>
+            <!-- Zillow -->
+            <a href="https://www.yelp.com/biz/just-1-real-estate-tracy-2" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Zillow">
+              <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="social-teal-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .59.043.87.128V9.37a6.34 6.34 0 0 0-.87-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.46a8.28 8.28 0 0 0 4.82 1.54v-3.31h-.05z"/></svg>
+            </a>
+            <!-- Google -->
+            <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Google">
+              <svg viewBox="0 0 24 24"><path d="M12.24 10.285v3.608h6.839c-.297 1.81-2.072 5.305-6.839 5.305-4.118 0-7.48-3.405-7.48-7.608s3.362-7.608 7.48-7.608c2.348 0 3.918.995 4.82 1.848l2.853-2.753c-1.833-1.714-4.21-2.753-7.673-2.753-6.29 0-11.4 5.11-11.4 11.4s5.11 11.4 11.4 11.4c6.577 0 10.942-4.629 10.942-11.137 0-.749-.082-1.32-.181-1.864h-10.762z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centered Privacy Choices at the bottom -->
+      <div class="footer-bottom-center">
+        <a href="#">Your Privacy Choices</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       17. FLOATING CONTACT US BUTTON
+       ========================================================================== -->
+  <a href="contact-us.html" class="floating-contact-btn" aria-label="Contact Us">
+    Contact Us &#94;
+  </a>
+
+  <!-- ==========================================================================
+       18. INTERACTIVE CONTACT US MODAL
+       ========================================================================== -->
+  <div class="contact-modal-overlay" id="contactModal">
+    <div class="contact-modal-card">
+      <button class="contact-modal-close" id="contactModalClose" aria-label="Close dialog">&times;</button>
+      
+      <div class="contact-modal-grid">
+        
+        <div class="modal-header-info">
+          <h2>CONTACT DETAILS</h2>
+          <p>Lulu Logan Group, powered by Just 1 Real Estate</p>
+          <p>Lulu Logan | CA DRE# 01452747</p>
+
+          <div class="modal-contact-row">
+            <div class="modal-contact-item">
+              <span>PHONE</span>
+              <a href="tel:6692220704">(669) 222-0704</a>
+            </div>
+            <div class="modal-contact-item">
+              <span>ADDRESS</span>
+              <div class="modal-addr">2181 N TRACY BLVD #275<br>TRACY, CA 95376</div>
+            </div>
+            <div class="modal-contact-item">
+              <span>EMAIL</span>
+              <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
+            </div>
+          </div>
+
+          <!-- 6 Circular Social Buttons (Matching Screenshot) -->
+          <div class="modal-social-row">
+            <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="modal-social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="modal-social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.zillow.com/profile/LuluLoganGroup" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Zillow">
+              <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="modal-social-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.38-1.48 3.49-3.29.04-2.83.02-5.66.02-8.49 0-3.69-.02-7.38.02-11.08z"/></svg>
+            </a>
+            <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="modal-social-btn" aria-label="Google">
+              <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="modal-contact-form" id="contactModalForm">
+          <div class="modal-form-row">
+            <div class="modal-input-wrap">
+              <label for="modalName" class="modal-input-label">NAME</label>
+              <input type="text" id="modalName" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="modalEmail" class="modal-input-label">EMAIL</label>
+              <input type="email" id="modalEmail" required class="modal-input-underline">
+            </div>
+            <div class="modal-input-wrap">
+              <label for="modalPhone" class="modal-input-label">PHONE</label>
+              <input type="tel" id="modalPhone" class="modal-input-underline">
+            </div>
+          </div>
+
+          <div class="modal-input-wrap">
+            <label for="modalMessage" class="modal-input-label">MESSAGE</label>
+            <textarea id="modalMessage" required class="modal-textarea-box"></textarea>
+          </div>
+
+          <div class="modal-consent-wrap">
+            <input type="checkbox" id="modalConsent" required>
+            <label for="modalConsent">
+              I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#">terms of use and Privacy Policy</a>.
+            </label>
+          </div>
+
+          <div class="modal-submit-wrap">
+            <button type="submit" class="modal-submit-btn">SUBMIT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+/**
+ * JUST 1 REAL ESTATE - MAIN JAVASCRIPT
+ * Accurate replica of interactive functionality
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // ----------------------------------------------------
+  // 1. NAVBAR SCROLL EFFECT
+  // ----------------------------------------------------
+  const navbar = document.getElementById('global-navbar');
+  
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Initial check
+
+  // ----------------------------------------------------
+  // 2. SIDE MENU TOGGLE
+  // ----------------------------------------------------
+  const sideMenu = document.getElementById('sideMenu');
+  const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const sideMenuClose = document.getElementById('sideMenuClose');
+
+  const openSideMenu = () => {
+    sideMenu.classList.add('open');
+    sideMenuOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeSideMenu = () => {
+    sideMenu.classList.remove('open');
+    sideMenuOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSideMenu);
+  if (sideMenuClose) sideMenuClose.addEventListener('click', closeSideMenu);
+  if (sideMenuOverlay) sideMenuOverlay.addEventListener('click', closeSideMenu);
+
+  // Side menu accordions
+  const sideDropdownLinks = document.querySelectorAll('.side-menu-dropdown-toggle');
+  sideDropdownLinks.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const submenu = toggle.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle('open');
+      }
+    });
+  });
+
+  // ----------------------------------------------------
+  // 3. TEAM CAROUSEL SLIDER
+  // ----------------------------------------------------
+  const teamTrack = document.getElementById('teamCarouselTrack');
+  const teamPrevBtn = document.getElementById('teamPrevBtn');
+  const teamNextBtn = document.getElementById('teamNextBtn');
+  let currentTeamIndex = 0;
+
+  const updateTeamSlider = () => {
+    if (!teamTrack) return;
+    const cards = teamTrack.querySelectorAll('.team-card');
+    if (!cards.length) return;
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24;
+    const visibleCards = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : window.innerWidth <= 1200 ? 3 : 5;
+    const maxIndex = Math.max(0, cards.length - visibleCards);
+
+    currentTeamIndex = Math.min(Math.max(currentTeamIndex, 0), maxIndex);
+    const offset = -(currentTeamIndex * (cardWidth + gap));
+    teamTrack.style.transform = `translateX(${offset}px)`;
+  };
+
+  if (teamPrevBtn) {
+    teamPrevBtn.addEventListener('click', () => {
+      currentTeamIndex--;
+      updateTeamSlider();
+    });
+  }
+
+  if (teamNextBtn) {
+    teamNextBtn.addEventListener('click', () => {
+      currentTeamIndex++;
+      updateTeamSlider();
+    });
+  }
+
+  window.addEventListener('resize', updateTeamSlider);
+
+  // ----------------------------------------------------
+  // 4. TESTIMONIALS SLIDER
+  // ----------------------------------------------------
+    const testimonials = [
+    {
+      quote: "Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication, strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family while delivering expert results. Highly recommend!",
+      author: "— SAM N."
+    },
+    {
+      quote: "Lulu, At Just 1Real Estate is fantastic. You couldn't ask for a better experience. She's knowledgeable about the properties she's selling, and I would recommend her to anyone interested in purchasing a home. So go see Lulu, if you're looking for a home.",
+      author: "— DIANNA"
+    },
+    {
+      quote: "I had a great experience with Lulu , she did a great job handling everything from the very beginning to the very end. I highly recommend her and team!",
+      author: "— MARK K."
+    }
+  ];
+
+  let currentTestimonial = 0;
+  const quoteElem = document.getElementById('testimonialQuote');
+  const authorElem = document.getElementById('testimonialAuthor');
+  const testPrevBtn = document.getElementById('testPrevBtn');
+  const testNextBtn = document.getElementById('testNextBtn');
+
+  const renderTestimonial = () => {
+    if (!quoteElem || !authorElem) return;
+    quoteElem.style.opacity = '0';
+    authorElem.style.opacity = '0';
+    setTimeout(() => {
+      quoteElem.textContent = testimonials[currentTestimonial].quote;
+      authorElem.textContent = testimonials[currentTestimonial].author;
+      quoteElem.style.opacity = '1';
+      authorElem.style.opacity = '1';
+    }, 200);
+  };
+
+  if (testPrevBtn) {
+    testPrevBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      renderTestimonial();
+    });
+  }
+
+  if (testNextBtn) {
+    testNextBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      renderTestimonial();
+    });
+  }
+
+  // ----------------------------------------------------
+  // 5. FEATURED PROPERTIES TOGGLE
+  // ----------------------------------------------------
+  const propPrevBtn = document.getElementById('propPrevBtn');
+  const propNextBtn = document.getElementById('propNextBtn');
+  const propertyCards = document.querySelectorAll('.property-card');
+
+  if (propPrevBtn && propNextBtn && propertyCards.length > 2) {
+    let propOffset = 0;
+    const updateProperties = () => {
+      propertyCards.forEach((card, idx) => {
+        if (idx >= propOffset && idx < propOffset + 2) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    };
+
+    propNextBtn.addEventListener('click', () => {
+      if (propOffset + 2 < propertyCards.length) {
+        propOffset += 2;
+        updateProperties();
+      }
+    });
+
+    propPrevBtn.addEventListener('click', () => {
+      if (propOffset - 2 >= 0) {
+        propOffset -= 2;
+        updateProperties();
+      }
+    });
+  }
+
+  // ----------------------------------------------------
+  // 6. CONTACT US MODAL
+  // ----------------------------------------------------
+  const contactModal = document.getElementById('contactModal');
+  const contactModalClose = document.getElementById('contactModalClose');
+  const contactTriggers = document.querySelectorAll('[data-open-modal="contact"]');
+
+  const openContactModal = (e) => {
+    if (e) e.preventDefault();
+    if (contactModal) {
+      contactModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeContactModal = () => {
+    if (contactModal) {
+      contactModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  contactTriggers.forEach(btn => btn.addEventListener('click', openContactModal));
+  if (contactModalClose) contactModalClose.addEventListener('click', closeContactModal);
+  if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) closeContactModal();
+    });
+  }
+
+  // ----------------------------------------------------
+  // 7. FORM SUBMISSIONS
+  // ----------------------------------------------------
+  const contactForm = document.getElementById('contactModalForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        alert('Thank you for contacting Lulu Logan Group! We have received your inquiry and will reach out shortly.');
+        contactForm.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        closeContactModal();
+      }, 700);
+    });
+  }
+
+  const newsletterForm = document.getElementById('footerNewsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = newsletterForm.querySelector('input[type="email"]');
+      const checkbox = newsletterForm.querySelector('input[type="checkbox"]');
+      
+      if (!checkbox.checked) {
+        alert('Please accept the consent terms before subscribing.');
+        return;
+      }
+
+      alert(`Thank you for subscribing with ${input.value}! Exclusive real estate listings and updates are on their way.`);
+      newsletterForm.reset();
+    });
+  }
+});
+
+
+  // Video thumbnail inline player swap
+  const videoWrap = document.querySelector('.video-thumbnail-wrap');
+  if (videoWrap) {
+    videoWrap.addEventListener('click', function() {
+      const url = this.getAttribute('data-video-url') || 'https://www.youtube.com/embed/-KksMDhrlAY?autoplay=1';
+      this.innerHTML = '<iframe src="' + url + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>';
+    });
+  }
+
+  // ----------------------------------------------------
+  // GLOBAL SIDE MENU INITIALIZATION
+  // ----------------------------------------------------
+  (function initGlobalSideMenu() {
+    var sideMenu = document.getElementById('global-sidemenu');
+    var openButtons = document.querySelectorAll('.hamburger-btn, #hamburgerBtn, #hamburger-btn, .nav-hamburger, [data-action="open-menu"]');
+    var closeButton = document.getElementById('sideMenuClose');
+
+    if (!sideMenu) return;
+
+    function openMenu() {
+      sideMenu.classList.add('visible');
+      sideMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      sideMenu.classList.remove('visible');
+      sideMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    openButtons.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openMenu();
+      });
+    });
+
+    if (closeButton) {
+      closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+
+    sideMenu.addEventListener('click', function(e) {
+      if (e.target === sideMenu || e.target.classList.contains('sidemenu-wrapper')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sideMenu.classList.contains('visible')) {
+        closeMenu();
+      }
+    });
+
+    var subNavContainers = sideMenu.querySelectorAll('.sub-nav-container');
+    subNavContainers.forEach(function(container) {
+      var mainNav = container.querySelector('.main-nav');
+      if (mainNav) {
+        mainNav.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          container.classList.toggle('open');
+        });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

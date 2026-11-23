@@ -1,0 +1,244 @@
+/* ==========================================================================
+   GLOBAL SIDE MENU DRAWER (Matches exact just1realestate.com screenshot)
+   ========================================================================== */
+#global-sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#global-sidemenu.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#global-sidemenu .sidemenu-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.88) 100%),
+              url('https://media-production.lp-cdn.com/media/d416ebde-fd4f-414a-97e6-115af8784da9');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+#global-sidemenu.visible .sidemenu-wrapper {
+  transform: translateX(0);
+}
+
+/* Watermark house logo in bottom-left */
+#global-sidemenu .sidemenu-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  max-width: 45vw;
+  height: 480px;
+  bottom: 30px;
+  left: 30px;
+  background-image: url('https://media-production.lp-cdn.com/media/3c059318-91b2-4d38-a75c-9b060ffe2547');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  opacity: 0.045;
+  filter: invert(0%) saturate(0%) brightness(0%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Close button on top-right */
+#global-sidemenu .sidemenu-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: #111;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#global-sidemenu .sidemenu-close:hover {
+  transform: scale(1.15) rotate(90deg);
+  color: #2b8282;
+}
+
+/* Right-aligned container for options */
+#global-sidemenu .sidemenu-holder {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  padding: 95px 60px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+#global-sidemenu .sidemenu-title {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #555;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin-bottom: 28px;
+  font-weight: 500;
+  padding-right: 8px;
+}
+
+#global-sidemenu .section-options {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 40px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#global-sidemenu .section-options::-webkit-scrollbar {
+  width: 4px;
+}
+#global-sidemenu .section-options::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+}
+#global-sidemenu .section-options::-webkit-scrollbar-thumb {
+  background: rgba(43, 130, 130, 0.4);
+  border-radius: 4px;
+}
+
+#global-sidemenu .option {
+  text-align: right;
+  position: relative;
+}
+
+#global-sidemenu .option > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+  line-height: 1.5;
+}
+
+#global-sidemenu .option > a:hover {
+  color: #2b8282;
+  transform: translateX(-3px);
+}
+
+/* Chevron indicator for expandable items */
+#global-sidemenu .sub-nav-container > .main-nav::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.3s ease;
+  margin-left: 6px;
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+#global-sidemenu .sub-nav-container.open > .main-nav {
+  color: #2b8282;
+}
+
+/* Sub-nav list */
+#global-sidemenu .sub-nav {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#global-sidemenu .sub-nav-container.open .sub-nav {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+#global-sidemenu .sub-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  padding: 4px 14px 4px 0;
+  transition: color 0.2s ease;
+}
+
+#global-sidemenu .sub-nav .sub-nav-link:hover {
+  color: #2b8282;
+}
+
+@media (max-width: 768px) {
+  #global-sidemenu .sidemenu-holder {
+    max-width: 100%;
+    padding: 80px 24px 30px 20px;
+  }
+  #global-sidemenu .option > a {
+    font-size: 20px;
+  }
+  #global-sidemenu .sidemenu-close {
+    top: 20px;
+    right: 20px;
+  }
+  #global-sidemenu .sidemenu-wrapper::before {
+    display: none;
+  }
+}
