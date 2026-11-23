@@ -58,24 +58,7 @@ body {
 }
 
 /* Close button at top right (Exact matching ✕) */
-.contact-close-btn {
-  position: fixed;
-  top: 20px;
-  right: 24px;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-family: Arial, sans-serif;
-  font-size: 32px;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 100;
-  transition: var(--transition-smooth);
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.contact-close-btn { display: none !important; }
 
 .contact-close-btn:hover {
   color: var(--accent);
@@ -628,7 +611,7 @@ li {
 /* Centered Header & Navigation Grid */
 .nav-container {
   display: grid !important;
-  grid-template-columns: 1fr auto 1fr !important;
+  grid-template-columns: 1fr auto 1.35fr !important;
   align-items: center !important;
   height: 100% !important;
   width: 100% !important;
@@ -655,9 +638,39 @@ li {
 
 .nav-group-right {
   display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
   align-items: center !important;
   justify-content: flex-end !important;
+  gap: 20px !important;
+}
+.nav-group-right .nav-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+.nav-group-right .nav-item-hamburger {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin-left: 6px !important;
+}
+.nav-group-left {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
   gap: 22px !important;
+}
+.nav-group-left .nav-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 @media (max-width: 1024px) {
@@ -723,7 +736,7 @@ li {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 9999;
-  display: flex;
+  display: none !important;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -733,6 +746,7 @@ li {
 }
 
 .contact-modal-overlay.open {
+  display: flex !important;
   opacity: 1;
   visibility: visible;
 }
@@ -1227,7 +1241,7 @@ li {
 
 
   <!-- Close button returning to whichever page the user navigated from -->
-  <button class="contact-close-btn" id="contactCloseBtn" aria-label="Close Contact Page">&times;</button>
+  <!-- contact-close-btn removed -->
 
   <main class="contact-page-wrapper">
     <div class="contact-card-container">
@@ -1304,18 +1318,7 @@ li {
           </div>
         </div>
 
-        <div class="form-group">
-        <div class="form-group">
-          <label for="contactInterest" class="form-label">INTERESTED IN...</label>
-          <select id="contactInterest" class="modal-select-field">
-            <option value="Selling & Buying">Selling &amp; Buying</option>
-            <option value="Selling">Selling</option>
-            <option value="Buying">Buying</option>
-            <option value="Renting">Renting</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
+                <div class="form-group">
           <label for="contactInterest" class="form-label">INTERESTED IN...</label>
           <select id="contactInterest" class="modal-select-field">
             <option value="Selling & Buying">Selling &amp; Buying</option>

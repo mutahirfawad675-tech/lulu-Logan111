@@ -801,13 +801,14 @@
       opacity: 0;
       visibility: hidden;
       transition: var(--transition-smooth);
-      display: flex;
+      display: none !important;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
 
     .contact-modal-overlay.open {
+  display: flex !important;
       opacity: 1;
       visibility: visible;
     }
@@ -941,6 +942,7 @@
    GLOBAL SIDE MENU DRAWER (Matches exact just1realestate.com screenshot)
    ========================================================================== */
 #global-sidemenu {
+  display: none !important;
   position: fixed;
   top: 0;
   left: 0;
@@ -954,6 +956,7 @@
 }
 
 #global-sidemenu.visible {
+  display: block !important;
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
@@ -1220,7 +1223,7 @@ li {
 /* Centered Header & Navigation Grid */
 .nav-container {
   display: grid !important;
-  grid-template-columns: 1fr auto 1fr !important;
+  grid-template-columns: 1fr auto 1.35fr !important;
   align-items: center !important;
   height: 100% !important;
   width: 100% !important;
@@ -1247,9 +1250,39 @@ li {
 
 .nav-group-right {
   display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
   align-items: center !important;
   justify-content: flex-end !important;
+  gap: 20px !important;
+}
+.nav-group-right .nav-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+.nav-group-right .nav-item-hamburger {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin-left: 6px !important;
+}
+.nav-group-left {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
   gap: 22px !important;
+}
+.nav-group-left .nav-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 @media (max-width: 1024px) {
@@ -1315,7 +1348,7 @@ li {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 9999;
-  display: flex;
+  display: none !important;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -1325,6 +1358,7 @@ li {
 }
 
 .contact-modal-overlay.open {
+  display: flex !important;
   opacity: 1;
   visibility: visible;
 }
@@ -2648,7 +2682,7 @@ li {
   <!-- ==========================================================================
        CONTACT US / LEAVE A MESSAGE MODAL POPUP
        ========================================================================== -->
-  <div class="contact-modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+  <div class="contact-modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" style="display: none;">
     <div class="contact-modal-card">
       <button class="contact-modal-close" id="contactModalClose" aria-label="Close dialog">&times;</button>
       
@@ -2754,7 +2788,7 @@ li {
   <!-- ==========================================================================
        LEAD / GUIDE / VALUATION MODAL
        ========================================================================== -->
-  <div class="contact-modal-overlay" id="leadValuationModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+  <div class="contact-modal-overlay" id="leadValuationModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle" style="display: none;">
     <div class="contact-modal-card lead-modal-card">
       <button class="contact-modal-close" id="leadModalClose" aria-label="Close dialog">&times;</button>
       
