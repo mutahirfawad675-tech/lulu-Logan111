@@ -836,9 +836,9 @@ button, input, textarea, select {
    4. SECTION: WHO WE ARE (Full-bleed luxury layout matching reference screenshot)
    ========================================================================== */
 #who-we-are {
-  background-color: var(--white);
-  padding: 80px 0 0 0 !important;
-  overflow: hidden;
+  background-color: #ffffff !important;
+  padding: 95px 0 0 0 !important;
+  overflow: hidden !important;
   border-bottom: none !important;
   position: relative;
   width: 100%;
@@ -859,40 +859,45 @@ button, input, textarea, select {
   gap: 0 !important;
 }
 
-/* Left Text Column: Generous space on left side matching screenshot */
+/* Left Text Column: Precise spacing & max-width matching screenshot */
 .who-we-are-text {
-  flex: 0 0 46% !important;
-  max-width: 680px !important;
-  padding-left: clamp(48px, 7vw, 130px) !important;
-  padding-right: clamp(28px, 4vw, 70px) !important;
-  padding-top: 30px !important;
+  flex: 0 0 auto !important;
+  width: 44% !important;
+  max-width: 575px !important;
+  padding-left: clamp(60px, 7.5vw, 135px) !important;
+  padding-right: 40px !important;
+  padding-top: 15px !important;
   padding-bottom: 90px !important;
   box-sizing: border-box !important;
 }
 
+/* Heading: Exactly matching screenshot with Tenor Sans */
 .who-we-are-text h2 {
-  font-family: var(--primary-font, 'Montserrat', sans-serif) !important;
-  font-size: 38px !important;
+  font-family: 'Tenor Sans', sans-serif !important;
+  font-size: 40px !important;
   font-weight: 400 !important;
-  letter-spacing: 2px !important;
+  letter-spacing: 1px !important;
   text-transform: uppercase !important;
   color: #111111 !important;
   margin-top: 0 !important;
-  margin-bottom: 16px !important;
-  line-height: 1.2 !important;
+  margin-bottom: 24px !important;
+  line-height: 1.15 !important;
 }
 
+/* Subtitle: Two subtle lines matching screenshot */
 .who-subtitle {
-  font-size: 13.5px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
   color: #444444 !important;
-  margin-bottom: 26px !important;
+  margin-bottom: 30px !important;
   line-height: 1.65 !important;
 }
 
 .who-subtitle .who-dre {
   display: block !important;
-  font-weight: 500 !important;
-  color: #222222 !important;
+  font-weight: 400 !important;
+  color: #333333 !important;
 }
 
 .who-subtitle .who-group {
@@ -900,20 +905,26 @@ button, input, textarea, select {
   color: #555555 !important;
 }
 
+/* Body paragraphs: Exact size, weight, line-height & line wrapping */
 .who-we-are-text p {
-  font-size: 13.5px !important;
-  line-height: 1.88 !important;
-  color: #444444 !important;
-  margin-bottom: 22px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.82 !important;
+  color: #333333 !important;
+  margin-bottom: 24px !important;
+  letter-spacing: 0.2px !important;
 }
 
+/* Highlight line: Bold, single line */
 .who-highlight {
-  font-size: 14px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
   font-weight: 700 !important;
   color: #111111 !important;
   margin-top: 26px !important;
-  margin-bottom: 34px !important;
-  line-height: 1.65 !important;
+  margin-bottom: 36px !important;
+  line-height: 1.6 !important;
 }
 
 /* Button style matching original cyan (#3BB9CA) */
@@ -921,10 +932,11 @@ button, input, textarea, select {
   display: inline-block !important;
   background-color: #3BB9CA !important;
   color: #ffffff !important;
-  padding: 14px 38px !important;
+  padding: 13px 36px !important;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 12px !important;
   font-weight: 600 !important;
-  letter-spacing: 1.8px !important;
+  letter-spacing: 1.6px !important;
   text-transform: uppercase !important;
   border: 1px solid #3BB9CA !important;
   border-radius: 2px !important;
@@ -943,10 +955,10 @@ button, input, textarea, select {
 
 /* Right Images Column: Stretches flush to the right viewport edge */
 .who-we-are-images {
-  flex: 0 0 54% !important;
+  flex: 1 !important;
   display: flex !important;
   align-items: flex-start !important;
-  gap: 24px !important;
+  gap: 22px !important;
   position: relative !important;
   margin-right: 0 !important;
   padding-right: 0 !important;
@@ -965,7 +977,7 @@ button, input, textarea, select {
   width: 100% !important;
   height: 680px !important;
   object-fit: cover !important;
-  object-position: 50% 20% !important;
+  object-position: 50% 15% !important;
   display: block !important;
 }
 
