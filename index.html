@@ -2151,7 +2151,7 @@ button, input, textarea, select {
    ========================================================================== */
 #insights {
   background-color: #ffffff;
-  padding: 36px 0 40px 0;
+  padding: 0 0 60px 0;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -2165,20 +2165,20 @@ button, input, textarea, select {
   margin-left: 0;
   margin-right: auto;
   padding-right: 25px;
-  gap: 26px;
+  gap: 25px;
 }
 
 .insights-visuals {
   display: flex;
-  align-items: stretch;
-  gap: 15px;
+  align-items: flex-end;
+  gap: 16px;
   flex: 0 0 auto;
   margin-left: 0;
 }
 
 .insights-img-peek {
   width: 136px;
-  height: 356px;
+  height: 601px;
   flex-shrink: 0;
   overflow: hidden;
   background-color: #f7f7f7;
@@ -2192,8 +2192,8 @@ button, input, textarea, select {
 }
 
 .insights-img-main {
-  width: 359px;
-  height: 356px;
+  width: 360px;
+  height: 660px;
   flex-shrink: 0;
   overflow: hidden;
   background-color: #f7f7f7;
@@ -2208,60 +2208,57 @@ button, input, textarea, select {
 
 .insights-content {
   flex: 1 1 auto;
-  max-width: 500px;
-  padding-top: 0;
+  max-width: 480px;
+  padding-top: 67px;
 }
 
 .insights-heading {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif);
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 400;
   text-transform: uppercase !important;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: #111111;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   line-height: 1.25;
-  white-space: nowrap;
 }
 
 .insights-desc {
   font-family: var(--body-font, 'Montserrat', sans-serif);
-  font-size: 9.5px;
+  font-size: 10px;
   font-weight: 400;
   color: #555555;
-  line-height: 1.5;
-  letter-spacing: 0.2px;
-  margin-bottom: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.25px;
+  margin-bottom: 50px;
   max-width: 440px;
 }
 
 .insights-article-list {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   width: 100%;
 }
 
 .insights-item {
   padding-top: 0;
-  padding-bottom: 10px;
+  padding-bottom: 18px;
   width: 100%;
 }
 
 .insights-item:not(:last-child) {
   border-bottom: 1px solid #111111;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .insights-item-title {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif);
-  font-size: 11.5px;
+  font-size: 13.5px;
   font-weight: 400;
   text-transform: uppercase !important;
   letter-spacing: 0.8px;
-  line-height: 1.35;
-  margin-bottom: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.45;
+  margin-bottom: 10px;
+  white-space: normal;
 }
 
 .insights-item-title a {
@@ -2276,11 +2273,11 @@ button, input, textarea, select {
 
 .insights-item-date {
   font-family: var(--body-font, 'Montserrat', sans-serif);
-  font-size: 8px;
+  font-size: 9.5px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #777777;
+  letter-spacing: 1.5px;
+  color: #444444;
 }
 
 .insights-view-all-btn {
@@ -2291,17 +2288,16 @@ button, input, textarea, select {
   color: #ffffff;
   border: none;
   border-radius: 0;
-  height: 26px;
-  padding: 0 16px;
-  font-family: var(--body-font, 'Montserrat', sans-serif);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
+  width: 128px;
+  height: 38px;
+  font-family: var(--primary-font, 'Tenor Sans', sans-serif);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.25s ease;
-  width: fit-content;
 }
 
 .insights-view-all-btn:hover {
@@ -2313,17 +2309,6 @@ button, input, textarea, select {
   .insights-wrapper {
     padding-right: 20px;
     gap: 20px;
-  }
-  .insights-img-peek {
-    width: 120px;
-    height: 356px;
-  }
-  .insights-img-main {
-    width: 340px;
-    height: 356px;
-  }
-  .insights-heading {
-    font-size: 21px;
   }
 }
 
@@ -2344,11 +2329,13 @@ button, input, textarea, select {
   .insights-img-main {
     width: 100%;
     max-width: 480px;
-    height: 380px;
+    height: auto;
+    aspect-ratio: 360 / 660;
   }
   .insights-content {
     max-width: 100%;
     padding-left: 0;
+    padding-top: 0;
     margin-top: 25px;
   }
 }
