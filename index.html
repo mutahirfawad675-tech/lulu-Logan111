@@ -1929,34 +1929,35 @@ button, input, textarea, select {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 79px !important;
+  gap: 46px !important;
   width: 100% !important;
 }
 
 .video-info-col {
-  flex: 0 0 215px !important;
-  max-width: 215px !important;
-  width: 215px !important;
+  flex: 0 0 208px !important;
+  max-width: 210px !important;
+  width: 208px !important;
 }
 
 .video-heading {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
-  font-size: 24px !important;
+  font-size: 22px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 1.2px !important;
+  letter-spacing: 1px !important;
   color: #111111 !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 14px !important;
   line-height: 1.2 !important;
+  white-space: nowrap !important;
 }
 
 .video-subtitle {
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 10.5px !important;
+  font-size: 11.5px !important;
   font-weight: 400 !important;
-  line-height: 1.5 !important;
-  color: #666666 !important;
-  margin-bottom: 22px !important;
+  line-height: 1.6 !important;
+  color: #555555 !important;
+  margin-bottom: 24px !important;
   max-width: 215px !important;
 }
 
@@ -1964,7 +1965,7 @@ button, input, textarea, select {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 12px !important;
+  gap: 14px !important;
 }
 
 .video-btn {
@@ -1975,7 +1976,7 @@ button, input, textarea, select {
   color: #ffffff !important;
   border: none !important;
   border-radius: 0 !important;
-  height: 28px !important;
+  height: 29px !important;
   padding: 0 16px !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
   font-size: 10px !important;
@@ -1994,16 +1995,16 @@ button, input, textarea, select {
 }
 
 .video-player-col {
-  flex: 0 0 448px !important;
-  max-width: 448px !important;
-  width: 448px !important;
+  flex: 0 0 488px !important;
+  max-width: 488px !important;
+  width: 488px !important;
   position: relative !important;
 }
 
 .video-thumbnail-wrap {
   position: relative !important;
   width: 100% !important;
-  aspect-ratio: 447 / 284 !important;
+  aspect-ratio: 488 / 360 !important;
   overflow: hidden !important;
   cursor: pointer !important;
   background-color: #f0f0f0 !important;
@@ -2013,8 +2014,9 @@ button, input, textarea, select {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  object-position: center !important;
   display: block !important;
-  transition: transform 0.5s ease !important;
+  transition: transform 0.4s ease !important;
 }
 
 .video-thumbnail-wrap:hover img {
@@ -4146,7 +4148,7 @@ button, input, textarea, select {
         <div class="video-info-col">
           <h2 class="video-heading">FEATURED VIDEO</h2>
           <p class="video-subtitle">
-            Living in West Sacramento, CA | Parks, Neighborhoods &amp; Daily Life
+            Living in West Sacramento, CA | Parks,<br>Neighborhoods &amp; Daily Life
           </p>
           <div class="video-actions">
             <a href="https://just1realestate.com/video-gallery" target="_blank" class="video-btn">VIEW ALL</a>
