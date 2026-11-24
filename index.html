@@ -1266,7 +1266,7 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   7. SECTION: TESTIMONIALS (Exact match to reference screenshot)
+   7. SECTION: TESTIMONIALS (Exact match to client reference Image 1)
    ========================================================================== */
 #testimonials {
   position: relative;
@@ -1276,7 +1276,7 @@ button, input, textarea, select {
   background-repeat: no-repeat;
   color: #ffffff;
   text-align: center;
-  padding: 105px 20px 115px 20px;
+  padding: 60px 20px 65px 20px;
   overflow: hidden;
 }
 
@@ -1294,113 +1294,153 @@ button, input, textarea, select {
 .testimonials-content {
   position: relative;
   z-index: 2;
-  max-width: 820px;
+  max-width: 530px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .testimonials-heading {
-  font-family: var(--primary-font);
-  font-size: 36px;
-  font-weight: 400;
+  font-family: 'Tenor Sans', sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 1.5px;
-  color: #ffffff;
-  margin-bottom: 14px;
-  line-height: 1.2;
-  text-align: center;
+  letter-spacing: 2.2px !important;
+  color: #ffffff !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
 }
 
 .testimonial-nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-family: var(--body-font);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  color: #ffffff;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+  color: #ffffff !important;
 }
 
 .testimonial-nav button {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-family: var(--body-font);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  background: none !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
   cursor: pointer;
-  padding: 0;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #ffffff;
-  transition: opacity 0.2s ease, border-color 0.2s ease;
-  line-height: 1;
+  padding: 0 !important;
+  border-bottom: none !important;
+  transition: opacity 0.2s ease;
+  line-height: 1 !important;
 }
 
 .testimonial-nav button:hover {
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .testimonial-nav .nav-sep {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 11px;
-  margin: 0 4px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 10px !important;
+  margin: 0 2px !important;
   user-select: none;
 }
 
 .testimonial-quote {
-  font-family: var(--body-font);
-  font-size: 13.5px;
-  line-height: 1.8;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  font-weight: 400;
-  max-width: 760px;
-  margin: 0 auto 20px auto;
-  text-align: center;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11.5px !important;
+  font-style: italic !important;
+  line-height: 1.48 !important;
+  letter-spacing: 0.35px !important;
+  color: #ffffff !important;
+  font-weight: 400 !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
   transition: opacity 0.25s ease;
   text-shadow: none !important;
+}
+
+.test-line {
+  display: block;
 }
 
 .testimonial-author {
-  font-family: var(--primary-font);
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: 2.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Tenor Sans', serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
   text-transform: uppercase !important;
-  color: #ffffff;
-  margin-bottom: 30px;
+  color: #ffffff !important;
+  margin-top: 16px !important;
+  margin-bottom: 24px !important;
   transition: opacity 0.25s ease;
   text-shadow: none !important;
 }
 
-.testimonial-view-all-btn {
+.testimonial-author::before,
+.testimonial-author::after {
+  content: '';
   display: inline-block;
-  background-color: #ffffff;
-  color: var(--accent);
-  border: 1px solid #ffffff;
-  border-radius: 0;
-  padding: 13px 42px;
-  font-family: var(--body-font);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
+  width: 22px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.testimonial-view-all-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 95px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  background-color: #ffffff !important;
+  color: var(--accent, #3BB9CA) !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 0 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 10.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  box-sizing: border-box !important;
 }
 
 .testimonial-view-all-btn:hover {
-  background-color: transparent;
-  color: #ffffff;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 600px) {
+  #testimonials {
+    padding: 50px 15px 54px 15px;
+  }
+  .testimonials-heading {
+    font-size: 20px !important;
+  }
+  .testimonial-quote {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
+  .test-line {
+    display: inline;
+  }
 }
 
 /* ==========================================================================
@@ -3777,11 +3817,14 @@ button, input, textarea, select {
       </div>
 
       <p class="testimonial-quote" id="testimonialQuote">
-        Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication, strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family while delivering expert results. Highly recommend!
+        <span class="test-line">Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across</span>
+        <span class="test-line">Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication,</span>
+        <span class="test-line">strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family</span>
+        <span class="test-line">while delivering expert results. Highly recommend!</span>
       </p>
 
       <div class="testimonial-author" id="testimonialAuthor">
-        &mdash; SAM N.
+        SAM N.
       </div>
 
       <a href="#" class="testimonial-view-all-btn" data-open-modal="contact">VIEW ALL</a>
@@ -4515,18 +4558,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
   // 4. TESTIMONIALS SLIDER
   // ----------------------------------------------------
-    const testimonials = [
+  const testimonials = [
     {
-      quote: "Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication, strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family while delivering expert results. Highly recommend!",
-      author: "— SAM N."
+      lines: [
+        "Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across",
+        "Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication,",
+        "strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family",
+        "while delivering expert results. Highly recommend!"
+      ],
+      author: "SAM N."
     },
     {
-      quote: "Lulu, At Just 1Real Estate is fantastic. You couldn't ask for a better experience. She's knowledgeable about the properties she's selling, and I would recommend her to anyone interested in purchasing a home. So go see Lulu, if you're looking for a home.",
-      author: "— DIANNA"
+      lines: [
+        "Lulu, At Just 1Real Estate is fantastic. You couldn't ask for a better experience. She's knowledgeable about",
+        "the properties she's selling, and I would recommend her to anyone interested in purchasing a home.",
+        "So go see Lulu, if you're looking for a home."
+      ],
+      author: "DIANNA"
     },
     {
-      quote: "I had a great experience with Lulu , she did a great job handling everything from the very beginning to the very end. I highly recommend her and team!",
-      author: "— MARK K."
+      lines: [
+        "I had a great experience with Lulu, she did a great job handling everything",
+        "from the very beginning to the very end. I highly recommend her and team!"
+      ],
+      author: "MARK K."
     }
   ];
 
@@ -4541,8 +4596,9 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteElem.style.opacity = '0';
     authorElem.style.opacity = '0';
     setTimeout(() => {
-      quoteElem.textContent = testimonials[currentTestimonial].quote;
-      authorElem.textContent = testimonials[currentTestimonial].author;
+      const item = testimonials[currentTestimonial];
+      quoteElem.innerHTML = item.lines.map(line => '<span class="test-line">' + line + '</span>').join('');
+      authorElem.textContent = item.author;
       quoteElem.style.opacity = '1';
       authorElem.style.opacity = '1';
     }, 200);
