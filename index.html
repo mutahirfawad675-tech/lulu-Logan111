@@ -2151,7 +2151,7 @@ button, input, textarea, select {
    ========================================================================== */
 #insights {
   background-color: #ffffff;
-  padding: 80px 0 90px 0;
+  padding: 36px 0 40px 0;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -2159,26 +2159,26 @@ button, input, textarea, select {
 
 .insights-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  max-width: 1380px;
+  max-width: 1040px;
   margin-left: 0;
   margin-right: auto;
-  padding-right: 50px;
-  gap: 38px;
+  padding-right: 25px;
+  gap: 26px;
 }
 
 .insights-visuals {
   display: flex;
-  align-items: center;
-  gap: 18px;
+  align-items: stretch;
+  gap: 15px;
   flex: 0 0 auto;
   margin-left: 0;
 }
 
 .insights-img-peek {
-  width: 166px;
-  height: 480px;
+  width: 136px;
+  height: 356px;
   flex-shrink: 0;
   overflow: hidden;
   background-color: #f7f7f7;
@@ -2192,8 +2192,8 @@ button, input, textarea, select {
 }
 
 .insights-img-main {
-  width: 435px;
-  height: 480px;
+  width: 359px;
+  height: 356px;
   flex-shrink: 0;
   overflow: hidden;
   background-color: #f7f7f7;
@@ -2207,113 +2207,123 @@ button, input, textarea, select {
 }
 
 .insights-content {
-  flex: 1 1 480px;
-  max-width: 560px;
-  padding-left: 5px;
+  flex: 1 1 auto;
+  max-width: 500px;
+  padding-top: 0;
 }
 
 .insights-heading {
-  font-family: var(--primary-font);
-  font-size: 32px;
+  font-family: var(--primary-font, 'Tenor Sans', sans-serif);
+  font-size: 21px;
   font-weight: 400;
   text-transform: uppercase !important;
   letter-spacing: 1px;
-  color: #000000;
-  margin-bottom: 14px;
+  color: #111111;
+  margin-bottom: 8px;
   line-height: 1.25;
+  white-space: nowrap;
 }
 
 .insights-desc {
-  font-family: var(--body-font);
-  font-size: 13px;
+  font-family: var(--body-font, 'Montserrat', sans-serif);
+  font-size: 9.5px;
   font-weight: 400;
   color: #555555;
-  line-height: 1.65;
-  letter-spacing: 0.3px;
-  margin-bottom: 32px;
-  max-width: 520px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  margin-bottom: 18px;
+  max-width: 440px;
 }
 
 .insights-article-list {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .insights-item {
   padding-top: 0;
-  padding-bottom: 18px;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
 .insights-item:not(:last-child) {
-  border-bottom: 1px solid #000000;
-  margin-bottom: 20px;
+  border-bottom: 1px solid #111111;
+  margin-bottom: 12px;
 }
 
 .insights-item-title {
-  font-family: var(--primary-font);
-  font-size: 15px;
+  font-family: var(--primary-font, 'Tenor Sans', sans-serif);
+  font-size: 11.5px;
   font-weight: 400;
   text-transform: uppercase !important;
   letter-spacing: 0.8px;
-  line-height: 1.45;
-  margin-bottom: 6px;
+  line-height: 1.35;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .insights-item-title a {
-  color: #000000;
+  color: #111111;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .insights-item-title a:hover {
-  color: var(--accent);
+  color: var(--accent, #3BB9CA);
 }
 
 .insights-item-date {
-  font-family: var(--body-font);
-  font-size: 10.5px;
+  font-family: var(--body-font, 'Montserrat', sans-serif);
+  font-size: 8px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   color: #777777;
 }
 
 .insights-view-all-btn {
-  display: inline-block;
-  background-color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent, #3BB9CA);
   color: #ffffff;
-  border: 1px solid var(--accent);
+  border: none;
   border-radius: 0;
-  padding: 13px 40px;
-  font-family: var(--body-font);
-  font-size: 12px;
+  height: 26px;
+  padding: 0 16px;
+  font-family: var(--body-font, 'Montserrat', sans-serif);
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background-color 0.25s ease;
+  width: fit-content;
 }
 
 .insights-view-all-btn:hover {
-  background-color: transparent;
-  color: var(--accent);
+  background-color: #2da1b1;
+  color: #ffffff;
 }
 
 @media (max-width: 1200px) {
   .insights-wrapper {
-    padding-right: 25px;
-    gap: 25px;
+    padding-right: 20px;
+    gap: 20px;
   }
   .insights-img-peek {
     width: 120px;
-    height: 420px;
+    height: 356px;
   }
   .insights-img-main {
-    width: 380px;
-    height: 420px;
+    width: 340px;
+    height: 356px;
   }
   .insights-heading {
-    font-size: 28px;
+    font-size: 21px;
   }
 }
 
