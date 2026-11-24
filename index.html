@@ -997,26 +997,38 @@ button, input, textarea, select {
   display: block !important;
 }
 
-/* 5. SECTION: MEET OUR TEAM (Line removed between sections) */
+/* 5. SECTION: MEET OUR TEAM (Refined compact layout matching reference) */
 #team {
   background-color: var(--white);
-  padding: 100px 0;
+  padding: 85px 0 95px;
   border-top: none !important; /* Line between sections removed */
 }
 
 .team-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 34px;
 }
 
 .team-header h2 {
+  font-family: 'Tenor Sans', 'Cinzel', serif;
   font-size: 38px;
-  letter-spacing: 1.5px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0;
+}
+
+#team .container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 45px;
+  box-sizing: border-box;
 }
 
 .carousel-container {
   position: relative;
-  padding: 0 50px;
+  width: 100%;
 }
 
 .carousel-track-wrapper {
@@ -1026,93 +1038,152 @@ button, input, textarea, select {
 
 .team-carousel-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   transition: transform 0.4s ease-in-out;
 }
 
 .team-card {
-  flex: 0 0 calc((100% - 96px) / 5);
-  min-width: 200px;
+  flex: 0 0 calc((100% - 80px) / 5);
+  width: calc((100% - 80px) / 5);
+  min-width: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .team-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1.15;
-  background-color: var(--black);
-  margin-bottom: 18px;
+  aspect-ratio: 1 / 1.28;
+  background-color: #000000;
+  margin-bottom: 14px;
   overflow: hidden;
+  position: relative;
 }
 
 .team-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 .team-img-wrap.logo-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--black);
-  padding: 20px;
+  background-color: #000000;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 .team-img-wrap.logo-card img {
-  max-width: 85%;
-  max-height: 85%;
+  width: auto;
+  height: auto;
+  max-width: 82%;
+  max-height: 82%;
   object-fit: contain;
 }
 
 .team-name {
-  font-family: var(--primary-font);
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-family: var(--primary-font, 'Montserrat', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  margin-top: 14px;
   margin-bottom: 4px;
-  color: var(--black);
+  color: #111111;
+  line-height: 1.3;
 }
 
 .team-role {
-  font-size: 12px;
-  color: var(--gray-med);
+  font-family: var(--primary-font, 'Montserrat', sans-serif);
+  font-size: 11px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.45;
   margin-bottom: 2px;
 }
 
 .team-company {
-  font-size: 12px;
-  color: var(--gray-med);
-  opacity: 0.85;
+  font-family: var(--primary-font, 'Montserrat', sans-serif);
+  font-size: 11px;
+  font-weight: 400;
+  color: #888888;
+  line-height: 1.45;
+  margin-bottom: 0;
 }
 
 .carousel-btn {
   position: absolute;
-  top: 38%;
+  top: 112px;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  background-color: var(--accent);
-  color: var(--white);
+  width: 32px;
+  height: 32px;
+  background-color: #3BB9CA;
+  color: #ffffff;
   border: none;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: background-color 0.25s ease;
-  font-size: 18px;
+  transition: background-color 0.25s ease, opacity 0.2s ease;
+  font-size: 15px;
+  line-height: 1;
+  padding: 0;
 }
 
 .carousel-btn:hover {
-  background-color: var(--accent-hover);
+  background-color: #2da1b1;
 }
 
 .carousel-btn-prev {
-  left: 0;
+  left: -40px;
 }
 
 .carousel-btn-next {
-  right: 0;
+  right: -40px;
+}
+
+@media (max-width: 1024px) {
+  #team .container {
+    max-width: 760px;
+    padding: 0 40px;
+  }
+  .team-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+  }
+  .carousel-btn-prev {
+    left: -35px;
+  }
+  .carousel-btn-next {
+    right: -35px;
+  }
+}
+
+@media (max-width: 640px) {
+  #team .container {
+    padding: 0 35px;
+  }
+  .team-card {
+    flex: 0 0 calc((100% - 15px) / 2);
+    width: calc((100% - 15px) / 2);
+  }
+  .carousel-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    top: 90px;
+  }
+  .carousel-btn-prev {
+    left: -30px;
+  }
+  .carousel-btn-next {
+    right: -30px;
+  }
 }
 
 /* ==========================================================================
@@ -3532,7 +3603,7 @@ button, input, textarea, select {
   <section id="team">
     <div class="container">
       <div class="team-header">
-        <h2>Meet Our Team</h2>
+        <h2>MEET OUR TEAM</h2>
       </div>
 
       <div class="carousel-container">
@@ -3543,18 +3614,9 @@ button, input, textarea, select {
             
             <div class="team-card">
               <div class="team-img-wrap">
-                <img src="images/parmjit.jpg" alt="Parmjit S. Rai">
-              </div>
-              <h5 class="team-name">Parmjit S. Rai</h5>
-              <p class="team-role">Real Estate Advisor</p>
-              <p class="team-company">Just 1 Real Estate</p>
-            </div>
-
-            <div class="team-card">
-              <div class="team-img-wrap">
                 <img src="images/lorna.jpg" alt="Lorna C">
               </div>
-              <h5 class="team-name">Lorna C</h5>
+              <h5 class="team-name">LORNA C</h5>
               <p class="team-role">Sr. Partner, Capital &amp; Finance</p>
               <p class="team-company">Just 1 Network</p>
             </div>
@@ -3563,7 +3625,7 @@ button, input, textarea, select {
               <div class="team-img-wrap logo-card">
                 <img src="images/card-logo.jpg" alt="Just 1 Real Estate">
               </div>
-              <h5 class="team-name">Brian F</h5>
+              <h5 class="team-name">BRIAN F</h5>
               <p class="team-role">Project Manager</p>
               <p class="team-company">Just 1 Network</p>
             </div>
@@ -3572,7 +3634,7 @@ button, input, textarea, select {
               <div class="team-img-wrap logo-card">
                 <img src="images/card-logo.jpg" alt="Just 1 Real Estate">
               </div>
-              <h5 class="team-name">Areeba I.</h5>
+              <h5 class="team-name">AREEBA I.</h5>
               <p class="team-role">Marketing Manager</p>
               <p class="team-company">Just 1 Network</p>
             </div>
@@ -3581,8 +3643,17 @@ button, input, textarea, select {
               <div class="team-img-wrap">
                 <img src="images/victor.jpg" alt="Victor">
               </div>
-              <h5 class="team-name">Victor</h5>
+              <h5 class="team-name">VICTOR</h5>
               <p class="team-role">Director</p>
+              <p class="team-company">Just 1 Network</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-img-wrap">
+                <img src="images/brian-h.jpg" alt="Brian H">
+              </div>
+              <h5 class="team-name">BRIAN H</h5>
+              <p class="team-role">Field Operations Manager</p>
               <p class="team-company">Just 1 Network</p>
             </div>
 
@@ -3590,7 +3661,7 @@ button, input, textarea, select {
               <div class="team-img-wrap">
                 <img src="images/agent-alex.jpg" alt="Agent Alex">
               </div>
-              <h5 class="team-name">Agent Alex</h5>
+              <h5 class="team-name">AGENT ALEX</h5>
               <p class="team-role">Digital Assistant (AI)</p>
               <p class="team-company">Luxury Presence</p>
             </div>
@@ -3599,7 +3670,7 @@ button, input, textarea, select {
               <div class="team-img-wrap">
                 <img src="images/agent-aley.jpg" alt="Agent Aley">
               </div>
-              <h5 class="team-name">Agent Aley</h5>
+              <h5 class="team-name">AGENT ALEY</h5>
               <p class="team-role">Digital Assistant</p>
               <p class="team-company">Just 1 Network</p>
             </div>
@@ -3608,8 +3679,8 @@ button, input, textarea, select {
               <div class="team-img-wrap">
                 <img src="images/sunainah.jpg" alt="Sunainah I">
               </div>
-              <h5 class="team-name">Sunainah I</h5>
-              <p class="team-role">Operations</p>
+              <h5 class="team-name">SUNAINAH I</h5>
+              <p class="team-role">Client Experience Coord.</p>
               <p class="team-company">Just 1 Network</p>
             </div>
 
@@ -3617,17 +3688,17 @@ button, input, textarea, select {
               <div class="team-img-wrap">
                 <img src="images/jessica.jpg" alt="Jessica H">
               </div>
-              <h5 class="team-name">Jessica H</h5>
-              <p class="team-role">Client Services</p>
-              <p class="team-company">Just 1 Real Estate</p>
+              <h5 class="team-name">JESSICA H</h5>
+              <p class="team-role">Project Assistant</p>
+              <p class="team-company">Just 1 Network</p>
             </div>
 
             <div class="team-card">
               <div class="team-img-wrap">
-                <img src="images/brian-h.jpg" alt="Brian H">
+                <img src="images/parmjit.jpg" alt="Parmjit S. Rai">
               </div>
-              <h5 class="team-name">Brian H</h5>
-              <p class="team-role">Advisory</p>
+              <h5 class="team-name">PARMJIT S. RAI</h5>
+              <p class="team-role">Real Estate Advisor</p>
               <p class="team-company">Just 1 Real Estate</p>
             </div>
 
@@ -4349,31 +4420,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = teamTrack.querySelectorAll('.team-card');
     if (!cards.length) return;
 
-    const cardWidth = cards[0].offsetWidth;
-    const gap = 24;
-    const visibleCards = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : window.innerWidth <= 1200 ? 3 : 5;
+    // Center arrows vertically on image
+    const firstImg = teamTrack.querySelector('.team-img-wrap');
+    if (firstImg && teamPrevBtn && teamNextBtn) {
+      const imgHeight = firstImg.offsetHeight;
+      if (imgHeight > 0) {
+        teamPrevBtn.style.top = (imgHeight / 2) + 'px';
+        teamNextBtn.style.top = (imgHeight / 2) + 'px';
+      }
+    }
+
+    const step = cards.length > 1 ? (cards[1].offsetLeft - cards[0].offsetLeft) : (cards[0].offsetWidth + 20);
+    const visibleCards = window.innerWidth <= 640 ? 2 : window.innerWidth <= 1024 ? 3 : 5;
     const maxIndex = Math.max(0, cards.length - visibleCards);
 
     currentTeamIndex = Math.min(Math.max(currentTeamIndex, 0), maxIndex);
-    const offset = -(currentTeamIndex * (cardWidth + gap));
+    const offset = -(currentTeamIndex * step);
     teamTrack.style.transform = `translateX(${offset}px)`;
+
+    if (teamPrevBtn) {
+      teamPrevBtn.style.opacity = currentTeamIndex === 0 ? '0.45' : '1';
+      teamPrevBtn.style.cursor = currentTeamIndex === 0 ? 'default' : 'pointer';
+    }
+    if (teamNextBtn) {
+      teamNextBtn.style.opacity = currentTeamIndex >= maxIndex ? '0.45' : '1';
+      teamNextBtn.style.cursor = currentTeamIndex >= maxIndex ? 'default' : 'pointer';
+    }
   };
 
   if (teamPrevBtn) {
     teamPrevBtn.addEventListener('click', () => {
-      currentTeamIndex--;
-      updateTeamSlider();
+      if (currentTeamIndex > 0) {
+        currentTeamIndex--;
+        updateTeamSlider();
+      }
     });
   }
 
   if (teamNextBtn) {
     teamNextBtn.addEventListener('click', () => {
-      currentTeamIndex++;
-      updateTeamSlider();
+      const cards = teamTrack ? teamTrack.querySelectorAll('.team-card') : [];
+      const visibleCards = window.innerWidth <= 640 ? 2 : window.innerWidth <= 1024 ? 3 : 5;
+      const maxIndex = Math.max(0, cards.length - visibleCards);
+      if (currentTeamIndex < maxIndex) {
+        currentTeamIndex++;
+        updateTeamSlider();
+      }
     });
   }
 
   window.addEventListener('resize', updateTeamSlider);
+  setTimeout(updateTeamSlider, 100);
 
   // ----------------------------------------------------
   // 4. TESTIMONIALS SLIDER
