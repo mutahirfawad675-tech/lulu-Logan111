@@ -1187,7 +1187,7 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   6. SECTION: QUOTE BANNER (Exact pixel-matched to screenshot)
+   6. SECTION: QUOTE BANNER (Exact pixel & line-break matched to screenshot)
    ========================================================================== */
 #quote-banner {
   background-color: #000000;
@@ -1197,22 +1197,27 @@ button, input, textarea, select {
 }
 
 .quote-container {
-  max-width: 760px;
+  max-width: 840px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .quote-text {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-style: italic !important;
   font-weight: 400 !important;
-  letter-spacing: 0.6px !important;
+  letter-spacing: 0.5px !important;
   line-height: 1.55 !important;
   text-transform: uppercase !important;
   margin-bottom: 38px !important;
   color: #ffffff !important;
   text-shadow: none !important;
+}
+
+.quote-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .quote-author {
@@ -1236,18 +1241,19 @@ button, input, textarea, select {
   line-height: 1.4 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 740px) {
   #quote-banner {
     padding: 45px 20px 45px;
   }
   .quote-container {
     max-width: 100%;
   }
-  .quote-br {
-    display: none;
+  .quote-line {
+    white-space: normal;
+    display: inline;
   }
   .quote-text {
-    font-size: 13px !important;
+    font-size: 12.5px !important;
     line-height: 1.6 !important;
     margin-bottom: 28px !important;
   }
@@ -3748,7 +3754,9 @@ button, input, textarea, select {
   <section id="quote-banner">
     <div class="quote-container">
       <div class="quote-text">
-        &ldquo; TELL ME WHAT YOU WANT TO DO, AND I&rsquo;LL ASK YOU WHY. BECAUSE UNDERSTANDING WHAT MATTERS TO<br class="quote-br"> YOU IS HOW WE MAKE REAL ESTATE DECISIONS THAT PROTECT WHAT YOU&rsquo;VE BUILT AND HELP YOU MOVE<br class="quote-br"> FORWARD. &rdquo;
+        <span class="quote-line">&ldquo; TELL ME WHAT YOU WANT TO DO, AND I&rsquo;LL ASK YOU WHY. BECAUSE UNDERSTANDING WHAT MATTERS TO</span>
+        <span class="quote-line">YOU IS HOW WE MAKE REAL ESTATE DECISIONS THAT PROTECT WHAT YOU&rsquo;VE BUILT AND HELP YOU MOVE</span>
+        <span class="quote-line">FORWARD. &rdquo;</span>
       </div>
       <div class="quote-author">LULU LOGAN</div>
       <div class="quote-title">REALTOR&reg; and Founder &amp; Builder of Lulu Logan Group, powered by Just 1 Real Estate</div>
