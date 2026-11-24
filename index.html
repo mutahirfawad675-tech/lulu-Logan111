@@ -2161,11 +2161,11 @@ button, input, textarea, select {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 100%;
+  max-width: 1040px;
   margin-left: 0;
-  margin-right: 0;
-  padding-right: 2vw;
-  gap: 32px;
+  margin-right: auto;
+  padding-right: 38px;
+  gap: 39px;
 }
 
 .insights-visuals {
@@ -2208,45 +2208,47 @@ button, input, textarea, select {
 }
 
 .insights-content {
-  flex: 1 1 auto;
-  width: 100%;
-  max-width: none;
-  padding-top: 55px;
-  padding-right: 2vw;
+  flex: 0 0 auto;
+  width: 435px;
+  max-width: 435px;
+  padding-top: 15px;
 }
 
 .insights-heading {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif);
-  font-size: clamp(28px, 2.4vw, 36px);
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 400;
   text-transform: uppercase !important;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
   color: #111111;
-  margin-bottom: 20px;
+  margin-left: 16px;
+  margin-bottom: 24px;
   line-height: 1.2;
 }
 
 .insights-desc {
   font-family: var(--body-font, 'Montserrat', sans-serif);
-  font-size: 13.5px;
+  font-size: 10.5px;
   font-weight: 400;
   color: #444444;
-  line-height: 1.65;
-  letter-spacing: 0.25px;
-  margin-bottom: 40px;
-  max-width: 850px;
-  width: 100%;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+  margin-left: 16px;
+  margin-bottom: 50px;
+  max-width: 400px;
 }
 
 .insights-article-list {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   width: 100%;
 }
 
 .insights-item {
   padding-top: 0;
-  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-bottom: 22px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .insights-item:not(:last-child) {
@@ -2256,8 +2258,8 @@ button, input, textarea, select {
 
 .insights-item-title {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif);
-  font-size: clamp(16px, 1.35vw, 19px);
-  font-weight: 600;
+  font-size: 13.5px;
+  font-weight: 400;
   text-transform: uppercase !important;
   letter-spacing: 0.8px;
   line-height: 1.4;
@@ -2277,10 +2279,10 @@ button, input, textarea, select {
 
 .insights-item-date {
   font-family: var(--body-font, 'Montserrat', sans-serif);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   color: #666666;
 }
 
@@ -2292,16 +2294,17 @@ button, input, textarea, select {
   color: #ffffff;
   border: none;
   border-radius: 0;
-  width: 130px;
+  width: 128px;
   height: 38px;
   font-family: var(--primary-font, 'Tenor Sans', sans-serif);
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.25s ease;
+  margin-left: 0;
 }
 
 .insights-view-all-btn:hover {
@@ -2312,13 +2315,7 @@ button, input, textarea, select {
 @media (max-width: 1200px) {
   .insights-wrapper {
     padding-right: 20px;
-    gap: 24px;
-  }
-  .insights-heading {
-    font-size: 28px;
-  }
-  .insights-item-title {
-    font-size: 16px;
+    gap: 30px;
   }
 }
 
@@ -2343,11 +2340,17 @@ button, input, textarea, select {
     aspect-ratio: 360 / 660;
   }
   .insights-content {
+    width: 100%;
     max-width: 100%;
     padding-left: 0;
     padding-top: 0;
     margin-top: 25px;
-    padding-right: 0;
+  }
+  .insights-heading,
+  .insights-desc,
+  .insights-item {
+    margin-left: 0;
+    padding-left: 0;
   }
 }
 
