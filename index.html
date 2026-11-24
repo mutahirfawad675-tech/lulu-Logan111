@@ -1474,16 +1474,26 @@ button, input, textarea, select {
   text-align: center !important;
 }
 
+.boutique-title-line {
+  display: block;
+  white-space: nowrap;
+}
+
 .boutique-content p {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 400 !important;
-  line-height: 20px !important;
+  line-height: 19.5px !important;
   letter-spacing: 0.25px !important;
   color: #666666 !important;
-  max-width: 600px !important;
+  max-width: 740px !important;
   margin: 0 auto !important;
   text-align: center !important;
+}
+
+.boutique-line {
+  display: block;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
@@ -1495,14 +1505,15 @@ button, input, textarea, select {
     line-height: 1.3 !important;
     margin-bottom: 18px !important;
   }
+  .boutique-title-line,
+  .boutique-line {
+    white-space: normal;
+    display: inline;
+  }
   .boutique-content p {
     font-size: 11.5px !important;
     line-height: 18px !important;
     max-width: 100% !important;
-  }
-  .boutique-br,
-  .desc-br {
-    display: none;
   }
 }
 
@@ -3872,9 +3883,15 @@ button, input, textarea, select {
   <section id="boutique-experience">
     <div class="container">
       <div class="boutique-content">
-        <h2>A BOUTIQUE REAL ESTATE EXPERIENCE BUILT ON<br class="boutique-br"> STRATEGY AND SERVICE</h2>
+        <h2>
+          <span class="boutique-title-line">A BOUTIQUE REAL ESTATE EXPERIENCE BUILT ON</span>
+          <span class="boutique-title-line">STRATEGY AND SERVICE</span>
+        </h2>
         <p>
-          At Just 1 Real Estate, every client receives personalized advisory support&mdash;grounded in data, shaped by<br class="desc-br"> market knowledge, and shaped by decades of experience across Mountain House, Tracy, the Tri-Valley,<br class="desc-br"> Central Valley, and Greater Sacramento. Our advisors help you move through each step with a clear plan<br class="desc-br"> and a modern, concierge-level experience that feels effortless from beginning to end.
+          <span class="boutique-line">At Just 1 Real Estate, every client receives personalized advisory support&mdash;grounded in data, shaped by</span>
+          <span class="boutique-line">market knowledge, and shaped by decades of experience across Mountain House, Tracy, the Tri-Valley,</span>
+          <span class="boutique-line">Central Valley, and Greater Sacramento. Our advisors help you move through each step with a clear plan</span>
+          <span class="boutique-line">and a modern, concierge-level experience that feels effortless from beginning to end.</span>
         </p>
       </div>
     </div>
