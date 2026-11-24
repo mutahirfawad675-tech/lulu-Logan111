@@ -833,98 +833,163 @@ button, input, textarea, select {
     font-size: 10px;
   }
 }/* ==========================================================================
-   4. SECTION: WHO WE ARE
+   4. SECTION: WHO WE ARE (Full-bleed luxury layout matching reference screenshot)
    ========================================================================== */
 #who-we-are {
   background-color: var(--white);
-  padding: 110px 0;
+  padding: 80px 0 0 0 !important;
   overflow: hidden;
+  border-bottom: none !important;
+  position: relative;
+  width: 100%;
+}
+
+.who-we-are-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .who-we-are-grid {
-  display: flex;
-  align-items: flex-start;
-  gap: 60px;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 0 !important;
 }
 
+/* Left Text Column: Generous space on left side matching screenshot */
 .who-we-are-text {
-  flex: 48%;
-  padding-right: 20px;
+  flex: 0 0 46% !important;
+  max-width: 680px !important;
+  padding-left: clamp(48px, 7vw, 130px) !important;
+  padding-right: clamp(28px, 4vw, 70px) !important;
+  padding-top: 30px !important;
+  padding-bottom: 90px !important;
+  box-sizing: border-box !important;
 }
 
 .who-we-are-text h2 {
-  font-size: 40px;
-  margin-bottom: 12px;
-  color: var(--black);
+  font-family: var(--primary-font, 'Montserrat', sans-serif) !important;
+  font-size: 38px !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #111111 !important;
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+  line-height: 1.2 !important;
 }
 
 .who-subtitle {
-  font-size: 13px;
-  color: var(--gray-med);
-  margin-bottom: 28px;
-  line-height: 1.6;
+  font-size: 13.5px !important;
+  color: #444444 !important;
+  margin-bottom: 26px !important;
+  line-height: 1.65 !important;
 }
 
-.who-subtitle strong {
-  display: block;
-  color: var(--black);
-  font-weight: 500;
+.who-subtitle .who-dre {
+  display: block !important;
+  font-weight: 500 !important;
+  color: #222222 !important;
+}
+
+.who-subtitle .who-group {
+  display: block !important;
+  color: #555555 !important;
 }
 
 .who-we-are-text p {
-  font-size: 14px;
-  line-height: 1.9;
-  color: #333333;
-  margin-bottom: 22px;
+  font-size: 13.5px !important;
+  line-height: 1.88 !important;
+  color: #444444 !important;
+  margin-bottom: 22px !important;
 }
 
 .who-highlight {
-  font-weight: 600;
-  color: var(--black);
-  margin-top: 25px;
-  margin-bottom: 35px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin-top: 26px !important;
+  margin-bottom: 34px !important;
+  line-height: 1.65 !important;
 }
 
+/* Button style matching original cyan (#3BB9CA) */
+.who-btn-learn {
+  display: inline-block !important;
+  background-color: #3BB9CA !important;
+  color: #ffffff !important;
+  padding: 14px 38px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+  border: 1px solid #3BB9CA !important;
+  border-radius: 2px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+.who-btn-learn:hover {
+  background-color: #2ea8b8 !important;
+  border-color: #2ea8b8 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Right Images Column: Stretches flush to the right viewport edge */
 .who-we-are-images {
-  flex: 52%;
-  display: flex;
-  gap: 25px;
-  align-items: flex-start;
-  position: relative;
+  flex: 0 0 54% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 24px !important;
+  position: relative !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 96px !important;
+  box-sizing: border-box !important;
 }
 
 .who-img-main {
-  width: 58%;
-  position: relative;
-  z-index: 1;
+  width: 58% !important;
+  flex: 0 0 58% !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .who-img-main img {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
+  width: 100% !important;
+  height: 680px !important;
+  object-fit: cover !important;
+  object-position: 50% 20% !important;
+  display: block !important;
 }
 
 .who-img-sub {
-  width: 42%;
-  margin-top: 80px;
-  position: relative;
-  z-index: 2;
+  flex: 1 !important;
+  width: 42% !important;
+  margin-top: 90px !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .who-img-sub img {
-  width: 100%;
-  height: 440px;
-  object-fit: cover;
+  width: 100% !important;
+  height: 620px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
 }
 
-/* ==========================================================================
-   5. SECTION: MEET OUR TEAM
-   ========================================================================== */
+/* 5. SECTION: MEET OUR TEAM (Line removed between sections) */
 #team {
   background-color: var(--white);
   padding: 100px 0;
-  border-top: 1px solid var(--border-color);
+  border-top: none !important; /* Line between sections removed */
 }
 
 .team-header {
@@ -2631,22 +2696,33 @@ button, input, textarea, select {
     display: none;
   }
   .who-we-are-grid {
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: column !important;
   }
-  .who-we-are-text, .who-we-are-images {
-    flex: 100%;
-    width: 100%;
+  .who-we-are-text {
+    flex: 100% !important;
+    max-width: 100% !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    padding-bottom: 40px !important;
   }
   .who-we-are-images {
-    flex-direction: column;
+    flex: 100% !important;
+    width: 100% !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    padding-bottom: 60px !important;
+    gap: 16px !important;
   }
-  .who-img-main, .who-img-sub {
-    width: 100%;
-    margin-top: 0;
+  .who-img-main {
+    width: 58% !important;
   }
-  .who-img-main img, .who-img-sub img {
-    height: 380px;
+  .who-img-sub {
+    width: 42% !important;
+    margin-top: 50px !important;
+  }
+  .who-img-main img,
+  .who-img-sub img {
+    height: 480px !important;
   }
   .pillars-grid {
     grid-template-columns: 1fr;
@@ -3390,19 +3466,19 @@ button, input, textarea, select {
     </div>
   </section>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        4. SECTION: WHO WE ARE
        ========================================================================== -->
-  <section id="who-we-are" class="section-padding">
-    <div class="container">
+  <section id="who-we-are">
+    <div class="who-we-are-container">
       <div class="who-we-are-grid">
         
         <!-- Text Column -->
         <div class="who-we-are-text">
-          <h2>Who We Are</h2>
+          <h2>WHO WE ARE</h2>
           <div class="who-subtitle">
-            <strong>Lulu Logan | CA DRE# 01452747</strong>
-            <span>Lulu Logan Group, powered by Just 1 Real Estate</span>
+            <span class="who-dre">Lulu Logan | CA DRE# 01452747</span>
+            <span class="who-group">Lulu Logan Group, powered by Just 1 Real Estate</span>
           </div>
 
           <p>
@@ -3421,10 +3497,10 @@ button, input, textarea, select {
             Activate the Just 1 Value System. Maximize your property's value from day one.
           </p>
 
-          <a href="#" class="btn btn-primary" data-open-modal="contact">Learn More</a>
+          <a href="about-us.html" class="who-btn-learn" data-open-contact-modal>LEARN MORE</a>
         </div>
 
-        <!-- Overlapping Images Column -->
+        <!-- Overlapping Images Column (Fills right side to screen edge) -->
         <div class="who-we-are-images">
           <div class="who-img-main">
             <img src="images/lulu-portrait.jpg" alt="Lulu Logan REALTOR">
