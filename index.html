@@ -1632,19 +1632,20 @@ button, input, textarea, select {
 }
 
 #featured-properties .container {
-  max-width: 754px !important;
+  max-width: 950px !important;
   margin: 0 auto !important;
   padding: 0 !important;
+  width: 100% !important;
 }
 
 .properties-header {
   text-align: center;
-  margin-bottom: 24px !important;
+  margin-bottom: 14px !important;
 }
 
 .properties-header h2 {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
-  font-size: 24px !important;
+  font-size: 26px !important;
   font-weight: 400 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
@@ -1658,12 +1659,12 @@ button, input, textarea, select {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 12px !important;
+  gap: 16px !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 10.5px !important;
+  font-size: 11px !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
-  margin-bottom: 22px !important;
+  margin-bottom: 24px !important;
   color: #777777 !important;
 }
 
@@ -1671,7 +1672,7 @@ button, input, textarea, select {
   background: none !important;
   border: none !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 10.5px !important;
+  font-size: 11px !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   cursor: pointer !important;
@@ -1694,16 +1695,16 @@ button, input, textarea, select {
 .properties-grid {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 16px !important;
-  margin: 0 auto 20px auto !important;
+  gap: 22px !important;
+  margin: 0 auto 28px auto !important;
   width: 100% !important;
-  max-width: 754px !important;
+  max-width: 950px !important;
 }
 
 .property-card {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 363 / 286;
+  aspect-ratio: 464 / 370;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1732,10 +1733,10 @@ button, input, textarea, select {
   background-color: var(--accent, #3BB9CA) !important;
   color: #ffffff !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 9.5px !important;
+  font-size: 10px !important;
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
-  padding: 4px 14px !important;
+  padding: 5px 16px !important;
   z-index: 2 !important;
   font-weight: 500 !important;
   text-shadow: none !important;
@@ -1744,11 +1745,14 @@ button, input, textarea, select {
 }
 
 .property-info-overlay {
-  position: relative !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   z-index: 2 !important;
-  background-color: rgba(0, 0, 0, 0.72) !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 25%, rgba(0, 0, 0, 0.82) 65%, rgba(0, 0, 0, 0.94) 100%) !important;
   color: #ffffff !important;
-  padding: 14px 12px 14px 12px !important;
+  padding: 34px 16px 18px 16px !important;
   text-align: center !important;
   text-shadow: none !important;
   width: 100% !important;
@@ -1757,10 +1761,10 @@ button, input, textarea, select {
 
 .property-price {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
-  font-size: 16px !important;
+  font-size: 20px !important;
   font-weight: 400 !important;
   letter-spacing: 1px !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 6px !important;
   text-shadow: none !important;
   color: #ffffff !important;
   line-height: 1.2 !important;
@@ -1768,10 +1772,10 @@ button, input, textarea, select {
 
 .property-address {
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 9.5px !important;
+  font-size: 10.5px !important;
   letter-spacing: 0.8px !important;
   text-transform: uppercase !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 6px !important;
   opacity: 0.95 !important;
   text-shadow: none !important;
   color: #ffffff !important;
@@ -1780,7 +1784,7 @@ button, input, textarea, select {
 
 .property-specs {
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 9px !important;
+  font-size: 9.5px !important;
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
   opacity: 0.85 !important;
