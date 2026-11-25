@@ -3577,6 +3577,258 @@ button, input, textarea, select {
   pointer-events: auto !important;
   transform: translateY(0) !important;
 }
+
+/* ==========================================================================
+   HOMEPAGE ENTRY POPUP: TAILORED LISTINGS FOR YOU
+   Exact match to reference screenshot
+   ========================================================================== */
+.tailored-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  z-index: 100000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s ease, visibility 0.35s ease !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.tailored-modal-overlay.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.tailored-modal-card {
+  position: relative !important;
+  width: 92% !important;
+  max-width: 846px !important;
+  min-height: 420px !important;
+  background-color: #ffffff !important;
+  display: flex !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(20px) scale(0.98) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.tailored-modal-overlay.open .tailored-modal-card {
+  transform: translateY(0) scale(1) !important;
+}
+
+.tailored-modal-close {
+  position: absolute !important;
+  top: 10px !important;
+  right: 14px !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+  color: #111111 !important;
+  cursor: pointer !important;
+  z-index: 20 !important;
+  padding: 4px 8px !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.tailored-modal-close:hover {
+  color: var(--accent, #3BB9CA) !important;
+  transform: scale(1.1) !important;
+}
+
+.tailored-modal-photo {
+  flex: 0 0 50% !important;
+  width: 50% !important;
+  position: relative !important;
+  background-color: #f0f0f0 !important;
+  align-self: stretch !important;
+}
+
+.tailored-modal-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+.tailored-modal-form-wrap {
+  flex: 0 0 50% !important;
+  width: 50% !important;
+  background-color: #ffffff !important;
+  padding: 32px 32px 26px 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  overflow-y: auto !important;
+  max-height: 90vh !important;
+}
+
+.tailored-modal-title {
+  font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #111111 !important;
+  text-align: center !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.tailored-modal-subtitle {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #555555 !important;
+  text-align: center !important;
+  margin: 0 auto 14px auto !important;
+  max-width: 320px !important;
+}
+
+.tailored-form {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.tailored-input-group {
+  margin-bottom: 12px !important;
+  width: 100% !important;
+}
+
+.tailored-input {
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 1px solid #cccccc !important;
+  padding: 6px 0 !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  color: #111111 !important;
+  background: transparent !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  transition: border-bottom-color 0.25s ease !important;
+}
+
+.tailored-input:focus {
+  border-bottom-color: var(--accent, #3BB9CA) !important;
+}
+
+.tailored-consent-group {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  margin-bottom: 16px !important;
+  text-align: left !important;
+}
+
+.tailored-checkbox {
+  margin-top: 2px !important;
+  accent-color: var(--accent, #3BB9CA) !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.tailored-consent-label {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 8.5px !important;
+  line-height: 1.35 !important;
+  color: #666666 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.tailored-submit-btn {
+  background-color: var(--accent, #3BB9CA) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 38px !important;
+  padding: 0 24px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: background-color 0.25s ease !important;
+}
+
+.tailored-submit-btn:hover {
+  background-color: #2da1b1 !important;
+}
+
+.tailored-success-state {
+  text-align: center !important;
+  padding: 20px 0 !important;
+}
+
+.tailored-success-icon {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: var(--accent, #3BB9CA) !important;
+  color: #ffffff !important;
+  font-size: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 16px auto !important;
+}
+
+.tailored-success-title {
+  font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
+  font-size: 20px !important;
+  letter-spacing: 1.2px !important;
+  color: #111111 !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+}
+
+.tailored-success-text {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+  color: #555555 !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .tailored-modal-card {
+    flex-direction: column !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+    max-width: 400px !important;
+  }
+  .tailored-modal-photo {
+    flex: 0 0 170px !important;
+    width: 100% !important;
+    height: 170px !important;
+  }
+  .tailored-modal-form-wrap {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    padding: 28px 20px 24px 20px !important;
+  }
+  .tailored-modal-title {
+    font-size: 21px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -4574,6 +4826,42 @@ button, input, textarea, select {
   </div>
 
   <!-- ==========================================================================
+       HOMEPAGE ENTRY POPUP: TAILORED LISTINGS FOR YOU
+       ========================================================================== -->
+  <div class="tailored-modal-overlay" id="tailoredListingsModal" role="dialog" aria-modal="true" aria-labelledby="tailoredModalTitle">
+    <div class="tailored-modal-card">
+      <button type="button" class="tailored-modal-close" id="tailoredModalClose" aria-label="Close dialog">&times;</button>
+      <div class="tailored-modal-photo">
+        <img src="images/popup-photo.png" alt="Tailored Real Estate Listings" class="tailored-modal-img">
+      </div>
+      <div class="tailored-modal-form-wrap">
+        <div id="tailoredFormContainer">
+          <h2 class="tailored-modal-title" id="tailoredModalTitle">TAILORED LISTINGS<br>FOR YOU</h2>
+          <p class="tailored-modal-subtitle">Say goodbye to endless searching. Get listings tailored to your dream home criteria sent directly to your inbox!</p>
+          <form id="tailoredListingsForm" class="tailored-form">
+            <div class="tailored-input-group">
+              <input type="email" id="tailoredEmail" placeholder="Email" required class="tailored-input">
+            </div>
+            <div class="tailored-consent-group">
+              <input type="checkbox" id="tailoredConsent" required class="tailored-checkbox">
+              <label for="tailoredConsent" class="tailored-consent-label">
+                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. Consent is not a condition of purchase.
+              </label>
+            </div>
+            <button type="submit" class="tailored-submit-btn">GET LISTINGS</button>
+          </form>
+        </div>
+        <div id="tailoredSuccessState" class="tailored-success-state" style="display: none;">
+          <div class="tailored-success-icon">&#10003;</div>
+          <h3 class="tailored-success-title">THANK YOU!</h3>
+          <p class="tailored-success-text">Your request for tailored listings has been received. We'll be in touch with properties that match your dream home criteria!</p>
+          <button type="button" class="tailored-submit-btn" id="tailoredSuccessClose" style="margin-top: 18px;">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
        COOKIE & PRIVACY CONSENT POPUP
        ========================================================================== -->
   <div id="cookieConsentBanner" class="cookie-consent-bar" role="dialog" aria-label="Cookie Consent">
@@ -4968,6 +5256,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
       alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.');
       newsletterForm.reset();
+    });
+  }
+
+  // ----------------------------------------------------
+  // IMMEDIATE ENTRY POPUP: TAILORED LISTINGS FOR YOU
+  // ----------------------------------------------------
+  const tailoredModal = document.getElementById('tailoredListingsModal');
+  const tailoredCloseBtn = document.getElementById('tailoredModalClose');
+  const tailoredForm = document.getElementById('tailoredListingsForm');
+  const tailoredFormContainer = document.getElementById('tailoredFormContainer');
+  const tailoredSuccessState = document.getElementById('tailoredSuccessState');
+  const tailoredSuccessClose = document.getElementById('tailoredSuccessClose');
+
+  function openTailoredModal() {
+    if (!tailoredModal) return;
+    tailoredModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  function closeTailoredModal() {
+    if (!tailoredModal) return;
+    tailoredModal.classList.remove('open');
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
+
+  // Open immediately when someone opens the website, before they interact with anything else
+  setTimeout(openTailoredModal, 300);
+
+  if (tailoredCloseBtn) {
+    tailoredCloseBtn.addEventListener('click', closeTailoredModal);
+  }
+  if (tailoredSuccessClose) {
+    tailoredSuccessClose.addEventListener('click', closeTailoredModal);
+  }
+  if (tailoredModal) {
+    tailoredModal.addEventListener('click', (e) => {
+      if (e.target === tailoredModal) {
+        closeTailoredModal();
+      }
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && tailoredModal && tailoredModal.classList.contains('open')) {
+      closeTailoredModal();
+    }
+  });
+
+  if (tailoredForm) {
+    tailoredForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = tailoredForm.querySelector('.tailored-submit-btn');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'SUBMITTING...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        if (tailoredFormContainer && tailoredSuccessState) {
+          tailoredFormContainer.style.display = 'none';
+          tailoredSuccessState.style.display = 'block';
+        }
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        tailoredForm.reset();
+      }, 500);
     });
   }
 
