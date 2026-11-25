@@ -1627,15 +1627,16 @@ button, input, textarea, select {
    ========================================================================== */
 #featured-properties {
   background-color: var(--white, #ffffff);
-  padding: 40px 20px 48px 20px !important;
+  padding: 40px 0 50px 0 !important;
   border-top: none !important;
 }
 
 #featured-properties .container {
-  max-width: 950px !important;
+  max-width: 1240px !important;
+  width: calc(100% - 70px) !important;
   margin: 0 auto !important;
   padding: 0 !important;
-  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .properties-header {
@@ -1698,13 +1699,13 @@ button, input, textarea, select {
   gap: 22px !important;
   margin: 0 auto 28px auto !important;
   width: 100% !important;
-  max-width: 950px !important;
+  max-width: 1240px !important;
 }
 
 .property-card {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 464 / 370;
+  aspect-ratio: 464 / 415 !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1733,10 +1734,10 @@ button, input, textarea, select {
   background-color: var(--accent, #3BB9CA) !important;
   color: #ffffff !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 10px !important;
-  letter-spacing: 1px !important;
+  font-size: 10.5px !important;
+  letter-spacing: 1.2px !important;
   text-transform: uppercase !important;
-  padding: 5px 16px !important;
+  padding: 6px 18px !important;
   z-index: 2 !important;
   font-weight: 500 !important;
   text-shadow: none !important;
@@ -1752,7 +1753,7 @@ button, input, textarea, select {
   z-index: 2 !important;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 25%, rgba(0, 0, 0, 0.82) 65%, rgba(0, 0, 0, 0.94) 100%) !important;
   color: #ffffff !important;
-  padding: 34px 16px 18px 16px !important;
+  padding: 38px 18px 20px 18px !important;
   text-align: center !important;
   text-shadow: none !important;
   width: 100% !important;
@@ -1761,7 +1762,7 @@ button, input, textarea, select {
 
 .property-price {
   font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
-  font-size: 20px !important;
+  font-size: 22px !important;
   font-weight: 400 !important;
   letter-spacing: 1px !important;
   margin-bottom: 6px !important;
