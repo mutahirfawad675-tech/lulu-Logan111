@@ -765,7 +765,145 @@ button, input, textarea, select {
 /* ==========================================================================
    SECTION 6 (Screenshot 6): OUR MISSION (2-Column Split: Image Left, Text Right)
    ========================================================================== */
-/* Reuses .jn-split-section, .jn-split-container, .jn-split-row */
+#our-mission {
+  background-color: #ffffff;
+  min-height: 680px;
+  box-sizing: border-box;
+  padding: 46px 0 99px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+#our-mission .jn-split-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: clamp(24px, 3.75vw, 54px);
+  padding-right: clamp(24px, 6.5vw, 94px);
+  box-sizing: border-box;
+}
+
+#our-mission .jn-split-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 52px; /* 52px of white space separating teal shadow right edge from text */
+  width: 100%;
+}
+
+#our-mission .jn-split-img-col {
+  flex: 0 0 680px; /* 668px photo + 12px teal offset */
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#our-mission .jn-split-img-box {
+  position: relative;
+  width: 668px;
+  height: 535px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+#our-mission .jn-split-img-box img {
+  width: 668px;
+  height: 535px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 12px 12px 0px 0px #38B2C4 !important;
+}
+
+#our-mission .jn-split-text-col {
+  flex: 1 1 560px;
+  max-width: 570px;
+  padding-top: 146px; /* 46px section padding + 146px = 192px from section top */
+  box-sizing: border-box;
+}
+
+#our-mission .jn-split-title {
+  font-family: var(--primary-font);
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase !important;
+  color: #000000;
+  margin-bottom: 26px;
+  line-height: 1.2;
+}
+
+#our-mission .jn-split-desc {
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  max-width: 570px;
+  margin-bottom: 26px;
+  text-align: left;
+}
+
+#our-mission .jn-split-desc:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  #our-mission .jn-split-container {
+    padding-left: clamp(20px, 3.75vw, 54px);
+    padding-right: clamp(20px, 4vw, 60px);
+  }
+  #our-mission .jn-split-row {
+    gap: clamp(30px, 4.5vw, 64px);
+  }
+  #our-mission .jn-split-text-col {
+    flex: 1 1 auto;
+    padding-top: clamp(20px, 8vw, 146px);
+  }
+  #our-mission .jn-split-img-col {
+    flex: 0 1 50%;
+  }
+  #our-mission .jn-split-img-box {
+    width: 100%;
+    height: auto;
+  }
+  #our-mission .jn-split-img-box img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 668 / 535;
+  }
+}
+
+@media (max-width: 1024px) {
+  #our-mission {
+    min-height: auto;
+    padding: 60px 20px 70px;
+  }
+  #our-mission .jn-split-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #our-mission .jn-split-row {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  #our-mission .jn-split-text-col {
+    max-width: 100%;
+    min-width: 0;
+    padding-top: 0;
+  }
+  #our-mission .jn-split-img-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #our-mission .jn-split-img-box {
+    max-width: 540px;
+    margin: 0 auto 12px auto;
+  }
+}
 
 /* ==========================================================================
    SECTION 7 (Screenshot 7): WORK WITH US
@@ -2284,7 +2422,7 @@ li {
       <div class="jn-split-row jn-reverse-mobile">
         
         <div class="jn-split-img-col">
-          <div class="jn-split-img-box jn-shadow-left">
+          <div class="jn-split-img-box jn-shadow-right">
             <img src="images/jn-mission.jpg" alt="Our Mission - Modern Interior Architecture">
           </div>
         </div>
@@ -2292,10 +2430,13 @@ li {
         <div class="jn-split-text-col">
           <h2 class="jn-split-title">OUR MISSION</h2>
           <p class="jn-split-desc">
-            Our mission is to provide unparalleled support, education, and guidance to our clients in all their real estate and related endeavors.
+            Our mission is to provide unparalleled support, education, and guidance<br class="jn-br-desktop">
+            to our clients in all their real estate and related endeavors.
           </p>
           <p class="jn-split-desc">
-            We are committed to transforming real estate experiences and helping our clients achieve their broader life goals through our comprehensive network of professional services.
+            We are committed to transforming real estate experiences and helping<br class="jn-br-desktop">
+            our clients achieve their broader life goals through our comprehensive<br class="jn-br-desktop">
+            network of professional services.
           </p>
         </div>
 
