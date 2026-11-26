@@ -555,44 +555,56 @@ button, input, textarea, select {
    ========================================================================== */
 .jn-split-section {
   background-color: #ffffff;
-  padding: 80px 20px 90px;
+  min-height: 680px;
+  box-sizing: border-box;
+  padding: 68px 0 77px 0;
+  display: flex;
+  align-items: center;
 }
 
 .jn-split-container {
-  max-width: 1240px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
+  padding-left: 54px;
+  padding-right: 54px;
+  box-sizing: border-box;
 }
 
 .jn-split-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 70px;
+  gap: 100px;
+  width: 100%;
 }
 
 .jn-split-text-col {
-  flex: 1;
-  max-width: 520px;
+  flex: 0 0 562px;
+  max-width: 562px;
+  padding-top: 187px; /* 68px section padding + 187px = 255px from top edge to title */
+  box-sizing: border-box;
 }
 
 .jn-split-title {
   font-family: var(--primary-font);
-  font-size: 34px;
+  font-size: 35px;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase !important;
   color: #000000;
-  margin-bottom: 22px;
-  line-height: 1.25;
+  margin-bottom: 24px;
+  line-height: 1.2;
 }
 
 .jn-split-desc {
   font-family: var(--body-font);
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 400;
-  color: #555555;
-  line-height: 1.85;
+  color: #333333;
+  line-height: 1.8;
   letter-spacing: 0.3px;
+  max-width: 565px;
   margin-bottom: 16px;
 }
 
@@ -601,30 +613,32 @@ button, input, textarea, select {
 }
 
 .jn-split-img-col {
-  flex: 1;
+  flex: 0 0 670px;
+  max-width: 670px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .jn-split-img-box {
   position: relative;
-  width: 100%;
-  max-width: 540px;
+  width: 670px;
+  height: 535px;
 }
 
 .jn-split-img-box img {
-  width: 100%;
-  height: auto;
+  width: 670px;
+  height: 535px;
+  object-fit: cover;
   display: block;
 }
 
 /* Teal offset box-shadow */
 .jn-shadow-right img {
-  box-shadow: 15px 15px 0px -4px #3BB9CA !important;
+  box-shadow: 12px 12px 0px 0px #38B2C4 !important;
 }
 
 .jn-shadow-left img {
-  box-shadow: -15px 15px 0px -4px #3BB9CA !important;
+  box-shadow: -12px 12px 0px 0px #38B2C4 !important;
 }
 
 /* ==========================================================================
@@ -1056,6 +1070,14 @@ button, input, textarea, select {
     grid-template-columns: 1fr;
     gap: 25px;
   }
+  .jn-split-section {
+    min-height: auto;
+    padding: 60px 20px 70px;
+  }
+  .jn-split-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .jn-split-row {
     flex-direction: column;
     gap: 40px;
@@ -1064,7 +1086,18 @@ button, input, textarea, select {
     flex-direction: column-reverse;
   }
   .jn-split-text-col, .jn-split-img-col {
+    flex: 1 1 auto;
     max-width: 100%;
+    padding-top: 0;
+  }
+  .jn-split-img-box {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+  }
+  .jn-split-img-box img {
+    width: 100%;
+    height: auto;
   }
   .footer-info-wrap {
     flex-direction: column;
@@ -1472,43 +1505,41 @@ li {
   }
 }
 
-/* Floating Contact Button */
+/* Floating Contact Button (Bottom Left) */
 .floating-contact-btn {
   position: fixed !important;
-  bottom: 24px !important;
-  left: 24px !important;
-  background-color: #2ea8b8 !important;
+  bottom: 28px !important;
+  left: 20px !important;
+  width: 150px !important;
+  height: 48px !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
-  padding: 12px 24px !important;
+  padding: 0 !important;
+  font-family: var(--body-font) !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   border: none !important;
+  border-radius: 0 !important;
   cursor: pointer !important;
-  z-index: 998 !important;
+  z-index: 999 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  justify-content: center !important;
+  gap: 6px !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
   text-decoration: none !important;
   text-shadow: none !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transform: translateY(16px) !important;
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease !important;
-  border-radius: 2px !important;
-}
-
-.floating-contact-btn.visible {
   opacity: 1 !important;
   pointer-events: auto !important;
-  transform: translateY(0) !important;
+  transition: background-color 0.25s ease, transform 0.25s ease !important;
 }
 
 .floating-contact-btn:hover {
-  background-color: #258895 !important;
+  background-color: #2ea0b1 !important;
   color: #ffffff !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Popups & Modals */
@@ -2146,7 +2177,7 @@ li {
   <!-- ==========================================================================
        SECTION 4 (Screenshot 4): VISION STATEMENT (2-Column Split: Text Left, Image Right)
        ========================================================================== -->
-  <section class="jn-split-section">
+  <section class="jn-split-section" id="vision-statement">
     <div class="container jn-split-container">
       <div class="jn-split-row">
         
@@ -2189,7 +2220,7 @@ li {
   <!-- ==========================================================================
        SECTION 6 (Screenshot 6): OUR MISSION (2-Column Split: Image Left, Text Right)
        ========================================================================== -->
-  <section class="jn-split-section">
+  <section class="jn-split-section" id="our-mission">
     <div class="container jn-split-container">
       <div class="jn-split-row jn-reverse-mobile">
         
@@ -2655,7 +2686,7 @@ li {
   // FLOATING CONTACT BUTTON (Visible only after top section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+  const heroSectionEl = document.getElementById('hero') || document.querySelector('.jn-hero, .hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
 
   if (floatingContactBtn) {
     if (heroSectionEl && 'IntersectionObserver' in window) {
@@ -2881,6 +2912,11 @@ li {
       </div>
     </div>
   </div>
+
+  <!-- Floating Contact Us Button (Bottom Left) -->
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal onclick="if (typeof openContactModal === 'function') openContactModal();">
+    CONTACT US <span style="font-size: 11px; transform: scaleY(0.7); display: inline-block;">&#94;</span>
+  </button>
 
   <!-- Accessibility Floating Button (Bottom Right) -->
   <button class="accessibility-floating-btn" id="accessibilityBtn" aria-label="Accessibility options" onclick="alert('Accessibility preferences');">
