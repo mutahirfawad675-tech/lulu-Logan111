@@ -849,12 +849,16 @@ button, input, textarea, select {
    ========================================================================== */
 .kc-ig-section {
   background-color: #ffffff;
-  padding: 85px 20px 95px;
+  padding: 18px 36px 18px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .kc-ig-container {
-  max-width: 1180px;
+  width: 100%;
+  max-width: 952px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .kc-ig-header {
@@ -864,91 +868,123 @@ button, input, textarea, select {
   margin-bottom: 28px;
 }
 
+.kc-ig-title-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .kc-ig-title-col h3 {
   font-family: var(--primary-font);
-  font-size: 26px;
+  font-size: clamp(19px, 1.85vw, 27px);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #000000;
-  margin-bottom: 4px;
+  letter-spacing: 1.5px;
+  color: #121212;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
 }
 
 .kc-ig-handle {
+  display: inline-block;
   font-family: var(--body-font);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: clamp(14px, 1.4vw, 20.5px);
+  font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #000000;
+  color: #121212;
   text-decoration: none;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.kc-ig-handle:hover {
+  color: var(--accent);
 }
 
 .kc-ig-nav-col {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 22px;
 }
 
 .kc-ig-follow-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 36px;
   background-color: var(--accent);
   color: #ffffff;
-  border: 1px solid var(--accent);
+  border: none;
   border-radius: 0;
-  padding: 10px 28px;
   font-family: var(--body-font);
-  font-size: 11px;
+  font-size: clamp(10px, 0.95vw, 13px);
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  box-sizing: border-box;
   transition: all 0.25s ease;
+  line-height: 1;
 }
 
 .kc-ig-follow-btn:hover {
-  background-color: transparent;
-  color: var(--accent);
+  background-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+.kc-ig-arrows {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .kc-ig-arrow-btn {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   background-color: var(--accent);
   color: #ffffff;
-  border: 1px solid var(--accent);
+  border: none;
+  border-radius: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-sizing: border-box;
   transition: all 0.25s ease;
+  padding: 0;
 }
 
 .kc-ig-arrow-btn svg {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 14px;
 }
 
 .kc-ig-arrow-btn:hover {
-  background-color: transparent;
-}
-
-.kc-ig-arrow-btn:hover svg path {
-  stroke: var(--accent);
+  background-color: var(--accent-hover);
 }
 
 .kc-ig-grid-wrap {
   width: 100%;
+  max-width: 952px;
+  margin: 0 auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
+.kc-ig-grid-wrap a {
+  display: block;
+  width: 100%;
+  max-width: 952px;
+}
+
 .kc-ig-grid-wrap img {
   width: 100%;
-  max-width: 960px;
+  max-width: 952px;
   height: auto;
+  aspect-ratio: 952 / 372;
   display: block;
 }
 
@@ -2427,18 +2463,20 @@ li {
         </div>
         <div class="kc-ig-nav-col">
           <a href="https://www.instagram.com/mountainhousecahomes/" target="_blank" class="kc-ig-follow-btn">FOLLOW ME</a>
-          <button class="kc-ig-arrow-btn" aria-label="Previous" onclick="alert('Previous slide')">
-            <svg viewBox="0 0 10 16"><path d="M8 2 L2 8 L8 14" stroke="#ffffff" stroke-width="2.5" fill="none"/></svg>
-          </button>
-          <button class="kc-ig-arrow-btn" aria-label="Next" onclick="alert('Next slide')">
-            <svg viewBox="0 0 10 16"><path d="M2 2 L8 8 L2 14" stroke="#ffffff" stroke-width="2.5" fill="none"/></svg>
-          </button>
+          <div class="kc-ig-arrows">
+            <button class="kc-ig-arrow-btn" aria-label="Previous" onclick="alert('Previous slide')">
+              <svg viewBox="0 0 10 16"><path d="M7 3 L2 8 L7 13" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="kc-ig-arrow-btn" aria-label="Next" onclick="alert('Next slide')">
+              <svg viewBox="0 0 10 16"><path d="M3 3 L8 8 L3 13" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="kc-ig-grid-wrap">
         <a href="https://www.instagram.com/mountainhousecahomes/" target="_blank" aria-label="Visit Instagram Feed">
-          <img src="images/kc-instagram-grid.jpg" alt="Instagram Feed @mountainhousecahomes">
+          <img src="images/kc-instagram-grid.jpg" alt="Instagram Feed @mountainhousecahomes" width="952" height="372">
         </a>
       </div>
 
