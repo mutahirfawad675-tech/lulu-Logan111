@@ -753,75 +753,108 @@ img {
    ========================================================================== */
 #selling-framework {
   background-color: #000000;
-  color: var(--white);
-  padding: 100px 0;
+  color: #FFFFFF;
+  padding: 112px 0 110px;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.framework-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 54px;
+  box-sizing: border-box;
 }
 
 .framework-title {
-  font-family: var(--primary-font);
-  font-size: 32px;
+  font-family: 'Tenor Sans', serif;
+  font-size: 40px;
   font-weight: 400;
   letter-spacing: 2.5px;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  color: #FFFFFF;
+  margin: 0 auto 32px;
 }
 
 .framework-subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 55px;
-  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #E5E5E5;
+  margin: 0 auto 34px;
 }
 
 .framework-cards-row {
   display: flex;
   gap: 16px;
-  justify-content: space-between;
-  align-items: stretch;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1328px;
+  margin: 0 auto 34px;
+  box-sizing: border-box;
 }
 
 .framework-card {
-  flex: 1;
-  background-color: var(--white);
-  color: var(--black);
+  flex: 0 0 176px;
+  width: 176px;
+  height: 116px;
+  background-color: #FFFFFF;
+  color: #111111;
   border-radius: 12px;
-  padding: 24px 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.framework-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(59, 185, 202, 0.25);
+.framework-card:hover,
+.framework-card.elevated {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
 }
 
 .framework-icon {
   font-size: 28px;
-  margin-bottom: 10px;
+  width: 28px;
+  height: 28px;
   line-height: 1;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .framework-label {
-  font-size: 11px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #111111;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .framework-footer-text {
-  max-width: 920px;
-  margin: 45px auto 0;
-  font-size: 12.5px;
+  max-width: 1120px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
+  color: #E5E5E5;
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -1070,6 +1103,16 @@ img {
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
+@media (max-width: 1360px) {
+  .framework-container {
+    padding: 0 24px;
+  }
+  .framework-cards-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 992px) {
   .nav-group-left, .nav-group-right .nav-item {
     display: none;
@@ -1103,10 +1146,10 @@ img {
   }
   .framework-cards-row {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
   }
   .framework-card {
-    flex: 0 0 calc(50% - 6px);
+    flex: 0 0 176px;
   }
   .footer-top-grid {
     grid-template-columns: 1fr;
@@ -1142,14 +1185,21 @@ img {
   .selling-approach-title {
     font-size: 22px;
   }
+  #selling-framework {
+    padding: 70px 20px 80px;
+  }
   .framework-title {
-    font-size: 24px;
+    font-size: 28px;
+  }
+  .framework-cards-row {
+    gap: 12px;
+  }
+  .framework-card {
+    flex: 0 0 calc(50% - 6px);
+    width: calc(50% - 6px);
   }
   .workwithus-title {
     font-size: 28px;
-  }
-  .framework-card {
-    flex: 0 0 100%;
   }
   .footer-bottom-row {
     flex-direction: column;
@@ -2340,30 +2390,30 @@ li {
        SECTION 4 (Screenshot 4): OUR SELLING FRAMEWORK
        ========================================================================== -->
   <section id="selling-framework">
-    <div class="container">
+    <div class="framework-container">
       <h2 class="framework-title">OUR SELLING FRAMEWORK</h2>
       <p class="framework-subtitle">A Proven System to Prepare, Position, and Present Your Home</p>
 
       <!-- 7 Framework Cards -->
       <div class="framework-cards-row">
         <div class="framework-card">
-          <div class="framework-icon">ðŸ“</div>
+          <div class="framework-icon">📝</div>
           <div class="framework-label">PREPARE</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸ“</div>
+          <div class="framework-icon">📍</div>
           <div class="framework-label">POSITION</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸŽ¤</div>
+          <div class="framework-icon">🎤</div>
           <div class="framework-label">PRESENT</div>
         </div>
-        <div class="framework-card">
-          <div class="framework-icon">ðŸ“£</div>
+        <div class="framework-card elevated">
+          <div class="framework-icon">📣</div>
           <div class="framework-label">PROMOTE</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸ¤</div>
+          <div class="framework-icon">🤝</div>
           <div class="framework-label">NEGOTIATE</div>
         </div>
         <div class="framework-card">
@@ -2377,7 +2427,7 @@ li {
       </div>
 
       <p class="framework-footer-text">
-        This is our high-level framework. The full Seller Blueprint—including strategy, timelines, and personalized recommendations—is provided during your consultation.
+        This is our high-level framework. The full Seller Blueprint—including strategy, timelines, and personalized recommendations—is provided during <br class="br-desktop">your consultation.
       </p>
     </div>
   </section>
