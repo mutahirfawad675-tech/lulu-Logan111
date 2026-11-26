@@ -1009,27 +1009,29 @@ button, input, textarea, select {
 .footer-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding-left: clamp(24px, 4.16vw, 60px);
+  padding-right: clamp(24px, 4.16vw, 60px);
   box-sizing: border-box;
   width: 100%;
 }
 
 .footer-info-wrap {
   display: grid;
-  grid-template-columns: 660px 660px;
+  grid-template-columns: 1fr 1fr;
   column-gap: 0;
   width: 100%;
   max-width: 1320px;
+  margin: 0 auto;
   box-sizing: border-box;
   margin-bottom: 0;
 }
 
 .footer-agent-box {
   width: 100%;
-  max-width: 660px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  padding-right: 20px;
 }
 
 .footer-brand-title {
@@ -1089,7 +1091,6 @@ button, input, textarea, select {
 
 .footer-newsletter-box {
   width: 100%;
-  max-width: 660px;
   box-sizing: border-box;
 }
 
