@@ -74,122 +74,73 @@ img {
 }
 
 /* ==========================================================================
-   1. GLOBAL NAVBAR
+   1. GLOBAL NAVIGATION BAR
    ========================================================================== */
 #global-navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 90px;
   z-index: 1000;
   background-color: transparent;
-  transition: background-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
-  padding: 24px 0;
+  color: var(--white);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
 }
 
 #global-navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 14px 0;
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
-  max-width: 1520px;
-  margin: 0 auto;
-  padding: 0 32px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  height: 100%;
+  padding: 0 42px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .nav-group {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
   list-style: none;
+  margin-top: 48px !important;
 }
 
-.nav-item {
-  position: relative;
+.nav-group-left {
+  flex: 1;
+  justify-content: flex-start;
 }
 
-.nav-link {
-  font-family: var(--body-font);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--white);
-  padding: 8px 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.25s ease;
-}
-
-#global-navbar.scrolled .nav-link {
-  color: #222222;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--accent) !important;
-}
-
-.nav-caret {
-  font-size: 8px;
-  transition: transform 0.25s ease;
-}
-
-.nav-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--white);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  min-width: 220px;
-  padding: 12px 0;
-  list-style: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: all 0.25s ease;
-}
-
-.nav-item:hover .nav-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.nav-item:hover .nav-caret {
-  transform: rotate(180deg);
-}
-
-.nav-dropdown li a {
-  display: block;
-  padding: 10px 24px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #333333;
-  letter-spacing: 1px;
-}
-
-.nav-dropdown li a:hover {
-  background-color: #f7f7f7;
-  color: var(--accent);
+.nav-group-right {
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .nav-logo {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 18px;
+}
+
+.nav-logo a {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-logo img {
-  height: 52px;
+  height: 55px;
+  max-height: 55px;
   width: auto;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: block;
+  transition: opacity 0.3s ease;
 }
 
 .nav-logo .logo-dark {
@@ -204,30 +155,123 @@ img {
   display: block;
 }
 
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--body-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: inherit;
+  padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.25s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-chevron {
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-item:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menus */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  min-width: 220px;
+  padding: 12px 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 10px 24px;
+  color: #333333;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.nav-dropdown li a:hover,
+.nav-dropdown li a.active {
+  background-color: #f7f7f7;
+  color: var(--accent);
+}
+
 .nav-phone {
-  letter-spacing: 0.5px;
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.nav-item-hamburger {
+  display: flex;
+  align-items: center;
+  margin-left: -6px;
 }
 
 .hamburger-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  padding: 0;
+  color: #ffffff;
+  margin-left: 24px;
 }
 
 .hamburger-btn span {
   display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--white);
+  background-color: #ffffff;
   transition: background-color 0.25s ease;
 }
 
 #global-navbar.scrolled .hamburger-btn span {
   background-color: #222222;
+}
+
+.hamburger-btn:hover span {
+  background-color: var(--accent) !important;
 }
 
 /* ==========================================================================
@@ -317,50 +361,93 @@ img {
 
 /* ==========================================================================
    SECTION 1 (Screenshot 1): HERO - BUYING SERVICES
+   Aspect Ratio: ~2.12:1 | Recommended Full-Width Canvas: 1440px x 680px
+   Top Edge to Title: 272px | Title-to-Subtitle Gap: 26px | Subtitle-to-Bottom: 274px
    ========================================================================== */
 #buying-hero {
   position: relative;
-  min-height: 540px;
-  height: 58vh;
-  max-height: 640px;
+  width: 100%;
+  height: 680px;
+  min-height: 680px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  color: var(--white);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url('images/buying-hero.jpg?v=2');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 120px 24px 60px;
+  color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url('images/buying-hero.jpg?v=2') center center / cover no-repeat;
+  box-sizing: border-box;
+  padding-top: 272px;
+  overflow: hidden;
 }
 
 .buying-hero-content {
-  max-width: 920px;
-  margin: 0 auto;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .buying-hero-title {
   font-family: var(--primary-font);
-  font-size: 46px;
+  font-size: 50px;
   font-weight: 400;
   letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
   line-height: 1.2;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 26px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .buying-hero-subtitle {
   font-family: var(--body-font);
   font-size: 14.5px;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 0.3px;
   line-height: 1.8;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 820px;
+  color: #ffffff;
+  max-width: 940px;
+  width: 100%;
   margin: 0 auto;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Bottom-Right Accessibility Icon */
+.hero-accessibility-btn {
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-accessibility-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .br-desktop {
+    display: none;
+  }
 }
 
 /* ==========================================================================
@@ -1414,7 +1501,6 @@ li {
 
 .sub-nav ul,
 .section-options,
-.nav-group,
 .nav-dropdown,
 .buying-accordion-body-inner ul,
 .selling-accordion-body-inner ul,
@@ -1425,76 +1511,18 @@ li {
   padding: 0 !important;
 }
 
-/* Centered Header & Navigation Grid */
-.nav-container {
-  display: grid !important;
-  grid-template-columns: 1fr auto 1.35fr !important;
-  align-items: center !important;
-  height: 100% !important;
-  width: 100% !important;
-  max-width: 1440px !important;
-  margin: 0 auto !important;
-  padding: 0 40px !important;
-}
-
-.nav-group-left {
+.nav-container .nav-group,
+.nav-group {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 24px !important;
-}
-
-.nav-logo {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 20px !important;
-  text-align: center !important;
-  flex-shrink: 0 !important;
-}
-
-.nav-group-right {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 20px !important;
-}
-.nav-group-right .nav-item {
-  display: inline-flex !important;
-  align-items: center !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
-}
-.nav-group-right .nav-item-hamburger {
-  display: inline-flex !important;
-  align-items: center !important;
-  flex-shrink: 0 !important;
-  margin-left: 6px !important;
-}
-.nav-group-left {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 22px !important;
-}
-.nav-group-left .nav-item {
-  display: inline-flex !important;
-  align-items: center !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
+  gap: 30px !important;
+  list-style: none !important;
+  margin-top: 48px !important;
+  padding: 0 !important;
 }
 
 @media (max-width: 1024px) {
   .nav-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
     padding: 0 20px !important;
   }
   .nav-group-left,
@@ -2141,13 +2169,20 @@ li {
   <!-- ==========================================================================
        SECTION 1 (Screenshot 1): HERO - BUYING SERVICES
        ========================================================================== -->
-  <section id="buying-hero">
+  <section id="buying-hero" class="buying-hero">
     <div class="buying-hero-content">
       <h1 class="buying-hero-title">BUYING SERVICES</h1>
       <p class="buying-hero-subtitle">
-        Buying a home is more than a search—it's a strategic milestone. At Just 1 Real Estate, we combine boutique advisory, local expertise, and modern tools to help you find the right home with clarity, confidence, and intention.
+        Buying a home is more than a search—it’s a strategic milestone. At Just 1 Real Estate, we combine boutique advisory,<br class="br-desktop"> local expertise, and modern tools to help you find the right home with clarity, confidence, and intention.
       </p>
     </div>
+
+    <!-- Bottom Right Accessibility Icon (matching screenshot) -->
+    <a href="#accessibility" class="hero-accessibility-btn" aria-label="Accessibility Assistance">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+      </svg>
+    </a>
   </section>
 
   <!-- ==========================================================================
@@ -2885,7 +2920,7 @@ li {
   // FLOATING CONTACT BUTTON (Visible only after top section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+  const heroSectionEl = document.getElementById('buying-hero') || document.getElementById('hero') || document.querySelector('.buying-hero, .hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
 
   if (floatingContactBtn) {
     if (heroSectionEl && 'IntersectionObserver' in window) {
