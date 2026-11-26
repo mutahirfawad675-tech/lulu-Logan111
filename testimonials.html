@@ -12,14 +12,14 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
        CSS VARIABLES & BASE STYLES
        ========================================================================== */
     :root {
-      --primary-font: 'Cinzel', serif;
+      --primary-font: 'Tenor Sans', sans-serif;
       --body-font: 'Montserrat', sans-serif;
       --bg-dark: #121212;
       --text-main: #222222;
@@ -77,32 +77,78 @@
       top: 0;
       left: 0;
       width: 100%;
+      height: 90px;
       z-index: 1000;
-      background: transparent;
-      transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
-      padding: 22px 0;
+      background-color: transparent;
+      color: var(--white);
+      transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
     }
 
     #global-navbar.scrolled {
-      background-color: rgba(18, 18, 18, 0.96);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-      padding: 14px 0;
+      background-color: var(--white);
+      color: var(--black);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     }
 
     .nav-container {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 0 30px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
+      height: 100%;
+      padding: 0 42px;
+      box-sizing: border-box;
+      max-width: 100%;
     }
 
     .nav-group {
       display: flex;
       align-items: center;
+      gap: 30px;
       list-style: none;
-      gap: 28px;
+      margin-top: 48px !important;
+    }
+
+    .nav-group-left {
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .nav-group-right {
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .nav-logo {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 18px;
+    }
+
+    .nav-logo a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo img {
+      height: 55px;
+      max-height: 55px;
+      width: auto;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-logo .logo-dark {
+      display: none;
+    }
+
+    #global-navbar.scrolled .nav-logo .logo-light {
+      display: none;
+    }
+
+    #global-navbar.scrolled .nav-logo .logo-dark {
+      display: block;
     }
 
     .nav-item {
@@ -110,16 +156,26 @@
     }
 
     .nav-link {
-      color: var(--white);
-      font-size: 12px;
+      font-family: var(--body-font);
+      font-size: 11.5px;
       font-weight: 500;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      color: inherit;
+      padding: 6px 0;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 8px 0;
       position: relative;
+      transition: color 0.25s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-chevron {
+      display: inline-block;
+      margin-left: 6px;
+      vertical-align: middle;
+      transition: transform 0.25s ease;
     }
 
     .nav-link:hover,
@@ -127,12 +183,7 @@
       color: var(--accent);
     }
 
-    .nav-caret {
-      font-size: 8px;
-      transition: transform 0.25s ease;
-    }
-
-    .nav-item:hover .nav-caret {
+    .nav-item:hover .nav-chevron {
       transform: rotate(180deg);
     }
 
@@ -141,15 +192,15 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #1a1a1a;
+      background-color: var(--white);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       min-width: 220px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      padding: 14px 0;
+      padding: 12px 0;
       list-style: none;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
-      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+      transition: all 0.25s ease;
       z-index: 100;
     }
 
@@ -161,46 +212,33 @@
 
     .nav-dropdown li a {
       display: block;
-      padding: 9px 22px;
-      color: #dddddd;
-      font-size: 11px;
-      letter-spacing: 1.2px;
+      padding: 10px 24px;
+      color: #333333;
+      font-size: 12px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       font-weight: 500;
+      transition: all 0.25s ease;
     }
 
     .nav-dropdown li a:hover,
     .nav-dropdown li a.active {
+      background-color: #f7f7f7;
       color: var(--accent);
-      background-color: rgba(255, 255, 255, 0.05);
-      padding-left: 26px;
-    }
-
-    /* Nav Logo */
-    .nav-logo a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-logo img {
-      height: 48px;
-      width: auto;
-      transition: opacity 0.3s ease;
-    }
-
-    .logo-dark {
-      display: none;
     }
 
     .nav-phone {
+      font-family: var(--body-font);
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     .nav-item-hamburger {
       display: flex;
       align-items: center;
+      margin-left: -6px;
     }
 
     .hamburger-btn {
@@ -209,20 +247,27 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      padding: 6px;
+      justify-content: space-between;
+      width: 24px;
+      height: 16px;
+      padding: 0;
+      color: #ffffff;
     }
 
     .hamburger-btn span {
       display: block;
-      width: 22px;
+      width: 24px;
       height: 2px;
-      background-color: var(--white);
-      transition: var(--transition-smooth);
+      background-color: #ffffff;
+      transition: background-color 0.25s ease;
+    }
+
+    #global-navbar.scrolled .hamburger-btn span {
+      background-color: #222222;
     }
 
     .hamburger-btn:hover span {
-      background-color: var(--accent);
+      background-color: var(--accent) !important;
     }
 
     /* Side Menu Drawer */
@@ -244,69 +289,76 @@
       visibility: visible;
     }
 
-    
-
     /* ==========================================================================
-       SECTION 1 (Screenshot 1): HERO SECTION
+       SECTION 1: HERO SECTION - TESTIMONIALS
+       Aspect Ratio: ~2.12:1 | Recommended Full-Width Canvas: 1440px x 680px
        ========================================================================== */
     #testimonials-hero {
       position: relative;
-      height: 65vh;
-      min-height: 460px;
+      width: 100%;
+      height: 680px;
+      min-height: 680px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: var(--white);
+      background: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url('images/testimonials-hero.jpg') center center / cover no-repeat;
+      box-sizing: border-box;
       overflow: hidden;
-    }
-
-    .hero-bg-parallax {
-      position: absolute;
-      top: -8%;
-      left: 0;
-      width: 100%;
-      height: 116%;
-      z-index: 1;
-      will-change: transform;
-      pointer-events: none;
-    }
-
-    .hero-bg-anim { width: 100%; height: 100%; background: url('images/testimonials-hero.jpg') center center / cover no-repeat; }
-
-    /* Hero animation removed - only home page has animated video */
-      50% {
-        transform: scale(1.08) translate(-1.2%, -0.8%);
-      }
-      100% {
-        transform: scale(1.04) translate(1%, -1.2%);
-      }
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.48));
-      z-index: 2;
-      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
-      z-index: 3;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
 
     .hero-title {
       font-family: var(--primary-font);
-      font-size: 50px;
+      font-size: 52px;
       font-weight: 400;
-      letter-spacing: 4px;
+      letter-spacing: 3.5px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--white);
+      color: #ffffff;
+      text-align: center;
+      margin: 0;
       padding: 0 20px;
+    }
+
+    /* Accessibility Floating Button (Bottom Right) */
+    .accessibility-floating-btn {
+      position: fixed;
+      bottom: 12px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10010;
+      border: none;
+      padding: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .accessibility-floating-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .accessibility-floating-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #000000;
     }
 
     /* ==========================================================================
@@ -1209,7 +1261,6 @@ li {
 
 .sub-nav ul,
 .section-options,
-.nav-group,
 .nav-dropdown,
 .buying-accordion-body-inner ul,
 .selling-accordion-body-inner ul,
@@ -1220,81 +1271,16 @@ li {
   padding: 0 !important;
 }
 
-/* Centered Header & Navigation Grid */
-.nav-container {
-  display: grid !important;
-  grid-template-columns: 1fr auto 1.35fr !important;
-  align-items: center !important;
-  height: 100% !important;
-  width: 100% !important;
-  max-width: 1440px !important;
-  margin: 0 auto !important;
-  padding: 0 40px !important;
-}
-
-.nav-group-left {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 24px !important;
-}
-
-.nav-logo {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 20px !important;
-  text-align: center !important;
-  flex-shrink: 0 !important;
-}
-
-.nav-group-right {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 20px !important;
-}
-.nav-group-right .nav-item {
-  display: inline-flex !important;
-  align-items: center !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
-}
-.nav-group-right .nav-item-hamburger {
-  display: inline-flex !important;
-  align-items: center !important;
-  flex-shrink: 0 !important;
-  margin-left: 6px !important;
-}
-.nav-group-left {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 22px !important;
-}
-.nav-group-left .nav-item {
-  display: inline-flex !important;
-  align-items: center !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
-}
-
 @media (max-width: 1024px) {
   .nav-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 0 20px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
   }
   .nav-group-left,
   .nav-group-right .nav-item {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -1864,7 +1850,7 @@ li {
       <!-- Left Navigation Items -->
       <ul class="nav-group nav-group-left">
         <li class="nav-item">
-          <a href="about-us.html" class="nav-link active">ABOUT <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg></a>
+          <a href="about-us.html" class="nav-link">ABOUT <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg></a>
           <ul class="nav-dropdown">
             <li><a href="about-us.html">About Us</a></li>
             <li><a href="testimonials.html" class="active">Testimonials</a></li>
@@ -1902,13 +1888,13 @@ li {
       <!-- Right Navigation Items -->
       <ul class="nav-group nav-group-right">
         <li class="nav-item">
-          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+          <a href="knowledge-center.html" class="nav-link">KNOWLEDGE CENTER</a>
         </li>
         <li class="nav-item">
-          <a href="just-1-network.html" class="nav-link">Just 1 Network</a>
+          <a href="just-1-network.html" class="nav-link">JUST 1 NETWORK</a>
         </li>
         <li class="nav-item">
-          <a href="contact-us.html" class="nav-link open-contact-modal-btn">Contact Us</a>
+          <a href="contact-us.html" class="nav-link open-contact-modal-btn">CONTACT US</a>
         </li>
         <li class="nav-item">
           <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
@@ -1928,13 +1914,9 @@ li {
   
 
   <!-- ==========================================================================
-       SECTION 1 (Screenshot 1): HERO SECTION
+       SECTION 1: HERO SECTION - TESTIMONIALS
        ========================================================================== -->
   <header id="testimonials-hero">
-    <div class="hero-bg-parallax" id="heroBgParallax">
-      <div class="hero-bg-anim"></div>
-    </div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-title">TESTIMONIALS</h1>
     </div>
@@ -2289,38 +2271,6 @@ li {
     if (openMenuBtn) openMenuBtn.addEventListener('click', openSideMenu);
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeSideMenu);
     if (sideOverlay) sideOverlay.addEventListener('click', closeSideMenu);
-
-    // 3. Contact Us Modal
-    const contactModal = document.getElementById('contact-modal');
-    const closeContactBtn = document.getElementById('close-contact-modal');
-    const openModalBtns = document.querySelectorAll('.open-contact-modal-btn');
-
-    openModalBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        contactModal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        if (sideMenu.classList.contains('open')) {
-          closeSideMenu();
-        }
-      });
-    });
-
-    if (closeContactBtn) {
-      closeContactBtn.addEventListener('click', () => {
-        contactModal.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    }
-
-    if (contactModal) {
-      contactModal.addEventListener('click', (e) => {
-        if (e.target === contactModal) {
-          contactModal.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
-    }
 
     // 4. Testimonials Read More Toggle (Kathy W.)
     let kathyExpanded = false;
@@ -2871,6 +2821,14 @@ li {
       </div>
     </div>
   </div>
+
+  <!-- Accessibility Floating Button (Bottom Right) -->
+  <button class="accessibility-floating-btn" id="accessibilityBtn" aria-label="Accessibility options" onclick="alert('Accessibility preferences');">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.62-.44-.45-.2-.96-.2-1.41 0-.24.1-.45.25-.62.44L9.7 9.17C8.72 10.25 7.17 11.02 5.63 11v2c1.94.02 3.79-.86 5.07-2.14L11 11.16V16l-2.45 4.36 1.74.98L12.5 17.5l2.21 3.84 1.74-.98L14 16v-4.84l.3-.3c1.28 1.28 3.13 2.16 5.07 2.14z"/>
+    </svg>
+  </button>
 
 </body>
 </html>
