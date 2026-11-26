@@ -136,13 +136,13 @@ button, input, textarea, select {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 40px;
+  padding: 0 42px;
 }
 
 .nav-group {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
   list-style: none;
 }
 
@@ -160,12 +160,13 @@ button, input, textarea, select {
   flex-shrink: 0;
   text-align: center;
   padding: 0 20px;
+  margin-top: 4px;
 }
 
 .nav-logo img {
-  height: 60px;
+  height: 55px;
   width: auto;
-  max-height: 60px;
+  max-height: 55px;
   display: block;
   transition: opacity 0.3s ease;
 }
@@ -187,20 +188,30 @@ button, input, textarea, select {
 }
 
 .nav-link {
-  font-size: 12px;
-  font-weight: 400;
+  font-family: var(--body-font);
+  font-size: 11.5px;
+  font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: inherit;
-  padding: 10px 0;
-  display: inline-block;
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
   position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-chevron {
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 2px;
   left: 0;
   width: 0;
   height: 1px;
@@ -214,6 +225,7 @@ button, input, textarea, select {
 }
 
 .nav-phone {
+  font-family: var(--body-font);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -223,6 +235,7 @@ button, input, textarea, select {
 .nav-item-hamburger {
   display: flex;
   align-items: center;
+  margin-left: 24px;
 }
 
 .hamburger-btn {
@@ -231,17 +244,16 @@ button, input, textarea, select {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 28px;
-  height: 28px;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
   padding: 0;
   color: inherit;
 }
 
 .hamburger-btn span {
   display: block;
-  width: 100%;
+  width: 24px;
   height: 1.5px;
   background-color: currentColor;
   transition: var(--transition-smooth);
@@ -349,7 +361,10 @@ button, input, textarea, select {
    ========================================================================== */
 .jn-hero {
   position: relative;
-  min-height: 560px;
+  width: 100%;
+  height: 680px;
+  min-height: 680px;
+  max-height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,7 +373,8 @@ button, input, textarea, select {
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  padding: 140px 20px 80px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .jn-hero-overlay {
@@ -367,25 +383,57 @@ button, input, textarea, select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.40);
   z-index: 1;
 }
 
 .jn-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .jn-hero-title {
   font-family: var(--primary-font);
-  font-size: 50px;
+  font-size: 54px;
   font-weight: 400;
   text-transform: uppercase !important;
-  letter-spacing: 2px;
+  letter-spacing: 3.5px;
   color: #ffffff;
   margin: 0;
   line-height: 1.2;
+}
+
+/* Accessibility Floating Button (Bottom Right) */
+.accessibility-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accessibility-floating-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+}
+
+.accessibility-floating-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #000000;
 }
 
 /* ==========================================================================
@@ -1025,7 +1073,9 @@ button, input, textarea, select {
 
 @media (max-width: 768px) {
   .jn-hero {
-    min-height: 420px;
+    height: auto;
+    min-height: 480px;
+    max-height: none;
     padding: 120px 20px 60px;
   }
   .jn-hero-title {
@@ -1969,19 +2019,19 @@ li {
   <nav id="global-navbar">
     <div class="nav-container">
       
-      <!-- Left Navigation Links (Clean plain text, NO dropdown arrows) -->
+      <!-- Left Navigation Links -->
       <ul class="nav-group nav-group-left">
         <li class="nav-item">
-          <a href="index.html#who-we-are" class="nav-link">About</a>
+          <a href="index.html#who-we-are" class="nav-link">ABOUT <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg></a>
         </li>
         <li class="nav-item">
           <a href="selling.html" class="nav-link">SELLING</a>
         </li>
         <li class="nav-item">
-          <a href="buying.html" class="nav-link">Buying</a>
+          <a href="buying.html" class="nav-link">BUYING <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg></a>
         </li>
         <li class="nav-item">
-          <a href="tri-valley.html" class="nav-link">Neighborhoods</a>
+          <a href="tri-valley.html" class="nav-link">NEIGHBORHOODS <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1L5 5L9 1"/></svg></a>
         </li>
       </ul>
 
@@ -1996,13 +2046,13 @@ li {
       <!-- Right Navigation Links -->
       <ul class="nav-group nav-group-right">
         <li class="nav-item">
-          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+          <a href="knowledge-center.html" class="nav-link">KNOWLEDGE CENTER</a>
         </li>
         <li class="nav-item">
-          <a href="just-1-network.html" class="nav-link active">Just 1 Network</a>
+          <a href="just-1-network.html" class="nav-link active">JUST 1 NETWORK</a>
         </li>
         <li class="nav-item">
-          <a href="contact-us.html" class="nav-link">Contact Us</a>
+          <a href="contact-us.html" class="nav-link">CONTACT US</a>
         </li>
         <li class="nav-item">
           <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
@@ -2818,6 +2868,14 @@ li {
       </div>
     </div>
   </div>
+
+  <!-- Accessibility Floating Button (Bottom Right) -->
+  <button class="accessibility-floating-btn" id="accessibilityBtn" aria-label="Accessibility options" onclick="alert('Accessibility preferences');">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.62-.44-.45-.2-.96-.2-1.41 0-.24.1-.45.25-.62.44L9.7 9.17C8.72 10.25 7.17 11.02 5.63 11v2c1.94.02 3.79-.86 5.07-2.14L11 11.16V16l-2.45 4.36 1.74.98L12.5 17.5l2.21 3.84 1.74-.98L14 16v-4.84l.3-.3c1.28 1.28 3.13 2.16 5.07 2.14z"/>
+    </svg>
+  </button>
 
 </body>
 </html>
