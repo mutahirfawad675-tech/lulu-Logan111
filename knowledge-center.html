@@ -994,60 +994,81 @@ button, input, textarea, select {
 #global-footer {
   background-color: #ffffff;
   color: #000000;
-  padding-top: 70px;
-  padding-bottom: 25px;
+  padding-top: 55px;
+  padding-bottom: 35px;
   font-family: var(--body-font);
-  border-top: 1px solid #eeeeee;
+  border-top: none !important;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#global-footer .container {
-  max-width: 1280px;
+#global-footer .container,
+.footer-container {
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 53px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.footer-info-wrap {
+  display: grid;
+  grid-template-columns: 667px 667px;
+  column-gap: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.footer-agent-box {
+  width: 100%;
+  max-width: 667px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .footer-brand-title {
   font-family: var(--primary-font);
-  font-size: 24px;
+  font-size: 29px;
   text-transform: none !important;
   font-weight: 400;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
   color: #000000;
   letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
-.footer-info-wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 80px;
-  margin-bottom: 35px;
+.footer-cell {
+  margin-bottom: 24px;
 }
 
-.footer-agent-box {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.footer-cell:last-child {
+  margin-bottom: 0;
 }
 
 .footer-cell-title {
-  font-size: 11px;
+  font-family: var(--body-font);
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: 4px;
+  margin-bottom: 14px;
+  line-height: 1.2;
 }
 
 .footer-cell-val {
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  color: #222222;
-  line-height: 1.6;
+  font-family: var(--body-font);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+  line-height: 1.2;
 }
 
 .footer-cell-val a {
-  color: #222222;
+  color: #000000;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
@@ -1056,54 +1077,77 @@ button, input, textarea, select {
   color: var(--accent);
 }
 
-.footer-newsletter-box {
-  width: 50%;
+.footer-address-line {
+  display: block;
+  margin-bottom: 14px;
 }
 
-.footer-newsletter-box .footer-cell-title {
-  margin-bottom: 12px;
+.footer-newsletter-box {
+  width: 100%;
+  max-width: 667px;
+  box-sizing: border-box;
+}
+
+.footer-newsletter-title {
+  font-family: var(--body-font);
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000000;
+  line-height: 1.2;
+  margin-bottom: 26px;
 }
 
 .footer-input-label {
   display: block;
-  font-size: 11px;
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #222222;
-  margin-bottom: 6px;
+  color: #000000;
+  line-height: 1.2;
+  margin-bottom: 36px;
 }
 
 .footer-input-field {
   width: 100%;
   border: none;
   border-bottom: 1px solid #000000;
-  padding: 8px 0;
-  font-size: 13px;
+  padding: 0 0 6px 0;
+  font-family: var(--body-font);
+  font-size: 14px;
   letter-spacing: 1px;
   outline: none;
   background: transparent;
   color: #000000;
-  margin-bottom: 18px;
+  box-sizing: border-box;
+  margin-bottom: 22px;
+  display: block;
 }
 
 .footer-consent {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 44px;
 }
 
 .footer-consent input[type="checkbox"] {
-  margin-top: 3px;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  margin-top: 5px;
   accent-color: var(--accent);
-  width: 14px;
-  height: 14px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
 .footer-consent label {
-  font-size: 10.5px;
-  line-height: 1.65;
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  line-height: 24px;
   color: #555555;
   letter-spacing: 0.2px;
 }
@@ -1114,42 +1158,61 @@ button, input, textarea, select {
 }
 
 .footer-subscribe-btn {
+  width: 196px;
+  height: 54px;
   background-color: var(--accent);
   color: #ffffff;
-  border: 1px solid var(--accent);
-  padding: 13px 42px;
-  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  font-family: var(--body-font);
+  font-size: 13.5px;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease;
+  box-sizing: border-box;
 }
 
 .footer-subscribe-btn:hover {
-  background-color: transparent;
-  color: var(--accent);
+  background-color: var(--accent-hover);
+  color: #ffffff;
 }
 
-/* Disclaimer & Broker */
+/* Disclaimer & Logos */
 .footer-text-first {
-  margin-top: 35px;
-  margin-bottom: 25px;
+  margin-top: 76px;
+  margin-bottom: 30px;
 }
 
 .footer-disclaimer-text {
+  font-family: var(--body-font);
   font-size: 12px !important;
   color: #222222;
-  margin-bottom: 18px;
-  line-height: 1.6;
+  margin-bottom: 28px;
+  line-height: 1.5;
 }
 
-.footer-logos-img {
-  width: 95px;
-  height: auto;
+.footer-logos-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.footer-logo-realtor {
+  height: 36px;
+  width: auto;
   display: block;
-  margin-bottom: 18px;
+}
+
+.footer-logo-eho {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .footer-broker-info {
@@ -1315,6 +1378,18 @@ button, input, textarea, select {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
+  }
+  .footer-info-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-agent-box,
+  .footer-newsletter-box {
+    max-width: 100%;
+  }
+  #global-footer .container,
+  .footer-container {
+    padding: 0 24px;
   }
   .footer-privacy-bar {
     flex-direction: column;
@@ -2497,24 +2572,24 @@ li {
           <h3 class="footer-brand-title">Lulu Logan Group</h3>
 
           <div class="footer-cell">
-            <div class="footer-cell-title">Email</div>
+            <div class="footer-cell-title">EMAIL</div>
             <div class="footer-cell-val">
               <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
             </div>
           </div>
 
           <div class="footer-cell">
-            <div class="footer-cell-title">Phone Number</div>
+            <div class="footer-cell-title">PHONE NUMBER</div>
             <div class="footer-cell-val">
               <a href="tel:6692220704">(669) 222-0704</a>
             </div>
           </div>
 
           <div class="footer-cell">
-            <div class="footer-cell-title">Address</div>
+            <div class="footer-cell-title">ADDRESS</div>
             <div class="footer-cell-val">
-              2181 N TRACY BLVD #275<br>
-              TRACY, CA 95376
+              <span class="footer-address-line">2181 N TRACY BLVD #275</span>
+              <span>TRACY, CA 95376</span>
             </div>
           </div>
         </div>
@@ -2522,10 +2597,10 @@ li {
         <!-- Right: Newsletter Subscription Form -->
         <div class="footer-newsletter-box">
           <form id="footerNewsletterForm" class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to exclusive news!'); this.reset();">
-            <div class="footer-cell-title">Sign up for exclusive news</div>
+            <div class="footer-newsletter-title">SIGN UP FOR EXCLUSIVE NEWS</div>
 
             <div class="inp-group">
-              <label for="footer-email-input" class="footer-input-label">Email Address</label>
+              <label for="footer-email-input" class="footer-input-label">EMAIL ADDRESS</label>
               <input type="email" id="footer-email-input" class="footer-input-field" required>
             </div>
 
@@ -2536,7 +2611,7 @@ li {
               </label>
             </div>
 
-            <button type="submit" class="footer-subscribe-btn">Subscribe</button>
+            <button type="submit" class="footer-subscribe-btn">SUBSCRIBE</button>
           </form>
         </div>
 
@@ -2549,7 +2624,8 @@ li {
         </p>
 
         <div class="footer-logos-wrap">
-          <img src="images/realtor-equal-housing.png" alt="Realtor &amp; Equal Housing Opportunity" class="footer-logos-img">
+          <img src="images/realtor-logo.png" alt="Realtor" class="footer-logo-realtor">
+          <img src="images/equal-housing-logo.png" alt="Equal Housing Opportunity" class="footer-logo-eho">
         </div>
 
         <div class="footer-broker-info">
