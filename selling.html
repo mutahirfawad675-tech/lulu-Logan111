@@ -81,32 +81,70 @@ img {
   top: 0;
   left: 0;
   width: 100%;
+  height: 90px;
   z-index: 1000;
   background-color: transparent;
-  transition: background-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
-  padding: 24px 0;
+  color: var(--white);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
 }
 
 #global-navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 14px 0;
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
-  max-width: 1520px;
-  margin: 0 auto;
-  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
+  padding: 0 42px;
+  box-sizing: border-box;
 }
 
 .nav-group {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
   list-style: none;
+}
+
+.nav-group-left {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.nav-group-right {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-logo {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 4px;
+}
+
+.nav-logo img {
+  height: 55px;
+  width: auto;
+  max-height: 55px;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo .logo-dark {
+  display: none;
+}
+
+#global-navbar.scrolled .nav-logo .logo-light {
+  display: none;
+}
+
+#global-navbar.scrolled .nav-logo .logo-dark {
+  display: block;
 }
 
 .nav-item {
@@ -115,20 +153,40 @@ img {
 
 .nav-link {
   font-family: var(--body-font);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--white);
+  color: inherit;
   padding: 8px 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  position: relative;
   transition: color 0.25s ease;
+  text-decoration: none;
 }
 
-#global-navbar.scrolled .nav-link {
-  color: #222222;
+.nav-chevron {
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-link:hover,
@@ -180,49 +238,38 @@ img {
   color: var(--accent);
 }
 
-.nav-logo {
+.nav-phone {
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.nav-item-hamburger {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.nav-logo img {
-  height: 52px;
-  width: auto;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.nav-logo .logo-dark {
-  display: none;
-}
-
-#global-navbar.scrolled .nav-logo .logo-light {
-  display: none;
-}
-
-#global-navbar.scrolled .nav-logo .logo-dark {
-  display: block;
-}
-
-.nav-phone {
-  letter-spacing: 0.5px;
+  margin-left: 24px;
 }
 
 .hamburger-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  padding: 0;
+  color: #ffffff;
 }
 
 .hamburger-btn span {
   display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--white);
+  background-color: #ffffff;
   transition: background-color 0.25s ease;
 }
 
@@ -317,48 +364,107 @@ img {
 
 /* ==========================================================================
    SECTION 1 (Screenshot 1): HERO - SELLING SERVICES
+   Aspect Ratio: ~2.12:1 | Recommended Full-Width Canvas: 1440px x 680px
    ========================================================================== */
 #selling-hero {
   position: relative;
-  min-height: 80vh;
+  width: 100%;
+  height: 680px;
+  min-height: 680px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   color: var(--white);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/selling-hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url('images/selling-hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 140px 24px 90px;
+  box-sizing: border-box;
+  padding-top: 262px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .selling-hero-content {
-  max-width: 920px;
+  width: 100%;
+  max-width: 940px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .selling-hero-title {
   font-family: var(--primary-font);
-  font-size: 46px;
+  font-size: 50px;
   font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  color: #ffffff;
+  margin: 0 0 26px 0;
   line-height: 1.2;
+  text-align: center;
 }
 
 .selling-hero-subtitle {
   font-family: var(--body-font);
-  font-size: 14.5px;
-  font-weight: 300;
+  font-size: 14.8px;
+  font-weight: 400;
   line-height: 1.8;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 820px;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  max-width: 940px;
   margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  #selling-hero {
+    height: auto;
+    min-height: 520px;
+    padding: 180px 20px 80px;
+  }
+  .selling-hero-title {
+    font-size: 38px;
+  }
+  .selling-hero-subtitle br {
+    display: none;
+  }
+}
+
+/* Accessibility Floating Button (Bottom Right) */
+.accessibility-floating-btn {
+  position: fixed;
+  bottom: 12px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10010;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accessibility-floating-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+}
+
+.accessibility-floating-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #000000;
 }
 
 /* ==========================================================================
@@ -1946,13 +2052,13 @@ li {
       <!-- Right Navigation Links -->
       <ul class="nav-group nav-group-right">
         <li class="nav-item">
-          <a href="knowledge-center.html" class="nav-link">Knowledge Center</a>
+          <a href="knowledge-center.html" class="nav-link">KNOWLEDGE CENTER</a>
         </li>
         <li class="nav-item">
-          <a href="just-1-network.html" class="nav-link">Just 1 Network</a>
+          <a href="just-1-network.html" class="nav-link">JUST 1 NETWORK</a>
         </li>
         <li class="nav-item">
-          <a href="contact-us.html" class="nav-link">Contact Us</a>
+          <a href="contact-us.html" class="nav-link">CONTACT US</a>
         </li>
         <li class="nav-item">
           <a href="tel:6692220704" class="nav-link nav-phone">(669) 222-0704</a>
@@ -1981,7 +2087,7 @@ li {
     <div class="selling-hero-content">
       <h1 class="selling-hero-title">SELLING SERVICES</h1>
       <p class="selling-hero-subtitle">
-        Selling your home is more than a transaction—it's a strategic moment. At Just 1 Real Estate, we combine boutique advisory, modern marketing, and the power of the Just 1 Network to prepare, position, and present your property for maximum impact.
+        Selling your home is more than a transaction—it’s a strategic moment. At Just 1 Real Estate, we combine boutique <br>advisory, modern marketing, and the power of the Just 1 Network to prepare, position, and present your property for <br>maximum impact.
       </p>
     </div>
   </section>
@@ -2865,6 +2971,19 @@ li {
       </div>
     </div>
   </div>
+
+  <!-- Floating Contact Us Button (Bottom Left) -->
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal onclick="if (typeof openContactModal === 'function') openContactModal();">
+    CONTACT US <span style="font-size: 11px; transform: scaleY(0.7); display: inline-block;">&#94;</span>
+  </button>
+
+  <!-- Accessibility Floating Button (Bottom Right) -->
+  <button class="accessibility-floating-btn" id="accessibilityBtn" aria-label="Accessibility options" onclick="alert('Accessibility preferences');">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.62-.44-.45-.2-.96-.2-1.41 0-.24.1-.45.25-.62.44L9.7 9.17C8.72 10.25 7.17 11.02 5.63 11v2c1.94.02 3.79-.86 5.07-2.14L11 11.16V16l-2.45 4.36 1.74.98L12.5 17.5l2.21 3.84 1.74-.98L14 16v-4.84l.3-.3c1.28 1.28 3.13 2.16 5.07 2.14z"/>
+    </svg>
+  </button>
 
 </body>
 </html>
