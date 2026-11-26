@@ -409,24 +409,35 @@ button, input, textarea, select {
 
 /* ==========================================================================
    SECTION 2: LOCAL GUIDE STATEMENT
+   Exact 1440 x 336 px sizing & typography
    ========================================================================== */
 .kc-intro {
   background-color: #ffffff;
-  padding: 85px 20px 45px;
+  padding: 0;
   text-align: center;
+  width: 100%;
+}
+
+.kc-intro .container {
+  max-width: 1440px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .kc-intro-wrap {
-  max-width: 980px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .kc-intro-img {
   width: 100%;
-  max-width: 960px;
+  max-width: 1440px;
   height: auto;
+  aspect-ratio: 1440 / 336;
   display: block;
 }
 
