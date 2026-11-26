@@ -451,58 +451,92 @@ img {
 }
 
 /* ==========================================================================
-   SECTION 2 (Screenshot 2): STRATEGIC GUIDANCE & ACCORDION
+   SECTION 2: STRATEGIC GUIDANCE & ACCORDION (HOMEOWNERSHIP SECTION)
    ========================================================================== */
 #buying-approach {
-  padding: 90px 0 100px;
+  padding: 96px 0 100px;
   background-color: var(--white);
+  box-sizing: border-box;
+}
+
+#buying-approach .container {
+  max-width: 1440px;
+  padding: 0 65px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .buying-approach-header {
   text-align: center;
-  max-width: 980px;
-  margin: 0 auto 65px;
+  max-width: 1000px;
+  margin: 0 auto 74px;
 }
 
 .buying-approach-title {
   font-family: var(--primary-font);
-  font-size: 28px;
+  font-size: 29px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   line-height: 1.45;
   color: #111111;
+  margin: 0;
 }
 
 .buying-approach-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1310px;
+  margin: 0 auto;
 }
 
-/* Image with cyan box shadow offset matching original website */
+/* Left-Side Interior Photo & Teal Offset Accent */
 .buying-approach-img-wrap {
   position: relative;
-  width: 100%;
+  width: 615px;
+  height: 345px;
+  flex-shrink: 0;
 }
 
 .buying-approach-img {
-  width: 100%;
-  aspect-ratio: 1/1;
+  width: 615px;
+  height: 345px;
   object-fit: cover;
+  object-position: center;
   display: block;
-  box-shadow: 15px 15px 0px -4px #3BB9CA;
+  position: relative;
+  z-index: 1;
 }
 
-/* Accordion */
+.buying-approach-img-wrap::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  border-right: 12px solid #38B2C4;
+  border-bottom: 12px solid #38B2C4;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Right-Side Accordion Menu */
 .buying-accordion-list {
   display: flex;
   flex-direction: column;
+  width: 625px;
+  max-width: 625px;
+  flex-shrink: 0;
 }
 
 .buying-accordion-item {
-  border-bottom: 1px solid var(--black);
+  border-top: none !important;
+  border-bottom: 1px solid #222222;
+  width: 100%;
 }
 
 .buying-accordion-header {
@@ -515,19 +549,20 @@ img {
   justify-content: space-between;
   cursor: pointer;
   text-align: left;
-  gap: 15px;
   outline: none;
 }
 
 .buying-accordion-header h3 {
-  font-family: var(--primary-font);
-  font-size: 15px;
+  font-family: var(--body-font);
+  font-size: 13.5px;
   font-weight: 500;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--black);
-  transition: color 0.2s ease;
-  line-height: 1.4;
+  color: #222222;
+  transition: color 0.25s ease;
+  line-height: 1.5;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .buying-accordion-header:hover h3,
@@ -536,18 +571,24 @@ img {
 }
 
 .accordion-chevron {
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
-  transform: rotate(45deg);
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: 12px;
+  height: 7px;
   flex-shrink: 0;
+  margin-right: 12px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.accordion-chevron polyline {
+  transition: stroke 0.25s ease;
+}
+
+.buying-accordion-header:hover .accordion-chevron polyline,
+.buying-accordion-item.active .accordion-chevron polyline {
+  stroke: var(--accent);
 }
 
 .buying-accordion-item.active .accordion-chevron {
-  transform: rotate(-135deg);
-  border-color: var(--accent);
+  transform: rotate(180deg);
 }
 
 .buying-accordion-body {
@@ -1165,8 +1206,26 @@ img {
     display: none;
   }
   .buying-approach-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 40px;
+  }
+  .buying-approach-img-wrap {
+    width: 100%;
+    max-width: 615px;
+    height: auto;
+  }
+  .buying-approach-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  .buying-accordion-list {
+    width: 100%;
+    max-width: 625px;
+  }
+  .buying-accordion-header h3 {
+    white-space: normal;
   }
   .framework-cards-row {
     flex-wrap: wrap;
@@ -2193,7 +2252,8 @@ li {
       
       <header class="buying-approach-header">
         <h2 class="buying-approach-title">
-          STRATEGIC GUIDANCE. CONFIDENT DECISIONS. A MODERN PATH TO HOMEOWNERSHIP.
+          STRATEGIC GUIDANCE. CONFIDENT DECISIONS. A<br class="br-desktop">
+          MODERN PATH TO HOMEOWNERSHIP.
         </h2>
       </header>
 
@@ -2211,7 +2271,9 @@ li {
           <div class="buying-accordion-item">
             <button class="buying-accordion-header" type="button" aria-expanded="false">
               <h3>UNDERSTANDING YOUR GOALS</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 1 6 6 11 1"></polyline>
+              </svg>
             </button>
             <div class="buying-accordion-body">
               <div class="buying-accordion-body-inner">
@@ -2230,7 +2292,9 @@ li {
           <div class="buying-accordion-item">
             <button class="buying-accordion-header" type="button" aria-expanded="false">
               <h3>A GUIDED, SUPPORTED BUYING EXPERIENCE</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 1 6 6 11 1"></polyline>
+              </svg>
             </button>
             <div class="buying-accordion-body">
               <div class="buying-accordion-body-inner">
@@ -2252,7 +2316,9 @@ li {
           <div class="buying-accordion-item">
             <button class="buying-accordion-header" type="button" aria-expanded="false">
               <h3>LOCAL INSIGHT THAT MAKES THE DIFFERENCE</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 1 6 6 11 1"></polyline>
+              </svg>
             </button>
             <div class="buying-accordion-body">
               <div class="buying-accordion-body-inner">
@@ -2273,7 +2339,9 @@ li {
           <div class="buying-accordion-item">
             <button class="buying-accordion-header" type="button" aria-expanded="false">
               <h3>NEGOTIATION WITH PURPOSE</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 1 6 6 11 1"></polyline>
+              </svg>
             </button>
             <div class="buying-accordion-body">
               <div class="buying-accordion-body-inner">
@@ -2294,7 +2362,9 @@ li {
           <div class="buying-accordion-item">
             <button class="buying-accordion-header" type="button" aria-expanded="false">
               <h3>A SEAMLESS CLOSING EXPERIENCE</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 1 6 6 11 1"></polyline>
+              </svg>
             </button>
             <div class="buying-accordion-body">
               <div class="buying-accordion-body-inner">
