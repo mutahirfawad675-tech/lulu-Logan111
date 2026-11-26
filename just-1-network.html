@@ -566,8 +566,8 @@ button, input, textarea, select {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding-left: 54px;
-  padding-right: 54px;
+  padding-left: clamp(24px, 3.75vw, 54px);
+  padding-right: clamp(24px, 3.75vw, 54px);
   box-sizing: border-box;
 }
 
@@ -575,13 +575,13 @@ button, input, textarea, select {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 100px;
+  gap: clamp(40px, 6vw, 90px);
   width: 100%;
 }
 
 .jn-split-text-col {
-  flex: 0 0 562px;
-  max-width: 562px;
+  flex: 1 1 500px;
+  max-width: 565px;
   padding-top: 187px; /* 68px section padding + 187px = 255px from top edge to title */
   box-sizing: border-box;
 }
@@ -613,21 +613,35 @@ button, input, textarea, select {
 }
 
 .jn-split-img-col {
-  flex: 0 0 670px;
-  max-width: 670px;
+  flex: 0 1 682px;
+  max-width: 682px;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
 .jn-split-img-box {
   position: relative;
-  width: 670px;
-  height: 535px;
+  width: 100%;
+  max-width: 670px;
+  height: auto;
+}
+
+.jn-split-img-box.jn-shadow-right {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.jn-split-img-box.jn-shadow-left {
+  margin-left: 12px;
+  margin-bottom: 12px;
 }
 
 .jn-split-img-box img {
-  width: 670px;
-  height: 535px;
+  width: 100%;
+  max-width: 670px;
+  height: auto;
+  aspect-ratio: 670 / 535;
   object-fit: cover;
   display: block;
 }
@@ -1094,6 +1108,10 @@ button, input, textarea, select {
     width: 100%;
     max-width: 540px;
     height: auto;
+  }
+  .jn-split-img-box.jn-shadow-right,
+  .jn-split-img-box.jn-shadow-left {
+    margin: 0 auto 12px auto;
   }
   .jn-split-img-box img {
     width: 100%;
