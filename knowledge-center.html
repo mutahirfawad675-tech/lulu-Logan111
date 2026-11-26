@@ -849,14 +849,14 @@ button, input, textarea, select {
    ========================================================================== */
 .kc-ig-section {
   background-color: #ffffff;
-  padding: 18px 36px 18px;
+  padding: clamp(18px, 1.8vw, 30px) clamp(36px, 3.4vw, 48px);
   width: 100%;
   box-sizing: border-box;
 }
 
 .kc-ig-container {
   width: 100%;
-  max-width: 952px;
+  max-width: 1344px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -865,7 +865,7 @@ button, input, textarea, select {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 28px;
+  margin-bottom: clamp(28px, 2.7vw, 38px);
 }
 
 .kc-ig-title-col {
@@ -875,19 +875,19 @@ button, input, textarea, select {
 
 .kc-ig-title-col h3 {
   font-family: var(--primary-font);
-  font-size: clamp(19px, 1.85vw, 27px);
+  font-size: clamp(19px, 1.9vw, 28px);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #121212;
-  margin: 0 0 10px 0;
+  margin: 0 0 clamp(10px, 0.95vw, 14px) 0;
   line-height: 1.2;
 }
 
 .kc-ig-handle {
   display: inline-block;
   font-family: var(--body-font);
-  font-size: clamp(14px, 1.4vw, 20.5px);
+  font-size: clamp(14px, 1.42vw, 21px);
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -904,21 +904,21 @@ button, input, textarea, select {
 .kc-ig-nav-col {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: clamp(22px, 2.1vw, 31px);
 }
 
 .kc-ig-follow-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 132px;
-  height: 36px;
+  width: clamp(132px, 12.8vw, 185px);
+  height: clamp(36px, 3.5vw, 50px);
   background-color: var(--accent);
   color: #ffffff;
   border: none;
   border-radius: 0;
   font-family: var(--body-font);
-  font-size: clamp(10px, 0.95vw, 13px);
+  font-size: clamp(10px, 0.98vw, 14px);
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -937,12 +937,12 @@ button, input, textarea, select {
 .kc-ig-arrows {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: clamp(6px, 0.6vw, 8.5px);
 }
 
 .kc-ig-arrow-btn {
-  width: 36px;
-  height: 36px;
+  width: clamp(36px, 3.5vw, 50px);
+  height: clamp(36px, 3.5vw, 50px);
   background-color: var(--accent);
   color: #ffffff;
   border: none;
@@ -957,8 +957,8 @@ button, input, textarea, select {
 }
 
 .kc-ig-arrow-btn svg {
-  width: 9px;
-  height: 14px;
+  width: clamp(9px, 0.9vw, 13px);
+  height: clamp(14px, 1.4vw, 19px);
 }
 
 .kc-ig-arrow-btn:hover {
@@ -967,7 +967,7 @@ button, input, textarea, select {
 
 .kc-ig-grid-wrap {
   width: 100%;
-  max-width: 952px;
+  max-width: 1344px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
@@ -977,12 +977,12 @@ button, input, textarea, select {
 .kc-ig-grid-wrap a {
   display: block;
   width: 100%;
-  max-width: 952px;
+  max-width: 1344px;
 }
 
 .kc-ig-grid-wrap img {
   width: 100%;
-  max-width: 952px;
+  max-width: 1344px;
   height: auto;
   aspect-ratio: 952 / 372;
   display: block;
