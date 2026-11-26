@@ -912,11 +912,16 @@ button, input, textarea, select {
   position: relative;
   background-image: url('images/jn-workwithus.jpg');
   background-size: cover;
-  background-position: center;
-  color: var(--white);
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #ffffff;
   text-align: center;
-  padding-top: 110px;
-  padding-bottom: 110px;
+  min-height: 680px;
+  box-sizing: border-box;
+  padding: 240px 20px 185px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-with-us-overlay {
@@ -925,52 +930,123 @@ button, input, textarea, select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.48);
+  background: rgba(0, 0, 0, 0.38); /* Semi-transparent dark overlay scrim (0.35 - 0.40) */
   z-index: 1;
+}
+
+.work-with-us-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .work-with-us-content {
   position: relative;
   z-index: 2;
-  max-width: 760px;
+  max-width: 680px;
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .work-with-us-content h2 {
-  font-size: 38px;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  font-family: var(--primary-font);
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+  text-transform: uppercase !important;
   color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 26px; /* 26px - 28px vertical gap to subtitle */
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .work-with-us-content p {
-  font-size: 14px;
-  line-height: 1.8;
-  margin-bottom: 35px;
+  font-family: var(--body-font);
+  font-size: 15.5px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  word-spacing: 1.5px;
   color: #ffffff;
+  line-height: 1.8;
+  margin-top: 0;
+  margin-bottom: 46px; /* 44px - 48px vertical gap to center CTA button */
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .work-with-us-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 44px;
+  width: 205px;
+  height: 54px;
+  box-sizing: border-box;
   background-color: #ffffff;
-  color: var(--accent);
+  color: #38B2C4;
   border: 1px solid #ffffff;
+  border-radius: 0px; /* Sharp 0px corners */
   font-family: var(--body-font);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
+  word-spacing: 4px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .work-with-us-btn:hover {
-  background-color: var(--accent);
+  background-color: #38B2C4;
   color: #ffffff;
-  border-color: var(--accent);
+  border-color: #38B2C4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 991px) {
+  #work-with-us {
+    min-height: auto;
+    padding: 120px 24px 100px 24px;
+  }
+  .work-with-us-content h2 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    margin-bottom: 20px;
+  }
+  .work-with-us-content p {
+    font-size: 14.5px;
+    margin-bottom: 35px;
+  }
+  .work-with-us-btn {
+    width: 190px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  #work-with-us {
+    padding: 90px 16px 80px 16px;
+  }
+  .work-with-us-content h2 {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    word-spacing: 3px;
+  }
+  .work-with-us-content p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
 }
 
 /* ==========================================================================
@@ -2449,11 +2525,12 @@ li {
        ========================================================================== -->
   <section id="work-with-us">
     <div class="work-with-us-overlay"></div>
-    <div class="container">
+    <div class="container work-with-us-container">
       <div class="work-with-us-content">
         <h2>WORK WITH US</h2>
         <p>
-          A modern real estate experience built on strategy, boutique service, and a connected network of professionals.
+          A modern real estate experience built on strategy, boutique service, and<br class="jn-br-desktop">
+          a connected network of professionals.
         </p>
         <a href="contact-us.html" class="work-with-us-btn">CONTACT US</a>
       </div>
