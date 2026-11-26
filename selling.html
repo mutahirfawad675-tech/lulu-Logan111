@@ -513,29 +513,23 @@ img {
   box-sizing: border-box;
 }
 
-/* Image with teal vertical offset accent */
+/* Image with teal offset accent */
 .selling-approach-img-wrap {
   position: relative;
-  width: 627px;
-  height: 345px;
-  flex: 0 0 627px;
-  display: flex;
+  flex: 0 0 600px;
+  max-width: 600px;
+  width: 100%;
+  margin-right: 12px;
+  margin-bottom: 12px;
 }
 
 .selling-approach-img {
-  width: 615px;
-  height: 345px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 42%;
   display: block;
-}
-
-.teal-vertical-accent {
-  width: 12px;
-  height: calc(100% - 20px);
-  margin-top: 20px;
-  background-color: #38B2C4;
-  flex-shrink: 0;
+  box-shadow: 12px 12px 0px 0px #38B2C4;
 }
 
 /* Accordion */
@@ -1084,14 +1078,16 @@ img {
     gap: 40px;
   }
   .selling-approach-img-wrap {
-    width: 100%;
-    max-width: 627px;
+    width: calc(100% - 12px);
+    max-width: 580px;
     height: auto;
+    margin-right: 12px;
+    margin-bottom: 12px;
   }
   .selling-approach-img {
-    width: calc(100% - 12px);
+    width: 100%;
     height: auto;
-    aspect-ratio: 615 / 345;
+    aspect-ratio: 1 / 1;
   }
   .selling-accordion-list {
     flex: 1 1 100%;
@@ -2155,13 +2151,12 @@ li {
 
       <div class="selling-approach-grid">
         
-        <!-- Left Image with teal vertical accent -->
+        <!-- Left Image with teal offset accent -->
         <div class="selling-approach-img-wrap">
           <img src="images/selling-approach.jpg" alt="A modern approach to selling your home" class="selling-approach-img">
-          <div class="teal-vertical-accent"></div>
         </div>
 
-        <!-- Right 4 Accordions -->
+        <!-- Right 5 Accordions -->
         <div class="selling-accordion-list">
           
           <!-- Accordion 1 -->
@@ -2252,6 +2247,33 @@ li {
                 <p><strong>AI sharpens the strategy. Our agents deliver the results.</strong></p>
               </div>
             </div>
+          </div>
+
+          <!-- Accordion 5 -->
+          <div class="selling-accordion-item">
+            <button class="selling-accordion-header" type="button" aria-expanded="false">
+              <h3>STANDING OUT IN A CROWDED MARKET</h3>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="selling-accordion-body">
+              <div class="selling-accordion-body-inner">
+                <p>Your property deserves premium exposure. Our marketing strategy blends modern digital reach with boutique presentation to ensure your home connects with the audience most likely to take action.</p>
+                <p>Your selling plan may include:</p>
+                <ul>
+                  <li>Targeted digital advertising</li>
+                  <li>High-quality photography + lifestyle visuals</li>
+                  <li>Curated property descriptions</li>
+                  <li>Social media amplification</li>
+                  <li>Agent-to-agent networking</li>
+                  <li>Global + relocation partner visibility (via Just 1 Network)</li>
+                  <li>Strategic open house planning</li>
+                </ul>
+                <p>Every listing is positioned with intention—designed to attract qualified buyers and maximize market impact.</p>
+              </div>
+            </div>
+          </div>
           </div>
 
         </div>
