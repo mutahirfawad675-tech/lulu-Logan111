@@ -362,18 +362,23 @@
     }
 
     /* ==========================================================================
-       SECTION 2, 3 & 4 (Screenshots 2, 3, 4): TESTIMONIALS LIST & PAGINATION
-       (Clean layout without icons - matching screenshots exactly)
+       SECTION 2: TESTIMONIALS LIST & CARDS
+       Aspect Ratio: ~2.12:1 | Recommended Full-Width Canvas: 1440px x 680px
+       Inner Container: 1160px max-width | Divider Line: 1170px (135px margins)
        ========================================================================== */
     #testimonials-list-section {
       background-color: var(--white);
-      padding: 70px 0 60px;
+      padding: 102px 0 60px;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .testimonials-container {
-      max-width: 960px;
+      width: 100%;
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 0 30px;
+      padding: 0 135px;
+      box-sizing: border-box;
     }
 
     .testimonials-page {
@@ -391,25 +396,38 @@
     }
 
     .testimonial-card {
+      width: 100%;
+      max-width: 1170px;
+      margin: 0 auto 54px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #222222;
       text-align: center;
-      padding-top: 15px;
-      padding-bottom: 45px;
-      margin-bottom: 45px;
-      border-bottom: 1px solid #111111;
+      box-sizing: border-box;
     }
 
-    .testimonial-card:last-child {
-      margin-bottom: 45px;
+    .testimonial-house-icon {
+      width: 105px;
+      height: 105px;
+      display: block;
+      margin: 0 auto 44px;
+      object-fit: contain;
     }
 
     .testimonial-text {
-      font-size: 15.5px;
-      line-height: 1.95;
-      letter-spacing: 0.6px;
-      color: #111111;
-      max-width: 840px;
-      margin: 0 auto 30px;
+      font-family: var(--body-font);
+      font-size: 14.5px;
       font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.3px;
+      color: #222222;
+      max-width: 1140px;
+      margin: 0 auto 42px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .desktop-br {
+      display: inline;
     }
 
     /* Expandable / Read More Toggle */
@@ -425,9 +443,9 @@
     .btn-read-more {
       background: none;
       border: none;
-      color: #111111;
+      color: #333333;
       font-family: var(--body-font);
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       font-weight: 500;
@@ -435,8 +453,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin: 5px 0 25px;
-      padding: 6px 0;
+      margin: -20px auto 35px;
+      padding: 6px 12px;
       transition: color 0.2s ease;
     }
 
@@ -445,13 +463,15 @@
     }
 
     .testimonial-author {
-      font-family: var(--body-font);
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
+      font-family: var(--primary-font);
+      font-size: 27px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      line-height: 1.2;
       text-transform: uppercase;
       color: #111111;
-      margin-top: 10px;
+      text-align: center;
+      margin: 0 auto;
     }
 
     /* Pagination Row (Screenshot 4) */
@@ -810,33 +830,6 @@
       font-size: 10.5px;
       color: #888888;
       margin-top: 25px;
-    }
-
-    /* Floating Contact Button (Bottom Left) */
-    .floating-contact-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: var(--accent);
-      color: var(--white);
-      padding: 12px 22px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      z-index: 998;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: var(--transition-smooth);
-    }
-
-    .floating-contact-btn:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-2px);
     }
 
     /* ==========================================================================
@@ -1287,13 +1280,17 @@ li {
 /* Floating Contact Button */
 .floating-contact-btn {
   position: fixed !important;
-  bottom: 24px !important;
-  left: 24px !important;
-  background-color: #2ea8b8 !important;
+  bottom: 26px !important;
+  left: 20px !important;
+  width: 150px !important;
+  height: 48px !important;
+  box-sizing: border-box !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
-  padding: 12px 24px !important;
+  padding: 0 !important;
+  font-family: var(--body-font) !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   border: none !important;
@@ -1301,7 +1298,8 @@ li {
   z-index: 998 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  justify-content: center !important;
+  gap: 6px !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
   text-decoration: none !important;
   text-shadow: none !important;
@@ -1309,7 +1307,7 @@ li {
   pointer-events: none !important;
   transform: translateY(16px) !important;
   transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease !important;
-  border-radius: 2px !important;
+  border-radius: 0 !important;
 }
 
 .floating-contact-btn.visible {
@@ -1319,7 +1317,7 @@ li {
 }
 
 .floating-contact-btn:hover {
-  background-color: #258895 !important;
+  background-color: #329ea8 !important;
   color: #ffffff !important;
 }
 
@@ -1934,16 +1932,21 @@ li {
         
         <!-- Card 1: Sam N. (Screenshot 2) -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
-            Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across Manteca, Lathrop, Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication, strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family while delivering expert results. Highly recommend!
+            Lulu and the Just 1 Real Estate team are absolutely amazing! They're helped us navigate multiple transactions across Manteca, Lathrop,<br class="desktop-br">
+            Mountain House, and Oakdale with professionalism, deep market knowledge, and solid dedication, strategic guidance, and personal care<br class="desktop-br">
+            made every step seamless. Truly a one-of-a-kind team that treats you like family while delivering expert results. Highly recommend!
           </p>
           <h2 class="testimonial-author">SAM N.</h2>
         </article>
 
         <!-- Card 2: Dianna (Screenshot 2) -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
-            Lulu, At Just 1Real Estate is fantastic. You couldn't ask for a better experience. She's knowledgeable about the properties she's selling, and I would recommend her to anyone interested in purchasing a home.<br><br>
+            Lulu, At Just 1Real Estate is fantastic. You couldn't ask for a better experience. She's knowledgeable about the properties she's selling, and<br class="desktop-br">
+            I would recommend her to anyone interested in purchasing a home.<br class="desktop-br">
             So go see Lulu, if you're looking for a home.
           </p>
           <h2 class="testimonial-author">DIANNA</h2>
@@ -1951,14 +1954,17 @@ li {
 
         <!-- Card 3: Mark K. (Screenshot 3) -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
-            I had a great experience with Lulu , she did a great job handling everything from the very beginning to the very end. I highly recommend her and team!
+            I had a great experience with Lulu , she did a great job handling everything from the very beginning to the very end. I highly recommend<br class="desktop-br">
+            her and team!
           </p>
           <h2 class="testimonial-author">MARK K.</h2>
         </article>
 
         <!-- Card 4: Kathy W. with Read More (Screenshot 3 & 4) -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <div class="testimonial-expand-wrapper">
             <p class="testimonial-text text-short" id="kathy-short">
               We would both like to express our sincere appreciation for Lulu Logan — not only an exceptional real estate professional, but also a truly remarkable person. Our journey with Lulu began when we spotted a listing online and needed an agent representative to view the home. Zillow connected us with Lulu, and after an initial hour-long coffee meeting, we had no idea how significant her role would become over the next ten months. From the outset, Lulu impressed us with her experience and professionalism, but what really stood out was her thoughtful approach. She took time to understand our preferences, financial parameters, desired neighborhoods, and — most importantly — our reasons for house hunting. With every showing, she gathered deeper insights into our evolving tastes, needs, and even areas of disagreement, always with patience and precision. As we were combining two households into one…
@@ -1967,7 +1973,7 @@ li {
               We would both like to express our sincere appreciation for Lulu Logan — not only an exceptional real estate professional, but also a truly remarkable person. Our journey with Lulu began when we spotted a listing online and needed an agent representative to view the home. Zillow connected us with Lulu, and after an initial hour-long coffee meeting, we had no idea how significant her role would become over the next ten months. From the outset, Lulu impressed us with her experience and professionalism, but what really stood out was her thoughtful approach. She took time to understand our preferences, financial parameters, desired neighborhoods, and — most importantly — our reasons for house hunting. With every showing, she gathered deeper insights into our evolving tastes, needs, and even areas of disagreement, always with patience and precision. As we were combining two households into one, Lulu asked to visit our individual homes. What seemed like a simple step turned out to be pivotal: it gave her a clear picture of our lifestyles and helped guide us to a home that would truly suit both of us. Her ability to understand not just real estate, but the people involved, became a key factor in finding the right fit. In the midst of our search, I also decided to sell a condo I owned in Southern California. Lulu didn’t hesitate — she took on what became a very complex and drawn-out process, filled with challenges including repairs, upgrades, a difficult HOA, and long-distance coordination. Through it all, Lulu was unwavering. She managed every aspect with remarkable diligence and professionalism. That sale, which might have discouraged many agents, closed successfully thanks to her persistence and problem-solving. Then, two months ago, we found the home — a perfect fit that captured both of us immediately. The home was at the top of our price range, but Lulu found a creative way to structure the deal and make it work. Once again, she navigated a complicated purchase process and got us to the finish line. Over the course of nearly a year, Lulu earned our complete trust and respect. Her vast knowledge — not only of real estate but also of finance and estate planning — is only surpassed by her people skills. She’s a master at managing personalities, expectations, and emotions, all while keeping the process on track. Lulu isn’t just a phenomenal agent — she’s become a friend. We wholeheartedly recommend her to anyone buying or selling a home. With Lulu Logan, you are truly in the best hands.
             </p>
             <button class="btn-read-more" id="kathy-toggle-btn" onclick="toggleKathyReview()">
-              <span id="kathy-toggle-text">READ MORE</span> <span id="kathy-toggle-caret">▼</span>
+              <span id="kathy-toggle-text">READ MORE</span> <span id="kathy-toggle-caret" style="font-size: 9px; vertical-align: middle;">&#9660;</span>
             </button>
           </div>
           <h2 class="testimonial-author">KATHY W.</h2>
@@ -1980,6 +1986,7 @@ li {
         
         <!-- Card 5: Robert & Elena M. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             Working with Lulu Logan was an absolute pleasure. From our first consultation in Mountain House to closing day, she demonstrated incredible market knowledge and negotiated an amazing deal on our behalf. Her attention to detail and proactive communication gave us peace of mind every step of the way.
           </p>
@@ -1988,6 +1995,7 @@ li {
 
         <!-- Card 6: Sarah T. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             Lulu is truly exceptional. She helped us sell our home in Tracy in less than two weeks above asking price! Her staging advice and marketing strategy were top notch. We cannot recommend Just 1 Real Estate enough to anyone looking for a dedicated and honest realtor.
           </p>
@@ -1996,6 +2004,7 @@ li {
 
         <!-- Card 7: David C. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             As first-time home buyers in the Central Valley, we had countless questions and anxieties. Lulu guided us through every inspection, escrow detail, and contract clause with remarkable patience. She found us the perfect home in Manteca!
           </p>
@@ -2004,6 +2013,7 @@ li {
 
         <!-- Card 8: Michael & Jennifer S. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             Lulu Logan and her team are in a league of their own. They treated our sale with utmost care and professionalism. Every detail from photography to open houses was executed flawlessly.
           </p>
@@ -2017,6 +2027,7 @@ li {
         
         <!-- Card 9: Amanda P. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             Lulu Logan is the epitome of professionalism in real estate. Her deep knowledge of the Tri-Valley and Central Valley markets saved us time and money. A wonderful experience from start to finish.
           </p>
@@ -2025,6 +2036,7 @@ li {
 
         <!-- Card 10: Jason B. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             Finding a reliable realtor who puts your interests first is rare. Lulu was always responsive, knowledgeable, and genuinely cared about our goals. Best real estate experience we've ever had.
           </p>
@@ -2033,6 +2045,7 @@ li {
 
         <!-- Card 11: Christina H. -->
         <article class="testimonial-card">
+          <img src="images/testimonial-house-logo.png" alt="Just 1 Real Estate House Icon" class="testimonial-house-icon" width="105" height="105">
           <p class="testimonial-text">
             Exceptional service, unmatched local expertise, and a truly caring approach. Lulu helped us transition seamlessly to our new home. Thank you Just 1 Real Estate!
           </p>
@@ -2181,7 +2194,9 @@ li {
   </footer>
 
   <!-- Floating Contact Us Button (Bottom Left) -->
-  
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal onclick="if (typeof openContactModal === 'function') openContactModal();">
+    CONTACT US <span style="font-size: 11px; transform: scaleY(0.7); display: inline-block;">&#94;</span>
+  </button>
 
   <!-- ==========================================================================
        GLOBAL CONTACT MODAL
