@@ -472,61 +472,91 @@ img {
    ========================================================================== */
 #selling-approach {
   padding: 90px 0 100px;
-  background-color: var(--white);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.selling-approach-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 65px);
+  box-sizing: border-box;
 }
 
 .selling-approach-header {
   text-align: center;
-  max-width: 980px;
-  margin: 0 auto 65px;
+  max-width: 1000px;
+  margin: 0 auto 72px;
 }
 
 .selling-approach-title {
-  font-family: var(--primary-font);
-  font-size: 28px;
+  font-family: 'Tenor Sans', serif;
+  font-size: 29px;
   font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  letter-spacing: 1.8px;
   line-height: 1.45;
   color: #111111;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .selling-approach-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 43px;
+  max-width: 1322px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Image with cyan box shadow offset matching original website */
+/* Image with teal vertical offset accent */
 .selling-approach-img-wrap {
   position: relative;
-  width: 100%;
+  width: 627px;
+  height: 345px;
+  flex: 0 0 627px;
+  display: flex;
 }
 
 .selling-approach-img {
-  width: 100%;
-  aspect-ratio: 1/1;
+  width: 615px;
+  height: 345px;
   object-fit: cover;
+  object-position: center 25%;
   display: block;
-  box-shadow: 15px 15px 0px -4px #3BB9CA;
+}
+
+.teal-vertical-accent {
+  width: 12px;
+  height: calc(100% - 20px);
+  margin-top: 20px;
+  background-color: #38B2C4;
+  flex-shrink: 0;
 }
 
 /* Accordion */
 .selling-accordion-list {
+  flex: 0 1 652px;
+  max-width: 652px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .selling-accordion-item {
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid #222222;
+  border-top: none;
 }
 
 .selling-accordion-header {
   width: 100%;
   background: none;
   border: none;
-  padding: 22px 0;
+  padding: 22px 12px 22px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -537,34 +567,35 @@ img {
 }
 
 .selling-accordion-header h3 {
-  font-family: var(--primary-font);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  color: #222222;
   text-transform: uppercase;
-  color: var(--black);
+  margin: 0;
   transition: color 0.2s ease;
-  line-height: 1.4;
 }
 
 .selling-accordion-header:hover h3,
 .selling-accordion-item.active .selling-accordion-header h3 {
-  color: var(--accent);
+  color: #38B2C4;
 }
 
 .accordion-chevron {
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
-  transform: rotate(45deg);
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: 12px;
+  height: 7px;
   flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .selling-accordion-item.active .accordion-chevron {
-  transform: rotate(-135deg);
-  border-color: var(--accent);
+  transform: rotate(180deg);
+}
+
+.selling-accordion-item.active .accordion-chevron path {
+  stroke: #38B2C4;
 }
 
 .selling-accordion-body {
@@ -1044,9 +1075,27 @@ img {
   .nav-group-left, .nav-group-right .nav-item {
     display: none;
   }
+  #selling-approach {
+    padding: 70px 30px 80px;
+  }
   .selling-approach-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 40px;
+  }
+  .selling-approach-img-wrap {
+    width: 100%;
+    max-width: 627px;
+    height: auto;
+  }
+  .selling-approach-img {
+    width: calc(100% - 12px);
+    height: auto;
+    aspect-ratio: 615 / 345;
+  }
+  .selling-accordion-list {
+    flex: 1 1 100%;
+    max-width: 652px;
   }
   .framework-cards-row {
     flex-wrap: wrap;
@@ -2093,32 +2142,35 @@ li {
   </section>
 
   <!-- ==========================================================================
-       SECTION 2 (Screenshot 2): UNLEASHING POTENTIAL & 5 ACCORDIONS
+       SECTION 2 (Screenshot 2): UNLEASHING POTENTIAL & 4 ACCORDIONS
        ========================================================================== -->
   <section id="selling-approach">
-    <div class="container">
+    <div class="selling-approach-container">
       
       <header class="selling-approach-header">
         <h2 class="selling-approach-title">
-          UNLEASHING POTENTIAL. ELEVATING VALUE. A MODERN APPROACH TO SELLING YOUR HOME.
+          UNLEASHING POTENTIAL. ELEVATING VALUE. A MODERN<br>APPROACH TO SELLING YOUR HOME.
         </h2>
       </header>
 
       <div class="selling-approach-grid">
         
-        <!-- Left Image with cyan outline -->
+        <!-- Left Image with teal vertical accent -->
         <div class="selling-approach-img-wrap">
           <img src="images/selling-approach.jpg" alt="A modern approach to selling your home" class="selling-approach-img">
+          <div class="teal-vertical-accent"></div>
         </div>
 
-        <!-- Right 5 Accordions -->
+        <!-- Right 4 Accordions -->
         <div class="selling-accordion-list">
           
           <!-- Accordion 1 -->
           <div class="selling-accordion-item">
             <button class="selling-accordion-header" type="button" aria-expanded="false">
               <h3>YOUR VISION, OUR EXPERTISE</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
             <div class="selling-accordion-body">
               <div class="selling-accordion-body-inner">
@@ -2131,7 +2183,9 @@ li {
           <div class="selling-accordion-item">
             <button class="selling-accordion-header" type="button" aria-expanded="false">
               <h3>A SEAMLESS, SUPPORTED SELLING EXPERIENCE</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
             <div class="selling-accordion-body">
               <div class="selling-accordion-body-inner">
@@ -2154,7 +2208,9 @@ li {
           <div class="selling-accordion-item">
             <button class="selling-accordion-header" type="button" aria-expanded="false">
               <h3>POWERED BY THE JUST 1 NETWORK</h3>
-              <span class="accordion-chevron"></span>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
             <div class="selling-accordion-body">
               <div class="selling-accordion-body-inner">
@@ -2176,8 +2232,10 @@ li {
           <!-- Accordion 4 -->
           <div class="selling-accordion-item">
             <button class="selling-accordion-header" type="button" aria-expanded="false">
-              <h3>AI-ENHANCED MARKETING. HUMAN EXPERTISE. EXTRAORDINARY RESULTS</h3>
-              <span class="accordion-chevron"></span>
+              <h3>AI-ENHANCED MARKETING. HUMAN EXPERTISE.<br>EXTRAORDINARY RESULTS</h3>
+              <svg class="accordion-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
             <div class="selling-accordion-body">
               <div class="selling-accordion-body-inner">
@@ -2192,30 +2250,6 @@ li {
                   <li>Marketing refinements based on audience behavior trends</li>
                 </ul>
                 <p><strong>AI sharpens the strategy. Our agents deliver the results.</strong></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Accordion 5 -->
-          <div class="selling-accordion-item">
-            <button class="selling-accordion-header" type="button" aria-expanded="false">
-              <h3>STANDING OUT IN A CROWDED MARKET</h3>
-              <span class="accordion-chevron"></span>
-            </button>
-            <div class="selling-accordion-body">
-              <div class="selling-accordion-body-inner">
-                <p>Your property deserves premium exposure. Our marketing strategy blends modern digital reach with boutique presentation to ensure your home connects with the audience most likely to take action.</p>
-                <p>Your selling plan may include:</p>
-                <ul>
-                  <li>Targeted digital advertising</li>
-                  <li>High-quality photography + lifestyle visuals</li>
-                  <li>Curated property descriptions</li>
-                  <li>Social media amplification</li>
-                  <li>Agent-to-agent networking</li>
-                  <li>Global + relocation partner visibility (via Just 1 Network)</li>
-                  <li>Strategic open house planning</li>
-                </ul>
-                <p>Every listing is positioned with intention—designed to attract qualified buyers and maximize market impact.</p>
               </div>
             </div>
           </div>
