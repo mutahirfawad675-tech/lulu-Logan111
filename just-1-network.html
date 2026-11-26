@@ -580,8 +580,9 @@ button, input, textarea, select {
 }
 
 .jn-split-text-col {
-  flex: 1 1 500px;
+  flex: 0 0 565px;
   max-width: 565px;
+  min-width: 550px;
   padding-top: 187px; /* 68px section padding + 187px = 255px from top edge to title */
   box-sizing: border-box;
 }
@@ -593,7 +594,7 @@ button, input, textarea, select {
   letter-spacing: 2px;
   text-transform: uppercase !important;
   color: #000000;
-  margin-bottom: 24px;
+  margin-bottom: 34px;
   line-height: 1.2;
 }
 
@@ -602,10 +603,15 @@ button, input, textarea, select {
   font-size: 14.5px;
   font-weight: 400;
   color: #333333;
-  line-height: 1.8;
+  line-height: 1.85;
   letter-spacing: 0.3px;
   max-width: 565px;
   margin-bottom: 16px;
+  text-align: left;
+}
+
+.jn-br-desktop {
+  display: inline;
 }
 
 .jn-split-desc:last-child {
@@ -1102,7 +1108,11 @@ button, input, textarea, select {
   .jn-split-text-col, .jn-split-img-col {
     flex: 1 1 auto;
     max-width: 100%;
+    min-width: 0;
     padding-top: 0;
+  }
+  .jn-br-desktop {
+    display: none;
   }
   .jn-split-img-box {
     width: 100%;
@@ -2202,7 +2212,9 @@ li {
         <div class="jn-split-text-col">
           <h2 class="jn-split-title">VISION STATEMENT</h2>
           <p class="jn-split-desc">
-            To be the leading real estate and professional services network, recognized for our dedication to client success, innovative solutions, and unwavering commitment to quality and service.
+            To be the leading real estate and professional services network,<br class="jn-br-desktop">
+            recognized for our dedication to client success, innovative solutions, and<br class="jn-br-desktop">
+            unwavering commitment to quality and service.
           </p>
         </div>
 
