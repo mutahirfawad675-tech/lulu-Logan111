@@ -633,75 +633,124 @@ img {
    ========================================================================== */
 #buying-framework {
   background-color: #000000;
-  color: var(--white);
-  padding: 100px 0;
+  color: #FFFFFF;
+  padding: 118px 0 112px;
   text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#buying-framework .container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 81px;
+  box-sizing: border-box;
 }
 
 .framework-title {
   font-family: var(--primary-font);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   letter-spacing: 2.5px;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  color: #FFFFFF;
+  margin: 0 0 28px;
 }
 
 .framework-subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 55px;
-  letter-spacing: 0.5px;
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
+  color: #E5E5E5;
+  margin: 0 0 52px;
 }
 
 .framework-cards-row {
   display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: stretch;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 17px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1278px;
+  margin: 0 auto 44px;
+  width: 100%;
 }
 
 .framework-card {
-  flex: 1;
-  background-color: var(--white);
-  color: var(--black);
+  width: 168px;
+  min-width: 168px;
+  max-width: 168px;
+  height: 114px;
+  min-height: 114px;
+  flex: 0 0 168px;
+  background-color: #FFFFFF;
+  color: #111111;
   border-radius: 12px;
-  padding: 24px 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .framework-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(59, 185, 202, 0.25);
 }
 
 .framework-icon {
-  font-size: 28px;
-  margin-bottom: 10px;
-  line-height: 1;
+  width: 28px;
+  height: 28px;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-size: 26px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
 .framework-label {
-  font-size: 11px;
+  font-family: var(--body-font);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #111111;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .framework-footer-text {
-  max-width: 920px;
-  margin: 45px auto 0;
-  font-size: 12.5px;
+  max-width: 1060px;
+  margin: 0 auto;
+  font-family: var(--body-font);
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
+  color: #E5E5E5;
+  text-align: center;
+}
+
+@media (max-width: 1320px) {
+  #buying-framework .container {
+    padding: 0 24px;
+  }
+  .framework-cards-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /* ==========================================================================
@@ -2408,37 +2457,37 @@ li {
       <!-- 7 Framework Cards -->
       <div class="framework-cards-row">
         <div class="framework-card">
-          <div class="framework-icon">ðŸ”</div>
+          <div class="framework-icon">&#128269;</div>
           <div class="framework-label">DISCOVER</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸ </div>
+          <div class="framework-icon">&#127968;</div>
           <div class="framework-label">TOUR</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸ“Š</div>
+          <div class="framework-icon">&#128202;</div>
           <div class="framework-label">EVALUATE</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">✍️</div>
+          <div class="framework-icon">&#x270D;&#xFE0F;</div>
           <div class="framework-label">OFFER</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸ“„</div>
+          <div class="framework-icon">&#128196;</div>
           <div class="framework-label">ESCROW</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">ðŸ”‘</div>
+          <div class="framework-icon">&#128273;</div>
           <div class="framework-label">KEYS</div>
         </div>
         <div class="framework-card">
-          <div class="framework-icon">⚡</div>
+          <div class="framework-icon">&#9889;</div>
           <div class="framework-label">AI ADVANTAGE</div>
         </div>
       </div>
 
       <p class="framework-footer-text">
-        This is our high-level roadmap. The full Buyer Journey—complete with strategy, timelines, and personalized guidance—is provided during your consultation.
+        This is our high-level roadmap. The full Buyer Journey—complete with strategy, timelines, and personalized guidance—is provided during your<br class="br-desktop"> consultation.
       </p>
     </div>
   </section>
