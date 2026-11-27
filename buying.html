@@ -934,46 +934,70 @@ img {
    SECTION 5 (Screenshots 5 & 6): THE JUST 1 BUYER JOURNEY (TIMELINE)
    ========================================================================== */
 #buyer-journey {
-  padding: 100px 0 0;
-  background-color: var(--white);
+  padding: 112px 0 0;
+  background-color: #FFFFFF;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#buyer-journey .container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .journey-header {
   text-align: center;
-  max-width: 960px;
-  margin: 0 auto 50px;
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .journey-title {
   font-family: var(--primary-font);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin: 0 0 34px;
   color: #111111;
 }
 
 .journey-desc {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: #555555;
-  margin-bottom: 25px;
+  max-width: 1140px;
+  margin: 0 auto 38px;
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.85;
+  color: #222222;
+  text-align: center;
 }
 
 .journey-subtext {
-  font-size: 14px;
-  font-weight: 500;
-  color: #111111;
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: #222222;
+  margin: 0 0 74px;
+  text-align: center;
 }
 
 /* Vertical Timeline Container */
 .journey-timeline-wrap {
   position: relative;
-  max-width: 980px;
-  margin: 40px auto 90px;
-  padding: 20px 0;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 74px;
 }
 
 .journey-timeline-wrap::before {
@@ -983,28 +1007,34 @@ img {
   bottom: 0;
   left: 50%;
   width: 1px;
-  background-color: #000000;
+  background-color: #111111;
   transform: translateX(-50%);
 }
 
 .timeline-row {
   display: flex;
   position: relative;
-  margin-top: 48px;
-  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: flex-start;
+  margin-bottom: 42px;
 }
 
-.timeline-row:first-child {
-  margin-top: 0;
+.timeline-row.row-1 {
+  margin-bottom: 34px;
+}
+
+.timeline-row:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-row::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 15px;
   left: 50%;
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   background-color: #000000;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -1013,33 +1043,60 @@ img {
 
 .timeline-col {
   width: 50%;
-  padding: 0 45px;
+  box-sizing: border-box;
 }
 
-.timeline-row.right .timeline-col.left-col {
-  /* empty */
-}
-
-.timeline-row.right .timeline-col.right-col {
-  text-align: left;
-}
-
-.timeline-row.left .timeline-col.left-col {
+.timeline-col.left-col {
+  padding-right: 36px;
+  padding-left: 0;
   text-align: right;
 }
 
-.timeline-row.left .timeline-col.right-col {
-  /* empty */
+.timeline-col.right-col {
+  padding-left: 36px;
+  padding-right: 0;
+  text-align: left;
 }
 
 .timeline-point-title {
   font-family: var(--primary-font);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
   text-transform: uppercase;
   color: #111111;
-  line-height: 1.45;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #buyer-journey {
+    padding: 70px 0 0;
+  }
+  .journey-title {
+    font-size: 28px;
+  }
+  .journey-timeline-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .journey-timeline-wrap::before {
+    left: 20px;
+  }
+  .timeline-row::before {
+    left: 20px;
+  }
+  .timeline-col.left-col,
+  .timeline-col.right-col {
+    width: 100%;
+    padding-left: 45px;
+    padding-right: 0;
+    text-align: left;
+  }
+  .timeline-row.left .timeline-col.right-col,
+  .timeline-row.right .timeline-col.left-col {
+    display: none;
+  }
 }
 
 /* Banner CTA below timeline */
@@ -2607,7 +2664,7 @@ li {
       <header class="journey-header">
         <h2 class="journey-title">THE JUST 1 BUYER JOURNEY</h2>
         <p class="journey-desc">
-          A Clear, Modern Path From Curiosity to Keys Buying a home shouldn't feel overwhelming. The Just 1 Buyer Journey is a proven, step-by-step framework that brings clarity, structure, and confidence to every decision you make. Our advisors guide you through each stage with strategy, market insight, and the support of the Just 1 Network—so you never feel lost, rushed, or unsure about your next move.
+          A Clear, Modern Path From Curiosity to Keys Buying a home shouldn't feel overwhelming. The Just 1 Buyer Journey is a proven, step-by-step<br class="br-desktop"> framework that brings clarity, structure, and confidence to every decision you make. Our advisors guide you through each stage with strategy,<br class="br-desktop"> market insight, and the support of the Just 1 Network—so you never feel lost, rushed, or unsure about your next move.
         </p>
         <p class="journey-subtext">Inside the Buyer Journey, you'll learn:</p>
       </header>
@@ -2616,7 +2673,7 @@ li {
       <div class="journey-timeline-wrap">
         
         <!-- Point 1 (Right) -->
-        <div class="timeline-row right">
+        <div class="timeline-row row-1 right">
           <div class="timeline-col left-col"></div>
           <div class="timeline-col right-col">
             <h4 class="timeline-point-title">HOW TO CLARIFY YOUR GOALS</h4>
@@ -2626,7 +2683,7 @@ li {
         <!-- Point 2 (Left) -->
         <div class="timeline-row left">
           <div class="timeline-col left-col">
-            <h4 class="timeline-point-title">HOW TO CONFIDENTLY UNDERSTAND YOUR NUMBERS</h4>
+            <h4 class="timeline-point-title">HOW TO CONFIDENTLY UNDERSTAND<br class="br-desktop"> YOUR NUMBERS</h4>
           </div>
           <div class="timeline-col right-col"></div>
         </div>
@@ -2635,14 +2692,14 @@ li {
         <div class="timeline-row right">
           <div class="timeline-col left-col"></div>
           <div class="timeline-col right-col">
-            <h4 class="timeline-point-title">HOW OUR CURATED TOURING SYSTEM WORKS</h4>
+            <h4 class="timeline-point-title">HOW OUR CURATED TOURING SYSTEM<br class="br-desktop"> WORKS</h4>
           </div>
         </div>
 
         <!-- Point 4 (Left) -->
         <div class="timeline-row left">
           <div class="timeline-col left-col">
-            <h4 class="timeline-point-title">HOW WE USE STRATEGY (NOT PRESSURE) TO HELP YOU CHOOSE THE RIGHT HOME</h4>
+            <h4 class="timeline-point-title">HOW WE USE STRATEGY (NOT PRESSURE)<br class="br-desktop"> TO HELP YOU CHOOSE THE RIGHT HOME</h4>
           </div>
           <div class="timeline-col right-col"></div>
         </div>
@@ -2651,14 +2708,14 @@ li {
         <div class="timeline-row right">
           <div class="timeline-col left-col"></div>
           <div class="timeline-col right-col">
-            <h4 class="timeline-point-title">HOW WE NEGOTIATE TO PROTECT YOUR INTERESTS</h4>
+            <h4 class="timeline-point-title">HOW WE NEGOTIATE TO PROTECT YOUR<br class="br-desktop"> INTERESTS</h4>
           </div>
         </div>
 
         <!-- Point 6 (Left) -->
         <div class="timeline-row left">
           <div class="timeline-col left-col">
-            <h4 class="timeline-point-title">HOW WE MANAGE ESCROW, INSPECTIONS, TIMELINES, AND DUE DILIGENCE</h4>
+            <h4 class="timeline-point-title">HOW WE MANAGE ESCROW,<br class="br-desktop"> INSPECTIONS, TIMELINES, AND DUE<br class="br-desktop"> DILIGENCE</h4>
           </div>
           <div class="timeline-col right-col"></div>
         </div>
@@ -2667,7 +2724,7 @@ li {
         <div class="timeline-row right">
           <div class="timeline-col left-col"></div>
           <div class="timeline-col right-col">
-            <h4 class="timeline-point-title">HOW WE SUPPORT YOU LONG AFTER CLOSING</h4>
+            <h4 class="timeline-point-title">HOW WE SUPPORT YOU LONG AFTER<br class="br-desktop"> CLOSING</h4>
           </div>
         </div>
 
