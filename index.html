@@ -2575,302 +2575,415 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   16. GLOBAL FOOTER (Exact replica of original reference)
+   16. GLOBAL FOOTER (Exact match to reference specifications)
    ========================================================================== */
 #global-footer {
-  background-color: #ffffff;
-  color: #000000;
-  padding-top: 70px;
-  padding-bottom: 25px;
-  font-family: var(--body-font);
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding-top: 96px !important;
+  padding-bottom: 25px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  box-sizing: border-box !important;
 }
 
 #global-footer .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.footer-brand-title {
-  font-family: var(--primary-font);
-  font-size: 24px;
-  text-transform: none !important;
-  font-weight: 400;
-  margin-bottom: 25px;
-  color: #000000;
-  letter-spacing: 0.5px;
+  max-width: 1440px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 53px !important;
+  box-sizing: border-box !important;
 }
 
 .footer-info-wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 80px;
-  margin-bottom: 35px;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .footer-agent-box {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  width: 50% !important;
+  max-width: 667px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding-right: 40px !important;
+  box-sizing: border-box !important;
+}
+
+.footer-brand-title {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 27px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.2 !important;
+  text-transform: none !important;
+  color: #111111 !important;
+  margin: 0 0 26px 0 !important;
+}
+
+.footer-cell {
+  margin: 0 0 22px 0 !important;
+}
+
+.footer-cell:last-child {
+  margin-bottom: 0 !important;
 }
 
 .footer-cell-title {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #000000;
-  margin-bottom: 4px;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.2px !important;
+  line-height: 1.6 !important;
+  text-transform: uppercase !important;
+  color: #222222 !important;
+  margin: 0 0 8px 0 !important;
 }
 
 .footer-cell-val {
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  color: #222222;
-  line-height: 1.6;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.2px !important;
+  line-height: 1.6 !important;
+  text-transform: uppercase !important;
+  color: #222222 !important;
 }
 
 .footer-cell-val a {
-  color: #222222;
-  text-decoration: underline;
+  color: #222222 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-decoration-thickness: 1px !important;
   transition: color 0.2s ease;
 }
 
 .footer-cell-val a:hover {
-  color: var(--accent);
+  color: #38B2C4 !important;
+}
+
+.footer-addr-line {
+  margin-bottom: 8px !important;
+}
+
+.footer-addr-line:last-child {
+  margin-bottom: 0 !important;
 }
 
 .footer-newsletter-box {
-  width: 50%;
+  width: 50% !important;
+  max-width: 667px !important;
+  margin-top: 58px !important;
+  box-sizing: border-box !important;
 }
 
-.footer-newsletter-box .footer-cell-title {
-  margin-bottom: 12px;
+.footer-newsletter-form {
+  width: 100% !important;
+}
+
+.footer-newsletter-heading {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.5px !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+  color: #111111 !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.footer-newsletter-box .inp-group {
+  margin-bottom: 22px !important;
 }
 
 .footer-input-label {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #222222;
-  margin-bottom: 6px;
+  display: block !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.5px !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+  color: #222222 !important;
+  margin: 0 0 10px 0 !important;
 }
 
 .footer-input-field {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding: 8px 0;
-  font-size: 13px;
-  letter-spacing: 1px;
-  outline: none;
-  background: transparent;
-  color: #000000;
-  margin-bottom: 18px;
+  width: 100% !important;
+  max-width: 667px !important;
+  height: 28px !important;
+  border: none !important;
+  border-bottom: 1px solid #333333 !important;
+  border-radius: 0 !important;
+  padding: 0 0 8px 0 !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 13px !important;
+  letter-spacing: 1px !important;
+  outline: none !important;
+  background: transparent !important;
+  color: #111111 !important;
+  box-sizing: border-box !important;
 }
 
 .footer-consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 24px;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  margin: 0 0 44px 0 !important;
 }
 
 .footer-consent input[type="checkbox"] {
-  margin-top: 3px;
-  accent-color: var(--accent);
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
+  width: 14px !important;
+  height: 14px !important;
+  border: 1px solid #555555 !important;
+  border-radius: 0px !important;
+  background-color: #ffffff !important;
+  accent-color: #38B2C4 !important;
+  margin-top: 3px !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
 }
 
 .footer-consent label {
-  font-size: 10.5px;
-  line-height: 1.65;
-  color: #555555;
-  letter-spacing: 0.2px;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 350 !important;
+  letter-spacing: 0.2px !important;
+  line-height: 1.85 !important;
+  color: #555555 !important;
+  max-width: 643px !important;
+  cursor: pointer !important;
+}
+
+.footer-consent .consent-line {
+  display: block !important;
+  white-space: nowrap !important;
 }
 
 .footer-consent label a {
-  text-decoration: underline;
-  color: #000000;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  color: #555555 !important;
+}
+
+.footer-consent label a:hover {
+  color: #38B2C4 !important;
 }
 
 .footer-subscribe-btn {
-  background-color: var(--accent);
-  color: #ffffff;
-  border: 1px solid var(--accent);
-  padding: 13px 42px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 196px !important;
+  height: 56px !important;
+  padding: 0 !important;
+  background-color: #38B2C4 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: background-color 0.25s ease !important;
+  box-sizing: border-box !important;
 }
 
 .footer-subscribe-btn:hover {
-  background-color: transparent;
-  color: var(--accent);
+  background-color: #2da1b2 !important;
 }
 
-/* Middle disclaimer & broker */
+/* Middle: Disclaimer & Broker Info */
 .footer-text-first {
-  margin-top: 35px;
-  margin-bottom: 25px;
+  margin-top: 78px !important;
+  margin-bottom: 0 !important;
 }
 
 .footer-disclaimer-text {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
   font-size: 12px !important;
-  color: #222222;
-  margin-bottom: 18px;
-  line-height: 1.6;
+  font-weight: 400 !important;
+  letter-spacing: 0.2px !important;
+  line-height: 1.4 !important;
+  color: #333333 !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.footer-logos-wrap {
+  margin-bottom: 18px !important;
 }
 
 .footer-logos-img {
-  width: 95px;
-  height: auto;
-  display: block;
-  margin-bottom: 18px;
+  width: 95px !important;
+  height: auto !important;
+  display: block !important;
 }
 
 .footer-broker-info {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
   font-size: 12px !important;
-  color: #222222;
-  line-height: 1.8;
+  font-weight: 400 !important;
+  color: #222222 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 25px !important;
 }
 
-/* Dividing line */
+/* Horizontal dividing line */
 .footer-divider-line {
-  width: 100%;
-  height: 1px;
-  background-color: #000000;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  width: 100% !important;
+  height: 1px !important;
+  background-color: #333333 !important;
+  margin: 25px 0 !important;
 }
 
 /* Bottom flex row */
 .footer-privacy-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-bottom: 20px;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 .footer-powered-col {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #222222;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 13px !important;
+  color: #222222 !important;
 }
 
 .footer-powered-col img {
-  height: 22px;
-  width: auto;
-  display: block;
+  height: 22px !important;
+  width: auto !important;
+  display: block !important;
 }
 
 .footer-powered-col a {
-  text-decoration: underline;
-  color: #000000;
+  text-decoration: underline !important;
+  color: #222222 !important;
 }
 
 .footer-right-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 14px !important;
 }
 
 .footer-copyright-links {
-  font-size: 13px;
-  color: #222222;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 13px !important;
+  color: #222222 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
 .footer-copyright-links a {
-  color: #222222;
-  text-decoration: none;
+  color: #222222 !important;
+  text-decoration: underline !important;
   transition: color 0.2s ease;
 }
 
 .footer-copyright-links a:hover {
-  color: var(--accent);
+  color: #38B2C4 !important;
 }
 
 .footer-copyright-links a.sitemap-link {
-  font-weight: 600;
+  font-weight: 700 !important;
+  color: #111111 !important;
 }
 
 .footer-social-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
 }
 
 .social-teal-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--accent);
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  background-color: #38B2C4 !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
 .social-teal-btn:hover {
-  transform: translateY(-2px);
-  background-color: var(--accent-hover);
+  transform: translateY(-2px) !important;
+  background-color: #2da1b2 !important;
 }
 
 .social-teal-btn svg {
-  width: 15px;
-  height: 15px;
-  fill: #ffffff;
+  width: 16px !important;
+  height: 16px !important;
+  fill: #ffffff !important;
 }
 
-.footer-bottom-center {
-  text-align: center;
-  padding-top: 15px;
-  padding-bottom: 10px;
+.footer-privacy-choices {
+  text-align: center !important;
+  padding-top: 15px !important;
+  padding-bottom: 10px !important;
 }
 
-.footer-bottom-center a {
-  font-size: 11px;
-  color: #555555;
-  text-decoration: none;
-  letter-spacing: 0.4px;
+.footer-privacy-choices a {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 11px !important;
+  color: #555555 !important;
+  text-decoration: none !important;
+  letter-spacing: 0.4px !important;
 }
 
-.footer-bottom-center a:hover {
-  text-decoration: underline;
+.footer-privacy-choices a:hover {
+  text-decoration: underline !important;
+}
+
+@media (max-width: 1024px) {
+  #global-footer .container {
+    padding: 0 24px !important;
+  }
+  .footer-consent .consent-line {
+    white-space: normal !important;
+    display: inline !important;
+  }
+  .footer-newsletter-box {
+    margin-top: 30px !important;
+  }
 }
 
 @media (max-width: 900px) {
+  #global-footer {
+    padding-top: 60px !important;
+  }
   .footer-info-wrap {
-    flex-direction: column;
-    gap: 35px;
+    flex-direction: column !important;
+    gap: 35px !important;
   }
   .footer-agent-box, .footer-newsletter-box {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+  .footer-newsletter-box {
+    margin-top: 0 !important;
   }
   .footer-privacy-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
   .footer-right-col {
-    align-items: flex-start;
+    align-items: flex-start !important;
   }
 }
 
@@ -4720,24 +4833,24 @@ button, input, textarea, select {
           <h3 class="footer-brand-title">Lulu Logan Group</h3>
 
           <div class="footer-cell">
-            <div class="footer-cell-title">Email</div>
+            <div class="footer-cell-title">EMAIL</div>
             <div class="footer-cell-val">
               <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
             </div>
           </div>
 
           <div class="footer-cell">
-            <div class="footer-cell-title">Phone Number</div>
+            <div class="footer-cell-title">PHONE NUMBER</div>
             <div class="footer-cell-val">
               <a href="tel:6692220704">(669) 222-0704</a>
             </div>
           </div>
 
           <div class="footer-cell">
-            <div class="footer-cell-title">Address</div>
+            <div class="footer-cell-title">ADDRESS</div>
             <div class="footer-cell-val">
-              2181 N TRACY BLVD #275<br>
-              TRACY, CA 95376
+              <div class="footer-addr-line">2181 N TRACY BLVD #275</div>
+              <div class="footer-addr-line">TRACY, CA 95376</div>
             </div>
           </div>
         </div>
@@ -4745,21 +4858,27 @@ button, input, textarea, select {
         <!-- Right: Newsletter Subscription Form -->
         <div class="footer-newsletter-box">
           <form id="footerNewsletterForm" class="footer-newsletter-form">
-            <div class="footer-cell-title">Sign up for exclusive news</div>
+            <div class="footer-newsletter-heading">SIGN UP FOR EXCLUSIVE NEWS</div>
 
             <div class="inp-group">
-              <label for="footer-email-input" class="footer-input-label">Email Address</label>
+              <label for="footer-email-input" class="footer-input-label">EMAIL ADDRESS</label>
               <input type="email" id="footer-email-input" class="footer-input-field" required>
             </div>
 
             <div class="footer-consent">
               <input type="checkbox" id="footer-consent-checkbox" required>
               <label for="footer-consent-checkbox">
-                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#" target="_blank" rel="noopener">terms of use and Privacy Policy</a>.
+                <span class="consent-line">I agree and consent to be contacted by Lulu Logan Group and Just 1 Real</span>
+                <span class="consent-line">Estate via call, email and text for real estate services and to receive Customer</span>
+                <span class="consent-line">service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at</span>
+                <span class="consent-line">any time or reply 'help' for assistance. You can also click the unsubscribe link in</span>
+                <span class="consent-line">the emails. Message and data rates may apply. Message Frequency may vary.</span>
+                <span class="consent-line">Consent is not a condition of purchase of any goods or services. You may also</span>
+                <span class="consent-line">visit our <a href="#" target="_blank" rel="noopener">terms of use and Privacy Policy</a>.</span>
               </label>
             </div>
 
-            <button type="submit" class="footer-subscribe-btn">Subscribe</button>
+            <button type="submit" class="footer-subscribe-btn">SUBSCRIBE</button>
           </form>
         </div>
 
@@ -4777,9 +4896,8 @@ button, input, textarea, select {
 
         <div class="footer-broker-info">
           Just 1 Real Estate<br>
-          Lulu Logan | CA DRE# 01452747<br>
-          Broker: Grobecker Holland International<br>
-          2181 N Tracy Blvd #275, Tracy, CA 95376
+          Lulu Logan | DRE #01452747<br>
+          Broker: Grobecker Holland International
         </div>
       </div>
 
@@ -4803,10 +4921,6 @@ button, input, textarea, select {
           </div>
 
           <div class="footer-social-row">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
             <!-- LinkedIn -->
             <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="social-teal-btn" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
