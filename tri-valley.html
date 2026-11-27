@@ -427,37 +427,59 @@
        SECTION 2 (Screenshot 2): AREAS OF EXPERTISE
        ========================================================================== */
     #expertise-section {
-      padding: 80px 0 95px;
-      background-color: var(--white);
+      padding-top: 56px;
+      padding-bottom: 70px;
+      background-color: #ffffff;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .expertise-container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      box-sizing: border-box;
     }
 
     .expertise-header {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 44px;
     }
 
     .expertise-title {
       font-family: var(--primary-font);
-      font-size: 30px;
+      font-size: 40px;
       font-weight: 400;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--black);
+      color: #111111;
+      margin: 0;
     }
 
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 462px);
+      max-width: 1410px;
+      width: 100%;
+      margin: 0 auto;
+      gap: 12px;
+      justify-content: center;
+      box-sizing: border-box;
     }
 
     .expertise-card {
       position: relative;
       display: block;
       overflow: hidden;
-      aspect-ratio: 1 / 1.02;
-      background-color: #000;
+      width: 462px;
+      height: 468px;
+      background-color: #000000;
       text-decoration: none;
+      border-radius: 0px;
+      box-sizing: border-box;
     }
 
     .expertise-card-img {
@@ -478,7 +500,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.28);
+      background-color: rgba(0, 0, 0, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -487,18 +509,21 @@
     }
 
     .expertise-card:hover .expertise-card-overlay {
-      background-color: rgba(0, 0, 0, 0.42);
+      background-color: rgba(0, 0, 0, 0.38);
     }
 
     .expertise-card-title {
       font-family: var(--primary-font);
-      font-size: 20px;
+      font-size: 23px;
       font-weight: 400;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--white);
+      color: #ffffff;
       text-align: center;
+      margin: 0;
       padding: 0 15px;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
     }
 
     /* ==========================================================================
@@ -877,7 +902,13 @@
 
       .expertise-grid {
         grid-template-columns: 1fr;
+        max-width: 462px;
         gap: 20px;
+      }
+      .expertise-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 462 / 468;
       }
 
       .search-banner-flex {
@@ -1235,29 +1266,34 @@ li {
 /* Floating Contact Button */
 .floating-contact-btn {
   position: fixed !important;
-  bottom: 24px !important;
-  left: 24px !important;
-  background-color: #2ea8b8 !important;
+  bottom: 26px !important;
+  left: 20px !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  height: 48px !important;
+  box-sizing: border-box !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
-  padding: 12px 24px !important;
+  padding: 0 16px !important;
+  font-family: var(--body-font) !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   border: none !important;
+  border-radius: 0px !important;
   cursor: pointer !important;
-  z-index: 998 !important;
-  display: inline-flex !important;
+  z-index: 9999 !important;
+  display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
   text-decoration: none !important;
-  text-shadow: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18) !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translateY(16px) !important;
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease !important;
-  border-radius: 2px !important;
+  transform: translateY(20px) !important;
+  transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.25s ease !important;
 }
 
 .floating-contact-btn.visible {
@@ -1267,7 +1303,7 @@ li {
 }
 
 .floating-contact-btn:hover {
-  background-color: #258895 !important;
+  background-color: #2ea1b2 !important;
   color: #ffffff !important;
 }
 
@@ -1887,7 +1923,7 @@ li {
        SECTION 2 (Screenshot 2): AREAS OF EXPERTISE
        ========================================================================== -->
   <section id="expertise-section">
-    <div class="container">
+    <div class="expertise-container">
       
       <header class="expertise-header">
         <h2 class="expertise-title">AREAS OF EXPERTISE</h2>
@@ -2063,7 +2099,10 @@ li {
     </div>
   </footer>
 
-  <!-- Floating Contact Button (Bottom Left) -->
+  <!-- Floating Contact Button (Bottom Left, matching screenshot) -->
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal onclick="if (typeof openContactModal === 'function') openContactModal();">
+    CONTACT US <span style="font-size: 11px; transform: scaleY(0.7); display: inline-block;">&#94;</span>
+  </button>
   
 
   <!-- JavaScript -->
@@ -2363,31 +2402,18 @@ li {
   // FLOATING CONTACT BUTTON (Visible only after top section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+  const heroSectionEl = document.getElementById('trivalley-hero') || document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
 
   if (floatingContactBtn) {
-    if (heroSectionEl && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            floatingContactBtn.classList.add('visible');
-          } else {
-            floatingContactBtn.classList.remove('visible');
-          }
-        });
-      }, { threshold: 0.15 });
-      observer.observe(heroSectionEl);
-    } else {
-      const updateFloatingContact = () => {
-        if (window.scrollY > 250) {
-          floatingContactBtn.classList.add('visible');
-        } else {
-          floatingContactBtn.classList.remove('visible');
-        }
-      };
-      window.addEventListener('scroll', updateFloatingContact, { passive: true });
-      updateFloatingContact();
-    }
+    const updateFloatingContact = () => {
+      if (window.scrollY > 150) {
+        floatingContactBtn.classList.add('visible');
+      } else {
+        floatingContactBtn.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', updateFloatingContact, { passive: true });
+    updateFloatingContact();
   }
 
 </script>
