@@ -424,92 +424,136 @@
     }
 
     /* ==========================================================================
-       SECTION 2 (Screenshot 2): REGION TABS
+       SECTION 2 (Screenshot 2): REGION TABS & PROPERTY LISTINGS
+       Aspect Ratio: ~2.53:1 | Full-Width Canvas: 1440px x 570px (desktop)
+       Inner 3-Column Grid Container: 1272px max-width (centered)
        ========================================================================== */
     #nc-tabs-section {
-      padding: 60px 0 20px;
-      background-color: var(--white);
+      padding: 54px 0 60px;
+      background-color: #ffffff;
+      width: 100%;
+      box-sizing: border-box;
     }
 
+    .nc-tabs-container {
+      max-width: 1440px;
+      padding: 0 84px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    /* Centered Filter Tab Bar: ~700px Total Width */
     .nc-tabs-row {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 50px;
+      margin-bottom: 74px; /* Filter Buttons to Main Heading Vertical Gap: 74px */
     }
 
     .nc-tab-pill {
-      background-color: var(--accent);
-      color: var(--white);
-      padding: 12px 32px;
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      border-radius: 0px;
+      background-color: #38B2C4;
+      color: #ffffff;
+      font-family: var(--body-font);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      display: inline-block;
-      transition: var(--transition-smooth);
+      text-decoration: none;
+      box-sizing: border-box;
+      border: none;
       cursor: pointer;
-      border: 1px solid var(--accent);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .nc-tab-pill.tab-tri-valley {
+      width: 166px;
+    }
+
+    .nc-tab-pill.tab-central-valley {
+      width: 218px;
+    }
+
+    .nc-tab-pill.tab-greater-sacramento {
+      width: 284px;
     }
 
     .nc-tab-pill:hover {
-      background-color: var(--accent-hover);
-      border-color: var(--accent-hover);
-      transform: translateY(-2px);
+      opacity: 0.92;
+      transform: translateY(-1px);
     }
 
     /* Region Section Header */
     .nc-region-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 64px; /* Subheading to 3-Column Property Image Row: 64px */
     }
 
     .nc-region-title {
       font-family: var(--primary-font);
-      font-size: 30px;
-      font-weight: 400;
+      font-size: 33px; /* 32px – 34px */
+      font-weight: 400; /* Regular (400) (No heavy bold used) */
       letter-spacing: 2.5px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--black);
-      margin-bottom: 12px;
+      color: #111111;
+      margin: 0 0 22px; /* Main Heading to Subheading Vertical Gap: 22px */
+      text-align: center;
     }
 
     .nc-region-subtitle {
       font-family: var(--body-font);
-      font-size: 13.5px;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
+      font-size: 14.5px; /* 14px – 15px */
+      font-weight: 400; /* Regular (400) */
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      color: #555555;
+      margin: 0;
+      text-align: center;
     }
 
     /* ==========================================================================
        PROPERTY CARDS (3 COLUMNS)
+       Individual Card: 404px width x 260px height | 30px Gutters | 1272px Total
        ========================================================================== */
     .nc-properties-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-bottom: 35px;
+      grid-template-columns: repeat(3, 404px);
+      column-gap: 30px;
+      row-gap: 40px;
+      max-width: 1272px;
+      margin: 0 auto 50px;
+      justify-content: center;
     }
 
     .nc-property-card {
-      background-color: var(--white);
+      background-color: transparent;
       text-decoration: none;
       display: flex;
       flex-direction: column;
+      width: 404px;
+      box-sizing: border-box;
+      border-radius: 0px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .nc-property-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
     .nc-property-img-wrap {
-      width: 100%;
-      aspect-ratio: 16 / 10.2;
-      overflow: hidden;
-      background-color: #f0f0f0;
+      width: 404px;
+      height: 260px;
       position: relative;
+      overflow: hidden;
+      border-radius: 0px;
+      background-color: #f0f0f0;
     }
 
     .nc-property-img {
@@ -517,26 +561,98 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
+      border-radius: 0px;
+      transition: transform 0.4s ease;
     }
 
     .nc-property-card:hover .nc-property-img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 
-    /* Card Info */
+    /* Overlay Badges Inside Each Image (Top-Left Corner: 14px, 14px) */
+    .nc-property-badges {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      height: 24px;
+      z-index: 3;
+      border-radius: 0px;
+      overflow: hidden;
+    }
+
+    .nc-badge-status {
+      width: 74px;
+      height: 24px;
+      background-color: rgba(56, 178, 196, 0.9);
+      color: #ffffff;
+      font-family: var(--body-font);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0px;
+      box-sizing: border-box;
+    }
+
+    .nc-badge-divider {
+      width: 1px;
+      height: 24px;
+      background-color: #ffffff;
+      display: block;
+    }
+
+    .nc-badge-mls {
+      width: 118px;
+      height: 24px;
+      background-color: rgba(56, 178, 196, 0.9);
+      color: #ffffff;
+      font-family: var(--body-font);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0px;
+      box-sizing: border-box;
+    }
+
+    /* Courtesy Watermark (Bottom-Left) */
+    .nc-property-courtesy {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      font-family: var(--body-font);
+      font-size: 8.5px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      z-index: 2;
+      pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Card Info & Pricing */
     .nc-property-body {
-      padding: 18px 0 10px;
+      padding-top: 24px; /* Property Image Bottom Edge to Price Text Vertical Gap: 24px */
       display: flex;
       flex-direction: column;
+      box-sizing: border-box;
     }
 
     .nc-property-price {
       font-family: var(--body-font);
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--black);
-      margin-bottom: 6px;
+      font-size: 21px; /* 20px – 22px */
+      font-weight: 700; /* Semi-Bold / Bold (600–700) */
+      letter-spacing: 0.5px;
+      color: #111111;
+      margin: 0 0 6px 0;
+      text-align: left;
     }
 
     .nc-property-address {
@@ -546,10 +662,11 @@
       letter-spacing: 0.8px;
       text-transform: uppercase;
       color: #666666;
-      margin-bottom: 8px;
+      margin: 0 0 8px 0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-align: left;
     }
 
     .nc-property-footer-row {
@@ -585,27 +702,30 @@
     /* Search Button Row */
     .nc-search-btn-wrap {
       text-align: center;
-      margin: 30px 0 70px;
+      margin: 30px 0 60px;
     }
 
     .btn-nc-search {
-      background-color: var(--accent);
-      color: var(--white);
-      padding: 14px 38px;
-      font-size: 12.5px;
+      background-color: #38B2C4;
+      color: #ffffff;
+      padding: 0 36px;
+      height: 48px;
+      line-height: 48px;
+      font-family: var(--body-font);
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      border: 1px solid var(--accent);
+      border: none;
+      border-radius: 0px;
       display: inline-block;
       cursor: pointer;
-      transition: var(--transition-smooth);
+      text-decoration: none;
+      transition: opacity 0.25s ease;
     }
 
     .btn-nc-search:hover {
-      background-color: var(--accent-hover);
-      border-color: var(--accent-hover);
-      transform: translateY(-2px);
+      opacity: 0.92;
     }
 
     /* ==========================================================================
@@ -939,6 +1059,12 @@
       .nc-properties-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        max-width: 100%;
+      }
+
+      .nc-property-card,
+      .nc-property-img-wrap {
+        width: 100%;
       }
 
       .footer-top-grid {
@@ -956,6 +1082,18 @@
     @media (max-width: 600px) {
       .nc-properties-grid {
         grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .nc-tabs-container {
+        padding: 0 20px;
+      }
+
+      .nc-tab-pill.tab-tri-valley,
+      .nc-tab-pill.tab-central-valley,
+      .nc-tab-pill.tab-greater-sacramento {
+        width: 100%;
+        max-width: 320px;
       }
 
       .nc-hero-title {
@@ -1949,13 +2087,13 @@ li {
        SECTION 2 (Screenshot 2): REGION TABS & TRI VALLEY INTRO
        ========================================================================== -->
   <section id="nc-tabs-section">
-    <div class="container">
+    <div class="nc-tabs-container">
       
       <!-- 3 Filter Tabs (Screenshot 2 Top) -->
       <div class="nc-tabs-row">
-        <a href="#tri-valley-section" class="nc-tab-pill">TRI VALLEY</a>
-        <a href="#central-valley-section" class="nc-tab-pill">CENTRAL VALLEY</a>
-        <a href="#greater-sacramento-section" class="nc-tab-pill">GREATER SACRAMENTO</a>
+        <a href="#tri-valley-section" class="nc-tab-pill tab-tri-valley">TRI VALLEY</a>
+        <a href="#central-valley-section" class="nc-tab-pill tab-central-valley">CENTRAL VALLEY</a>
+        <a href="#greater-sacramento-section" class="nc-tab-pill tab-greater-sacramento">GREATER SACRAMENTO</a>
       </div>
 
       <!-- ======================================================================
@@ -1974,14 +2112,20 @@ li {
           <!-- Property 1 (Screenshot 3 Left) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">FOR SALE</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 226131995</span>
+              </div>
               <img src="images/nc-p1.jpg" alt="5010 Greyson Creek Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
-              <div class="nc-property-price">$4,650,000</div>
+              <div class="nc-property-price">$6,650,000</div>
               <div class="nc-property-address">5010 GREYSON CREEK DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">7 BEDS 8 BATHS 6,322 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -1989,14 +2133,20 @@ li {
           <!-- Property 2 (Screenshot 3 Center) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">FOR SALE</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 226135270</span>
+              </div>
               <img src="images/nc-p2.jpg" alt="4145 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of eXp Realty of Northern California, Inc.</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$4,575,000</div>
               <div class="nc-property-address">4145 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">5 BEDS 6.5 BATHS 6,580 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2004,14 +2154,20 @@ li {
           <!-- Property 3 (Screenshot 3 Right) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">FOR SALE</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 226062740</span>
+              </div>
               <img src="images/nc-p3.jpg" alt="3526 Greenview Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of BERKSHIRE HATHAWAY HomeServices NorCal Real Estate</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$4,498,000</div>
               <div class="nc-property-address">3526 GREENVIEW DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">3 BEDS 4 BATHS 4,231 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2019,14 +2175,20 @@ li {
           <!-- Property 4 (Screenshot 4 Left) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 225096101</span>
+              </div>
               <img src="images/nc-p4.jpg" alt="4138 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$4,122,500</div>
               <div class="nc-property-address">4138 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">5 BEDS 6.5 BATHS 6,607 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2034,14 +2196,20 @@ li {
           <!-- Property 5 (Screenshot 4 Center) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 225026091</span>
+              </div>
               <img src="images/nc-p5.jpg" alt="6345 Western Sierra Way" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,600,000</div>
               <div class="nc-property-address">6345 WESTERN SIERRA WAY, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">5 BEDS 6 BATHS 5,115 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2049,14 +2217,20 @@ li {
           <!-- Property 6 (Screenshot 4 Right) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 225105374</span>
+              </div>
               <img src="images/nc-p6.jpg" alt="6315 Western Sierra Way" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,600,000</div>
               <div class="nc-property-address">6315 WESTERN SIERRA WAY, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">4 BEDS 4.5 BATHS 5,009 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2064,14 +2238,20 @@ li {
           <!-- Property 7 (Screenshot 5 Left) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">FOR SALE</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 226134814</span>
+              </div>
               <img src="images/nc-p7.jpg" alt="4190 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,549,000</div>
               <div class="nc-property-address">4190 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">5 BEDS 6 BATHS 4,543 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2079,14 +2259,20 @@ li {
           <!-- Property 8 (Screenshot 5 Center) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 225096119</span>
+              </div>
               <img src="images/nc-p8.jpg" alt="4195 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Keller Williams Realty EDH</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,537,500</div>
               <div class="nc-property-address">4195 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">3 BEDS 3.5 BATHS 4,111 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2094,14 +2280,20 @@ li {
           <!-- Property 9 (Screenshot 5 Right) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 226081332</span>
+              </div>
               <img src="images/nc-p9.jpg" alt="4150 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,530,000</div>
               <div class="nc-property-address">4150 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">4 BEDS 4.5 BATHS 4,602 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2109,14 +2301,20 @@ li {
           <!-- Property 10 (Screenshot 6 Left) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 226086518</span>
+              </div>
               <img src="images/nc-p10.jpg" alt="4200 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,499,000</div>
               <div class="nc-property-address">4200 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">5 BEDS 6 BATHS 6,759 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2124,14 +2322,20 @@ li {
           <!-- Property 11 (Screenshot 6 Center) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 224103257</span>
+              </div>
               <img src="images/nc-p11.jpg" alt="4180 Raphael Drive" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,390,000</div>
               <div class="nc-property-address">4180 RAPHAEL DRIVE, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">4 BEDS 4.5 BATHS 4,470 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
@@ -2139,14 +2343,20 @@ li {
           <!-- Property 12 (Screenshot 6 Right) -->
           <a href="contact-us.html" class="nc-property-card">
             <div class="nc-property-img-wrap">
+              <div class="nc-property-badges">
+                <span class="nc-badge-status">SOLD</span>
+                <span class="nc-badge-divider"></span>
+                <span class="nc-badge-mls">MLS® 225048341</span>
+              </div>
               <img src="images/nc-p12.jpg" alt="789 Del Coronado Court" class="nc-property-img" loading="lazy">
+              <span class="nc-property-courtesy">Courtesy of Nick Sadek Sotheby's International Realty</span>
             </div>
             <div class="nc-property-body">
               <div class="nc-property-price">$3,350,000</div>
               <div class="nc-property-address">789 DEL CORONADO COURT, EL DORADO HILLS, CA 95762</div>
               <div class="nc-property-footer-row">
                 <span class="nc-property-specs">5 BEDS 5.5 BATHS 4,954 SQ.FT.</span>
-                <span class="metrolist-logo"><em>MetroList</em><sup>Â®</sup></span>
+                <span class="metrolist-logo"><em>MetroList</em><sup>®</sup></span>
               </div>
             </div>
           </a>
