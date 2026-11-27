@@ -631,66 +631,111 @@
     }
 
     /* ==========================================================================
-       SECTION 5 (Screenshot 5): WORK WITH US
+       SECTION 4 (Screenshot 4): WORK WITH US
+       Aspect Ratio: ~2.12:1 | Recommended Full-Width Canvas: 1440px x 680px
+       Inner Content Container: 680px max-width (centered)
+       Background Overlay Scrim: rgba(0, 0, 0, 0.38) over workwithus-centralvalley.jpg
+       Top Padding: 240px | Bottom Padding: 185px | Button: 205px x 54px
        ========================================================================== */
     #centralvalley-workwithus {
       position: relative;
-      min-height: 480px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('images/workwithus-centralvalley.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #FFFFFF;
+      text-align: center;
+      min-height: 680px;
+      box-sizing: border-box;
+      padding: 240px 20px 185px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/workwithus-centralvalley.jpg') center/cover no-repeat;
-      color: var(--white);
-      padding: 100px 24px;
+      width: 100%;
     }
 
     .workwithus-content {
-      max-width: 860px;
-      margin: 0 auto;
       position: relative;
       z-index: 2;
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      box-sizing: border-box;
     }
 
     .workwithus-title {
       font-family: var(--primary-font);
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 400;
       letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+      word-spacing: 6px;
+      text-transform: uppercase !important;
+      color: #FFFFFF;
+      margin-top: 0;
+      margin-bottom: 27px;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     }
 
     .workwithus-desc {
       font-family: var(--body-font);
-      font-size: 14.5px;
-      font-weight: 300;
+      font-size: 15.5px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      word-spacing: 1.5px;
+      color: #FFFFFF;
       line-height: 1.8;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 30px;
-      max-width: 760px;
+      margin-top: 0;
+      margin-bottom: 46px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     }
 
+    .workwithus-btn,
     .btn-white-teal {
-      background-color: var(--white);
-      color: var(--accent);
-      border: 1px solid var(--white);
-      padding: 14px 34px;
-      font-size: 13px;
-      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 205px;
+      height: 54px;
+      box-sizing: border-box;
+      background-color: #FFFFFF;
+      color: #38B2C4;
+      border: 1px solid #FFFFFF;
+      border-radius: 0px;
+      font-family: var(--body-font);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      word-spacing: 4px;
       text-transform: uppercase;
-      font-weight: 600;
-      display: inline-block;
       cursor: pointer;
-      transition: var(--transition-smooth);
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
+    .workwithus-btn:hover,
     .btn-white-teal:hover {
-      background-color: var(--accent);
-      color: var(--white);
-      border-color: var(--accent);
+      background-color: #38B2C4;
+      color: #FFFFFF;
+      border-color: #38B2C4;
+    }
+
+    @media (max-width: 768px) {
+      #centralvalley-workwithus {
+        min-height: auto;
+        padding: 120px 20px 100px;
+      }
+      .workwithus-title {
+        font-size: 32px;
+        letter-spacing: 2px;
+      }
+      .workwithus-desc {
+        font-size: 14.5px;
+      }
     }
 
     /* ==========================================================================
@@ -918,32 +963,7 @@
       margin-top: 25px;
     }
 
-    /* Floating Contact Button (Bottom Left) */
-    .floating-contact-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: var(--accent);
-      color: var(--white);
-      padding: 12px 22px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      z-index: 998;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: var(--transition-smooth);
-    }
 
-    .floating-contact-btn:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-2px);
-    }
 
     /* ==========================================================================
        RESPONSIVE DESIGN
@@ -1303,29 +1323,35 @@ li {
 /* Floating Contact Button */
 .floating-contact-btn {
   position: fixed !important;
-  bottom: 24px !important;
-  left: 24px !important;
-  background-color: #2ea8b8 !important;
+  bottom: 26px !important;
+  left: 20px !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  height: 48px !important;
+  box-sizing: border-box !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
-  padding: 12px 24px !important;
+  padding: 0 16px !important;
+  font-family: var(--body-font) !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 1.5px !important;
+  word-spacing: 3px !important;
   text-transform: uppercase !important;
   border: none !important;
+  border-radius: 0px !important;
   cursor: pointer !important;
-  z-index: 998 !important;
-  display: inline-flex !important;
+  z-index: 9999 !important;
+  display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
   text-decoration: none !important;
-  text-shadow: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18) !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translateY(16px) !important;
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease !important;
-  border-radius: 2px !important;
+  transform: translateY(20px) !important;
+  transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.25s ease !important;
 }
 
 .floating-contact-btn.visible {
@@ -1335,7 +1361,7 @@ li {
 }
 
 .floating-contact-btn:hover {
-  background-color: #258895 !important;
+  background-color: #2ea1b2 !important;
   color: #ffffff !important;
 }
 
@@ -2021,15 +2047,16 @@ li {
   </section>
 
   <!-- ==========================================================================
-       SECTION 4 (Screenshot 5): WORK WITH US
+       SECTION 4 (Screenshot 4): WORK WITH US
        ========================================================================== -->
   <section id="centralvalley-workwithus">
     <div class="workwithus-content">
       <h2 class="workwithus-title">WORK WITH US</h2>
       <p class="workwithus-desc">
-        A modern real estate experience built on strategy, boutique service, and a connected network of professionals.
+        A modern real estate experience built on strategy, boutique service, and<br>
+        a connected network of professionals.
       </p>
-      <a href="contact-us.html" class="btn-white-teal">CONTACT US</a>
+      <a href="contact-us.html" class="workwithus-btn btn-white-teal">CONTACT US</a>
     </div>
   </section>
 
@@ -2147,8 +2174,10 @@ li {
     </div>
   </footer>
 
-  <!-- Floating Contact Button (Bottom Left) -->
-  
+  <!-- Floating Contact Button (Bottom Left, matching screenshot) -->
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal onclick="if (typeof openContactModal === 'function') openContactModal();">
+    CONTACT US <span style="font-size: 11px; transform: scaleY(0.7); display: inline-block;">&#94;</span>
+  </button>
 
   <!-- JavaScript -->
   <script>
@@ -2447,7 +2476,7 @@ li {
   // FLOATING CONTACT BUTTON (Visible only after top section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+  const heroSectionEl = document.getElementById('centralvalley-hero') || document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
 
   if (floatingContactBtn) {
     if (heroSectionEl && 'IntersectionObserver' in window) {
