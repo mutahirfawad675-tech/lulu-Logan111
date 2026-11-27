@@ -411,36 +411,80 @@ button, input, textarea, select {
 
 /* ==========================================================================
    SECTION 2: LOCAL GUIDE STATEMENT
-   Exact 1440 x 336 px sizing & typography
+   Crystal clear native typography matching exact reference specifications
    ========================================================================== */
 .kc-intro {
-  background-color: #ffffff;
-  padding: 0;
-  text-align: center;
-  width: 100%;
+  background-color: #ffffff !important;
+  padding: 85px 24px 75px 24px !important;
+  text-align: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .kc-intro .container {
-  max-width: 1440px;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
 }
 
 .kc-intro-wrap {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100% !important;
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 
-.kc-intro-img {
-  width: 100%;
-  max-width: 1440px;
-  height: auto;
-  aspect-ratio: 1440 / 336;
-  display: block;
+.kc-intro-heading {
+  font-family: var(--primary-font, 'Cinzel', serif) !important;
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2.5px !important;
+  line-height: 1.25 !important;
+  color: #111111 !important;
+  margin: 0 0 28px 0 !important;
+  text-align: center !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.kc-intro-desc {
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.25px !important;
+  line-height: 1.65 !important;
+  color: #555555 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.kc-intro-line {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .kc-intro {
+    padding: 50px 20px 45px 20px !important;
+  }
+  .kc-intro-heading {
+    font-size: 22px !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 18px !important;
+  }
+  .kc-intro-desc {
+    font-size: 12.5px !important;
+  }
+  .kc-intro-line {
+    display: inline !important;
+  }
 }
 
 /* ==========================================================================
@@ -2441,7 +2485,11 @@ li {
   <section class="kc-intro">
     <div class="container">
       <div class="kc-intro-wrap">
-        <img src="images/kc-central-valley.png" alt="Central Valley, CA Neighborhoods: Local Guide - Searching for the perfect local guide? Learn more about the nearest hospitals, schools, restaurants, and local services to you. Check them out here:" class="kc-intro-img">
+        <h2 class="kc-intro-heading">CENTRAL VALLEY, CA NEIGHBORHOODS: LOCAL GUIDE</h2>
+        <p class="kc-intro-desc">
+          <span class="kc-intro-line">Searching for the perfect local guide? Learn more about the nearest hospitals,</span>
+          <span class="kc-intro-line">schools, restaurants, and local services to you. Check them out here:</span>
+        </p>
       </div>
     </div>
   </section>
