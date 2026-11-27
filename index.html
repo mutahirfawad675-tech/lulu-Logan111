@@ -1268,7 +1268,7 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   7. SECTION: TESTIMONIALS (Exact match to client reference Image 1)
+   7. SECTION: TESTIMONIALS (Exact match to client reference specifications)
    Fixed Parallax: Background image stays fixed in place while only text & buttons scroll
    ========================================================================== */
 #testimonials {
@@ -1280,10 +1280,14 @@ button, input, textarea, select {
   background-repeat: no-repeat;
   color: #ffffff;
   text-align: center;
-  padding: 84px 20px 88px 20px;
-  min-height: 400px;
+  min-height: 680px;
+  height: 680px;
+  padding: 162px 24px 106px 24px;
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   image-rendering: -webkit-optimize-contrast;
 }
 
@@ -1294,7 +1298,7 @@ button, input, textarea, select {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.44);
+  background-color: rgba(0, 0, 0, 0.38);
   z-index: 1;
   pointer-events: none;
 }
@@ -1302,7 +1306,8 @@ button, input, textarea, select {
 .testimonials-content {
   position: relative;
   z-index: 2;
-  max-width: 820px;
+  max-width: 960px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1311,39 +1316,40 @@ button, input, textarea, select {
 }
 
 .testimonials-heading {
-  font-family: 'Tenor Sans', sans-serif !important;
-  font-size: 24px !important;
+  font-family: var(--primary-font, 'Cinzel', serif) !important;
+  font-size: 40px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 2.2px !important;
+  letter-spacing: 3px !important;
   color: #ffffff !important;
-  margin: 0 0 8px 0 !important;
+  margin: 0 0 22px 0 !important;
   line-height: 1.2 !important;
   text-align: center !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
 }
 
 .testimonial-nav {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 11.5px !important;
   font-weight: 500 !important;
-  letter-spacing: 1.8px !important;
+  letter-spacing: 2px !important;
   text-transform: uppercase !important;
-  margin-bottom: 20px !important;
-  color: #ffffff !important;
+  margin: 0 0 38px 0 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .testimonial-nav button {
   background: none !important;
   border: none !important;
-  color: #ffffff !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 10px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 11.5px !important;
   font-weight: 500 !important;
-  letter-spacing: 1.8px !important;
+  letter-spacing: 2px !important;
   text-transform: uppercase !important;
   cursor: pointer;
   padding: 0 !important;
@@ -1353,29 +1359,34 @@ button, input, textarea, select {
 }
 
 .testimonial-nav button:hover {
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .testimonial-nav .nav-sep {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 10px !important;
-  margin: 0 2px !important;
+  display: inline-block !important;
+  width: 1px !important;
+  height: 14px !important;
+  background-color: #ffffff !important;
+  margin: 0 16px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
   user-select: none;
 }
 
 .testimonial-quote {
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 12px !important;
-  font-style: italic !important;
-  line-height: 1.52 !important;
-  letter-spacing: 0.35px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 14.5px !important;
+  font-style: normal !important;
+  line-height: 1.9 !important;
+  letter-spacing: 0.3px !important;
   color: #ffffff !important;
   font-weight: 400 !important;
-  max-width: 800px !important;
-  margin: 0 auto !important;
+  max-width: 960px !important;
+  width: 100% !important;
+  margin: 0 0 44px 0 !important;
   text-align: center !important;
   transition: opacity 0.25s ease;
-  text-shadow: none !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
 }
 
 .test-line {
@@ -1384,72 +1395,89 @@ button, input, textarea, select {
 }
 
 .testimonial-author {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: 'Tenor Sans', serif !important;
-  font-size: 13px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 19px !important;
   font-weight: 400 !important;
-  letter-spacing: 2px !important;
+  letter-spacing: 2.5px !important;
   text-transform: uppercase !important;
   color: #ffffff !important;
-  margin-top: 16px !important;
-  margin-bottom: 24px !important;
+  margin: 0 0 44px 0 !important;
   transition: opacity 0.25s ease;
-  text-shadow: none !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
 }
 
 .testimonial-author::before,
 .testimonial-author::after {
-  content: '';
-  display: inline-block;
-  width: 22px;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.85);
+  display: none !important;
 }
 
 .testimonial-view-all-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 95px !important;
-  height: 28px !important;
+  width: 182px !important;
+  height: 50px !important;
   padding: 0 !important;
   background-color: #ffffff !important;
-  color: var(--accent, #3BB9CA) !important;
-  border: 1px solid #ffffff !important;
-  border-radius: 0 !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 10.5px !important;
+  color: #38B2C4 !important;
+  border: none !important;
+  border-radius: 0px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
+  font-size: 12px !important;
   font-weight: 500 !important;
-  letter-spacing: 1.2px !important;
+  letter-spacing: 2px !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
   cursor: pointer;
+  box-shadow: none !important;
   transition: all 0.25s ease;
   box-sizing: border-box !important;
 }
 
 .testimonial-view-all-btn:hover {
-  background-color: transparent !important;
-  color: #ffffff !important;
+  background-color: #f4fdff !important;
+  color: #2da1b2 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #testimonials {
-    padding: 50px 15px 54px 15px;
-  }
-  .testimonials-heading {
-    font-size: 20px !important;
-  }
-  .testimonial-quote {
-    font-size: 11.5px !important;
-    line-height: 1.5 !important;
+    height: auto;
+    min-height: 580px;
+    padding: 100px 24px 70px 24px;
   }
   .test-line {
     white-space: normal;
     display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  #testimonials {
+    padding: 70px 20px 60px 20px;
+  }
+  .testimonials-heading {
+    font-size: 28px !important;
+    margin-bottom: 16px !important;
+  }
+  .testimonial-nav {
+    margin-bottom: 24px !important;
+  }
+  .testimonial-quote {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 28px !important;
+  }
+  .testimonial-author {
+    font-size: 16px !important;
+    margin-bottom: 28px !important;
+  }
+  .testimonial-view-all-btn {
+    width: 160px !important;
+    height: 46px !important;
   }
 }
 
@@ -4238,7 +4266,7 @@ button, input, textarea, select {
       </p>
 
       <div class="testimonial-author" id="testimonialAuthor">
-        SAM N.
+        — SAM N.
       </div>
 
       <a href="#" class="testimonial-view-all-btn" data-open-modal="contact">VIEW ALL</a>
@@ -5022,7 +5050,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "strategic guidance, and personal care made every step seamless. Truly a one-of-a-kind team that treats you like family",
         "while delivering expert results. Highly recommend!"
       ],
-      author: "SAM N."
+      author: "— SAM N."
     },
     {
       lines: [
@@ -5030,14 +5058,14 @@ document.addEventListener('DOMContentLoaded', () => {
         "the properties she's selling, and I would recommend her to anyone interested in purchasing a home.",
         "So go see Lulu, if you're looking for a home."
       ],
-      author: "DIANNA"
+      author: "— DIANNA"
     },
     {
       lines: [
         "I had a great experience with Lulu, she did a great job handling everything",
         "from the very beginning to the very end. I highly recommend her and team!"
       ],
-      author: "MARK K."
+      author: "— MARK K."
     }
   ];
 
