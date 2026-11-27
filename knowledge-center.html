@@ -3142,34 +3142,31 @@ li {
   }
 
   // ----------------------------------------------------
-  // FLOATING CONTACT BUTTON (Visible only after top section)
+  // FLOATING CONTACT BUTTON (Visible strictly AFTER hero section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+  const heroSectionEl = document.querySelector('.kc-hero') || document.getElementById('hero');
+  const footerSectionEl = document.getElementById('global-footer');
 
   if (floatingContactBtn) {
-    if (heroSectionEl && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            floatingContactBtn.classList.add('visible');
-          } else {
-            floatingContactBtn.classList.remove('visible');
-          }
-        });
-      }, { threshold: 0.15 });
-      observer.observe(heroSectionEl);
-    } else {
-      const updateFloatingContact = () => {
-        if (window.scrollY > 250) {
-          floatingContactBtn.classList.add('visible');
-        } else {
-          floatingContactBtn.classList.remove('visible');
-        }
-      };
-      window.addEventListener('scroll', updateFloatingContact, { passive: true });
-      updateFloatingContact();
-    }
+    const updateFloatingContact = () => {
+      const heroRect = heroSectionEl ? heroSectionEl.getBoundingClientRect() : null;
+      const footerRect = footerSectionEl ? footerSectionEl.getBoundingClientRect() : null;
+      if ((!heroRect || heroRect.bottom <= 0) && (!footerRect || footerRect.top >= window.innerHeight - 30)) {
+        floatingContactBtn.classList.add('visible');
+      } else {
+        floatingContactBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', updateFloatingContact, { passive: true });
+    window.addEventListener('resize', updateFloatingContact, { passive: true });
+    updateFloatingContact();
+
+    floatingContactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactModal();
+    });
   }
 
 </script>
@@ -3177,7 +3174,9 @@ li {
   <!-- ==========================================================================
        FLOATING CONTACT BUTTON
        ========================================================================== -->
-  
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal>
+    Contact Us &#94;
+  </button>
 
   <!-- ==========================================================================
        CONTACT US / LEAVE A MESSAGE MODAL POPUP
