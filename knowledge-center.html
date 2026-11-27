@@ -422,14 +422,14 @@ button, input, textarea, select {
 }
 
 .kc-intro .container {
-  max-width: 1200px !important;
+  max-width: 1440px !important;
   margin: 0 auto !important;
-  padding: 0 !important;
+  padding: 0 24px !important;
 }
 
 .kc-intro-wrap {
   width: 100% !important;
-  max-width: 980px !important;
+  max-width: 1300px !important;
   margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
@@ -440,14 +440,15 @@ button, input, textarea, select {
 
 .kc-intro-heading {
   font-family: var(--primary-font, 'Cinzel', serif) !important;
-  font-size: 32px !important;
+  font-size: 28px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 2.5px !important;
+  letter-spacing: 2px !important;
   line-height: 1.25 !important;
   color: #111111 !important;
-  margin: 0 0 28px 0 !important;
+  margin: 0 0 24px 0 !important;
   text-align: center !important;
+  white-space: nowrap !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   text-rendering: optimizeLegibility !important;
@@ -470,13 +471,21 @@ button, input, textarea, select {
   display: block !important;
 }
 
+@media (max-width: 1100px) {
+  .kc-intro-heading {
+    white-space: normal !important;
+    font-size: 24px !important;
+    letter-spacing: 1.5px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .kc-intro {
     padding: 50px 20px 45px 20px !important;
   }
   .kc-intro-heading {
-    font-size: 22px !important;
-    letter-spacing: 1.5px !important;
+    font-size: 20px !important;
+    letter-spacing: 1.2px !important;
     margin-bottom: 18px !important;
   }
   .kc-intro-desc {
