@@ -137,10 +137,12 @@ a {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+      max-width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      backface-visibility: hidden;
+    }
 
 button, input, textarea, select {
   font-family: inherit;
@@ -5453,6 +5455,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
