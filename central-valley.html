@@ -420,43 +420,73 @@
     }
 
     /* ==========================================================================
-       SECTION 2 (Screenshots 1, 2 & 3): AREAS OF EXPERTISE
+       SECTION 2 (Screenshots 1 & 2): AREAS OF EXPERTISE
+       Aspect Ratio: ~2.53:1 (Full-width 3-column desktop neighborhood grid)
+       Recommended Full-Width Canvas: 1440px x 570px (or 1920px x 760px)
+       Inner 3-Column Grid Container: 1272px max-width (centered)
+       Outer Left & Right Margins: 84px from screen edges at 1440px
+       Top Section Padding: 54px from top edge to "AREAS OF EXPERTISE"
+       Heading to 3-Column Row Gap: 54px
+       Bottom Section Padding: 18px below the images
+       Card Dimensions: 412px width x 404px height (1.02:1 aspect ratio), sharp 0px corners
+       Column & Row Gap: 18px crisp white gutter separating cards
+       Image Overlay Scrim: Subtle dark overlay rgba(0, 0, 0, 0.25)
+       Heading Font: 36px Regular (400) Cinzel, letter-spacing: 2.5px, line-height: 1.2, #111111, centered
+       Card Title Font: 19px Regular (400) Cinzel, letter-spacing: 2px, line-height: 1.2, crisp #ffffff, centered
        ========================================================================== */
     #expertise-section {
-      background-color: var(--white);
-      padding: 90px 0 100px;
+      padding-top: 54px;
+      padding-bottom: 18px;
+      background-color: #ffffff;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .expertise-container {
+      max-width: 1272px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
     }
 
     .expertise-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 54px;
     }
 
     .expertise-title {
       font-family: var(--primary-font);
-      font-size: clamp(26px, 3.2vw, 36px);
+      font-size: 36px;
       font-weight: 400;
-      letter-spacing: 4px;
+      letter-spacing: 2.5px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--black);
+      color: #111111;
+      margin: 0;
     }
 
     /* 3-Column Responsive Grid matching Screenshots */
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 1200px;
+      grid-template-columns: repeat(3, 412px);
+      max-width: 1272px;
+      width: 100%;
       margin: 0 auto;
+      gap: 18px;
+      justify-content: start;
+      box-sizing: border-box;
     }
 
     .expertise-card {
       position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
       display: block;
-      cursor: pointer;
-      background-color: #000;
+      overflow: hidden;
+      width: 412px;
+      height: 404px;
+      background-color: #000000;
+      text-decoration: none;
+      border-radius: 0px;
+      box-sizing: border-box;
     }
 
     .expertise-card-img {
@@ -464,7 +494,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .expertise-card:hover .expertise-card-img {
@@ -477,7 +507,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.28);
+      background-color: rgba(0, 0, 0, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -486,18 +516,36 @@
     }
 
     .expertise-card:hover .expertise-card-overlay {
-      background-color: rgba(0, 0, 0, 0.42);
+      background-color: rgba(0, 0, 0, 0.38);
     }
 
     .expertise-card-title {
       font-family: var(--primary-font);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 400;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--white);
+      color: #ffffff;
       text-align: center;
+      margin: 0;
       padding: 0 15px;
+    }
+
+    @media (max-width: 1300px) {
+      .expertise-container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        justify-content: center;
+      }
+      .expertise-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 412 / 404;
+      }
     }
 
     /* ==========================================================================
@@ -1868,10 +1916,10 @@ li {
   </section>
 
   <!-- ==========================================================================
-       SECTION 2 (Screenshots 1, 2 & 3): AREAS OF EXPERTISE
+       SECTION 2 (Screenshots 1 & 2): AREAS OF EXPERTISE
        ========================================================================== -->
   <section id="expertise-section">
-    <div class="container">
+    <div class="expertise-container">
       
       <header class="expertise-header">
         <h2 class="expertise-title">AREAS OF EXPERTISE</h2>
@@ -1879,7 +1927,7 @@ li {
 
       <div class="expertise-grid">
         
-        <!-- Card 1: Mountain House (Screenshot 2) -->
+        <!-- Card 1: Mountain House (Screenshot 1) -->
         <a href="contact-us.html" class="expertise-card">
           <img src="images/area-mountain-house.jpg" alt="Mountain House" class="expertise-card-img" loading="lazy">
           <div class="expertise-card-overlay">
@@ -1887,7 +1935,7 @@ li {
           </div>
         </a>
 
-        <!-- Card 2: Tracy (Screenshot 2) -->
+        <!-- Card 2: Tracy (Screenshot 1) -->
         <a href="contact-us.html" class="expertise-card">
           <img src="images/area-tracy.jpg" alt="Tracy" class="expertise-card-img" loading="lazy">
           <div class="expertise-card-overlay">
@@ -1895,7 +1943,7 @@ li {
           </div>
         </a>
 
-        <!-- Card 3: Lathrop (Screenshot 2) -->
+        <!-- Card 3: Lathrop (Screenshot 1) -->
         <a href="contact-us.html" class="expertise-card">
           <img src="images/area-lathrop.jpg" alt="Lathrop" class="expertise-card-img" loading="lazy">
           <div class="expertise-card-overlay">
@@ -1903,7 +1951,7 @@ li {
           </div>
         </a>
 
-        <!-- Card 4: Manteca (Screenshot 3) -->
+        <!-- Card 4: Manteca (Screenshot 2) -->
         <a href="contact-us.html" class="expertise-card">
           <img src="images/area-manteca.jpg" alt="Manteca" class="expertise-card-img" loading="lazy">
           <div class="expertise-card-overlay">
@@ -1911,7 +1959,7 @@ li {
           </div>
         </a>
 
-        <!-- Card 5: Lodi (Screenshot 3) -->
+        <!-- Card 5: Lodi (Screenshot 2) -->
         <a href="contact-us.html" class="expertise-card">
           <img src="images/area-lodi.jpg" alt="Lodi" class="expertise-card-img" loading="lazy">
           <div class="expertise-card-overlay">
