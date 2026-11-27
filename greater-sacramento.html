@@ -417,42 +417,65 @@
 
     /* ==========================================================================
        SECTION 2 (Screenshot 2): AREAS OF EXPERTISE
+       Aspect Ratio: ~2.12:1 | Recommended Full-Width Canvas: 1440px x 680px
+       Inner 3-Column Grid Container: 1410px max-width (centered)
+       Outer Left/Right Padding: 15px | Column Gap: 12px
+       Cards: 462px width x 468px height | Scrim: rgba(0, 0, 0, 0.25)
        ========================================================================== */
     #expertise-section {
-      background-color: var(--white);
-      padding: 90px 0 100px;
+      padding-top: 42px;
+      padding-bottom: 84px;
+      background-color: #ffffff;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .expertise-container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      box-sizing: border-box;
     }
 
     .expertise-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 44px;
     }
 
     .expertise-title {
       font-family: var(--primary-font);
-      font-size: clamp(26px, 3.2vw, 36px);
+      font-size: 40px;
       font-weight: 400;
-      letter-spacing: 4px;
+      letter-spacing: 2.5px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--black);
+      color: #111111;
+      margin: 0;
     }
 
-    /* 3-Column Responsive Grid matching Screenshot 2 */
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 1200px;
+      grid-template-columns: repeat(3, 462px);
+      max-width: 1410px;
+      width: 100%;
       margin: 0 auto;
+      gap: 12px;
+      justify-content: center;
+      box-sizing: border-box;
     }
 
     .expertise-card {
       position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
       display: block;
-      cursor: pointer;
-      background-color: #000;
+      overflow: hidden;
+      width: 462px;
+      height: 468px;
+      background-color: #000000;
+      text-decoration: none;
+      border-radius: 0px;
+      box-sizing: border-box;
     }
 
     .expertise-card-img {
@@ -460,7 +483,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .expertise-card:hover .expertise-card-img {
@@ -473,7 +496,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.28);
+      background-color: rgba(0, 0, 0, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -482,18 +505,21 @@
     }
 
     .expertise-card:hover .expertise-card-overlay {
-      background-color: rgba(0, 0, 0, 0.42);
+      background-color: rgba(0, 0, 0, 0.38);
     }
 
     .expertise-card-title {
       font-family: var(--primary-font);
-      font-size: 20px;
+      font-size: 23px;
       font-weight: 400;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--white);
+      color: #ffffff;
       text-align: center;
+      margin: 0;
       padding: 0 15px;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
     }
 
     /* ==========================================================================
@@ -1215,29 +1241,35 @@ li {
 /* Floating Contact Button */
 .floating-contact-btn {
   position: fixed !important;
-  bottom: 24px !important;
-  left: 24px !important;
-  background-color: #2ea8b8 !important;
+  bottom: 28px !important;
+  left: 20px !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  height: 48px !important;
+  box-sizing: border-box !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
-  padding: 12px 24px !important;
+  padding: 0 16px !important;
+  font-family: var(--body-font) !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 1.5px !important;
+  word-spacing: 3px !important;
   text-transform: uppercase !important;
   border: none !important;
+  border-radius: 0px !important;
   cursor: pointer !important;
-  z-index: 998 !important;
-  display: inline-flex !important;
+  z-index: 9999 !important;
+  display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
   text-decoration: none !important;
-  text-shadow: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18) !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translateY(16px) !important;
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease !important;
-  border-radius: 2px !important;
+  transform: translateY(20px) !important;
+  transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.25s ease !important;
 }
 
 .floating-contact-btn.visible {
@@ -1247,7 +1279,7 @@ li {
 }
 
 .floating-contact-btn:hover {
-  background-color: #258895 !important;
+  background-color: #2ea1b2 !important;
   color: #ffffff !important;
 }
 
@@ -1865,7 +1897,7 @@ li {
        SECTION 2 (Screenshot 2): AREAS OF EXPERTISE
        ========================================================================== -->
   <section id="expertise-section">
-    <div class="container">
+    <div class="expertise-container">
       
       <header class="expertise-header">
         <h2 class="expertise-title">AREAS OF EXPERTISE</h2>
@@ -2041,7 +2073,10 @@ li {
     </div>
   </footer>
 
-  <!-- Floating Contact Button (Bottom Left) -->
+  <!-- Floating Contact Button (Bottom Left, matching screenshot) -->
+  <button type="button" class="floating-contact-btn" id="floatingContactBtn" aria-label="Contact Us" data-open-contact-modal onclick="if (typeof openContactModal === 'function') openContactModal();">
+    CONTACT US <span style="font-size: 11px; transform: scaleY(0.7); display: inline-block;">&#94;</span>
+  </button>
   
 
   <!-- JavaScript -->
@@ -2341,31 +2376,18 @@ li {
   // FLOATING CONTACT BUTTON (Visible only after top section)
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
-  const heroSectionEl = document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
+  const heroSectionEl = document.getElementById('sacramento-hero') || document.getElementById('hero') || document.querySelector('.hero-section, .about-hero-section, .featured-hero, .properties-hero, header, section:first-of-type');
 
   if (floatingContactBtn) {
-    if (heroSectionEl && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            floatingContactBtn.classList.add('visible');
-          } else {
-            floatingContactBtn.classList.remove('visible');
-          }
-        });
-      }, { threshold: 0.15 });
-      observer.observe(heroSectionEl);
-    } else {
-      const updateFloatingContact = () => {
-        if (window.scrollY > 250) {
-          floatingContactBtn.classList.add('visible');
-        } else {
-          floatingContactBtn.classList.remove('visible');
-        }
-      };
-      window.addEventListener('scroll', updateFloatingContact, { passive: true });
-      updateFloatingContact();
-    }
+    const updateFloatingContact = () => {
+      if (window.scrollY > 150) {
+        floatingContactBtn.classList.add('visible');
+      } else {
+        floatingContactBtn.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', updateFloatingContact, { passive: true });
+    updateFloatingContact();
   }
 
 </script>
