@@ -739,228 +739,372 @@
     }
 
     /* ==========================================================================
-       SECTION 6 & 7 (Screenshots 6 & 7): GLOBAL FOOTER
+       SECTION 5 & 6 (Screenshots 5 & 6): GLOBAL FOOTER (Matches exact reference)
        ========================================================================== */
     #global-footer {
-      background-color: var(--white);
-      color: var(--black);
-      padding: 80px 0 40px;
+      background-color: #ffffff;
+      color: #000000;
+      padding-top: 32px;
+      padding-bottom: 28px;
+      font-family: var(--body-font);
       border-top: 1px solid #eeeeee;
-      font-size: 13px;
+      box-sizing: border-box;
+      width: 100%;
     }
 
-    .footer-top-grid {
+    #global-footer .container,
+    #global-footer .footer-container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 55px;
+      padding-right: 55px;
+      box-sizing: border-box;
+    }
+
+    /* Upper Section: 50% / 50% Split Grid (Symmetrical 50/50 container) */
+    .footer-info-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 60px;
+      width: 100%;
+      max-width: 1330px;
+      margin-bottom: 64px; /* 64px below SUBSCRIBE button */
     }
 
-    .footer-col-left h3 {
-      font-family: var(--body-font);
-      font-size: 22px;
+    /* Left Column: Lulu Logan Group & Contact Stack */
+    .footer-agent-box {
+      width: 100%;
+      max-width: 665px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-brand-title {
+      font-family: var(--primary-font);
+      font-size: 29px;
       font-weight: 400;
-      margin-bottom: 25px;
       letter-spacing: 0.5px;
-      color: var(--black);
+      line-height: 1.2;
+      color: #000000;
+      text-transform: none !important;
+      margin-top: 0;
+      margin-bottom: 22px; /* 22px vertical gap to EMAIL label */
     }
 
-    .footer-info-block {
-      margin-bottom: 20px;
+    .footer-cell {
+      margin-bottom: 22px; /* 22px vertical gap between contact blocks */
     }
 
-    .footer-info-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      color: #777777;
-      text-transform: uppercase;
-      margin-bottom: 4px;
+    .footer-cell:last-child {
+      margin-bottom: 0;
     }
 
-    .footer-info-val {
-      font-size: 13px;
-      color: var(--black);
-      line-height: 1.6;
-    }
-
-    .footer-info-val a {
-      color: var(--black);
-      text-decoration: underline;
-    }
-
-    .footer-info-val a:hover {
-      color: var(--accent);
-    }
-
-    /* Newsletter Right Column */
-    .footer-col-right h4 {
-      font-family: var(--body-font);
-      font-size: 13px;
+    .footer-cell-title {
+      font-size: 11.5px;
       font-weight: 500;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 24px;
-      color: var(--black);
+      color: #222222;
+      margin-bottom: 10px; /* 10px gap between label and value */
+      line-height: 1.2;
     }
 
-    .newsletter-input-group {
-      margin-bottom: 18px;
+    .footer-cell-val {
+      font-size: 12.5px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #222222;
+      line-height: 1.85;
+      text-transform: uppercase;
     }
 
-    .newsletter-input-underline {
+    .footer-cell-val a {
+      color: #222222;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-cell-val a:hover {
+      color: #38B2C4;
+    }
+
+    /* Right Column: Newsletter Subscription Form */
+    .footer-newsletter-box {
       width: 100%;
+      max-width: 665px;
+      margin-top: 56px; /* 32px + 56px = 88px vertical offset from top screen edge */
+    }
+
+    .footer-newsletter-title {
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #111111;
+      margin-bottom: 22px; /* 22px vertical gap to EMAIL ADDRESS */
+      line-height: 1.2;
+    }
+
+    .footer-input-group {
+      width: 100%;
+      max-width: 665px;
+      margin-bottom: 22px; /* 22px gap to consent checkbox */
+      position: relative;
+    }
+
+    .footer-input-label {
+      display: block;
+      font-family: var(--body-font);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #222222;
+      margin-bottom: 0px;
+      line-height: 1.2;
+    }
+
+    .footer-input-field {
+      width: 100%;
+      max-width: 665px;
+      height: 36px; /* 36px input height for exact vertical proportion to line */
       border: none;
       border-bottom: 1px solid #000000;
-      padding: 10px 0;
+      border-radius: 0;
+      padding: 8px 0 4px;
       font-family: var(--body-font);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--black);
-      background: transparent;
+      font-size: 13px;
+      letter-spacing: 1px;
       outline: none;
+      background: transparent;
+      color: #000000;
+      box-sizing: border-box;
+      display: block;
     }
 
-    .newsletter-input-underline::placeholder {
-      color: #666666;
+    .footer-input-field:focus {
+      outline: none !important;
+      border-bottom: 1px solid #000000 !important;
+      box-shadow: none !important;
     }
 
-    .newsletter-consent {
+    .footer-input-field:-webkit-autofill,
+    .footer-input-field:-webkit-autofill:hover, 
+    .footer-input-field:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+      box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    }
+
+    .footer-consent {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 24px;
-      font-size: 11px;
-      line-height: 1.6;
-      color: #666666;
+      gap: 10px; /* 10px horizontal gap between checkbox and text */
+      margin-bottom: 46px; /* 46px vertical gap to SUBSCRIBE button */
     }
 
-    .newsletter-consent input[type="checkbox"] {
-      margin-top: 3px;
+    .footer-consent input[type="checkbox"] {
+      margin-top: 2px;
+      accent-color: #38B2C4;
+      width: 15px; /* 15px x 15px */
+      height: 15px;
+      flex-shrink: 0;
       cursor: pointer;
-      accent-color: var(--accent);
+      border: 1px solid #555555;
+      box-sizing: border-box;
     }
 
-    .newsletter-consent label {
-      cursor: pointer;
-    }
-
-    .newsletter-consent a {
-      color: #666666;
-      text-decoration: underline;
-    }
-
-    .newsletter-consent a:hover {
-      color: var(--accent);
-    }
-
-    .newsletter-btn {
-      background-color: var(--accent);
-      color: var(--white);
-      border: 1px solid var(--accent);
-      padding: 12px 36px;
+    .footer-consent label {
       font-size: 12px;
-      letter-spacing: 1.5px;
-      font-weight: 600;
+      font-weight: 400;
+      line-height: 1.75;
+      color: #666666;
+      max-width: 642px; /* ~644px wide next to checkbox */
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .footer-consent label a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: #666666;
+      transition: color 0.2s ease;
+    }
+
+    .footer-consent label a:hover {
+      color: #111111;
+    }
+
+    .footer-subscribe-btn {
+      background-color: #38B2C4;
+      color: #ffffff;
+      border: none;
+      border-radius: 0px;
+      width: 196px; /* 196px width */
+      height: 54px; /* 54px height */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      font-family: var(--body-font);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
-      transition: var(--transition-smooth);
+      transition: all 0.3s ease;
     }
 
-    .newsletter-btn:hover {
-      background-color: var(--accent-hover);
-      border-color: var(--accent-hover);
+    .footer-subscribe-btn:hover {
+      background-color: #2da1b2;
+      color: #ffffff;
     }
 
-    /* Footer Middle */
-    .footer-middle-legal {
-      font-size: 11.5px;
-      color: #666666;
-      line-height: 1.6;
-      margin-bottom: 20px;
+    /* Middle: Disclaimer & Broker Info */
+    .footer-text-first {
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
-    .footer-realtor-img {
-      height: 38px;
-      width: auto;
-      margin-bottom: 18px;
+    .footer-disclaimer-text {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #444444;
+      margin-top: 0;
+      margin-bottom: 22px; /* 22px gap to logos */
     }
 
-    .footer-dre-info {
-      font-size: 11.5px;
-      color: #666666;
-      line-height: 1.8;
-      margin-bottom: 35px;
-    }
-
-    /* Footer Bottom Row */
-    .footer-bottom-row {
+    .footer-logos-wrap {
+      margin-bottom: 24px; /* 24px gap to licensing block */
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-top: 25px;
-      border-top: 1px solid #000000;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 12px;
-      color: #555555;
+      gap: 14px;
     }
 
-    .lp-attribution {
+    .footer-logos-img {
+      height: 42px; /* 42px tall */
+      width: auto;
+      display: block;
+    }
+
+    .footer-broker-info {
+      font-size: 12px;
+      font-weight: 400;
+      color: #333333;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    /* Horizontal Dividing Line */
+    .footer-divider-line {
+      width: 100%;
+      height: 1px;
+      background-color: #000000;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    /* Bottom flex row: Luxury Presence + Copyright/Sitemap + Social Icons */
+    .footer-privacy-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 10px;
+    }
+
+    .footer-powered-col {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #222222;
+    }
+
+    .footer-powered-col img {
+      height: 20px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-powered-col a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: #000000;
+    }
+
+    .footer-right-col {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-copyright-links {
+      font-size: 13px;
+      color: #222222;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .lp-logo-badge {
-      height: 18px;
-      width: auto;
-    }
-
-    .footer-copyright a {
-      color: #555555;
+    .footer-copyright-links a {
+      color: #000000;
       text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
     }
 
-    .footer-copyright a:hover {
-      color: var(--accent);
+    .footer-copyright-links a:hover {
+      color: #38B2C4;
     }
 
     .footer-social-row {
       display: flex;
-      align-items: center;
       gap: 10px;
+      align-items: center;
     }
 
     .social-teal-btn {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background-color: var(--accent);
-      color: var(--white);
-      display: flex;
+      background-color: #38B2C4;
+      color: #ffffff;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: var(--transition-smooth);
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
 
     .social-teal-btn:hover {
-      background-color: var(--accent-hover);
       transform: translateY(-2px);
+      background-color: #2da1b2;
     }
 
     .social-teal-btn svg {
-      width: 14px;
-      height: 14px;
-      fill: currentColor;
+      width: 15px;
+      height: 15px;
+      fill: #ffffff;
     }
 
-    .footer-privacy-choices {
+    .footer-bottom-center {
+      margin-top: 30px;
+      margin-bottom: 10px;
       text-align: center;
-      font-size: 10.5px;
-      color: #888888;
-      margin-top: 25px;
+    }
+
+    .footer-bottom-center a {
+      font-size: 11px;
+      color: #666666;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-bottom-center a:hover {
+      color: #000000;
     }
 
 
@@ -979,7 +1123,7 @@
       .expertise-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .footer-top-grid {
+      .footer-info-wrap {
         grid-template-columns: 1fr;
         gap: 40px;
       }
@@ -993,10 +1137,10 @@
       .expertise-grid {
         grid-template-columns: 1fr;
       }
-      .footer-bottom-row {
+      .footer-privacy-bar {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        gap: 15px;
       }
     }
   /* ==========================================================================
@@ -2061,114 +2205,130 @@ li {
   </section>
 
   <!-- ==========================================================================
-       SECTION 5 & 6 (Screenshots 6 & 7): GLOBAL FOOTER
+       SECTION 5 & 6 (Screenshots 5 & 6): GLOBAL FOOTER (Matches exact reference)
        ========================================================================== -->
   <footer id="global-footer">
-    <div class="container">
+    <div class="container footer-container">
       
-      <div class="footer-top-grid">
+      <!-- Upper Section: 50% / 50% Split Grid -->
+      <div class="footer-info-wrap">
         
-        <!-- Left Column -->
-        <div class="footer-col-left">
-          <h3>Lulu Logan Group</h3>
-          
-          <div class="footer-info-block">
-            <div class="footer-info-label">EMAIL</div>
-            <div class="footer-info-val">
+        <!-- Left: Agent / Group Info -->
+        <div class="footer-agent-box">
+          <h3 class="footer-brand-title">Lulu Logan Group</h3>
+
+          <div class="footer-cell">
+            <div class="footer-cell-title">EMAIL</div>
+            <div class="footer-cell-val">
               <a href="mailto:OFFICE@JUST1REALESTATE.COM">OFFICE@JUST1REALESTATE.COM</a>
             </div>
           </div>
 
-          <div class="footer-info-block">
-            <div class="footer-info-label">PHONE NUMBER</div>
-            <div class="footer-info-val">
+          <div class="footer-cell">
+            <div class="footer-cell-title">PHONE NUMBER</div>
+            <div class="footer-cell-val">
               <a href="tel:6692220704">(669) 222-0704</a>
             </div>
           </div>
 
-          <div class="footer-info-block">
-            <div class="footer-info-label">ADDRESS</div>
-            <div class="footer-info-val">
+          <div class="footer-cell">
+            <div class="footer-cell-title">ADDRESS</div>
+            <div class="footer-cell-val">
               2181 N TRACY BLVD #275<br>
               TRACY, CA 95376
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Newsletter -->
-        <div class="footer-col-right">
-          <h4>SIGN UP FOR EXCLUSIVE NEWS</h4>
-          
-          <form id="footerNewsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.'); this.reset();">
-            <div class="newsletter-input-group">
-              <input type="email" placeholder="EMAIL ADDRESS" required class="newsletter-input-underline">
+        <!-- Right: Newsletter Subscription Form -->
+        <div class="footer-newsletter-box">
+          <form id="footerNewsletterForm" class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Exclusive real estate listings and updates are on their way.'); this.reset();">
+            <div class="footer-newsletter-title">SIGN UP FOR EXCLUSIVE NEWS</div>
+
+            <div class="footer-input-group">
+              <label for="footer-email-input" class="footer-input-label">EMAIL ADDRESS</label>
+              <input type="email" id="footer-email-input" class="footer-input-field" placeholder="" required>
             </div>
 
-            <div class="newsletter-consent">
-              <input type="checkbox" id="newsletterConsent" required>
-              <label for="newsletterConsent">
-                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real Estate via call, email and text for real estate services and to receive Customer service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message Frequency may vary. Consent is not a condition of purchase of any goods or services. You may also visit our <a href="#">terms of use and Privacy Policy</a>.
+            <div class="footer-consent">
+              <input type="checkbox" id="footer-consent-checkbox" required>
+              <label for="footer-consent-checkbox">
+                I agree and consent to be contacted by Lulu Logan Group and Just 1 Real<br class="br-desktop">
+                Estate via call, email and text for real estate services and to receive Customer<br class="br-desktop">
+                service, promotional, and marketing SMS. To Opt Out, you can reply 'stop' at<br class="br-desktop">
+                any time or reply 'help' for assistance. You can also click the unsubscribe link in<br class="br-desktop">
+                the emails. Message and data rates may apply. Message Frequency may vary.<br class="br-desktop">
+                Consent is not a condition of purchase of any goods or services. You may also<br class="br-desktop">
+                visit our <a href="#" target="_blank" rel="noopener">terms of use</a> and <a href="#" target="_blank" rel="noopener">Privacy Policy</a>.
               </label>
             </div>
 
-            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+            <button type="submit" class="footer-subscribe-btn">SUBSCRIBE</button>
           </form>
         </div>
 
       </div>
 
-      <!-- Legal Disclosure -->
-      <p class="footer-middle-legal">
-        All information is deemed reliable but not guaranteed and should be independently reviewed and verified.
-      </p>
+      <!-- Middle: Disclaimer & Broker Info -->
+      <div class="footer-text-first">
+        <p class="footer-disclaimer-text">
+          All information is deemed reliable but not guaranteed and should be independently reviewed and verified.
+        </p>
 
-      <!-- Realtor / Equal Housing Opportunity Logo -->
-      <img src="images/realtor-equal-housing.png" alt="Realtor & Equal Housing Opportunity" class="footer-realtor-img">
+        <div class="footer-logos-wrap">
+          <img src="images/realtor-equal-housing.png" alt="Realtor & Equal Housing Opportunity" class="footer-logos-img">
+        </div>
 
-      <!-- Broker Info -->
-      <div class="footer-dre-info">
-        <p>Just 1 Real Estate</p>
-        <p>Lulu Logan | DRE #01452747</p>
-        <p>Broker: Grobecker Holland International</p>
+        <div class="footer-broker-info">
+          Just 1 Real Estate<br>
+          Lulu Logan | DRE #01452747<br>
+          Broker: Grobecker Holland International
+        </div>
       </div>
 
-      <!-- Bottom Attribution & Socials -->
-      <div class="footer-bottom-row">
-        
-        <div class="lp-attribution">
-          <img src="images/luxury-presence.png" alt="Luxury Presence" class="lp-logo-badge">
-          <span>Real Estate Website Design by <a href="https://www.luxurypresence.com/" target="_blank" rel="noopener" style="text-decoration: underline;">Luxury Presence</a></span>
+      <!-- Horizontal dividing line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Bottom flex row: Luxury Presence + Copyright/Sitemap + Social Icons -->
+      <div class="footer-privacy-bar">
+        <div class="footer-powered-col">
+          <img src="images/luxury-presence.png" alt="Luxury Presence">
+          <span>Real Estate Website Design by <a href="https://www.luxurypresence.com/real-estate-website-design/" target="_blank" rel="noopener">Luxury Presence</a></span>
         </div>
 
-        <div class="footer-copyright">
-          Copyright Â© 2026 | <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a>
-        </div>
+        <div class="footer-right-col">
+          <div class="footer-copyright-links">
+            <span>Copyright &copy; 2026</span>
+            <span>|</span>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" class="sitemap-link">Sitemap</a>
+          </div>
 
-        <div class="footer-social-row">
-          <a href="https://www.instagram.com/just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="social-teal-btn" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-          <a href="https://www.yelp.com/biz/just-1-real-estate-tracy-2" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Zillow">
-            <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="social-teal-btn" aria-label="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.38-1.48 3.49-3.29.04-2.83.02-5.66.02-8.49 0-3.69-.02-7.38.02-11.08z"/></svg>
-          </a>
-          <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Google">
-            <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
-          </a>
+          <div class="footer-social-row">
+            <a href="https://www.linkedin.com/company/just-1-real-estate/" target="_blank" rel="noopener" class="social-teal-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@just1realestate" target="_blank" rel="noopener" class="social-teal-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.yelp.com/biz/just-1-real-estate-tracy-2" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Zillow">
+              <svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 7.5h-3.5v11.5h-10v-11.5h-3.5l8.5-7.5zm-3.5 10.5v1.2h4.8l-4.8 4.8v1h7v-1.2h-4.8l4.8-4.8v-1h-7z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@just1network" target="_blank" rel="noopener" class="social-teal-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.38-1.48 3.49-3.29.04-2.83.02-5.66.02-8.49 0-3.69-.02-7.38.02-11.08z"/></svg>
+            </a>
+            <a href="https://www.google.com/search?client=opera-gx&q=Just+1+Real+Estate+%E2%80%93+Mountain+House+Realtors" target="_blank" rel="noopener" class="social-teal-btn" aria-label="Google">
+              <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+            </a>
+          </div>
         </div>
 
       </div>
 
-      <div class="footer-privacy-choices">
-        <a href="#">Your Privacy Choices</a>
+      <!-- Centered Privacy Choices at the bottom -->
+      <div class="footer-bottom-center">
+        <a href="#privacy-choices">Your Privacy Choices</a>
       </div>
 
     </div>
