@@ -410,26 +410,33 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   SECTION 2: LOCAL GUIDE STATEMENT
-   Crystal clear native typography matching exact reference specifications
+   SECTION 2: LOCAL GUIDE STATEMENT (Exact match to reference specifications)
+   Canvas: 1440px x 367px (~3.92:1 Aspect Ratio)
    ========================================================================== */
 .kc-intro {
   background-color: #ffffff !important;
-  padding: 85px 24px 75px 24px !important;
+  min-height: 367px !important;
+  padding: 115px 24px 114px 24px !important;
   text-align: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .kc-intro .container {
-  max-width: 1440px !important;
+  max-width: 1264px !important;
+  width: 100% !important;
   margin: 0 auto !important;
-  padding: 0 24px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .kc-intro-wrap {
   width: 100% !important;
-  max-width: 1300px !important;
+  max-width: 1264px !important;
   margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
@@ -439,14 +446,14 @@ button, input, textarea, select {
 }
 
 .kc-intro-heading {
-  font-family: var(--primary-font, 'Cinzel', serif) !important;
-  font-size: 28px !important;
+  font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
+  font-size: 39px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  line-height: 1.25 !important;
+  letter-spacing: 2.5px !important;
+  line-height: 1.2 !important;
   color: #111111 !important;
-  margin: 0 0 24px 0 !important;
+  margin: 0 0 54px 0 !important;
   text-align: center !important;
   white-space: nowrap !important;
   -webkit-font-smoothing: antialiased !important;
@@ -456,12 +463,14 @@ button, input, textarea, select {
 
 .kc-intro-desc {
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 13.5px !important;
+  font-size: 14.5px !important;
   font-weight: 400 !important;
-  letter-spacing: 0.25px !important;
-  line-height: 1.65 !important;
-  color: #555555 !important;
-  margin: 0 !important;
+  letter-spacing: 0.3px !important;
+  line-height: 1.8 !important;
+  color: #333333 !important;
+  max-width: 602px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -471,25 +480,28 @@ button, input, textarea, select {
   display: block !important;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .kc-intro-heading {
     white-space: normal !important;
-    font-size: 24px !important;
-    letter-spacing: 1.5px !important;
+    font-size: 32px !important;
+    letter-spacing: 2px !important;
   }
 }
 
 @media (max-width: 768px) {
   .kc-intro {
+    min-height: auto !important;
     padding: 50px 20px 45px 20px !important;
   }
   .kc-intro-heading {
-    font-size: 20px !important;
-    letter-spacing: 1.2px !important;
-    margin-bottom: 18px !important;
+    font-size: 22px !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 24px !important;
+    white-space: normal !important;
   }
   .kc-intro-desc {
-    font-size: 12.5px !important;
+    font-size: 13px !important;
+    max-width: 100% !important;
   }
   .kc-intro-line {
     display: inline !important;
