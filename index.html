@@ -2580,8 +2580,8 @@ button, input, textarea, select {
 #global-footer {
   background-color: #ffffff !important;
   color: #000000 !important;
-  padding-top: 96px !important;
-  padding-bottom: 25px !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
   box-sizing: border-box !important;
 }
@@ -2613,13 +2613,13 @@ button, input, textarea, select {
 
 .footer-brand-title {
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 27px !important;
+  font-size: 28px !important;
   font-weight: 400 !important;
   letter-spacing: 0.5px !important;
   line-height: 1.2 !important;
   text-transform: none !important;
   color: #111111 !important;
-  margin: 0 0 26px 0 !important;
+  margin: 0 0 24px 0 !important;
 }
 
 .footer-cell {
@@ -2674,7 +2674,7 @@ button, input, textarea, select {
 .footer-newsletter-box {
   width: 50% !important;
   max-width: 667px !important;
-  margin-top: 58px !important;
+  margin-top: 55px !important;
   box-sizing: border-box !important;
 }
 
@@ -2810,7 +2810,15 @@ button, input, textarea, select {
   letter-spacing: 0.2px !important;
   line-height: 1.4 !important;
   color: #333333 !important;
-  margin: 0 0 24px 0 !important;
+  margin: 0 !important;
+}
+
+#global-footer .footer-logos-wrap,
+#global-footer .footer-broker-info,
+#global-footer .footer-divider-line,
+#global-footer .footer-privacy-bar,
+#global-footer .footer-bottom-center {
+  display: none !important;
 }
 
 .footer-logos-wrap {
@@ -5754,12 +5762,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
   const floatingContactBtn = document.querySelector('.floating-contact-btn');
   const heroSectionEl = document.getElementById('hero');
+  const footerSectionEl = document.getElementById('global-footer');
 
   if (floatingContactBtn && heroSectionEl) {
     const updateFloatingContact = () => {
       const heroRect = heroSectionEl.getBoundingClientRect();
-      // Only show when the hero section is completely scrolled past (bottom <= 0)
-      if (heroRect.bottom <= 0) {
+      const footerRect = footerSectionEl ? footerSectionEl.getBoundingClientRect() : null;
+      // Show after hero is passed, but hide when footer enters viewport to avoid overlapping footer text
+      if (heroRect.bottom <= 0 && (!footerRect || footerRect.top >= window.innerHeight - 30)) {
         floatingContactBtn.classList.add('visible');
       } else {
         floatingContactBtn.classList.remove('visible');
