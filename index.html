@@ -2010,81 +2010,127 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   12. SECTION: FEATURED VIDEO (Exact match to reference screenshot)
+   12. SECTION: FEATURED VIDEO (Exact match to reference specifications)
+   Canvas: 1440px x 570px (Aspect ratio ~2.53:1)
    ========================================================================== */
 #featured-video {
-  background-color: #ffffff;
-  padding: 60px 20px 70px 20px;
+  position: relative !important;
+  background-color: #ffffff !important;
+  width: 100% !important;
+  min-height: 570px !important;
+  height: 570px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#featured-video::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 62px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 1px !important;
+  background-color: #EEEEEE !important;
+  z-index: 1 !important;
 }
 
 #featured-video .container {
-  max-width: 950px !important;
+  max-width: 1440px !important;
+  width: 100% !important;
+  height: 100% !important;
   margin: 0 auto !important;
   padding: 0 !important;
+  position: relative !important;
+  box-sizing: border-box !important;
 }
 
 .video-section-grid {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 118px !important;
+  position: relative !important;
   width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .video-info-col {
-  flex: 0 0 260px !important;
+  position: absolute !important;
+  left: 214px !important;
+  top: 150px !important;
+  width: 270px !important;
   max-width: 270px !important;
-  width: 260px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  z-index: 2 !important;
 }
 
 .video-heading {
-  font-family: var(--primary-font, 'Tenor Sans', sans-serif) !important;
-  font-size: 26px !important;
+  font-family: var(--primary-font, 'Cinzel', serif) !important;
+  font-size: 27px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 1.2px !important;
+  letter-spacing: 2.5px !important;
   color: #111111 !important;
-  margin-bottom: 14px !important;
+  margin: 0 0 24px 0 !important;
   line-height: 1.2 !important;
   white-space: nowrap !important;
+  text-align: left !important;
 }
 
 .video-subtitle {
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 11.5px !important;
+  font-size: 13px !important;
   font-weight: 400 !important;
+  letter-spacing: 0.2px !important;
   line-height: 1.6 !important;
   color: #555555 !important;
-  margin-bottom: 24px !important;
+  margin: 0 0 28px 0 !important;
   max-width: 260px !important;
+  text-align: left !important;
 }
 
 .video-actions {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 14px !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .video-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background-color: var(--accent, #3BB9CA) !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
   border: none !important;
-  border-radius: 0 !important;
-  height: 32px !important;
-  padding: 0 20px !important;
+  border-radius: 0px !important;
+  height: 38px !important;
+  padding: 0 !important;
   font-family: var(--body-font, 'Montserrat', sans-serif) !important;
-  font-size: 10.5px !important;
+  font-size: 11.5px !important;
   font-weight: 500 !important;
-  letter-spacing: 1.2px !important;
+  letter-spacing: 1.8px !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
   cursor: pointer !important;
+  box-sizing: border-box !important;
   transition: background-color 0.25s ease !important;
-  width: fit-content !important;
+}
+
+.video-btn-view-all {
+  width: 114px !important;
+}
+
+.video-btn-explore {
+  width: 228px !important;
 }
 
 .video-btn:hover {
@@ -2093,19 +2139,23 @@ button, input, textarea, select {
 }
 
 .video-player-col {
-  flex: 0 0 572px !important;
-  max-width: 572px !important;
-  width: 572px !important;
-  position: relative !important;
+  position: absolute !important;
+  left: 620px !important;
+  top: 58px !important;
+  width: 618px !important;
+  height: 384px !important;
+  max-width: 618px !important;
+  z-index: 2 !important;
 }
 
 .video-thumbnail-wrap {
   position: relative !important;
-  width: 100% !important;
-  aspect-ratio: 572 / 368 !important;
+  width: 618px !important;
+  height: 384px !important;
   overflow: hidden !important;
   cursor: pointer !important;
   background-color: #f0f0f0 !important;
+  border-radius: 0px !important;
 }
 
 .video-thumbnail-wrap img {
@@ -2114,6 +2164,7 @@ button, input, textarea, select {
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
+  border-radius: 0px !important;
   transition: transform 0.4s ease !important;
 }
 
@@ -2122,41 +2173,81 @@ button, input, textarea, select {
 }
 
 .play-button {
-  display: none !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 68px !important;
+  height: 68px !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+
+.play-button-inner {
+  width: 56px !important;
+  height: 56px !important;
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
 }
 
 .play-button svg {
-  width: 18px;
-  height: 18px;
-  fill: #ffffff;
-  margin-left: 3px;
-  transition: fill 0.3s ease;
+  width: 16px !important;
+  height: 16px !important;
+  fill: #111111 !important;
+  margin-left: 3px !important;
+  display: block !important;
 }
 
 .video-thumbnail-wrap:hover .play-button {
-  transform: translate(-50%, -50%) scale(1.1);
-  background-color: var(--accent);
-  border-color: var(--accent);
+  transform: translate(-50%, -50%) scale(1.08) !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #featured-video {
-    padding: 40px 15px 50px 15px !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 50px 20px 80px 20px !important;
+  }
+  #featured-video::after {
+    bottom: 20px !important;
+  }
+  #featured-video .container {
+    height: auto !important;
   }
   .video-section-grid {
+    position: static !important;
     flex-direction: column !important;
-    gap: 30px !important;
-    text-align: left !important;
+    align-items: center !important;
+    gap: 36px !important;
   }
   .video-info-col {
-    max-width: 100% !important;
-    flex: 1 1 auto !important;
+    position: static !important;
     width: 100% !important;
+    max-width: 618px !important;
   }
   .video-player-col {
+    position: static !important;
     width: 100% !important;
-    max-width: 100% !important;
-    flex: 1 1 auto !important;
+    max-width: 618px !important;
+    height: auto !important;
+  }
+  .video-thumbnail-wrap {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 618 / 384 !important;
   }
 }
 
@@ -3867,27 +3958,31 @@ button, input, textarea, select {
   position: fixed !important;
   bottom: 24px !important;
   left: 24px !important;
-  background-color: #2ea8b8 !important;
+  width: 150px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  background-color: #38B2C4 !important;
   color: #ffffff !important;
-  padding: 12px 24px !important;
+  font-family: var(--body-font, 'Montserrat', sans-serif) !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   border: none !important;
+  border-radius: 0px !important;
   cursor: pointer !important;
   z-index: 998 !important;
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
   text-decoration: none !important;
-  border-radius: 2px !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
   transform: translateY(20px) !important;
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease, background-color 0.25s ease !important;
 }
 
 .floating-contact-btn.visible {
@@ -4709,8 +4804,8 @@ button, input, textarea, select {
             Living in West Sacramento, CA | Parks,<br>Neighborhoods &amp; Daily Life
           </p>
           <div class="video-actions">
-            <a href="https://just1realestate.com/video-gallery" target="_blank" class="video-btn">VIEW ALL</a>
-            <a href="#explore-area" class="video-btn">EXPLORE THE COMMUNITY</a>
+            <a href="https://just1realestate.com/video-gallery" target="_blank" class="video-btn video-btn-view-all">VIEW ALL</a>
+            <a href="#explore-area" class="video-btn video-btn-explore">EXPLORE THE COMMUNITY</a>
           </div>
         </div>
 
@@ -4718,7 +4813,9 @@ button, input, textarea, select {
           <div class="video-thumbnail-wrap" data-video-url="https://www.youtube.com/embed/-KksMDhrlAY?autoplay=1">
             <img src="images/video-thumb.jpg" alt="Featured Community Video - West Sacramento">
             <div class="play-button" aria-label="Play Video">
-              <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+              <div class="play-button-inner">
+                <svg viewBox="0 0 24 24"><polygon points="7 4 19 12 7 20 7 4"></polygon></svg>
+              </div>
             </div>
           </div>
         </div>
